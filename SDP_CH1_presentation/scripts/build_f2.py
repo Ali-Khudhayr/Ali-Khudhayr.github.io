@@ -16,8 +16,8 @@ def grab(s, sid):
 def sub1(s, a, b):
     assert s.count(a) == 1, (a, s.count(a)); return s.replace(a, b)
 # 1 ---- opening video: smaller, darker names (new media + matching poster)
-shutil.copy(WORK + '/intro3.mp4', P + 'media/media1.mp4')
-shutil.copy(WORK + '/intro3_poster.png', P + 'media/image_intro_poster.png')
+shutil.copy(WORK + '/intro4.mp4', P + 'media/media1.mp4')
+shutil.copy(WORK + '/intro4_poster.png', P + 'media/image_intro_poster.png')
 r = rd('slides/_rels/slide1.xml.rels')
 wr('slides/_rels/slide1.xml.rels', sub1(r, 'Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="../media/image1.png"',
                                         'Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="../media/image_intro_poster.png"'))

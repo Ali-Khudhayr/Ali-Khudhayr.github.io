@@ -4,7 +4,8 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 
 | File | What it is |
 |---|---|
-| `EE499_Team16_Presentation_F_v3.pptx` | **Latest deck**: F_v2 with the professor's notes applied |
+| `EE499_Team16_Presentation_F_v4.pptx` | **Latest deck**: F_v3 with smaller, black names and IDs in the opening video |
+| `EE499_Team16_Presentation_F_v3.pptx` | F_v2 with the professor's notes applied |
 | `EE499_Team16_Presentation_F_v2.pptx` | Team's revision before those notes |
 | `EE499_Team16_Presentation_5.pptx` | **Final deck**: 24 slides, timed for about 9 minutes, with speaker notes |
 | `EE499_Team16_Presentation_5_preview.pdf` | Quick preview (rendered with substitute fonts; open the .pptx for the real look) |
@@ -31,3 +32,6 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 - DS-03: the big number is now **120 / 80 %** of baseline (≥ 5 s, ≥ 90 % detected).
 - DS-06: **±5 %** is now labelled as cost-estimate error (alerts at 50 · 80 · 100 %).
 - Last slide: the priority-control video was stretched; it is now true 16:9 and large, with the key timing figures below it.
+
+## F_v3 → F_v4
+- Opening video: names and IDs are now black, and a little smaller than the presentation title.
