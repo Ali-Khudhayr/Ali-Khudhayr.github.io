@@ -4,7 +4,8 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 
 | File | What it is |
 |---|---|
-| `EE499_Team16_Presentation_F_v4.pptx` | **Latest deck**: F_v3 with smaller, black names and IDs in the opening video |
+| `EE499_Team16_Presentation_F_v5.pptx` | **Latest deck**: names and IDs spread evenly over the whole tower |
+| `EE499_Team16_Presentation_F_v4.pptx` | F_v3 with smaller, black names and IDs in the opening video |
 | `EE499_Team16_Presentation_F_v3.pptx` | F_v2 with the professor's notes applied |
 | `EE499_Team16_Presentation_F_v2.pptx` | Team's revision before those notes |
 | `EE499_Team16_Presentation_5.pptx` | **Final deck**: 24 slides, timed for about 9 minutes, with speaker notes |
@@ -35,3 +36,6 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 
 ## F_v3 → F_v4
 - Opening video: names and IDs are now black, and a little smaller than the presentation title.
+
+## F_v4 → F_v5
+- Opening video: the three name + ID blocks are spaced evenly over the full height of the tower.
