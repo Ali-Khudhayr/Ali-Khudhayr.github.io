@@ -4,6 +4,8 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 
 | File | What it is |
 |---|---|
+| `EE499_Team16_Presentation_F_v3.pptx` | **Latest deck**: F_v2 with the professor's notes applied |
+| `EE499_Team16_Presentation_F_v2.pptx` | Team's revision before those notes |
 | `EE499_Team16_Presentation_5.pptx` | **Final deck**: 24 slides, timed for about 9 minutes, with speaker notes |
 | `EE499_Team16_Presentation_5_preview.pdf` | Quick preview (rendered with substitute fonts; open the .pptx for the real look) |
 | `EE499_Team16_Presentation_4.pptx` | Previous version, with the review notes on the slides |
@@ -21,3 +23,11 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 - **Last slide**: Thank you, plus the looping summary and the priority-control demo, both playing on an infinite loop.
 - **Slide numbers**: now live slide-number fields, so they stay correct if slides move.
 - **Speaker notes**: a time budget and talking points on every slide.
+
+## Changes F_v2 → F_v3 (professor's notes)
+- Opening video: names and IDs are smaller and dark amber.
+- New **Problem statement** slide: the full statement with its four parts highlighted and mapped to four cards. It closes the problem section (order 11 → 13 → 12); the slide before it is now titled *Two core problems*.
+- "Heavy loads overlap" → "Heavy-demand loads may run at the same time".
+- DS-03: the big number is now **120 / 80 %** of baseline (≥ 5 s, ≥ 90 % detected).
+- DS-06: **±5 %** is now labelled as cost-estimate error (alerts at 50 · 80 · 100 %).
+- Last slide: the priority-control video was stretched; it is now true 16:9 and large, with the key timing figures below it.
