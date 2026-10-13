@@ -4,7 +4,8 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 
 | File | What it is |
 |---|---|
-| `EE499_Team16_Presentation_F_v5.pptx` | **Latest deck**: names and IDs spread evenly over the whole tower |
+| `EE499_Team16_Presentation_F_v6.pptx` | **Latest deck**: simple native diagram on slide 8 |
+| `EE499_Team16_Presentation_F_v5.pptx` | Names and IDs spread evenly over the whole tower |
 | `EE499_Team16_Presentation_F_v4.pptx` | F_v3 with smaller, black names and IDs in the opening video |
 | `EE499_Team16_Presentation_F_v3.pptx` | F_v2 with the professor's notes applied |
 | `EE499_Team16_Presentation_F_v2.pptx` | Team's revision before those notes |
@@ -39,3 +40,6 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 
 ## F_v4 → F_v5
 - Opening video: the three name + ID blocks are spaced evenly over the full height of the tower.
+
+## F_v5 → F_v6
+- Slide 8: the reproduced demand-side-management figure is replaced by a simple native diagram (grid limit → smart controller ← user priorities → appliances P1–P4 with ON / SHED). The caption still credits [4].

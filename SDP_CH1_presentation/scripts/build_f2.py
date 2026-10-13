@@ -123,3 +123,52 @@ for pos, rid in enumerate(re.findall(r'<p:sldId id="\d+" r:id="(rId\d+)"/>', rd(
         return re.sub(r'(<a:fld [^>]*type="slidenum">.*?<a:t>)[^<]*(</a:t>)', lambda r: r.group(1) + str(pos) + r.group(2), sp, flags=re.S)
     wr(f, re.sub(r'<p:sp><p:nvSpPr><p:cNvPr id="\d+" name="pageno"/>.*?</p:sp>', fix, s, flags=re.S))
 print('done')
+# 7 ---- slide 8: replace the complex reproduced figure with a simple native diagram
+s = rd('slides/slide8.xml'); r8 = rd('slides/_rels/slide8.xml.rels')
+r8 = re.sub(r'<Relationship Id="rId3"[^>]*image25\.jpg"/>', '', r8)
+ic = {'bolt': 'image32.png', 'gauge': 'image40.png', 'people': 'image55.png',
+      'fridge': 'image22.png', 'ac': 'image21.png', 'heater': 'image23.png', 'washer': 'image24.png'}
+r8 = r8.replace('</Relationships>', ''.join(f'<Relationship Id="rIdD_{k}" Type="{REL_IMG}" Target="../media/{v}"/>' for k, v in ic.items()) + '</Relationships>')
+GREY = 'C3CEDB'
+kids = []
+n = [100]
+def nid(): n[0] += 1; return n[0]
+def arrow(x, y, w, h, prst='rightArrow'):
+    return flat(nid(), 'arrow', x, y, w, h, GREY, prst=prst)
+def bold_run(t, sz, col): return run(t, sz, col, 'Segoe UI Semibold')
+# grid supply
+gx, gy, gw, gh = 0.75, 3.3, 1.3, 1.6
+kids += [shape(nid(), 'grid', gx, gy, gw, gh, CARD),
+         shape(nid(), 'grid_o', gx + 0.33, gy + 0.2, 0.64, 0.64, 'FEE2E2', prst='ellipse'),
+         pic(nid(), 'grid_i', 'rIdD_bolt', gx + 0.47, gy + 0.34, 0.36, 0.36, 'Grid supply'),
+         text(nid(), 'grid_t', gx + 0.05, gy + 0.95, gw - 0.1, 0.6, [para([bold_run('Grid supply', 13, INK)], 'ctr'), para([run('fixed limit', 11, SLATE, 'Segoe UI')], 'ctr')])]
+kids.append(arrow(2.1, 3.92, 0.3, 0.36))
+# controller (dark) with user priorities above
+cx, cy, cw_, ch_ = 2.45, 3.3, 1.65, 1.6
+kids += [shape(nid(), 'ctrl', cx, cy, cw_, ch_, INK),
+         shape(nid(), 'ctrl_o', cx + 0.5, cy + 0.2, 0.64, 0.64, '1F3147', prst='ellipse'),
+         pic(nid(), 'ctrl_i', 'rIdD_gauge', cx + 0.64, cy + 0.34, 0.36, 0.36, 'Smart controller'),
+         text(nid(), 'ctrl_t', cx + 0.05, cy + 0.95, cw_ - 0.1, 0.6, [para([bold_run('Smart controller', 13, 'FFFFFF')], 'ctr'), para([run('compares demand', 11, 'C3CEDB', 'Segoe UI')], 'ctr')])]
+ux, uy = cx, 2.0
+kids += [shape(nid(), 'user', ux, uy, cw_, 0.75, 'FEF3C7'),
+         shape(nid(), 'user_o', ux + 0.12, uy + 0.12, 0.5, 0.5, AMBER, prst='ellipse'),
+         pic(nid(), 'user_i', 'rIdD_people', ux + 0.2, uy + 0.2, 0.34, 0.34, 'User'),
+         text(nid(), 'user_t', ux + 0.7, uy + 0.12, cw_ - 0.75, 0.5, [para([bold_run('User sets', 11, INK)]), para([bold_run('priorities', 11, INK)])], anchor='ctr'),
+         arrow(cx + cw_ / 2 - 0.17, 2.82, 0.34, 0.42, prst='downArrow')]
+kids.append(arrow(4.15, 3.92, 0.3, 0.36))
+# appliances, highest priority first
+rows = [('fridge', 'Refrigerator', 'P1 · highest', True), ('ac', 'Air conditioner', 'P2', True),
+        ('heater', 'Water heater', 'P3', False), ('washer', 'Washing machine', 'P4 · lowest', False)]
+ax, aw = 4.5, 2.55
+for i, (k, nm, p, on) in enumerate(rows):
+    y = 2.0 + i * 1.0
+    kids += [shape(nid(), f'app{i}', ax, y, aw, 0.85, 'FFFFFF' if on else 'FEF2F2'),
+             pic(nid(), f'app_i{i}', f'rIdD_{k}', ax + 0.12, y + 0.17, 0.5, 0.5, nm),
+             text(nid(), f'app_t{i}', ax + 0.72, y + 0.12, 1.2, 0.62, [para([bold_run(nm, 11, INK if on else SLATE)]), para([run(p, 10, AMBER, 'Segoe UI Semibold')])], anchor='ctr'),
+             shape(nid(), f'pill{i}', ax + aw - 0.72, y + 0.27, 0.6, 0.31, TEAL if on else RED, adj=50000),
+             text(nid(), f'pill_t{i}', ax + aw - 0.72, y + 0.3, 0.6, 0.25, [para([run('ON' if on else 'SHED', 9.5, 'FFFFFF', 'Segoe UI Semibold')], 'ctr')])]
+fig = grab(s, 6)
+s = s.replace(fig, group(6, 'fig', 0.75, 2.0, 6.3, 3.85, kids))
+s = s.replace('<a:t>Demand-side management concept. Reproduced from [4].</a:t>', '<a:t>Simplified from the demand-side management concept in [4].</a:t>')
+wr('slides/slide8.xml', s); wr('slides/_rels/slide8.xml.rels', r8)
+print('slide 8 redrawn')
