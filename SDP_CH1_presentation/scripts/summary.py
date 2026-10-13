@@ -1,7 +1,7 @@
 import sys, subprocess, numpy as np
 from PIL import Image
 src, out, poster = sys.argv[1], sys.argv[2], sys.argv[3]
-keep = [2,5,6,7,8,9,10,12,13,15,16,18,19,20,21,22,23,24]   # content slides (no intro / dividers / final)
+keep = [1,4,5,6,7,8,9,11,12,14,15,17,18,19,20,21,22,23]   # content slides (no intro / dividers / final)
 ims = [np.asarray(Image.open(f'{src}/s-{n:02d}.png').convert('RGB').resize((1280,720)), np.float32) for n in keep]
 FPS, HOLD, FADE = 25, 2.4, 0.6
 p = subprocess.Popen(['ffmpeg','-y','-loglevel','error','-f','rawvideo','-pix_fmt','rgb24','-s','1280x720','-r',str(FPS),'-i','-',

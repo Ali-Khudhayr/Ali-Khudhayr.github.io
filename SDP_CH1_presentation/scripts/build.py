@@ -20,10 +20,26 @@ ICON = {  # existing icon files
 ORDER = []   # final order of slide files
 # ------------------------------------------------------------ 1. intro video slide (reuses slide4.xml)
 iv = cp_media(WORK + '/intro.mp4', 'media9.mp4'); ip = cp_media(WORK + '/intro_poster.png', 'image66.png')
-wr('slides/slide4.xml', slide([video(2, 'vid_intro', 'rIdM', 'rIdV', 'rIdP', 0, 0, 13.3333, 7.5,
-        'Opening: tower windows spell the team names and university IDs')],
-    timing(lambda t: [play(t, 2, 0, 11200)], [(2, False, True)]), bg='000000'))
-wr('slides/_rels/slide4.xml.rels', rels([LAYOUT, notes_rel(4), ('rIdM', REL_MEDIA, iv), ('rIdV', REL_VID, iv), ('rIdP', REL_IMG, ip)]))
+TL = 0.6; TW_ = 5.15
+kids1 = [video(2, 'vid_intro', 'rIdM', 'rIdV', 'rIdP', 0, 0, 13.3333, 7.5,
+               'Opening: the tower windows spell the team names and university IDs'),
+         shape(3, 'logo_bg', TL, 0.6, 1.0, 1.0, 'FFFFFF', adj=17142),
+         pic(4, 'logo', 'rIdLogo', TL + 0.05, 0.65, 0.9, 0.9, 'King Abdulaziz University logo'),
+         text(5, 'kick', TL + 1.25, 0.7, 4.2, 0.8, [para([run('EE499  SENIOR DESIGN PROJECT', 13, AMBER, spc=200)]),
+                                                   para([run('Report 1 — Problem & Design Requirements', 13, SLATE, 'Segoe UI')])]),
+         text(6, 't1', TL, 1.9, TW_, 1.3, [para([run('Smart Home', 34, INK, 'Bahnschrift SemiBold')], lnpct=92000),
+                                           para([run('Energy Management', 34, INK, 'Bahnschrift SemiBold')], lnpct=92000)]),
+         text(7, 't2', TL, 3.15, TW_, 0.5, [para([run('with Priority-Based Load Control', 22, AMBER, 'Bahnschrift SemiBold')])]),
+         text(8, 'team', TL, 4.15, TW_, 0.3, [para([run('TEAM 16  ·  PME', 12, AMBER, spc=200)])]),
+         text(9, 'adv_k', TL, 4.7, TW_, 0.3, [para([run('ADVISOR & CUSTOMER', 13, AMBER, spc=300)])]),
+         text(10, 'adv', TL, 5.05, TW_, 0.45, [para([run('Dr. Fahd Hariri', 24, INK)])]),
+         text(11, 'uni', TL, 5.55, TW_, 0.6, [para([run('Electrical and Computer Engineering', 14, SLATE, 'Segoe UI Semibold')]),
+                                            para([run('King Abdulaziz University  ·  Fall 2026', 14, SLATE, 'Segoe UI Semibold')])])]
+def intro_steps(t):
+    return [play(t, 2, 0, 10500)] + [fadeup(t, sid, 150 + i * 220) for i, sid in enumerate([3, 4, 5, 6, 7, 8, 9, 10, 11])]
+wr('slides/slide4.xml', slide(kids1, timing(intro_steps, [(2, False, True)])))
+wr('slides/_rels/slide4.xml.rels', rels([LAYOUT, notes_rel(4), ('rIdM', REL_MEDIA, iv), ('rIdV', REL_VID, iv), ('rIdP', REL_IMG, ip),
+                                         ('rIdLogo', REL_IMG, '../media/image2.png')]))
 # ------------------------------------------------------------ stat-card slides (merge of old 4-9)
 def stat_slide(n, kicker, title, cards, src_lines):
     ch = header(kicker, title, '#')
@@ -168,7 +184,7 @@ wr('slides/_rels/slide29.xml.rels', rels([LAYOUT, notes_rel(29), ('rId1', REL_ME
     ('rId5', REL_IMG, '../media/image64.png'), ('rIdSM', REL_MEDIA, sv), ('rIdSV', REL_VID, sv), ('rIdSP', REL_IMG, sp_),
     ('rIdPM', REL_MEDIA, '../media/media8.mp4'), ('rIdPV', REL_VID, '../media/media8.mp4'), ('rIdPP', REL_IMG, pp)]))
 # ------------------------------------------------------------ slide order
-order = [4, 1, 2, 3, 5, 7, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+order = [4, 2, 3, 5, 7, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
 pres = rd('presentation.xml'); prels = rd('_rels/presentation.xml.rels')
 rid_for = {int(n): r for r, n in re.findall(r'Id="(rId\d+)"[^>]*Target="slides/slide(\d+)\.xml"', prels)}
 ids = dict(re.findall(r'<p:sldId id="(\d+)" r:id="(rId\d+)"/>', pres)); sid_for = {r: i for i, r in ids.items()}
@@ -188,39 +204,38 @@ for pos, n in enumerate(order, 1):
     wr(f, s)
 print('built', len(order), 'slides')
 # ------------------------------------------------------------ speaker notes: time budget (~8:45 total) + talking points
-NOTES = {
- 1: ('0:15', 'Let the opening video play — the tower spells our names and IDs. Advance once it stops.'),
- 2: ('0:20', 'Project title, team, advisor. Report 1 covers the problem and the design requirements.'),
- 3: ('0:10', 'Four parts: introduction, problem statement, objectives, design requirements.'),
- 4: ('0:05', 'Why household energy needs managing.'),
+NOTES = {  # keyed by slide file number
+ 4: ('0:30', 'Opening slide: the tower spells our names and university IDs while we introduce the project — Smart Home Energy Management with Priority-Based Load Control, Report 1, advisor Dr. Fahd Hariri.'),
+ 2: ('0:10', 'Four parts: introduction, problem statement, objectives, design requirements.'),
+ 3: ('0:05', 'Why household energy needs managing.'),
  5: ('0:35', 'Homes take 47 % of Saudi electricity; about 70 % of home electricity goes to air-conditioning; above 6,000 kWh/month every extra kWh costs 67 % more (18 → 30 halalas).'),
- 6: ('0:35', 'Per-appliance feedback saved a median 14 % (ACEEE, 57 studies). A dirty AC filter wastes 5–15 % and stays hidden in the total. About 53 house fires a day in KSA, mostly electrical.'),
- 7: ('0:30', 'A conventional meter gives one number. Three questions it cannot answer — which appliance, which can wait, which misbehaves — map to cost, continuity and safety. Not a luxury: a need.'),
- 8: ('0:25', 'Our system measures each appliance separately: voltage, current, power, energy and ON/OFF status.'),
- 9: ('0:30', 'User sets priorities; when demand exceeds the limit the lowest-priority load is shed; essentials stay on.'),
- 10: ('0:25', 'Abnormal operation is a supporting function: deviation from the appliance’s own baseline triggers a warning. Direct sub-metering is more reliable than whole-house estimates.'),
- 11: ('0:05', 'Problem statement.'),
- 12: ('0:25', 'Five problems households face today.'),
- 13: ('0:20', 'The need: residential energy management with monitoring, priority control, cost management and supplied essentials.'),
- 14: ('0:05', 'Objectives.'),
- 15: ('0:25', 'Three higher-level objectives: economic, reliability, safety and efficiency.'),
- 16: ('0:30', 'Six lower-level objectives: monitor, detect, prioritise, budget, inform, stay safe.'),
- 17: ('0:05', 'Design requirements.'),
- 18: ('0:30', 'DS-01 to DS-04: ±5 % accuracy, ≤ 3 s updates, ≥ 90 % abnormal detection, ≤ 1 s load control.'),
- 19: ('0:30', 'DS-05 to DS-08: reconnection, cost and budget alerts, user warnings, ≤ 2 s fail-safe.'),
- 20: ('0:25', 'The warning behaviour: outside 120 / 80 % of baseline for ≥ 5 s → warn within 5 s.'),
- 21: ('0:20', 'Constraints C-01 to C-06: budget, single-phase scope, lab power, schedule, no appliance modification, supervised lab.'),
- 22: ('0:20', 'Standards we follow for guidance: IEC 60730-1, IEC 62053-21, SBC 401, GSO low-voltage regulation.'),
- 23: ('0:20', 'Assumptions behind the design.'),
- 24: ('0:20', 'Five deliverables: prototype, test bench, firmware and UI, validation results, documentation.'),
- 25: ('0:15', 'Close. The summary and the priority-control demo loop on their own during questions.'),
+ 7: ('0:35', 'Per-appliance feedback saved a median 14 % (ACEEE, 57 studies). A dirty AC filter wastes 5–15 % and stays hidden in the total. About 53 house fires a day in KSA, mostly electrical.'),
+ 10: ('0:30', 'A conventional meter gives one number. Three questions it cannot answer — which appliance, which can wait, which misbehaves — map to cost, continuity and safety. Not a luxury: a need.'),
+ 12: ('0:25', 'Our system measures each appliance separately: voltage, current, power, energy and ON/OFF status.'),
+ 13: ('0:30', 'User sets priorities; when demand exceeds the limit the lowest-priority load is shed; essentials stay on.'),
+ 14: ('0:25', 'Abnormal operation is a supporting function: deviation from the appliance’s own baseline triggers a warning. Direct sub-metering is more reliable than whole-house estimates.'),
+ 15: ('0:05', 'Problem statement.'),
+ 16: ('0:25', 'Five problems households face today.'),
+ 17: ('0:20', 'The need: residential energy management with monitoring, priority control, cost management and supplied essentials.'),
+ 18: ('0:05', 'Objectives.'),
+ 19: ('0:25', 'Three higher-level objectives: economic, reliability, safety and efficiency.'),
+ 20: ('0:30', 'Six lower-level objectives: monitor, detect, prioritise, budget, inform, stay safe.'),
+ 21: ('0:05', 'Design requirements.'),
+ 22: ('0:30', 'DS-01 to DS-04: ±5 % accuracy, ≤ 3 s updates, ≥ 90 % abnormal detection, ≤ 1 s load control.'),
+ 23: ('0:30', 'DS-05 to DS-08: reconnection, cost and budget alerts, user warnings, ≤ 2 s fail-safe.'),
+ 24: ('0:25', 'The warning behaviour: outside 120 / 80 % of baseline for ≥ 5 s → warn within 5 s.'),
+ 25: ('0:20', 'Constraints C-01 to C-06: budget, single-phase scope, lab power, schedule, no appliance modification, supervised lab.'),
+ 26: ('0:20', 'Standards we follow for guidance: IEC 60730-1, IEC 62053-21, SBC 401, GSO low-voltage regulation.'),
+ 27: ('0:20', 'Assumptions behind the design.'),
+ 28: ('0:20', 'Five deliverables: prototype, test bench, firmware and UI, validation results, documentation.'),
+ 29: ('0:15', 'Close. The summary and the priority-control demo loop on their own during questions.'),
 }
 for pos, n in enumerate(order, 1):
     rel = rd(f'slides/_rels/slide{n}.xml.rels')
     m = re.search(r'Target="\.\./notesSlides/(notesSlide\d+\.xml)"', rel)
     if not m: continue
     f = 'notesSlides/' + m.group(1); s = rd(f)
-    tm, tx = NOTES[pos]
+    tm, tx = NOTES[n]
     body = f'<a:p><a:r><a:rPr lang="en-US" b="1" dirty="0"/><a:t>⏱ {tm}</a:t></a:r></a:p><a:p><a:r><a:rPr lang="en-US" dirty="0"/><a:t>{esc(tx)}</a:t></a:r></a:p>'
     s = re.sub(r'(<p:ph type="body"[^>]*/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/>).*?(</p:txBody>)', lambda r: r.group(1) + body + r.group(2), s, count=1, flags=re.S)
     wr(f, s)

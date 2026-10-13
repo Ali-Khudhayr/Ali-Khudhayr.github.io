@@ -4,15 +4,15 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 
 | File | What it is |
 |---|---|
-| `EE499_Team16_Presentation_5.pptx` | **Final deck**: 25 slides, timed for about 9 minutes, with speaker notes |
+| `EE499_Team16_Presentation_5.pptx` | **Final deck**: 24 slides, timed for about 9 minutes, with speaker notes |
 | `EE499_Team16_Presentation_5_preview.pdf` | Quick preview (rendered with substitute fonts; open the .pptx for the real look) |
 | `EE499_Team16_Presentation_4.pptx` | Previous version, with the review notes on the slides |
-| `media/opening_names_tower.mp4` | Opening video: a tower's windows spell each name and university ID, letter by letter |
+| `media/opening_names_tower.mp4` | Opening video (light city): the tower's windows spell each name and university ID, letter by letter |
 | `media/summary_loop.mp4` | Looping summary of the content slides (plays on the last slide) |
 | `scripts/` | Scripts that generated the videos and applied the edits |
 
 ## Changes from v4
-- **New slide 1**: the opening video plays automatically and stops on the finished names and IDs.
+- **Slide 1 is now the video**: a light city where the tower spells each name and ID, then stops. The title, logo, advisor and university sit beside it, so there is no separate title slide.
 - **Slides 4–9 merged into 2**: *Where household electricity goes* and *What the single total hides*.
 - **Slides 10 + 11 merged and shortened**: the meter's three unanswered questions now map to Cost, Continuity and Safety.
 - **Per-appliance slide reworded**: dash list, and V · I · P · kWh · ON/OFF is no longer repeated.
