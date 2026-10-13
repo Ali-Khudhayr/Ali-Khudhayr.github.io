@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ali Yasser Khudhayr | Electrical Power Engineering</title>
+<meta name="description" content="Ali Yasser Khudhayr — final-year Electrical Engineering (Power & Machines) student at King Abdulaziz University. Projects, experience, certificates and work samples.">
+<meta property="og:title" content="Ali Yasser Khudhayr | Electrical Power Engineering">
+<meta property="og:description" content="Power & Machines engineering student at KAU — GPA 4.68/5.00, 32 certificates, 29 explainer videos, 6 engineering projects.">
+<meta property="og:image" content="https://ali-khudhayr.github.io/assets/photo.jpg">
+<meta name="theme-color" content="#0a0f1c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0f1c'/%3E%3Cpath d='M36 6 16 36h14l-4 22 22-32H34z' fill='%23f5b21b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0f1c; --bg2:#0e1526; --panel:#121a2e; --panel2:#17213a; --line:#24304d;
+    --text:#e9edf6; --muted:#9aa6bf; --dim:#6c7896;
+    --amber:#f5b21b; --amber2:#ffcf5c; --teal:#3fd8c4; --rose:#ff7a8a;
+    --r:16px; --maxw:1160px;
+    --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; --ar:"IBM Plex Sans Arabic","IBM Plex Sans",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono)}
+  /* background grid */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 80%)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,15,28,.78);backdrop-filter:blur(12px);border-bottom:1px solid rgba(36,48,77,.6)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.2px}
+  .brand .bolt{width:30px;height:30px;border-radius:9px;background:var(--panel2);display:grid;place-items:center;border:1px solid var(--line)}
+  .links{display:flex;gap:4px}
+  .links a{padding:8px 12px;border-radius:10px;color:var(--muted);font-size:14.5px;transition:.2s}
+  .links a:hover{color:var(--text);background:var(--panel)}
+  .navcta{padding:9px 16px;border-radius:11px;background:var(--amber);color:#1a1200;font-weight:600;font-size:14.5px;white-space:nowrap}
+  .burger{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:7px 10px;font:inherit;cursor:pointer}
+
+  /* hero */
+  header.hero{position:relative;padding:72px 0 110px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13px;color:var(--teal);border:1px solid rgba(63,216,196,.3);background:rgba(63,216,196,.07);padding:6px 12px;border-radius:999px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(63,216,196,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(63,216,196,0)}100%{box-shadow:0 0 0 0 rgba(63,216,196,0)}}
+  h1{font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-1.5px;margin:20px 0 6px;font-weight:700}
+  h1 .amber{color:var(--amber)}
+  .arname{font-family:var(--ar);font-size:24px;color:var(--muted);direction:rtl;text-align:left;margin-bottom:18px}
+  .lead{font-size:19px;color:#c9d1e3;max-width:600px}
+  .lead b{color:var(--text);font-weight:600}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 28px;color:var(--muted);font-size:14.5px}
+  .meta span{display:inline-flex;align-items:center;gap:7px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:13px;font-weight:600;font-size:15.5px;border:1px solid var(--line);background:var(--panel);transition:.2s}
+  .btn:hover{transform:translateY(-2px);border-color:#3a4a72}
+  .btn.primary{background:var(--amber);color:#1a1200;border-color:var(--amber)}
+  .btn.primary:hover{background:var(--amber2)}
+  .portrait{position:relative;justify-self:end;width:100%;max-width:360px}
+  .portrait .frame{border-radius:26px;overflow:hidden;border:1px solid var(--line);background:var(--panel);aspect-ratio:4/5;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+  .portrait .frame img{width:100%;height:100%;object-fit:cover}
+  .badge{position:absolute;background:rgba(18,26,46,.92);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
+  .badge b{display:block;font-size:20px;font-family:var(--mono);color:var(--amber);line-height:1.1}
+  .badge.b1{left:-34px;top:38px}
+  .badge.b2{right:-18px;bottom:46px}
+  .badge.b2 b{color:var(--teal)}
+  svg.waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px;opacity:.5;pointer-events:none;z-index:0}
+
+  /* stats */
+  .stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:34px}
+  .stat{background:var(--bg2);padding:22px 18px}
+  .stat .n{font-family:var(--mono);font-size:34px;font-weight:600;color:var(--text);line-height:1.1;letter-spacing:-1px}
+  .stat .n small{font-size:18px;color:var(--amber)}
+  .stat .l{color:var(--muted);font-size:13.5px;margin-top:6px;line-height:1.35}
+  .stat:nth-child(3n+1) .n{color:var(--amber)}
+  .stat:nth-child(3n+2) .n{color:var(--teal)}
+
+  /* sections */
+  section{padding:84px 0 0}
+  #about{padding-top:30px}
+  .sec-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px;flex-wrap:wrap}
+  .kicker{font-family:var(--mono);color:var(--amber);font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
+  h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.8px;line-height:1.1;margin-top:8px}
+  .sec-head p{color:var(--muted);max-width:480px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
+  .about p{color:#c9d1e3;margin-bottom:14px}
+  .about p:last-child{margin-bottom:0}
+  .goal{display:grid;gap:14px}
+  .goal .card{padding:22px}
+  .goal h3{font-size:14px;font-family:var(--mono);color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:500}
+  .goal p{color:#c9d1e3;margin:0}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;margin-top:6px}
+  .facts dt{color:var(--dim)}
+  .facts dd{color:var(--text)}
+
+  /* timeline */
+  .tl{position:relative;display:grid;gap:16px}
+  .tl-item{display:grid;grid-template-columns:200px 1fr;gap:26px}
+  .tl-date{font-family:var(--mono);font-size:13.5px;color:var(--muted);padding-top:27px;text-align:right}
+  .tl-date b{display:block;color:var(--amber);font-weight:500}
+  .tl .card{position:relative}
+  .tl .card::before{content:"";position:absolute;left:-14px;top:30px;width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(245,178,27,.15)}
+  .role{font-size:19px;font-weight:600}
+  .org{color:var(--teal);font-size:14.5px;margin:2px 0 12px}
+  ul.pts{list-style:none;display:grid;gap:7px}
+  ul.pts li{position:relative;padding-left:18px;color:#c9d1e3;font-size:15.5px}
+  ul.pts li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:2px;background:var(--amber)}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .tag{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line);background:var(--bg2);padding:3px 9px;border-radius:7px}
+
+  /* projects */
+  .proj{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .p{display:flex;flex-direction:column;transition:.25s}
+  .p:hover{transform:translateY(-4px);border-color:#3a4a72}
+  .p.feature{grid-column:span 2;background:linear-gradient(135deg,#17213a 0%,#121a2e 60%)}
+  .p .code{font-family:var(--mono);font-size:12.5px;color:var(--amber);letter-spacing:.5px}
+  .p h3{font-size:20px;line-height:1.25;margin:8px 0 10px}
+  .p p{color:#c3cbdd;font-size:15.3px;flex:1}
+  .p .foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px;flex-wrap:wrap}
+  .p .when{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+  .more{font-size:14px;color:var(--teal);font-weight:500;display:inline-flex;gap:6px;align-items:center}
+  .more:hover{color:var(--text)}
+  .kpi{display:flex;gap:22px;margin:4px 0 14px;flex-wrap:wrap}
+  .kpi div{font-family:var(--mono);font-size:24px;color:var(--teal);line-height:1}
+  .kpi div span{display:block;font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-top:5px}
+
+  /* videos */
+  .vid{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:start}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .gallery img{border-radius:12px;border:1px solid var(--line);aspect-ratio:16/9;object-fit:cover;width:100%}
+  .courses{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
+  .course{display:flex;justify-content:space-between;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:10px 13px;font-size:14.5px}
+  .course b{font-family:var(--mono);color:var(--amber);font-weight:500;font-size:13px;white-space:nowrap;margin-left:10px}
+
+  /* certificates */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .chip{font:inherit;font-size:14px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:8px 14px;border-radius:999px;transition:.2s}
+  .chip:hover{color:var(--text)}
+  .chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+  .chip .c{font-family:var(--mono);font-size:12px;opacity:.7;margin-left:4px}
+  .certs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .cert{display:grid;grid-template-columns:42px 1fr auto;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:13px 16px;transition:.2s}
+  .cert:hover{border-color:#3a4a72;background:var(--panel2)}
+  .cert .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:19px;background:var(--bg2);border:1px solid var(--line)}
+  .cert .t{font-weight:600;font-size:15px;line-height:1.3}
+  .cert .s{color:var(--muted);font-size:13.3px}
+  .cert .d{font-family:var(--mono);font-size:12.5px;color:var(--dim);text-align:right;white-space:nowrap}
+  .cert[hidden]{display:none}
+
+  /* drive band */
+  .drive{display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;background:linear-gradient(120deg,#16203a,#101829);border:1px solid var(--line);border-radius:22px;padding:28px 32px;margin-top:26px}
+  .qr{background:#fff;padding:12px;border-radius:14px;width:150px;height:150px}
+  .qr img{width:100%;height:100%}
+  .drive h3{font-size:24px;letter-spacing:-.4px}
+  .drive p{color:var(--muted);margin-top:6px;max-width:520px}
+  .drive .folders{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+
+  /* community */
+  .comm{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+  .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+  .vol{display:grid;gap:10px;margin-top:16px}
+  .vol .row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+  .vol .row span:last-child{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+  .skills h3{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+  .bar{margin-bottom:12px}
+  .bar .lbl{display:flex;justify-content:space-between;font-size:14.5px;margin-bottom:6px}
+  .bar .lbl span:last-child{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  .bar .trk{height:6px;border-radius:9px;background:var(--bg2);overflow:hidden}
+  .bar .fill{height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--amber),var(--teal));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .pill-list{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{font-size:14px;padding:7px 12px;border-radius:10px;background:var(--bg2);border:1px solid var(--line);color:#cdd5e6}
+
+  /* contact */
+  .contact{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;margin:84px 0 0;padding:44px;border-radius:24px;background:radial-gradient(circle at 15% 0%,rgba(245,178,27,.16),transparent 55%),var(--panel);border:1px solid var(--line)}
+  .contact h2{margin:0 0 10px}
+  .contact p{color:var(--muted);max-width:560px}
+  .contact .btns{margin-top:22px}
+  footer{padding:36px 0 50px;color:var(--dim);font-size:13.5px;text-align:center}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.dot{animation:none}html{scroll-behavior:auto}}
+
+  @media (max-width:1000px){
+    .stats{grid-template-columns:repeat(3,1fr)}
+    .proj{grid-template-columns:1fr 1fr}
+    .p.feature{grid-column:span 2}
+    .skills{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:820px){
+    .links{display:none}
+    .links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--line);padding:10px 16px}
+    .burger{display:block}
+    .navcta{display:none}
+    .hero-grid,.about,.vid,.comm{grid-template-columns:1fr}
+    .portrait{justify-self:center;max-width:300px;order:-1}
+    .badge.b1{left:-12px}.badge.b2{right:-8px}
+    .tl-item{grid-template-columns:1fr;gap:6px}
+    .tl-date{text-align:left;padding:0 0 0 4px}
+    .tl .card::before{display:none}
+    .certs{grid-template-columns:1fr}
+    .drive{grid-template-columns:1fr;text-align:left}
+    .contact{grid-template-columns:1fr;padding:28px}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 16px}
+    .stats{grid-template-columns:1fr 1fr}
+    .proj{grid-template-columns:1fr}
+    .p.feature{grid-column:auto}
+    .skills{grid-template-columns:1fr}
+    .courses{grid-template-columns:1fr}
+    .cert{grid-template-columns:38px 1fr}
+    .cert .d{grid-column:2;text-align:left}
+    .stat .n{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="bolt"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-2 8 11-13h-7z" fill="#f5b21b"/></svg></span>Ali Khudhayr</a>
+    <div class="links" id="links">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#videos">Videos</a><a href="#certificates">Certificates</a><a href="#community">Community</a><a href="#skills">Skills</a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="navcta" href="assets/Ali-Khudhayr-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Open to internships &amp; graduate roles · 2027</span>
+        <h1>Ali Yasser <span class="amber">Khudhayr</span></h1>
+        <div class="arname">علي ياسر خضير</div>
+        <p class="lead">Final-year <b>Electrical Engineering (Power &amp; Machines)</b> student at King Abdulaziz University. I analyze power systems, build embedded prototypes, and turn complex engineering into clear reports, tools and videos.</p>
+        <div class="meta">
+          <span>📍 Jeddah, Saudi Arabia</span>
+          <span>🎓 B.Sc. expected May 2027</span>
+          <span>✉️ <a href="mailto:ali.y.khudhayr@gmail.com">ali.y.khudhayr@gmail.com</a></span>
+        </div>
+        <div class="btns">
+          <a class="btn primary" href="https://drive.google.com/drive/folders/1NR7AGE4MkWl0ar45UZUVKkOYmQnN3HpW" target="_blank" rel="noopener">View certificates &amp; work ↗</a>
+          <a class="btn" href="assets/Ali-Khudhayr-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="frame"><img src="assets/photo.jpg" alt="Portrait of Ali Yasser Khudhayr" width="480" height="600"></div>
+        <div class="badge b1"><b>4.68<span style="font-size:13px;color:var(--muted)"> / 5.00</span></b>Cumulative GPA</div>
+        <div class="badge b2"><b>Excellent</b>Academic Excellence 2024–25</div>
+      </div>
+    </div>
+
+    <div class="stats rv" id="stats">
+      <div class="stat"><div class="n"><span data-count="32">0</span></div><div class="l">Certificates &amp; courses completed</div></div>
+      <div class="stat"><div class="n"><span data-count="140">0</span><small>+</small></div><div class="l">Documented training hours</div></div>
+      <div class="stat"><div class="n"><span data-count="100">0</span><small>+</small></div><div class="l">Books read</div></div>
+      <div class="stat"><div class="n"><span data-count="29">0</span></div><div class="l">Engineering explainer videos produced</div></div>
+      <div class="stat"><div class="n"><span data-count="6">0</span></div><div class="l">Engineering projects delivered</div></div>
+      <div class="stat"><div class="n"><span data-count="4">0</span></div><div class="l">Industrial plant visits</div></div>
+      <div class="stat"><div class="n"><span data-count="50">0</span><small>h</small></div><div class="l">Certified volunteer hours</div></div>
+      <div class="stat"><div class="n"><span data-count="2">0</span><small>+ yrs</small></div><div class="l">Weekly community teaching</div></div>
+      <div class="stat"><div class="n"><span data-count="6">0</span></div><div class="l">Classical texts memorized (80–100%)</div></div>
+      <div class="stat"><div class="n"><span data-count="8">0</span></div><div class="l">Staff led as organizers supervisor</div></div>
+      <div class="stat"><div class="n"><span data-count="10">0</span></div><div class="l">Retail sites tracked in 5 cities</div></div>
+      <div class="stat"><div class="n"><span data-count="5">0</span></div><div class="l">Simulation tools used in projects</div></div>
+    </div>
+  </div>
+  <svg class="waves" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true">
+    <path id="w1" fill="none" stroke="#f5b21b" stroke-width="1.6"/>
+    <path id="w2" fill="none" stroke="#3fd8c4" stroke-width="1.6"/>
+    <path id="w3" fill="none" stroke="#ff7a8a" stroke-width="1.6"/>
+  </svg>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head rv"><div><div class="kicker">01 · About</div><h2>Power engineer in the making</h2></div></div>
+    <div class="about">
+      <div class="card rv">
+        <p>I am a final-year Electrical Engineering student specializing in <b>Power &amp; Machines</b> at King Abdulaziz University, holding a <b>4.68 / 5.00</b> GPA and a Certificate of Academic Excellence.</p>
+        <p>My work spans power-flow and fault analysis in PowerWorld and Simulink, synchronous-machine testing, PIC18 and ESP32 embedded systems, and data-driven calibration of an autonomous vehicle. My senior design project builds a smart home energy-management system with priority-based load control.</p>
+        <p>Outside the lab I have supervised student teams, built data reports for a multi-city retail operation, taught as a university TA, and taught weekly in a mosque memorization circle since 2024. I also produced a 29-video animated series that explains six power-engineering courses.</p>
+        <dl class="facts">
+          <dt>Born</dt><dd>10 January 2004</dd>
+          <dt>Nationality</dt><dd>Palestinian · resident of Jeddah</dd>
+          <dt>Languages</dt><dd>Arabic (native) · English (very good)</dd>
+        </dl>
+      </div>
+      <div class="goal">
+        <div class="card rv"><h3>Career goal</h3><p>Join a leading Saudi utility or energy company as a power systems engineer, and earn professional registration with the Saudi Council of Engineers.</p></div>
+        <div class="card rv"><h3>Vision</h3><p>Grow into a technical leader in Saudi Arabia’s renewable-energy sector and help deliver the clean-energy goals of Vision 2030.</p></div>
+        <div class="card rv"><h3>What I bring</h3><p>Simulation-backed analysis, clear technical writing, and the habit of turning raw data into decisions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head rv"><div><div class="kicker">02 · Experience</div><h2>Where I’ve worked &amp; led</h2></div><p>Paid work, university roles and industrial exposure, newest first.</p></div>
+    <div class="tl">
+      <div class="tl-item rv">
+        <div class="tl-date"><b>Jul – Sep 2026</b>31 Jul – 28 Sep 2026</div>
+        <div class="card">
+          <div class="role">Operations &amp; Data Reporting Assistant <span style="color:var(--muted);font-weight:400">· Part-time</span></div>
+          <div class="org">Retail field-operations project · Jeddah</div>
+          <ul class="pts">
+            <li>Prepared 14 purchase-invoice reports for products distributed to retail branches, with cost per branch and per staff member backed by photo evidence.</li>
+            <li>Built an Excel daily site log for 9 staff at 10 sites across 5 cities (Jeddah, Makkah, Madinah, Yanbu, Riyadh) with an automatic performance ranking.</li>
+          </ul>
+          <div class="tags"><span class="tag">Excel</span><span class="tag">Reporting</span><span class="tag">Data analysis</span></div>
+        </div>
+      </div>
+      <div class="tl-item rv">
+        <div class="tl-date"><b>Aug 2025 – May 2026</b>Academic year 2025–26</div>
+        <div class="card">
+          <div class="role">Industrial Field Visits</div>
+          <div class="org">Al-Taqa Energy · Hala Company · Al-Rowad Factory · Savola Group (Afia)</div>
+          <ul class="pts"><li>Observed power distribution, motor control centers, PLC-based production-line automation and plant safety practices in operating facilities.</li></ul>
+          <div class="tags"><span class="tag">MCC</span><span class="tag">PLC automation</span><span class="tag">Industrial safety</span></div>
+        </div>
+      </div>
+      <div class="tl-item rv">
+        <div class="tl-date"><b>Aug – Dec 2025</b>Fall 2025</div>
+        <div class="card">
+          <div class="role">Teaching Assistant</div>
+          <div class="org">Department of Electrical &amp; Computer Engineering · KAU</div>
+          <ul class="pts"><li>Helped students master circuits, power-system concepts and simulation tools alongside course faculty.</li></ul>
+          <div class="tags"><span class="tag">Teaching</span><span class="tag">Mentoring</span></div>
+        </div>
+      </div>
+      <div class="tl-item rv">
+        <div class="tl-date"><b>Mar 2024 – Feb 2025</b>12 months</div>
+        <div class="card">
+          <div class="role">Organizers Supervisor</div>
+          <div class="org">Fitness Club · Deanship of Student Affairs · KAU</div>
+          <ul class="pts"><li>Led 8 student organizers across morning and evening shifts, managed attendance and coverage, and wrote weekly reports to club management.</li></ul>
+          <div class="tags"><span class="tag">Leadership</span><span class="tag">Scheduling</span><span class="tag">Reporting</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head rv"><div><div class="kicker">03 · Projects</div><h2>Engineering projects</h2></div><p>Every report below is in the shared Drive folder, with teammates’ IDs hidden.</p></div>
+    <div class="proj">
+      <article class="card p feature rv">
+        <div class="code">EE499 · SENIOR DESIGN PROJECT · TEAM 16</div>
+        <h3>Smart Home Energy Management with Priority-Based Load Control</h3>
+        <div class="kpi"><div>3<span>team members</span></div><div>6<span>design objectives</span></div><div>2027<span>graduation demo</span></div></div>
+        <p>Appliance-level monitoring with automatic priority-based load shedding, monthly budget tracking and abnormal-load warnings. The goal is lower household bills while essential loads stay supplied. Advisor: Dr. Fahd Hariri.</p>
+        <div class="foot"><span class="when">Aug 2026 – May 2027</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Read report 1 ↗</a></div>
+      </article>
+      <article class="card p rv">
+        <div class="code">EE490 · AUTONOMOUS SYSTEMS</div>
+        <h3>QCar 2 Steering &amp; Speed Calibration</h3>
+        <div class="kpi"><div>2.17×<span>speed at 2× throttle</span></div><div>90<span>trials @100 Hz</span></div></div>
+        <p>As calibration lead, I found the car’s non-linear throttle response and designed an encoder, IMU and pose experiment in Python. The target is 30% lower route error.</p>
+        <div class="foot"><span class="when">Aug – Dec 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Proposal ↗</a></div>
+      </article>
+      <article class="card p rv">
+        <div class="code">EE366 · MICROCONTROLLERS</div>
+        <h3>IoT Parking-Slot Occupancy Detection</h3>
+        <p>A PIC18F4580 with an ultrasonic sensor and three-state LED and buzzer alerts. An ESP32 Wi-Fi bridge posts time-stamped events to a web server. Verified in Proteus.</p>
+        <div class="foot"><span class="when">May – Jun 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a></div>
+      </article>
+      <article class="card p rv">
+        <div class="code">EE451 · POWER SYSTEM ANALYSIS</div>
+        <h3>Power Flow &amp; Fault Analysis</h3>
+        <p>Modeled a multi-bus network in PowerWorld and Simulink and validated the power-flow and fault results against hand calculations. Team of 5.</p>
+        <div class="foot"><span class="when">May 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a></div>
+      </article>
+      <article class="card p rv">
+        <div class="code">EE441 · ELECTRIC MACHINES</div>
+        <h3>Synchronous Motor V-Curves</h3>
+        <p>Measured armature current against field current at no load and full load, then compared the lab V-curves with a MATLAB/Simulink model.</p>
+        <div class="foot"><span class="when">May 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a></div>
+      </article>
+      <article class="card p rv">
+        <div class="code">EE331 · AUTOMATIC CONTROL</div>
+        <h3>Feedback Control System Design</h3>
+        <p>Analyzed open- and closed-loop step responses and designed the controller with root-locus techniques in MATLAB.</p>
+        <div class="foot"><span class="when">Aug – Dec 2025</span><span class="more" style="color:var(--dim)">Course project</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="wrap">
+    <div class="sec-head rv"><div><div class="kicker">04 · Explainer series</div><h2>29 animated lessons on power engineering</h2></div><p>I scripted and produced a motion-graphics series that explains six power courses, with equations, circuits and diagrams animated step by step.</p></div>
+    <div class="vid">
+      <div class="card rv">
+        <div class="courses">
+          <div class="course">Power System Protection<b>EE454 · 5</b></div>
+          <div class="course">High-Voltage Engineering<b>EE452 · 5</b></div>
+          <div class="course">Power System Analysis<b>EE451 · 5</b></div>
+          <div class="course">Power Electronics<b>EE442 · 5</b></div>
+          <div class="course">Electric Machines<b>EE441 · 5</b></div>
+          <div class="course">Machines Lab<b>EE405 · 4</b></div>
+        </div>
+        <ul class="pts">
+          <li>Topics include Gauss–Seidel and Newton–Raphson power flow, transformer tests, rectifiers, Paschen’s law and circuit breakers.</li>
+          <li>Each video is 7–10 minutes with narration and animated derivations.</li>
+        </ul>
+        <div class="btns" style="margin-top:20px"><a class="btn primary" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL">Watch samples ↗</a></div>
+      </div>
+      <div class="gallery rv">
+        <img loading="lazy" src="assets/v-gauss-seidel.jpg" alt="Gauss-Seidel power-flow equation frame">
+        <img loading="lazy" src="assets/v-transformer-oc-test.jpg" alt="Transformer open-circuit test frame">
+        <img loading="lazy" src="assets/v-bridge-rectifier.jpg" alt="Bridge rectifier frame">
+        <img loading="lazy" src="assets/v-pv-bus.jpg" alt="PV bus acceleration frame">
+        <img loading="lazy" src="assets/v-machine-field.jpg" alt="Synchronous machine field frame">
+        <img loading="lazy" src="assets/v-circuit-breaker-arc.jpg" alt="Circuit breaker arc frame">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="wrap">
+    <div class="sec-head rv"><div><div class="kicker">05 · Certificates</div><h2>All 32 certificates, verified</h2></div><p>Click any certificate to open its folder on Google Drive (view only).</p></div>
+    <div class="chips rv" id="chips"></div>
+    <div class="certs" id="certs"></div>
+    <div class="drive rv">
+      <div class="qr"><img src="assets/qr-drive.svg" alt="QR code to the certificates and portfolio folder"></div>
+      <div>
+        <h3>Scan to see every original</h3>
+        <p>One shared Drive folder holds every certificate, the project reports and the video samples, sorted into 8 folders. It is view-only, and personal ID numbers are hidden.</p>
+        <div class="folders"><span class="tag">01 Excellence</span><span class="tag">02 Technical</span><span class="tag">03 Volunteering</span><span class="tag">04 Development</span><span class="tag">05 Other</span><span class="tag">06 Qur’an &amp; texts</span><span class="tag">07 Reports</span><span class="tag">08 Videos</span></div>
+      </div>
+      <a class="btn primary" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1NR7AGE4MkWl0ar45UZUVKkOYmQnN3HpW">Open folder ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="wrap">
+    <div class="sec-head rv"><div><div class="kicker">06 · Community</div><h2>Teaching, volunteering &amp; tools I built</h2></div></div>
+    <div class="comm">
+      <div class="card rv">
+        <div class="role">Volunteer Teacher &amp; Program Supervisor</div>
+        <div class="org">Qur’an Memorization Circle · Umm Al-Qura Mosque, Jeddah · Jun 2024 – Present</div>
+        <ul class="pts">
+          <li>Teach and mentor students in memorization, character building and Prophetic biography, and track each student’s weekly progress.</li>
+          <li>Built <b>“Gems Store”</b>, an offline web app with leaderboards, badges, auctions and an in-class reward economy, plus a library of competitions in 7 categories, used in the “Masarat Summer 2026” program.</li>
+        </ul>
+        <div class="vol">
+          <div class="row"><span><b>Active Member &amp; Event Organizer</b> · ECE Club, KAU</span><span>Aug 2024 – May 2025</span></div>
+          <div class="row"><span><b>Sports Hall Organizer</b> · 50 h · National Volunteering Platform</span><span>1–15 Jan 2025</span></div>
+          <div class="row"><span><b>Crowd Management Team</b> · KAU-ROBOCON 2023</span><span>May 2023</span></div>
+          <div class="row"><span><b>Al-Raed Volunteer Leader Program</b> · 48 h · KAU</span><span>Jun 2022</span></div>
+        </div>
+      </div>
+      <figure class="rv">
+        <div class="shot"><img loading="lazy" src="assets/gems-store.jpg" alt="Screenshot of the Gems Store reward app with weekly leaderboard"></div>
+        <figcaption style="color:var(--dim);font-size:13px;margin-top:10px">Gems Store, a single-file web app I built for the memorization circle. Shown with demo data.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head rv"><div><div class="kicker">07 · Skills</div><h2>Toolbox</h2></div><p>Bars show where I’m strongest, based on project depth rather than self-rating.</p></div>
+    <div class="skills">
+      <div class="card rv">
+        <h3>⚡ Power &amp; simulation</h3>
+        <div class="bar"><div class="lbl"><span>MATLAB / Simulink</span><span>4 projects</span></div><div class="trk"><div class="fill" data-w="88"></div></div></div>
+        <div class="bar"><div class="lbl"><span>PowerWorld</span><span>EE451</span></div><div class="trk"><div class="fill" data-w="76"></div></div></div>
+        <div class="bar"><div class="lbl"><span>Proteus</span><span>EE366</span></div><div class="trk"><div class="fill" data-w="72"></div></div></div>
+        <div class="bar"><div class="lbl"><span>LTspice</span><span>coursework</span></div><div class="trk"><div class="fill" data-w="66"></div></div></div>
+        <div class="bar"><div class="lbl"><span>Quanser QLabs</span><span>EE490</span></div><div class="trk"><div class="fill" data-w="70"></div></div></div>
+      </div>
+      <div class="card rv">
+        <h3>🔌 Programming &amp; embedded</h3>
+        <div class="bar"><div class="lbl"><span>Python (data analysis)</span><span>EE490</span></div><div class="trk"><div class="fill" data-w="80"></div></div></div>
+        <div class="bar"><div class="lbl"><span>C / C++ (PIC18, Arduino)</span><span>EE366</span></div><div class="trk"><div class="fill" data-w="74"></div></div></div>
+        <div class="bar"><div class="lbl"><span>ESP32 Wi-Fi / HTTP</span><span>EE366</span></div><div class="trk"><div class="fill" data-w="68"></div></div></div>
+        <div class="bar"><div class="lbl"><span>HTML / JS tools</span><span>Gems Store</span></div><div class="trk"><div class="fill" data-w="72"></div></div></div>
+        <div class="bar"><div class="lbl"><span>Advanced Excel reporting</span><span>work</span></div><div class="trk"><div class="fill" data-w="86"></div></div></div>
+      </div>
+      <div class="card rv">
+        <h3>🤝 Professional &amp; soft skills</h3>
+        <div class="pill-list">
+          <span class="pill">Team leadership</span><span class="pill">Teaching &amp; public speaking</span><span class="pill">Technical writing</span><span class="pill">Problem solving</span><span class="pill">Time management</span><span class="pill">Adaptability</span><span class="pill">LaTeX / Overleaf</span><span class="pill">Prompt engineering</span><span class="pill">AI-assisted development</span><span class="pill">WBS &amp; Gantt</span><span class="pill">Pugh matrix</span><span class="pill">Engineering standards</span><span class="pill">Motion graphics</span>
+        </div>
+        <h3 style="margin-top:20px">🎯 Hobbies</h3>
+        <div class="pill-list"><span class="pill">Reading (100+ books)</span><span class="pill">Educational game design</span><span class="pill">Car mechanics</span><span class="pill">Fitness</span><span class="pill">3D modeling</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="contact">
+  <div class="contact rv">
+    <div>
+      <div class="kicker">08 · Contact</div>
+      <h2>Let’s talk</h2>
+      <p>I’m looking for internships, co-op roles and graduate positions in power systems, utilities and energy. The fastest way to reach me is email.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:ali.y.khudhayr@gmail.com">✉️ ali.y.khudhayr@gmail.com</a>
+        <a class="btn" href="tel:+966570336515">📞 +966 57 033 6515</a>
+        <a class="btn" href="assets/Ali-Khudhayr-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+    <div class="qr" style="width:170px;height:170px"><img src="assets/qr-drive.svg" alt="QR code to certificates folder"></div>
+  </div>
+</div>
+</main>
+
+<footer>© 2026 Ali Yasser Khudhayr · Jeddah, Saudi Arabia</footer>
+
+<script>
+// ---- certificates data ----
+const F={
+  ex:'18o4TT3vrgXgqkQeix0eAkykA2igpBmf2', te:'14_Seo6ZBpmyJIzCcR_HRWYLFKIKhoFOl', vo:'1UmXWkQFjIoLXzpu9xxn-ycDvcJlC2v3t',
+  pd:'115trJJ1CrQdllEPK0jjyOkHj3PTdVvft', ot:'18NbMwSEgppKCTT66eKhaHD4sUV43wKP1', qt:'1vg21q6CBqo_Pq4nl4ghWKRBpA-814SXq'};
+const CAT={ex:['Excellence','🏅'],te:['Technical','⚙️'],vo:['Volunteering','🤝'],pd:['Development','📈'],ot:['Other','📎'],qt:['Qur’an & texts','📖']};
+const C=[
+ ['ex','Certificate of Academic Excellence','KAU Deanship of Student Affairs','2024–25'],
+ ['te','Introduction to Agentic Programming','Google Developer Group · KAU','5 Aug 2026'],
+ ['te','An Introduction to LaTeX Using Overleaf','KAU Writing Center','17 Feb 2026'],
+ ['te','Image Generation Workshop','AI Club · KAU','15 Feb 2026'],
+ ['te','Prompt Engineering Fundamentals','Engineering Innovation Club · KAU','—'],
+ ['te','Microsoft Office 365: Word, Excel, PowerPoint · 25 h','KAU Continuing Education','Jul–Aug 2022'],
+ ['vo','Appreciation · Active Member','ECE Club · KAU','2024–25'],
+ ['vo','Sports Hall Organizer · 50 volunteer hours','National Volunteering Platform','Jan 2025'],
+ ['vo','Appreciation · Crowd Management','KAU-ROBOCON 2023','May 2023'],
+ ['vo','Al-Raed Volunteer Leader Program · 48 h','KAU Community Service','Jun 2022'],
+ ['pd','Personal Planning','KAU Human Capacity Development Center','2 Aug 2023'],
+ ['pd','Self-Discipline','KAU Human Capacity Development Center','31 Jul 2023'],
+ ['pd','Balanced Wheel of Life','KAU Human Capacity Development Center','19 Jul 2023'],
+ ['pd','Self-Esteem and Self-Confidence','KAU Human Capacity Development Center','17 Jul 2023'],
+ ['pd','Credit Cards · FinTech series','KAU Entrepreneurship Club','8 Feb 2023'],
+ ['pd','Open Banking · FinTech series','KAU Entrepreneurship Club','1 Feb 2023'],
+ ['pd','FinTech','KAU Entrepreneurship Club','25 Jan 2023'],
+ ['pd','Advanced Self-Development Skills · 60 h','Asas Training Center (TVTC)','Aug 2022'],
+ ['ot','Multiple Intelligences Workshop','HRDF (Hadaf)','16 Sep 2026'],
+ ['ot','Why the Non-Profit Sector?','Jusoor Youth Association','Dec 2024'],
+ ['ot','Engineering Gate','KAU Faculty of Engineering','30 Aug 2023'],
+ ['ot','Developing Entrepreneurial Skills','KAU Faculty of Computing','Feb 2023'],
+ ['ot','Mastery Intelligence','KAU Academic Advising','Jan 2023'],
+ ['ot','Google Drive Cloud Apps','Al-Naeem Community Center','Dec 2020'],
+ ['ot','Graphic Design Skills','Al-Naeem Community Center','Nov 2020'],
+ ['qt','Ghiras Track Graduation · 2-year program','Rising Generation Academy','Jun 2024'],
+ ['qt','Al-Nazm Al-Bayyin · 90%','Huffaz Al-Mutoon','Oct 2023'],
+ ['qt','Al-Bayquniyyah · 100%','Huffaz Al-Mutoon','May 2023'],
+ ['qt','Nazm Al-Ajrumiyyah · 90%','Huffaz Al-Mutoon','Apr 2023'],
+ ['qt','Al-Qasida Al-Lamiyya · 90%','Huffaz Al-Mutoon','Feb 2023'],
+ ['qt','Tuhfat Al-Atfal · 92%','Huffaz Al-Mutoon','Nov 2022'],
+ ['qt','Al-Urjuza Al-Mi’iyya · 80%','Huffaz Al-Mutoon','Oct 2022'],
+];
+const certs=document.getElementById('certs'), chips=document.getElementById('chips');
+certs.innerHTML=C.map(([k,t,s,d])=>`<a class="cert" data-k="${k}" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/${F[k]}"><span class="ic">${CAT[k][1]}</span><span><span class="t">${t}</span><br><span class="s">${s}</span></span><span class="d">${d}</span></a>`).join('');
+const keys=['all',...Object.keys(CAT)];
+chips.innerHTML=keys.map(k=>{const n=k==='all'?C.length:C.filter(c=>c[0]===k).length;return `<button class="chip${k==='all'?' on':''}" data-k="${k}">${k==='all'?'All':CAT[k][0]}<span class="c">${n}</span></button>`}).join('');
+chips.addEventListener('click',e=>{const b=e.target.closest('.chip'); if(!b) return;
+  chips.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));
+  certs.querySelectorAll('.cert').forEach(c=>c.hidden=!(b.dataset.k==='all'||c.dataset.k===b.dataset.k));});
+
+// ---- reveal + counters + bars ----
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function count(el){const to=+el.dataset.count; if(reduce){el.textContent=to;return} const t0=performance.now(),dur=1400;
+  (function f(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3); el.textContent=Math.round(to*e); if(p<1) requestAnimationFrame(f)})(t0);}
+const io=new IntersectionObserver(es=>es.forEach(en=>{ if(!en.isIntersecting) return; const el=en.target; el.classList.add('in');
+  el.querySelectorAll('[data-count]').forEach(count); el.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%'); io.unobserve(el);}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
+
+// ---- three-phase waveform ----
+const paths=[w1,w2,w3].map(id=>id); let ph=0;
+function draw(){ for(let k=0;k<3;k++){ let d=''; for(let x=0;x<=1200;x+=12){ const y=70+42*Math.sin(x/115+ph+k*2.094); d+=(x?'L':'M')+x+' '+y.toFixed(1);} paths[k].setAttribute('d',d);} }
+draw(); if(!reduce){ (function loop(){ ph+=0.012; draw(); requestAnimationFrame(loop) })(); }
+</script>
+</body>
+</html>
