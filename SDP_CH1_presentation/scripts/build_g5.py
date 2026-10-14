@@ -34,6 +34,11 @@ def num_badge(col):
         return [shape(ib, f'nb{ib}', bx, by, 0.44, 0.44, col, prst='ellipse'),
                 text(ib + 1, f'nt{ib}', bx, by + 0.04, 0.44, 0.36, [para([run(str(i + 1), 15, 'FFFFFF', 'Bahnschrift SemiBold')], 'ctr')], anchor='ctr')]
     return f
+ICON_ROWS = [('pulse', 'FEF3C7'), ('bell', 'FEE2E2'), ('check', 'CCFBF1')]
+def icon_badge(i, ib, bx, by):
+    k, tint = ICON_ROWS[i]
+    return [shape(ib, f'ib{ib}', bx, by, 0.44, 0.44, tint, prst='ellipse'),
+            pic(ib + 1, f'ii{ib}', f'rIdI_{k}', bx + 0.08, by + 0.08, 0.28, 0.28, k)]
 def notes_rel(n):
     return ('rIdN', REL_NOTES, re.search(r'Target="(\.\./notesSlides/notesSlide\d+\.xml)"', rd(f'slides/_rels/slide{n}.xml.rels')).group(1))
 def img_rels(keys): return [(f'rIdI_{k}', REL_IMG, '../media/' + IMG[k]) for k in keys]
@@ -52,10 +57,10 @@ ch = header('01 · INTRODUCTION', 'Priority control & abnormal warning', '#')
 ch.append(card(11, 0.75, 'FEF3C7', CARD, 'sort', 'Priority-based control', 'Core function',
                ['User sets load priorities', 'Demand > limit → shed lowest first', 'Essential loads stay ON'], num_badge(INK)))
 ch.append(card(71, 7.03, 'FEE2E2', CARD, 'bell', 'Abnormal warning', 'Supporting function',
-               ['Each load vs. its own baseline', 'Deviation → warn the user', 'Sub-metering → reliable detection'], num_badge(RED)))
+               ['Deviation from baseline', 'User warning', 'Supports — not replaces — control'], icon_badge))
 ch.append(text(99, 'src', 0.75, 6.55, 11.83, 0.3, [para([run('Priority scheduling concept: [4]  ·  Appliance anomaly detection: Rashid et al. [5]', 11, SLATE, 'Segoe UI', i=1)])]))
 wr('slides/slide8.xml', slide(ch, timing(fade_chain([10, 70], 150, 350))))
-wr('slides/_rels/slide8.xml.rels', rels([LAYOUT, notes_rel(8)] + img_rels(['sort', 'bell'])))
+wr('slides/_rels/slide8.xml.rels', rels([LAYOUT, notes_rel(8)] + img_rels(['sort', 'bell', 'pulse', 'check'])))
 # ---- drop old 7 and 9 from the show
 pres = rd('presentation.xml'); prels = rd('_rels/presentation.xml.rels')
 rid = {n: r for r, n in re.findall(r'Id="(rId\d+)"[^>]*Target="slides/slide(\d+)\.xml"', prels)}

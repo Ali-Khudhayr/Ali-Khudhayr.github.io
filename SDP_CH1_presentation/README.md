@@ -4,7 +4,8 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 
 | File | What it is |
 |---|---|
-| `EE499_Team16_Presentation_F_v7.pptx` | **Latest deck**: built from the team's F_v5, with slides 6+7 and 8+9 merged (24 slides) |
+| `EE499_Team16_Presentation_F_v8.pptx` | **Latest deck**: F_v7 with the abnormal-warning card back to icons and the original wording |
+| `EE499_Team16_Presentation_F_v7.pptx` | Built from the team's F_v5, with slides 6+7 and 8+9 merged (24 slides) |
 | `EE499_Team16_Presentation_F_v5_team.pptx` | Team's F_v5 with their own edits |
 | `EE499_Team16_Presentation_F_v6.pptx` | Simple native diagram on slide 8 (now replaced by the merged slide in F_v7) |
 | `EE499_Team16_Presentation_F_v5.pptx` | Names and IDs spread evenly over the whole tower |
@@ -50,3 +51,6 @@ Smart Home Energy Management with Priority-Based Load Control: Report 1 (Problem
 - Slides 6 + 7 → one comparison slide: *Conventional meter* (three questions it can't answer) vs *Per-appliance monitoring* (three short points).
 - Slides 8 + 9 → one slide: *Priority-based control* (core, 3 steps) and *Abnormal warning* (supporting, 3 points), with sources [4] and [5].
 - 26 → 24 slides; slide numbers re-verified.
+
+## F_v7 → F_v8
+- Slide 7, *Abnormal warning* card: icon markers (pulse, bell, check) and the original points — *Deviation from baseline*, *User warning*, *Supports — not replaces — control*.
