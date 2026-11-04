@@ -4,531 +4,494 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ali Yasser Khudhayr | Electrical Power Engineering</title>
-<meta name="description" content="Ali Yasser Khudhayr — final-year Electrical Engineering (Power & Machines) student at King Abdulaziz University. Projects, experience, certificates and work samples.">
+<meta name="description" content="Ali Yasser Khudhayr, final-year Electrical Engineering (Power & Machines) student at King Abdulaziz University. Projects, videos, certificates and work samples.">
 <meta property="og:title" content="Ali Yasser Khudhayr | Electrical Power Engineering">
-<meta property="og:description" content="Power & Machines engineering student at KAU — GPA 4.68/5.00, 49 certificates, 29 explainer videos, 11 engineering projects.">
+<meta property="og:description" content="Power & Machines engineering student at KAU: GPA 4.68/5.00, 48+ explainer videos, 50+ certificates, 11 engineering projects.">
 <meta property="og:image" content="https://ali-khudhayr.github.io/assets/photo.jpg">
 <meta name="theme-color" content="#0a0f1c">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0f1c'/%3E%3Cpath d='M36 6 16 36h14l-4 22 22-32H34z' fill='%23f5b21b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
   :root{
     --bg:#0a0f1c; --bg2:#0e1526; --panel:#121a2e; --panel2:#17213a; --line:#24304d;
-    --text:#e9edf6; --muted:#9aa6bf; --dim:#6c7896;
-    --amber:#f5b21b; --amber2:#ffcf5c; --teal:#3fd8c4; --rose:#ff7a8a;
+    --text:#e9edf6; --muted:#a3aec6; --dim:#7f8ba8; --body:#c9d1e3;
+    --amber:#f5b21b; --amber2:#ffcf5c; --teal:#3fd8c4;
     --r:16px; --maxw:1160px;
     --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; --ar:"IBM Plex Sans Arabic","IBM Plex Sans",sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:76px}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;background:var(--bg);scrollbar-color:#33415f var(--bg)}
+  ::selection{background:var(--amber);color:#1a1200}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:#2a3654;border-radius:9px;border:2px solid var(--bg)}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .mono{font-family:var(--mono)}
-  /* background grid */
+  img,video{max-width:100%;display:block}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
-    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
     background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 80%)}
+  .ic{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
   /* nav */
-  nav{position:sticky;top:0;z-index:50;background:rgba(10,15,28,.78);backdrop-filter:blur(12px);border-bottom:1px solid rgba(36,48,77,.6)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.2px}
-  .brand .bolt{width:30px;height:30px;border-radius:9px;background:var(--panel2);display:grid;place-items:center;border:1px solid var(--line)}
-  .links{display:flex;gap:4px}
-  .links a{padding:8px 12px;border-radius:10px;color:var(--muted);font-size:14.5px;transition:.2s}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,15,28,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(36,48,77,.6)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;white-space:nowrap}
+  .bolt{width:30px;height:30px;border-radius:9px;background:var(--panel2);display:grid;place-items:center;border:1px solid var(--line)}
+  .links{display:flex;gap:2px}
+  .links a{padding:8px 11px;border-radius:10px;color:var(--muted);font-size:14.5px;transition:color .2s,background .2s}
   .links a:hover{color:var(--text);background:var(--panel)}
+  .nav-end{display:flex;gap:10px;align-items:center}
   .navcta{padding:9px 16px;border-radius:11px;background:var(--amber);color:#1a1200;font-weight:600;font-size:14.5px;white-space:nowrap}
-  .burger{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:7px 10px;font:inherit;cursor:pointer}
+  .navcta:hover{background:var(--amber2)}
+  .burger,.lang{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;font:inherit;cursor:pointer;transition:border-color .2s,background .2s}
+  .burger{display:none;padding:8px 10px;line-height:0}
+  .lang{font-size:14px;font-weight:600;padding:8px 12px;white-space:nowrap}
+  .lang:hover,.burger:hover{border-color:#3a4a72;background:var(--panel2)}
+  .lang:lang(ar){font-family:var(--ar)}
+
+  /* the signature: a single-line diagram that energizes as you scroll */
+  .rail{position:fixed;inset-inline-start:max(14px,calc((100vw - var(--maxw))/2 - 92px));top:calc(50% + 32px);transform:translateY(-50%);height:62vh;width:64px;z-index:40;display:none}
+  .rail .pct{position:absolute;top:-30px;inset-inline-start:0;font-family:var(--mono);font-size:12.5px;color:var(--amber);direction:ltr;font-variant-numeric:tabular-nums}
+  .rail .bus{position:absolute;inset-inline-start:6px;top:0;bottom:0;width:2px;background:var(--line);border-radius:2px}
+  .rail .live{position:absolute;inset-inline-start:0;top:0;width:100%;height:100%;transform-origin:top;transform:scaleY(var(--p,0));background:linear-gradient(180deg,var(--amber),var(--teal))}
+  .rail .head{position:absolute;inset-inline-start:2px;top:calc(var(--p,0)*100%);width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--amber2);box-shadow:0 2px 10px 2px rgba(245,178,27,.55)}
+  .rail a{position:absolute;inset-inline-start:0;display:flex;align-items:center;height:22px;margin-top:-11px;gap:8px;color:var(--dim)}
+  .rail a i{display:block;width:14px;height:4px;border-radius:1px;background:var(--line);transition:background .3s,box-shadow .3s}
+  .rail a span{font-size:12.5px;white-space:nowrap;opacity:0;transform:translateX(-4px);transition:opacity .25s,transform .25s var(--ease);background:var(--bg2);border:1px solid var(--line);padding:1px 8px;border-radius:7px}
+  html[dir=rtl] .rail a span{transform:translateX(4px)}
+  .rail a.on i{background:var(--amber)}
+  .rail a.now i{background:var(--amber2);box-shadow:0 2px 8px rgba(245,178,27,.6)}
+  .rail a.now{color:var(--text)}
+  .rail a:hover span,.rail a:focus-visible span,.rail a.now span{opacity:1;transform:none}
+  .topbar{position:fixed;top:64px;inset-inline:0;height:3px;z-index:49;background:transparent;pointer-events:none}
+  .topbar i{display:block;height:100%;transform-origin:left;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--amber),var(--teal))}
+  html[dir=rtl] .topbar i{transform-origin:right}
+  @media (min-width:1400px){.rail{display:block}.topbar{display:none}}
 
   /* hero */
-  header.hero{position:relative;padding:72px 0 110px;overflow:hidden}
-  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13px;color:var(--teal);border:1px solid rgba(63,216,196,.3);background:rgba(63,216,196,.07);padding:6px 12px;border-radius:999px}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(63,216,196,.6);animation:pulse 2s infinite}
-  @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(63,216,196,0)}100%{box-shadow:0 0 0 0 rgba(63,216,196,0)}}
-  h1{font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-1.5px;margin:20px 0 6px;font-weight:700}
+  header.hero{position:relative;padding:64px 0 96px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;position:relative;z-index:1}
+  h1{font-size:clamp(44px,6.2vw,76px);line-height:1.02;letter-spacing:-.03em;font-weight:700;text-wrap:balance}
   h1 .amber{color:var(--amber)}
-  .arname{font-family:var(--ar);font-size:24px;color:var(--muted);direction:rtl;text-align:left;margin-bottom:18px}
-  .lead{font-size:19px;color:#c9d1e3;max-width:600px}
+  .arname{font-family:var(--ar);font-size:24px;color:var(--muted);direction:rtl;text-align:left;margin:6px 0 18px}
+  .lead{font-size:20px;color:var(--body);max-width:34em}
   .lead b{color:var(--text);font-weight:600}
-  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 28px;color:var(--muted);font-size:14.5px}
-  .meta span{display:inline-flex;align-items:center;gap:7px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin:20px 0 26px;color:var(--muted);font-size:14.5px}
+  .meta span,.meta a{display:inline-flex;align-items:center;gap:7px}
+  .meta a:hover{color:var(--text)}
+  .avail{color:var(--teal)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal)}
   .btns{display:flex;flex-wrap:wrap;gap:12px}
-  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:13px;font-weight:600;font-size:15.5px;border:1px solid var(--line);background:var(--panel);transition:.2s}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:13px;font-weight:600;font-size:15.5px;border:1px solid var(--line);background:var(--panel);transition:transform .25s var(--ease),border-color .2s,background .2s}
   .btn:hover{transform:translateY(-2px);border-color:#3a4a72}
   .btn.primary{background:var(--amber);color:#1a1200;border-color:var(--amber)}
   .btn.primary:hover{background:var(--amber2)}
-  .portrait{position:relative;justify-self:end;width:100%;max-width:360px}
-  .portrait .frame{border-radius:26px;overflow:hidden;border:1px solid var(--line);background:var(--panel);aspect-ratio:4/5;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
-  .portrait .frame img{width:100%;height:100%;object-fit:cover}
-  .badge{position:absolute;background:rgba(18,26,46,.92);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
-  .badge b{display:block;font-size:20px;font-family:var(--mono);color:var(--amber);line-height:1.1}
-  .badge.b1{left:-34px;top:38px}
-  .badge.b2{right:-18px;bottom:46px}
-  .badge.b2 b{color:var(--teal)}
-  svg.waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px;opacity:.5;pointer-events:none;z-index:0}
+  .portrait{position:relative;justify-self:end;width:100%;max-width:350px}
+  .frame{border-radius:26px;overflow:hidden;border:1px solid var(--line);background:var(--panel);aspect-ratio:4/5;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+  .frame img{width:100%;height:100%;object-fit:cover}
+  .badge{position:absolute;background:rgba(18,26,46,.94);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
+  .badge b{display:block;font-size:20px;font-family:var(--mono);color:var(--amber);line-height:1.15}
+  .badge b small{font-size:13px;color:var(--muted);font-weight:400}
+  .b1{inset-inline-start:-30px;top:38px}
+  .b2{inset-inline-end:-16px;bottom:46px}
+  .b2 b{color:var(--teal);font-family:var(--sans)}
+  svg.waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px;opacity:.5;pointer-events:none}
 
-  /* stats */
-  .stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:34px}
-  .stat{background:var(--bg2);padding:22px 18px}
-  .stat .n{font-family:var(--mono);font-size:34px;font-weight:600;color:var(--text);line-height:1.1;letter-spacing:-1px}
-  .stat .n small{font-size:18px;color:var(--amber)}
-  .stat .l{color:var(--muted);font-size:13.5px;margin-top:6px;line-height:1.35}
-  .stat:nth-child(3n+1) .n{color:var(--amber)}
-  .stat:nth-child(3n+2) .n{color:var(--teal)}
+  /* numbers */
+  .stats{display:grid;grid-template-columns:repeat(6,1fr);border-block:1px solid var(--line);margin-top:-28px;position:relative;z-index:2;background:var(--bg)}
+  .stat{padding:24px 16px}
+  .stat+.stat{border-inline-start:1px solid var(--line)}
+  .stat .n{font-family:var(--mono);font-size:clamp(30px,3.3vw,42px);font-weight:600;line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat .n small{font-size:.55em;color:var(--amber)}
+  .stat:nth-child(odd) .n{color:var(--amber)}
+  .stat:nth-child(even) .n{color:var(--teal)}
+  .stat .l{color:var(--muted);font-size:14px;margin-top:6px;line-height:1.35}
 
-  /* sections */
-  section{padding:84px 0 0}
-  #about{padding-top:30px}
-  .sec-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px;flex-wrap:wrap}
-  .kicker{font-family:var(--mono);color:var(--amber);font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
-  h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.8px;line-height:1.1;margin-top:8px}
-  .sec-head p{color:var(--muted);max-width:480px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+  section{padding:96px 0 0}
+  .head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+  h2{font-size:clamp(30px,3.8vw,46px);letter-spacing:-.02em;line-height:1.1;text-wrap:balance}
+  .head p{color:var(--muted);max-width:30em}
+  .more{font-size:15px;color:var(--teal);font-weight:500;display:inline-flex;gap:6px;align-items:center;transition:color .2s}
+  .more:hover{color:var(--text)}
 
   /* about */
-  .about{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
-  .about p{color:#c9d1e3;margin-bottom:14px}
-  .about p:last-child{margin-bottom:0}
-  .goal{display:grid;gap:14px}
-  .goal .card{padding:22px}
-  .goal h3{font-size:14px;font-family:var(--mono);color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:500}
-  .goal p{color:#c9d1e3;margin:0}
-  .facts{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;margin-top:6px}
+  #about{padding-top:72px}
+  .about{display:grid;grid-template-columns:1.25fr .75fr;gap:48px}
+  .about .say{font-size:clamp(21px,2.3vw,27px);line-height:1.4;color:var(--text);text-wrap:pretty;font-weight:500}
+  .about .say em{font-style:normal;color:var(--amber)}
+  .wins{list-style:none;display:grid;gap:10px;margin-top:26px;color:var(--body);font-size:16px}
+  .wins li{display:flex;gap:10px}
+  .wins .ic{color:var(--teal);margin-top:5px}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:9px 18px;font-size:15.5px;align-content:start}
   .facts dt{color:var(--dim)}
   .facts dd{color:var(--text)}
 
-  /* timeline */
-  .tl{position:relative;display:grid;gap:16px}
-  .tl-item{display:grid;grid-template-columns:200px 1fr;gap:26px}
-  .tl-date{font-family:var(--mono);font-size:13.5px;color:var(--muted);padding-top:27px;text-align:right}
-  .tl-date b{display:block;color:var(--amber);font-weight:500}
-  .tl .card{position:relative}
-  .tl .card::before{content:"";position:absolute;left:-14px;top:30px;width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(245,178,27,.15)}
-  .role{font-size:19px;font-weight:600}
-  .org{color:var(--teal);font-size:14.5px;margin:2px 0 12px}
-  ul.pts{list-style:none;display:grid;gap:7px}
-  ul.pts li{position:relative;padding-left:18px;color:#c9d1e3;font-size:15.5px}
-  ul.pts li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:2px;background:var(--amber)}
-  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-  .tag{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line);background:var(--bg2);padding:3px 9px;border-radius:7px}
-
-  /* projects */
-  .proj{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .p{display:flex;flex-direction:column;transition:.25s}
-  .p:hover{transform:translateY(-4px);border-color:#3a4a72}
-  .p.feature{grid-column:span 2;background:linear-gradient(135deg,#17213a 0%,#121a2e 60%)}
-  .p .code{font-family:var(--mono);font-size:12.5px;color:var(--amber);letter-spacing:.5px}
-  .p h3{font-size:20px;line-height:1.25;margin:8px 0 10px}
-  .p p{color:#c3cbdd;font-size:15.3px;flex:1}
-  .p .foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px;flex-wrap:wrap}
-  .p .when{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
-  .more{font-size:14px;color:var(--teal);font-weight:500;display:inline-flex;gap:6px;align-items:center}
-  .more:hover{color:var(--text)}
-  .kpi{display:flex;gap:22px;margin:4px 0 14px;flex-wrap:wrap}
-  .kpi div{font-family:var(--mono);font-size:24px;color:var(--teal);line-height:1}
-  .kpi div span{display:block;font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-top:5px}
-
-  .shots{display:grid;grid-template-columns:.8fr 1.2fr;gap:10px;margin:4px 0 14px}
-  .shots img{border-radius:12px;border:1px solid var(--line);width:100%;height:170px;object-fit:cover}
-  .shot1 img{border-radius:12px;border:1px solid var(--line);width:100%;height:230px;object-fit:cover;object-position:top;margin:4px 0 14px}
-  .p.code-card{background:linear-gradient(135deg,#132a2a,#121a2e)}
-  .qpath{margin-top:22px}
-  .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px;position:relative}
-  .step{background:var(--bg2);border:1px solid var(--line);border-radius:13px;padding:14px 12px;text-align:center}
-  .step b{display:block;font-family:var(--mono);font-size:26px;color:var(--teal);line-height:1}
-  .step b small{font-size:13px;color:var(--muted)}
-  .step span{display:block;font-size:12.5px;color:var(--muted);margin-top:6px}
-  .step em{display:inline-block;font-style:normal;font-family:var(--mono);font-size:12px;color:#1a1200;background:var(--amber);border-radius:6px;padding:1px 7px;margin-top:8px}
-  .step:last-child{border-color:var(--teal);box-shadow:0 0 0 3px rgba(63,216,196,.12)}
-  .qbar{height:8px;border-radius:9px;background:var(--bg2);margin-top:16px;overflow:hidden}
-  .qbar div{height:100%;width:0;background:linear-gradient(90deg,var(--amber),var(--teal));transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
-  @media (max-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
-  @media (max-width:560px){.shots{grid-template-columns:1fr}.shots img{height:200px}}
+  /* work */
+  .feature{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;margin-bottom:56px}
+  .feature.flip>.pair{order:2}
+  .media{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+  .media img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+  a.media:hover img,.tile:hover .media img{transform:scale(1.035)}
+  .media.paper{background:#fff;padding:14px}
+  .media.paper img{object-fit:contain}
+  .pair{display:grid;grid-template-columns:1.2fr .8fr;gap:10px}
+  .pair .media{aspect-ratio:auto;height:330px}
+  .code{font-family:var(--mono);font-size:13px;color:var(--amber);margin-bottom:6px}
+  h3{font-size:clamp(21px,2.1vw,27px);line-height:1.3;letter-spacing:-.01em;font-weight:600;text-wrap:balance}
+  .feature p{color:var(--body);margin:10px 0 16px}
+  .kpi{display:flex;gap:24px;margin:16px 0;flex-wrap:wrap}
+  .kpi div{font-family:var(--mono);font-size:26px;color:var(--teal);line-height:1;font-variant-numeric:tabular-nums}
+  .kpi span{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:6px;line-height:1.3}
+  .tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:26px 18px}
+  .tile{grid-column:span 2;display:flex;flex-direction:column}
+  .tile.wide{grid-column:span 3}
+  .tile .media{aspect-ratio:16/10;margin-bottom:12px}
+  .tile h3{font-size:18.5px;margin-bottom:3px}
+  .tile p{color:var(--muted);font-size:15px;line-height:1.45}
+  .tile .code{font-size:12px;margin-bottom:3px}
+  .rows{margin-top:44px;border-top:1px solid var(--line)}
+  .rowp{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--line);transition:background .2s}
+  .rowp:hover{background:rgba(255,255,255,.015)}
+  .rowp .code{margin:0}
+  .rowp b{font-weight:600;font-size:16.5px}
+  .rowp p{color:var(--muted);font-size:14.5px;line-height:1.4}
 
   /* videos */
-  .vid{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:start}
-  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .gallery img{border-radius:12px;border:1px solid var(--line);aspect-ratio:16/9;object-fit:cover;width:100%}
-  .courses{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
-  .course{display:flex;justify-content:space-between;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:10px 13px;font-size:14.5px}
-  .course b{font-family:var(--mono);color:var(--amber);font-weight:500;font-size:13px;white-space:nowrap;margin-left:10px}
+  .reel{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:10px}
+  .vc{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);background:var(--panel);aspect-ratio:16/9;display:block}
+  .vc.big{grid-column:span 2;grid-row:span 2}
+  .vc video{width:100%;height:100%;object-fit:cover}
+  .vc span{position:absolute;inset-inline-start:8px;bottom:8px;font-size:12.5px;font-weight:500;background:rgba(10,15,28,.86);padding:3px 9px;border-radius:7px;transition:background .2s,color .2s}
+  .vc:hover span{background:var(--amber);color:#1a1200}
+  .vc:hover{border-color:#3a4a72}
+
+  /* experience */
+  .tl{display:grid}
+  .job{display:grid;grid-template-columns:190px 1fr;gap:22px;padding:20px 0;border-top:1px solid var(--line)}
+  .job:last-child{border-bottom:1px solid var(--line)}
+  .when{font-family:var(--mono);font-size:13.5px;color:var(--amber);padding-top:4px;font-variant-numeric:tabular-nums}
+  .role{font-size:19px;font-weight:600}
+  .org{color:var(--teal);font-size:14.5px;margin:1px 0 6px}
+  .job p{color:var(--body);font-size:15.5px;max-width:70ch}
+
+  /* community */
+  .show{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;margin-bottom:56px}
+  .stack{position:relative;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+  .stack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:fadeshow 16s infinite both}
+  .stack img:nth-child(2){animation-delay:4s}.stack img:nth-child(3){animation-delay:8s}.stack img:nth-child(4){animation-delay:12s}
+  @keyframes fadeshow{0%{opacity:0;transform:scale(1.03)}5%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1)}100%{opacity:0}}
+  .show p{color:var(--body);margin:10px 0 16px}
+  .nums{display:flex;gap:26px;flex-wrap:wrap;margin:14px 0 18px}
+  .apps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:50px}
+  .vol{display:grid;grid-template-columns:1.3fr .7fr;gap:40px}
+  .list{display:grid}
+  .list .row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px}
+  .list .row span:last-child{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+  .path h3{font-size:18.5px;margin-bottom:4px}
+  .path p{color:var(--muted);font-size:14.5px}
+  .qbar{height:8px;border-radius:9px;background:var(--panel2);margin:14px 0 6px;overflow:hidden}
+  .qbar div{height:100%;width:0;background:linear-gradient(90deg,var(--amber),var(--teal));transition:width 1.6s var(--ease)}
 
   /* certificates */
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-  .chip{font:inherit;font-size:14px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:8px 14px;border-radius:999px;transition:.2s}
+  .chip{font:inherit;font-size:14px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:8px 14px;border-radius:999px;transition:color .2s,background .2s}
   .chip:hover{color:var(--text)}
   .chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
-  .chip .c{font-family:var(--mono);font-size:12px;opacity:.7;margin-left:4px}
-  .certs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-  .cert{display:grid;grid-template-columns:42px 1fr auto;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:13px 16px;transition:.2s}
-  .cert:hover{border-color:#3a4a72;background:var(--panel2)}
-  .cert .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:19px;background:var(--bg2);border:1px solid var(--line)}
-  .cert .t{font-weight:600;font-size:15px;line-height:1.3}
-  .cert .s{color:var(--muted);font-size:13.3px}
-  .cert .d{font-family:var(--mono);font-size:12.5px;color:var(--dim);text-align:right;white-space:nowrap}
+  .chip .c{font-family:var(--mono);font-size:12px;opacity:.75;margin-inline-start:5px}
+  .certs{display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px}
+  .cert{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:13px 2px;border-top:1px solid var(--line);transition:color .2s}
+  .cert:hover .t{color:var(--amber2)}
+  .cert .t{font-weight:600;font-size:15.5px;line-height:1.3;transition:color .2s}
+  .cert .s{color:var(--muted);font-size:13.5px}
+  .cert .d{font-family:var(--mono);font-size:12.5px;color:var(--dim);white-space:nowrap}
   .cert[hidden]{display:none}
-
-  /* drive band */
-  .drive{display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;background:linear-gradient(120deg,#16203a,#101829);border:1px solid var(--line);border-radius:22px;padding:28px 32px;margin-top:26px}
-  .qr{background:#fff;padding:12px;border-radius:14px;width:150px;height:150px}
+  .drive{display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;margin-top:34px;padding:22px 26px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}
+  .qr{background:#fff;padding:8px;border-radius:12px;width:96px;height:96px}
   .qr img{width:100%;height:100%}
-  .drive h3{font-size:24px;letter-spacing:-.4px}
-  .drive p{color:var(--muted);margin-top:6px;max-width:520px}
-  .drive .folders{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-
-  /* community */
-  .comm{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
-  .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line)}
-  .vol{display:grid;gap:10px;margin-top:16px}
-  .vol .row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
-  .vol .row span:last-child{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+  .drive h3{font-size:20px}
+  .drive p{color:var(--muted);font-size:15px;margin-top:2px}
 
   /* skills */
-  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
-  .skills h3{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
-  .bar{margin-bottom:12px}
-  .bar .lbl{display:flex;justify-content:space-between;font-size:14.5px;margin-bottom:6px}
-  .bar .lbl span:last-child{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-  .bar .trk{height:6px;border-radius:9px;background:var(--bg2);overflow:hidden}
-  .bar .fill{height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--amber),var(--teal));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
-  .pill-list{display:flex;flex-wrap:wrap;gap:8px}
-  .pill{font-size:14px;padding:7px 12px;border-radius:10px;background:var(--bg2);border:1px solid var(--line);color:#cdd5e6}
+  .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .skills h3{font-size:16px;margin-bottom:12px;color:var(--amber);font-weight:600}
+  .pills{display:flex;flex-wrap:wrap;gap:7px}
+  .pill{font-size:14px;padding:6px 11px;border-radius:9px;background:var(--bg2);border:1px solid var(--line);color:#cdd5e6}
 
   /* contact */
-  .contact{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;margin:84px 0 0;padding:44px;border-radius:24px;background:radial-gradient(circle at 15% 0%,rgba(245,178,27,.16),transparent 55%),var(--panel);border:1px solid var(--line)}
-  .contact h2{margin:0 0 10px}
-  .contact p{color:var(--muted);max-width:560px}
-  .contact .btns{margin-top:22px}
-  footer{padding:36px 0 50px;color:var(--dim);font-size:13.5px;text-align:center}
+  .contact{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;margin-top:96px;padding:44px;border-radius:24px;background:radial-gradient(circle at 15% 0%,rgba(245,178,27,.16),transparent 55%),var(--panel);border:1px solid var(--line)}
+  .contact p{color:var(--muted);margin-top:8px;max-width:34em}
+  .contact .btns{margin-top:20px}
+  .contact .qr{width:130px;height:130px}
+  footer{padding:32px 0 46px;color:var(--dim);font-size:13.5px;text-align:center}
 
-  /* reveal */
-  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-  .rv.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.dot{animation:none}html{scroll-behavior:auto}}
+  /* reveal: content stays visible without script */
+  .js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .8s var(--ease)}
+  .js .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.stack img{animation:none;opacity:0}.stack img:first-child{opacity:1}}
 
-  @media (max-width:1000px){
-    .stats{grid-template-columns:repeat(3,1fr)}
-    .proj{grid-template-columns:1fr 1fr}
-    .p.feature{grid-column:span 2}
-    .skills{grid-template-columns:1fr 1fr}
-  }
-  @media (max-width:820px){
+  /* Arabic */
+  html[dir=rtl]{--sans:var(--ar);--mono:var(--ar)}
+  html[dir=rtl] body{font-family:var(--ar);line-height:1.75}
+  html[dir=rtl] *{letter-spacing:0!important}
+  html[dir=rtl] h1{line-height:1.2}
+  html[dir=rtl] h2,html[dir=rtl] h3{line-height:1.32}
+  html[dir=rtl] .arname{direction:ltr;text-align:right;font-family:"IBM Plex Sans",system-ui,sans-serif}
+  html[dir=rtl] .stat .n,html[dir=rtl] .kpi div,html[dir=rtl] .nums div,html[dir=rtl] .badge b{direction:ltr;text-align:right}
+  html[dir=rtl] .kpi span{direction:rtl}
+
+  @media (max-width:1040px){
     .links{display:none}
     .links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--line);padding:10px 16px}
     .burger{display:block}
+    .stats{grid-template-columns:repeat(3,1fr)}
+    .stat:nth-child(4){border-inline-start:0}
+    .stat:nth-child(n+4){border-top:1px solid var(--line)}
+    .skills{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:820px){
+    section{padding-top:72px}
     .navcta{display:none}
-    .hero-grid,.about,.vid,.comm{grid-template-columns:1fr}
-    .portrait{justify-self:center;max-width:300px;order:-1}
-    .badge.b1{left:-12px}.badge.b2{right:-8px}
-    .tl-item{grid-template-columns:1fr;gap:6px}
-    .tl-date{text-align:left;padding:0 0 0 4px}
-    .tl .card::before{display:none}
+    .hero-grid,.about,.feature,.show,.vol,.apps{grid-template-columns:1fr}
+    .feature.flip>.pair{order:0}
+    .portrait{justify-self:center;max-width:290px;order:-1}
+    .b1{inset-inline-start:-12px}.b2{inset-inline-end:-8px}
+    .tile,.tile.wide{grid-column:span 3}
+    .reel{grid-template-columns:1fr 1fr}
+    .job{grid-template-columns:1fr;gap:4px}
+    .rowp{grid-template-columns:1fr auto;gap:2px 14px}
+    .rowp .code{grid-column:1/-1}
     .certs{grid-template-columns:1fr}
-    .drive{grid-template-columns:1fr;text-align:left}
+    .drive{grid-template-columns:auto 1fr}
+    .drive .btn{grid-column:1/-1;justify-content:center}
     .contact{grid-template-columns:1fr;padding:28px}
   }
   @media (max-width:560px){
+    body{font-size:16px}
     .wrap{padding:0 16px}
+    header.hero{padding:36px 0 80px}
     .stats{grid-template-columns:1fr 1fr}
-    .proj{grid-template-columns:1fr}
-    .p.feature{grid-column:auto}
+    .stat:nth-child(odd){border-inline-start:0}
+    .stat:nth-child(4){border-inline-start:1px solid var(--line)}
+    .stat:nth-child(n+3){border-top:1px solid var(--line)}
+    .tiles{grid-template-columns:1fr}
+    .tile,.tile.wide{grid-column:auto}
+    .pair{grid-template-columns:1fr}
+    .pair .media{height:220px}
     .skills{grid-template-columns:1fr}
-    .courses{grid-template-columns:1fr}
-    .cert{grid-template-columns:38px 1fr}
-    .cert .d{grid-column:2;text-align:left}
-    .stat .n{font-size:28px}
+    .brand{font-size:14px}
+    .lang{padding:7px 9px;font-size:13px}
+    .list .row{flex-direction:column;gap:0}
   }
 </style>
 </head>
 <body>
-
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top"><span class="bolt"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-2 8 11-13h-7z" fill="#f5b21b"/></svg></span>Ali Khudhayr</a>
+    <a class="brand" href="#top"><span class="bolt"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-2 8 11-13h-7z" fill="#f5b21b"/></svg></span>Ali Khudhayr</a>
     <div class="links" id="links">
-      <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#videos">Videos</a><a href="#certificates">Certificates</a><a href="#community">Community</a><a href="#skills">Skills</a>
+      <a href="#about">About</a><a href="#work">Projects</a><a href="#videos">Videos</a><a href="#experience">Experience</a><a href="#community">Community</a><a href="#certificates">Certificates</a><a href="#skills">Skills</a>
     </div>
-    <div style="display:flex;gap:10px;align-items:center">
+    <div class="nav-end">
+      <button class="lang" id="lang" type="button" lang="ar" aria-label="عرض الموقع بالعربية">العربية</button>
       <a class="navcta" href="assets/Ali-Khudhayr-CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      <button class="burger" aria-label="Menu" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+      <button class="burger" type="button" aria-label="Menu" onclick="document.getElementById('links').classList.toggle('open')"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </nav>
+
+<div class="topbar" aria-hidden="true"><i></i></div>
+<aside class="rail" aria-label="Page progress">
+  <div class="pct" aria-hidden="true">0%</div>
+  <div class="bus" aria-hidden="true"><div class="live"></div><div class="head"></div></div>
+  <a href="#top" data-s="top"><i></i><span>Top</span></a>
+  <a href="#about" data-s="about"><i></i><span>About</span></a>
+  <a href="#work" data-s="work"><i></i><span>Projects</span></a>
+  <a href="#videos" data-s="videos"><i></i><span>Videos</span></a>
+  <a href="#experience" data-s="experience"><i></i><span>Experience</span></a>
+  <a href="#community" data-s="community"><i></i><span>Community</span></a>
+  <a href="#certificates" data-s="certificates"><i></i><span>Certificates</span></a>
+  <a href="#skills" data-s="skills"><i></i><span>Skills</span></a>
+  <a href="#contact" data-s="contact"><i></i><span>Contact</span></a>
+</aside>
 
 <header class="hero" id="top">
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow"><span class="dot"></span>Open to internships &amp; graduate roles · 2027</span>
         <h1>Ali Yasser <span class="amber">Khudhayr</span></h1>
         <div class="arname">علي ياسر خضير</div>
-        <p class="lead">Final-year <b>Electrical Engineering (Power &amp; Machines)</b> student at King Abdulaziz University. I analyze power systems, build embedded prototypes, and turn complex engineering into clear reports, tools and videos.</p>
+        <p class="lead">Final-year <b>Electrical Engineering (Power &amp; Machines)</b> student at King Abdulaziz University. I analyze power systems, build prototypes, and turn hard engineering into clear tools and videos.</p>
         <div class="meta">
-          <span>📍 Jeddah, Saudi Arabia</span>
-          <span>🎓 B.Sc. expected May 2027</span>
-          <span>✉️ <a href="mailto:ali.y.khudhayr@gmail.com">ali.y.khudhayr@gmail.com</a></span>
+          <span class="avail"><span class="dot"></span>Open to internships &amp; graduate roles · 2027</span>
+          <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>Jeddah, Saudi Arabia</span>
+          <a href="mailto:ali.y.khudhayr@gmail.com"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>ali.y.khudhayr@gmail.com</a>
         </div>
         <div class="btns">
-          <a class="btn primary" href="https://drive.google.com/drive/folders/1NR7AGE4MkWl0ar45UZUVKkOYmQnN3HpW" target="_blank" rel="noopener">View certificates &amp; work ↗</a>
+          <a class="btn primary" href="#work">See my work</a>
           <a class="btn" href="assets/Ali-Khudhayr-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
           <a class="btn" href="#contact">Contact</a>
         </div>
       </div>
       <div class="portrait">
-        <div class="frame"><img src="assets/photo.jpg" alt="Portrait of Ali Yasser Khudhayr" width="480" height="600"></div>
-        <div class="badge b1"><b>4.68<span style="font-size:13px;color:var(--muted)"> / 5.00</span></b>Cumulative GPA</div>
+        <div class="frame"><img src="assets/photo.jpg" alt="Portrait of Ali Yasser Khudhayr" width="700" height="875"></div>
+        <div class="badge b1"><b>4.68 <small>/ 5.00</small></b>Cumulative GPA</div>
         <div class="badge b2"><b>Excellent</b>Academic Excellence 2024–25</div>
       </div>
     </div>
-
-    <div class="stats rv" id="stats">
-      <div class="stat"><div class="n"><span data-count="50">0</span><small>+</small></div><div class="l">Certificates &amp; courses earned</div></div>
-      <div class="stat"><div class="n"><span data-count="210">0</span><small>+</small></div><div class="l">Training hours completed</div></div>
-      <div class="stat"><div class="n"><span data-count="100">0</span><small>+</small></div><div class="l">Books read</div></div>
-      <div class="stat"><div class="n"><span data-count="29">0</span></div><div class="l">Engineering explainer videos produced</div></div>
-      <div class="stat"><div class="n"><span data-count="11">0</span></div><div class="l">Engineering projects delivered</div></div>
-      <div class="stat"><div class="n"><span data-count="4">0</span></div><div class="l">Industrial plant visits</div></div>
-      <div class="stat"><div class="n"><span data-count="200">0</span><small>+ h</small></div><div class="l">Volunteer hours across 4 fields</div></div>
-      <div class="stat"><div class="n"><span data-count="2">0</span><small>+ yrs</small></div><div class="l">Weekly community teaching</div></div>
-      <div class="stat"><div class="n"><span data-count="6">0</span></div><div class="l">Classical texts memorized (80–100%)</div></div>
-      <div class="stat"><div class="n"><span data-count="8">0</span></div><div class="l">Staff led as organizers supervisor</div></div>
-      <div class="stat"><div class="n"><span data-count="2">0</span></div><div class="l">Ideathon podium finishes (3rd, then 2nd)</div></div>
-      <div class="stat"><div class="n"><span data-count="20">0</span><small> juz</small></div><div class="l">Qur’an memorized, 6 certified levels</div></div>
-    </div>
   </div>
   <svg class="waves" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true">
-    <path id="w1" fill="none" stroke="#f5b21b" stroke-width="1.6"/>
-    <path id="w2" fill="none" stroke="#3fd8c4" stroke-width="1.6"/>
-    <path id="w3" fill="none" stroke="#ff7a8a" stroke-width="1.6"/>
+    <path id="w1" fill="none" stroke="#f5b21b" stroke-width="1.6"/><path id="w2" fill="none" stroke="#3fd8c4" stroke-width="1.6"/><path id="w3" fill="none" stroke="#6c7896" stroke-width="1.6"/>
   </svg>
 </header>
 
-<main>
+<div class="wrap">
+  <div class="stats rv">
+    <div class="stat"><div class="n"><span data-count="48">0</span><small>+</small></div><div class="l">Explainer videos</div></div>
+    <div class="stat"><div class="n"><span data-count="11">0</span></div><div class="l">Engineering projects</div></div>
+    <div class="stat"><div class="n"><span data-count="50">0</span><small>+</small></div><div class="l">Certificates</div></div>
+    <div class="stat"><div class="n"><span data-count="210">0</span><small>+</small></div><div class="l">Training hours</div></div>
+    <div class="stat"><div class="n"><span data-count="50">0</span><small>+</small></div><div class="l">Organizers supervised</div></div>
+    <div class="stat"><div class="n"><span data-count="200">0</span><small>+</small></div><div class="l">Volunteer hours</div></div>
+  </div>
+</div>
+
 <section id="about">
-  <div class="wrap">
-    <div class="sec-head rv"><div><div class="kicker">01 · About</div><h2>Power engineer in the making</h2></div></div>
-    <div class="about">
-      <div class="card rv">
-        <p>I am a final-year Electrical Engineering student specializing in <b>Power &amp; Machines</b> at King Abdulaziz University, holding a <b>4.68 / 5.00</b> GPA and a Certificate of Academic Excellence.</p>
-        <p>My work spans power-flow and fault analysis in PowerWorld and Simulink, synchronous-machine testing, PIC18 and ESP32 embedded systems, and data-driven calibration of an autonomous vehicle. My senior design project builds a smart home energy-management system with priority-based load control. As a research assistant at KAU’s Center of Excellence in Renewable Energy and Electric Power Systems Research, I compare metaheuristic tuning of a buck-converter PI controller, and I co-authored the resulting manuscript (under review).</p>
-        <p>Outside the lab I serve as Vice President &amp; Treasurer of KAU’s Hospital Management Club, have supervised student teams, built data reports for a multi-city retail operation, taught as a university TA, taught weekly in a mosque memorization circle since 2024, and memorized 20 juz of the Qur’an through six certified levels. I also produced a 29-video animated series that explains six power-engineering courses, and I build offline web apps that real people use, including a bookkeeping app for a retail shop and a weekly planning app for my memorization circle.</p>
-        <dl class="facts">
-          <dt>Born</dt><dd>10 January 2004</dd>
-          <dt>Nationality</dt><dd>Palestinian · resident of Jeddah</dd>
-          <dt>Languages</dt><dd>Arabic (native) · English (very good)</dd>
-        </dl>
-      </div>
-      <div class="goal">
-        <div class="card rv"><h3>Career goal</h3><p>Join a leading Saudi utility or energy company as a power systems engineer, and earn professional registration with the Saudi Council of Engineers.</p></div>
-        <div class="card rv"><h3>Vision</h3><p>Grow into a technical leader in Saudi Arabia’s renewable-energy sector and help deliver the clean-energy goals of Vision 2030.</p></div>
-        <div class="card rv"><h3>What I bring</h3><p>Simulation-backed analysis, clear technical writing, and the habit of turning raw data into decisions.</p></div>
-      </div>
-    </div>
-    <div class="card rv" style="margin-top:22px">
-      <h3>🏆 Achievements</h3>
-      <ul class="pts">
-        <li>Certificate of Academic Excellence (“Excellent”), Deanship of Student Affairs, KAU, 2024–2025.</li>
-        <li>Competed in two <b>Ideathon</b> innovation challenges with Ajyal Care Association, placing <b>third and then second</b>.</li>
-        <li>Co-authored a journal manuscript on PSO, TDO and hybrid PSO-TDO tuning of a buck converter, submitted to <i>JKAU: Engineering Sciences</i> (under review).</li>
-        <li>Designed a complete summer program for students, <b>“Masarat Summer 2026”</b>.</li>
-        <li>Kept a <b>4.68 / 5.00</b> GPA while working part-time and volunteering every week.</li>
-        <li>Completed more than <b>210 training hours</b> and earned <b>over 50 certificates</b>.</li>
-        <li>Logged more than <b>200 volunteer hours</b> in education, events, community and charity work.</li>
+  <div class="wrap about rv">
+    <div>
+      <p class="say">I want to join a leading Saudi energy company as a <em>power systems engineer</em>, and grow into a technical leader in renewable energy.</p>
+      <ul class="wins">
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Research assistant at KAU’s renewable-energy center, with a co-authored manuscript under review.</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Certificate of Academic Excellence, KAU, 2024–2025.</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Third, then second place in two Ideathon challenges with Ajyal Care Association.</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Designed the full “Masarat Summer 2026” student program.</span></li>
       </ul>
     </div>
+    <dl class="facts">
+      <dt>Degree</dt><dd>B.Sc., expected May 2027</dd>
+      <dt>GPA</dt><dd>4.68 / 5.00</dd>
+      <dt>Born</dt><dd>10 January 2004</dd>
+      <dt>Nationality</dt><dd>Palestinian · resident of Jeddah</dd>
+      <dt>Languages</dt><dd>Arabic (native) · English (very good)</dd>
+    </dl>
   </div>
 </section>
 
-<section id="experience">
+<section id="work">
   <div class="wrap">
-    <div class="sec-head rv"><div><div class="kicker">02 · Experience</div><h2>Where I’ve worked &amp; led</h2></div><p>Paid work, university roles and industrial exposure, newest first.</p></div>
-    <div class="tl">
-      <div class="tl-item rv">
-        <div class="tl-date"><b>Oct 2025 – Present</b>Research role</div>
-        <div class="card">
-          <div class="role">Research Assistant</div>
-          <div class="org">Center of Excellence in Renewable Energy &amp; Electric Power Systems Research · KAU · Supervisor: Dr. Sultan Alghamdi</div>
-          <ul class="pts">
-            <li>Simulate and compare PSO, TDO and hybrid PSO-TDO tuning of a PI controller for a DC–DC buck converter, then analyze and write up the results.</li>
-            <li>Co-author of the resulting manuscript, submitted to <i>JKAU: Engineering Sciences</i> (under review).</li>
-          </ul>
-          <div class="tags"><span class="tag">Metaheuristic tuning</span><span class="tag">Power electronics</span><span class="tag">Research writing</span></div>
-        </div>
-      </div>
-      <div class="tl-item rv">
-        <div class="tl-date"><b>Oct 2026 – Present</b>Student leadership</div>
-        <div class="card">
-          <div class="role">Vice President &amp; Treasurer</div>
-          <div class="org">Hospital Management Club · King Abdulaziz University</div>
-          <ul class="pts"><li>Own the club’s term plan (10 events, 39 tracked tasks), budget and meeting minutes, with a written report within 48 hours of every event. Built the club’s interactive planning page.</li></ul>
-          <div class="tags"><span class="tag">Leadership</span><span class="tag">Planning</span><span class="tag">Budgeting</span></div>
-        </div>
-      </div>
-      <div class="tl-item rv">
-        <div class="tl-date"><b>Jul – Sep 2026</b>31 Jul – 28 Sep 2026</div>
-        <div class="card">
-          <div class="role">Operations &amp; Data Reporting Assistant <span style="color:var(--muted);font-weight:400">· Part-time</span></div>
-          <div class="org">Retail field-operations project · Jeddah</div>
-          <ul class="pts">
-            <li>Prepared 14 purchase-invoice reports for products distributed to retail branches, with cost per branch and per staff member backed by photo evidence.</li>
-            <li>Built an Excel daily site log for 9 staff at 10 sites across 5 cities (Jeddah, Makkah, Madinah, Yanbu, Riyadh) with an automatic performance ranking.</li>
-          </ul>
-          <div class="tags"><span class="tag">Excel</span><span class="tag">Reporting</span><span class="tag">Data analysis</span></div>
-        </div>
-      </div>
-      <div class="tl-item rv">
-        <div class="tl-date"><b>Aug 2025 – May 2026</b>Academic year 2025–26</div>
-        <div class="card">
-          <div class="role">Industrial Field Visits</div>
-          <div class="org">Al-Taqa Energy · Hala Company · Al-Rowad Factory · Savola Group (Afia)</div>
-          <ul class="pts"><li>Observed power distribution, motor control centers, PLC-based production-line automation and plant safety practices in operating facilities.</li></ul>
-          <div class="tags"><span class="tag">MCC</span><span class="tag">PLC automation</span><span class="tag">Industrial safety</span></div>
-        </div>
-      </div>
-      <div class="tl-item rv">
-        <div class="tl-date"><b>Aug – Dec 2025</b>Fall 2025</div>
-        <div class="card">
-          <div class="role">Teaching Assistant</div>
-          <div class="org">Department of Electrical &amp; Computer Engineering · KAU</div>
-          <ul class="pts"><li>Helped students master circuits, power-system concepts and simulation tools alongside course faculty.</li></ul>
-          <div class="tags"><span class="tag">Teaching</span><span class="tag">Mentoring</span></div>
-        </div>
-      </div>
-      <div class="tl-item rv">
-        <div class="tl-date"><b>Mar 2024 – Feb 2025</b>12 months</div>
-        <div class="card">
-          <div class="role">Organizers Supervisor</div>
-          <div class="org">Fitness Club · Deanship of Student Affairs · KAU</div>
-          <ul class="pts"><li>Led 8 student organizers across morning and evening shifts, managed attendance and coverage, and wrote weekly reports to club management.</li></ul>
-          <div class="tags"><span class="tag">Leadership</span><span class="tag">Scheduling</span><span class="tag">Reporting</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="head rv"><h2>Engineering projects</h2><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">All 12 reports ↗</a></div>
 
-<section id="projects">
-  <div class="wrap">
-    <div class="sec-head rv"><div><div class="kicker">03 · Projects</div><h2>Engineering projects</h2></div><p>Course and senior-design reports are in the shared Drive folder, with teammates’ IDs hidden.</p></div>
-    <div class="proj">
-      <article class="card p feature rv">
-        <div class="code">EE499 · SENIOR DESIGN PROJECT · TEAM 16</div>
+    <article class="feature rv">
+      <a class="media paper" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz"><img src="assets/proj-ee499.jpg" alt="Block diagram of the smart home energy management system" width="1200" height="986" loading="lazy"></a>
+      <div>
+        <div class="code">EE499 · Senior design · Team 16</div>
         <h3>Smart Home Energy Management with Priority-Based Load Control</h3>
-        <div class="kpi"><div>3<span>team members</span></div><div>6<span>design objectives</span></div><div>2027<span>graduation demo</span></div></div>
-        <p>Appliance-level monitoring with automatic priority-based load shedding, monthly budget tracking and abnormal-load warnings. The goal is lower household bills while essential loads stay supplied. Chapters 1–3 are written: the chosen baseline uses an ESP32, PZEM-004T meters and a hardware watchdog, at about 910 SAR against a 1,000 SAR budget. Advisor: Dr. Fahd Hariri.</p>
-        <div class="foot"><span class="when">Aug 2026 – May 2027</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Read report 1 ↗</a></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">FREELANCE · SOFTWARE</div>
-        <h3>Mizan: Offline Bookkeeping &amp; Cash-Audit Web App</h3>
-        <p>An installable offline app that replaced a retail shop’s paper ledger: sales, receipts, shift closing, bank reconciliation and financial statements, secured by PIN roles and a SHA-256 hash-chained audit log. Stress-tested with a year of data (40,000 sales).</p>
-        <div class="foot"><span class="when">Oct 2026</span></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">EE490 · AUTONOMOUS SYSTEMS</div>
-        <h3>QCar 2 Steering &amp; Speed Calibration</h3>
-        <div class="kpi"><div>2.17×<span>speed at 2× throttle</span></div><div>90<span>trials @100 Hz</span></div></div>
-        <p>As calibration lead, I found the car’s non-linear throttle response and designed an encoder, IMU and pose experiment in Python. The target is 30% lower route error.</p>
-        <div class="foot"><span class="when">Aug – Dec 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Proposal ↗</a></div>
-      </article>
-      <article class="card p feature rv">
-        <div class="code">EE442 · POWER ELECTRONICS · HARDWARE</div>
+        <p>Monitors every appliance and sheds low-priority loads automatically, so bills drop while essential loads stay on.</p>
+        <div class="kpi"><div>6<span>design objectives</span></div><div>910<span>SAR of a 1,000 SAR budget</span></div><div>2027<span>graduation demo</span></div></div>
+        <a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Read report 1 ↗</a>
+      </div>
+    </article>
+
+    <article class="feature flip rv">
+      <div class="pair">
+        <div class="media"><img src="assets/inverter-scope.jpg" alt="Oscilloscope showing the sinusoidal inverter output" loading="lazy"></div>
+        <div class="media"><img src="assets/inverter-hardware.jpg" alt="Inverter hardware prototype with Arduino, MOSFETs and transformer" loading="lazy"></div>
+      </div>
+      <div>
+        <div class="code">EE442 · Power electronics · Hardware</div>
         <h3>Single-Phase SPWM Inverter: 12 V DC to 220 V AC</h3>
-        <div class="shots"><img loading="lazy" src="assets/inverter-hardware.jpg" alt="Inverter hardware prototype with Arduino, MOSFETs and transformer"><img loading="lazy" src="assets/inverter-scope.jpg" alt="Oscilloscope showing the sinusoidal inverter output"></div>
+        <p>Built and tested on the bench with an Arduino UNO, two MOSFETs and a step-up transformer.</p>
         <div class="kpi"><div>60 Hz<span>output, &lt;0.34% error</span></div><div>200<span>step SPWM lookup</span></div><div>127 V<span>RMS measured</span></div></div>
-        <p>Built and tested an inverter with an Arduino UNO generating complementary SPWM through a Timer1 interrupt, two IRL540N MOSFETs and a center-tapped step-up transformer. I verified the output on an oscilloscope and a multimeter.</p>
-        <div class="foot"><span class="when">May – Jun 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1QHtUKN0-FzNW_t3X-ZdbNSkcARZJ0uDp">Firmware ↗</a></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">EE366 · MICROCONTROLLERS</div>
-        <h3>IoT Parking-Slot Occupancy Detection</h3>
-        <p>A PIC18F4580 with an ultrasonic sensor and three-state LED and buzzer alerts. An ESP32 Wi-Fi bridge posts time-stamped events to a web server. Verified in Proteus.</p>
-        <div class="foot"><span class="when">May – Jun 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">EE451 · POWER SYSTEM ANALYSIS</div>
-        <h3>Power Flow &amp; Fault Analysis</h3>
-        <p>Modeled a multi-bus network in PowerWorld and Simulink and validated the power-flow and fault results against hand calculations. Team of 5.</p>
-        <div class="foot"><span class="when">May 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">EE441 · ELECTRIC MACHINES</div>
-        <h3>Synchronous Motor V-Curves</h3>
-        <p>Measured armature current against field current at no load and full load, then compared the lab V-curves with a MATLAB/Simulink model.</p>
-        <div class="foot"><span class="when">May 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">EE442 · POWER ELECTRONICS</div>
-        <h3>Power Converter Simulations</h3>
-        <p>Simulated AC-DC, DC-DC and DC-AC converters in Simulink and analyzed ripple and harmonics. The full-wave rectifier reached 2.98% THD.</p>
-        <div class="foot"><span class="when">Jun 2026</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">EE360 · DIGITAL DESIGN</div>
-        <h3>Signed Arithmetic Circuit in Verilog</h3>
-        <p>Computes F = ±aX² ± bX ± c on 4-bit inputs using structural Verilog: multipliers, two’s-complement add/subtract units, multiplexers and overflow detection. Simulated in Quartus. Team of 4.</p>
-        <div class="foot"><span class="when">Nov 2025</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">MEP261 · THERMODYNAMICS</div>
-        <h3>Rankine Cycle Analysis + 2 Labs</h3>
-        <p>Solved a Rankine power cycle with pump and turbine efficiencies by hand and in Excel. Lab reports cover saturation pressure versus temperature and a vapor-compression refrigeration unit.</p>
-        <div class="foot"><span class="when">Feb – May 2025</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Reports ↗</a></div>
-      </article>
-      <article class="card p rv">
-        <div class="code">EE331 · AUTOMATIC CONTROL</div>
-        <h3>Feedback Control System Design</h3>
-        <p>Analyzed open- and closed-loop step responses and designed the controller with root-locus techniques in MATLAB.</p>
-        <div class="foot"><span class="when">Aug – Dec 2025</span><span class="more" style="color:var(--dim)">Course project</span></div>
-      </article>
-      <article class="card p feature rv">
-        <div class="code">EE202 · PROGRAMMING · TEAM OF 6</div>
-        <h3>Battleship Game with an AI Opponent (Python, PyQt5)</h3>
-        <div class="shot1"><img loading="lazy" src="assets/battleship-game.jpg" alt="Battleship game board during play, showing hits and misses"></div>
-        <p>A desktop game with a PyQt5 interface, manual or random ship placement, 10×10 or 15×15 grids, and an AI opponent with easy and hard modes. About 760 lines of Python.</p>
-        <div class="foot"><span class="when">2025</span><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1QHtUKN0-FzNW_t3X-ZdbNSkcARZJ0uDp">Source code ↗</a></div>
-      </article>
-      <article class="card p code-card rv">
-        <div class="code">SOURCE CODE &amp; REPORTS</div>
-        <h3>Read the work itself</h3>
-        <p>All 12 project reports and the source code (Arduino firmware and the Python game) are in the shared Drive. Teammates’ IDs are hidden.</p>
-        <div class="foot"><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">12 reports ↗</a><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1QHtUKN0-FzNW_t3X-ZdbNSkcARZJ0uDp">Code ↗</a></div>
-      </article>
+        <a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz">Report ↗</a>&nbsp;&nbsp;&nbsp;<a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1QHtUKN0-FzNW_t3X-ZdbNSkcARZJ0uDp">Firmware ↗</a>
+      </div>
+    </article>
+
+    <div class="tiles">
+      <article class="tile wide rv"><div class="media"><img src="assets/shot-mizan.jpg" alt="Mizan app dashboard with demo data" loading="lazy"></div><div class="code">Freelance · Software</div><h3>Mizan: offline bookkeeping app</h3><p>Replaced a shop’s paper ledger, stress-tested with 40,000 sales. Shown with demo data.</p></article>
+      <a class="tile wide rv" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz"><div class="media"><img src="assets/proj-ee441.jpg" alt="Synchronous machine test bench in the lab" loading="lazy"></div><div class="code">EE441 · Electric machines</div><h3>Synchronous Motor V-Curves</h3><p>Lab measurements compared with a MATLAB/Simulink model.</p></a>
+      <a class="tile rv" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz"><div class="media"><img src="assets/proj-ee451.jpg" alt="Simulated fault current waveform" loading="lazy"></div><div class="code">EE451 · Power system analysis</div><h3>Power Flow &amp; Fault Analysis</h3><p>PowerWorld and Simulink, checked by hand. Team of 5.</p></a>
+      <a class="tile rv" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz"><div class="media"><img src="assets/proj-ee442.jpg" alt="Simulated converter output waveform" loading="lazy"></div><div class="code">EE442 · Power electronics</div><h3>Power Converter Simulations</h3><p>AC-DC, DC-DC and DC-AC in Simulink, down to 2.98% THD.</p></a>
+      <a class="tile rv" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1QHtUKN0-FzNW_t3X-ZdbNSkcARZJ0uDp"><div class="media"><img src="assets/battleship-game.jpg" alt="Battleship game board during play, showing hits and misses" loading="lazy"></div><div class="code">EE202 · Programming · Team of 6</div><h3>Battleship with an AI Opponent</h3><p>About 760 lines of Python with a PyQt5 interface.</p></a>
+    </div>
+
+    <div class="rows rv">
+      <a class="rowp" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz"><div class="code">EE490</div><div><b>QCar 2 Steering &amp; Speed Calibration</b><p>Calibration lead: 90 trials at 100 Hz, aiming for 30% lower route error.</p></div><span class="more">Proposal ↗</span></a>
+      <a class="rowp" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz"><div class="code">EE366</div><div><b>IoT Parking-Slot Occupancy Detection</b><p>PIC18F4580 and an ESP32 Wi-Fi bridge, verified in Proteus.</p></div><span class="more">Report ↗</span></a>
+      <a class="rowp" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz"><div class="code">EE360</div><div><b>Signed Arithmetic Circuit in Verilog</b><p>Structural Verilog simulated in Quartus. Team of 4.</p></div><span class="more">Report ↗</span></a>
+      <a class="rowp" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18HnHIwl0CPJXqHFNAY8DVcS4hULka4cz"><div class="code">MEP261</div><div><b>Rankine Cycle Analysis + 2 Labs</b><p>Solved by hand and in Excel, with two lab reports.</p></div><span class="more">Reports ↗</span></a>
+      <div class="rowp"><div class="code">EE331</div><div><b>Feedback Control System Design</b><p>Controller designed with root locus in MATLAB.</p></div><span class="more" style="color:var(--dim)">Course project</span></div>
     </div>
   </div>
 </section>
 
 <section id="videos">
   <div class="wrap">
-    <div class="sec-head rv"><div><div class="kicker">04 · Explainer series</div><h2>29 animated lessons on power engineering</h2></div><p>I scripted and produced a motion-graphics series that explains six power courses, with equations, circuits and diagrams animated step by step.</p></div>
-    <div class="vid">
-      <div class="card rv">
-        <div class="courses">
-          <div class="course">Power System Protection<b>EE454 · 5</b></div>
-          <div class="course">High-Voltage Engineering<b>EE452 · 5</b></div>
-          <div class="course">Power System Analysis<b>EE451 · 5</b></div>
-          <div class="course">Power Electronics<b>EE442 · 5</b></div>
-          <div class="course">Electric Machines<b>EE441 · 5</b></div>
-          <div class="course">Machines Lab<b>EE405 · 4</b></div>
-        </div>
-        <ul class="pts">
-          <li>Topics include Gauss–Seidel and Newton–Raphson power flow, transformer tests, rectifiers, Paschen’s law and circuit breakers.</li>
-          <li>Each video is 7–10 minutes with narration and animated derivations.</li>
-        </ul>
-        <div class="btns" style="margin-top:20px"><a class="btn primary" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL">Watch samples ↗</a></div>
+    <div class="head rv"><h2>48+ animated lessons on power engineering</h2><a class="more" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL">Watch samples ↗</a></div>
+    <div class="reel rv">
+      <a class="vc big" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL"><video muted loop playsinline preload="none" poster="assets/clip-ee442.jpg" src="assets/clip-ee442.mp4"></video><span>Power Electronics</span></a>
+      <a class="vc" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL"><video muted loop playsinline preload="none" poster="assets/clip-ee441.jpg" src="assets/clip-ee441.mp4"></video><span>Electric Machines</span></a>
+      <a class="vc" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL"><video muted loop playsinline preload="none" poster="assets/clip-ee454.jpg" src="assets/clip-ee454.mp4"></video><span>Power System Protection</span></a>
+      <a class="vc" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL"><video muted loop playsinline preload="none" poster="assets/clip-ee331.jpg" src="assets/clip-ee331.mp4"></video><span>Control Systems</span></a>
+      <a class="vc" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL"><video muted loop playsinline preload="none" poster="assets/clip-ee452.jpg" src="assets/clip-ee452.mp4"></video><span>High-Voltage Engineering</span></a>
+      <a class="vc" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL"><video muted loop playsinline preload="none" poster="assets/clip-ee451.jpg" src="assets/clip-ee451.mp4"></video><span>Power System Analysis</span></a>
+      <a class="vc" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL"><video muted loop playsinline preload="none" poster="assets/clip-ee405.jpg" src="assets/clip-ee405.mp4"></video><span>Machines Lab</span></a>
+      <a class="vc" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1WGUwWgOUyKx0nqVSIjPOWLoneRel9-IL"><video muted loop playsinline preload="none" poster="assets/clip-ee303.jpg" src="assets/clip-ee303.mp4"></video><span>Measurements</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="head rv"><h2>Where I’ve worked &amp; led</h2></div>
+    <div class="tl rv">
+      <div class="job"><div class="when">Oct 2025 – Present</div><div><div class="role">Research Assistant</div><div class="org">Center of Excellence in Renewable Energy &amp; Electric Power Systems Research · KAU</div><p>Compare PSO, TDO and hybrid tuning of a buck-converter PI controller. Co-author of the manuscript under review at <i>JKAU: Engineering Sciences</i>.</p></div></div>
+      <div class="job"><div class="when">Oct 2026 – Present</div><div><div class="role">Vice President &amp; Treasurer</div><div class="org">Hospital Management Club · KAU</div><p>Own the term plan (10 events, 39 tracked tasks), budget and event reports.</p></div></div>
+      <div class="job"><div class="when">Jul – Sep 2026</div><div><div class="role">Operations &amp; Data Reporting Assistant</div><div class="org">Retail field-operations project · Jeddah · Part-time</div><p>14 invoice reports and an Excel log ranking 9 staff at 10 sites across 5 cities.</p></div></div>
+      <div class="job"><div class="when">Aug 2025 – May 2026</div><div><div class="role">Industrial Field Visits</div><div class="org">Al-Taqa Energy · Hala Company · Al-Rowad Factory · Savola Group (Afia)</div></div></div>
+      <div class="job"><div class="when">Aug – Dec 2025</div><div><div class="role">Teaching Assistant</div><div class="org">Department of Electrical &amp; Computer Engineering · KAU</div></div></div>
+      <div class="job"><div class="when">Mar 2024 – Feb 2025</div><div><div class="role">Organizers Supervisor</div><div class="org">Fitness Club · Deanship of Student Affairs · KAU</div><p>Led 8 student organizers across two daily shifts, with weekly reports to management.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="wrap">
+    <div class="head rv"><h2>Teaching, volunteering &amp; tools I built</h2></div>
+    <div class="show rv">
+      <a class="stack" href="games/" target="_blank" rel="noopener" aria-label="Open the games">
+        <img src="assets/shot-sahm.jpg" alt="Stock market quiz game start screen" loading="lazy">
+        <img src="assets/shot-haraj.jpg" alt="Car showroom quiz game start screen" loading="lazy">
+        <img src="assets/shot-sinjeem.jpg" alt="Sin Jeem quiz game start screen" loading="lazy">
+        <img src="assets/shot-hazzer.jpg" alt="Picture guessing game start screen" loading="lazy">
+      </a>
+      <div>
+        <h3>A library of classroom games</h3>
+        <p>Designed for my Qur’an memorization circle and played by real students.</p>
+        <div class="kpi nums"><div>15<span>HTML games</span></div><div>137<span>movement games</span></div><div>3,300<span>reviewed questions</span></div></div>
+        <a class="btn primary" href="games/" target="_blank" rel="noopener">Play the games ↗</a>
       </div>
-      <div class="gallery rv">
-        <img loading="lazy" src="assets/v-gauss-seidel.jpg" alt="Gauss-Seidel power-flow equation frame">
-        <img loading="lazy" src="assets/v-transformer-oc-test.jpg" alt="Transformer open-circuit test frame">
-        <img loading="lazy" src="assets/v-bridge-rectifier.jpg" alt="Bridge rectifier frame">
-        <img loading="lazy" src="assets/v-pv-bus.jpg" alt="PV bus acceleration frame">
-        <img loading="lazy" src="assets/v-machine-field.jpg" alt="Synchronous machine field frame">
-        <img loading="lazy" src="assets/v-circuit-breaker-arc.jpg" alt="Circuit breaker arc frame">
+    </div>
+    <div class="apps">
+      <article class="tile rv" style="grid-column:auto"><div class="media"><img src="assets/shot-khitatak.jpg" alt="Khitatak weekly plan screen with sample students" loading="lazy"></div><h3>Khitatak</h3><p>An offline app that writes each student’s weekly memorization plan. Shown with sample names.</p></article>
+      <article class="tile rv" style="grid-column:auto"><div class="media"><img src="assets/gems-store.jpg" alt="Screenshot of the Gems Store reward app with weekly leaderboard" loading="lazy"></div><h3>Gems Store</h3><p>An offline reward economy with leaderboards, badges and auctions. Shown with demo data.</p></article>
+    </div>
+    <div class="vol rv">
+      <div class="list">
+        <div class="row"><span><b>Volunteer Teacher &amp; Program Supervisor</b> · Umm Al-Qura Mosque, Jeddah</span><span>Jun 2024 – Present</span></div>
+        <div class="row"><span><b>Active Member &amp; Event Organizer</b> · ECE Club, KAU</span><span>Aug 2024 – May 2025</span></div>
+        <div class="row"><span><b>Event Organizer</b> · KAU Sports Hall &amp; KAU-ROBOCON 2023</span><span>May 2023 – Jan 2025</span></div>
+        <div class="row"><span><b>Peer Mentor</b> · simulation tools &amp; programming, KAU</span><span>During studies</span></div>
+      </div>
+      <div class="path">
+        <h3>Qur’an memorization</h3>
+        <p>20 of 30 juz · six certified levels, all rated Excellent</p>
+        <div class="qbar"><div id="qfill" data-w="67"></div></div>
       </div>
     </div>
   </div>
@@ -536,99 +499,25 @@
 
 <section id="certificates">
   <div class="wrap">
-    <div class="sec-head rv"><div><div class="kicker">05 · Certificates</div><h2>Certificates you can verify</h2></div><p>Click any certificate to open its folder on Google Drive (view only).</p></div>
-    <div class="chips rv" id="chips"></div>
-    <div class="certs" id="certs"></div>
+    <div class="head rv"><h2>Certificates you can verify</h2></div>
+    <div class="chips rv" id="chips" role="group" aria-label="Filter certificates"></div>
+    <div class="certs rv" id="certs"></div>
     <div class="drive rv">
-      <div class="qr"><img src="assets/qr-drive.svg" alt="QR code to the certificates and portfolio folder"></div>
-      <div>
-        <h3>Scan to see every original</h3>
-        <p>One shared Drive folder holds every certificate, the project reports, the source code and the video samples, sorted into 9 folders. It is view-only, and personal ID numbers are hidden.</p>
-        <div class="folders"><span class="tag">01 Excellence</span><span class="tag">02 Technical</span><span class="tag">03 Volunteering</span><span class="tag">04 Development</span><span class="tag">05 Other</span><span class="tag">06 Qur’an &amp; texts</span><span class="tag">07 Reports</span><span class="tag">08 Videos</span><span class="tag">09 Code</span></div>
-      </div>
-      <a class="btn primary" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1NR7AGE4MkWl0ar45UZUVKkOYmQnN3HpW">Open folder ↗</a>
-    </div>
-  </div>
-</section>
-
-<section id="community">
-  <div class="wrap">
-    <div class="sec-head rv"><div><div class="kicker">06 · Community</div><h2>Teaching, volunteering &amp; tools I built</h2></div></div>
-    <div class="comm">
-      <div class="card rv">
-        <div class="role">Volunteer Teacher &amp; Program Supervisor</div>
-        <div class="org">Qur’an Memorization Circle · Umm Al-Qura Mosque, Jeddah · Jun 2024 – Present</div>
-        <ul class="pts">
-          <li>Teach and mentor students in memorization, character building and Prophetic biography, and track each student’s weekly progress.</li>
-          <li>Designed the complete <b>“Masarat Summer 2026”</b> program for students: schedule, activities, competitions and teaching material.</li>
-          <li>Built <b>“Gems Store”</b>, an offline web app with leaderboards, badges, auctions and an in-class reward economy, plus a library of competitions in 7 categories, used in the “Masarat Summer 2026” program.</li>
-          <li>Built <b>“Khitatak”</b>, an offline web app that generates each student’s weekly memorization and review plans and prints them.</li>
-          <li>Grew the competition library into 15 HTML classroom games, a 137-game movement library and a bank of about 3,300 reviewed questions. <a href="games/" target="_blank" rel="noopener" style="color:var(--accent,inherit);text-decoration:underline"><b>Open the games ↗</b></a></li>
-        </ul>
-        <div class="vol">
-          <div class="row"><span><b>Active Member &amp; Event Organizer</b> · ECE Club, KAU</span><span>Aug 2024 – May 2025</span></div>
-          <div class="row"><span><b>Event Organizer</b> · KAU Sports Hall (50 h) &amp; KAU-ROBOCON 2023 crowd management</span><span>May 2023 – Jan 2025</span></div>
-          <div class="row"><span><b>200+ volunteer hours</b> · education, events, community &amp; charity work</span><span>2019 – Present</span></div>
-          <div class="row"><span><b>Peer Mentor</b> · study groups in simulation tools &amp; programming, KAU</span><span>During studies</span></div>
-          <div class="row"><span><b>Al-Raed Volunteer Leader Program</b> · 48 h · KAU</span><span>Jun 2022</span></div>
-          <div class="row"><span><b>Ramadan Food Basket Distribution</b> · Ith’am Food Bank</span><span>May–Jun 2019</span></div>
-          <div class="row"><span><b>Educator Competencies</b> · 15 h · Masarat Youth Association</span><span>May–Jun 2024</span></div>
-        </div>
-      </div>
-      <figure class="rv">
-        <div class="shot"><img loading="lazy" src="assets/gems-store.jpg" alt="Screenshot of the Gems Store reward app with weekly leaderboard"></div>
-        <figcaption style="color:var(--dim);font-size:13px;margin-top:10px">Gems Store, a single-file web app I built for the memorization circle. Shown with demo data.</figcaption>
-      </figure>
-    </div>
-    <div class="card qpath rv">
-      <div class="role">Qur’an memorization path</div>
-      <div class="org">Khairukum Association, Jeddah · six certified levels, every one rated Excellent</div>
-      <div class="steps">
-        <div class="step"><b>5<small> juz</small></b><span>Jul 2019</span><em>95%</em></div>
-        <div class="step"><b>8<small> juz</small></b><span>Jan 2020</span><em>91%</em></div>
-        <div class="step"><b>10<small> juz</small></b><span>May 2022</span><em>90%</em></div>
-        <div class="step"><b>13<small> juz</small></b><span>Sep 2022</span><em>95%</em></div>
-        <div class="step"><b>15<small> juz</small></b><span>Apr 2023</span><em>91%</em></div>
-        <div class="step"><b>20<small> juz</small></b><span>Dec 2023</span><em>95%</em></div>
-      </div>
-      <div class="qbar"><div class="fill" data-w="66.7"></div></div>
-      <div style="display:flex;justify-content:space-between;color:var(--dim);font-size:12.5px;margin-top:6px" class="mono"><span>0</span><span>20 of 30 juz · 67%</span><span>30</span></div>
+      <div class="qr"><img src="assets/qr-drive.svg" alt="QR code to the certificates and portfolio folder" loading="lazy"></div>
+      <div><h3>Every original, in one folder</h3><p>Certificates, reports, code and video samples. View only, with ID numbers hidden.</p></div>
+      <a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1NR7AGE4MkWl0ar45UZUVKkOYmQnN3HpW">Open folder ↗</a>
     </div>
   </div>
 </section>
 
 <section id="skills">
   <div class="wrap">
-    <div class="sec-head rv"><div><div class="kicker">07 · Skills</div><h2>Toolbox</h2></div><p>Bars show where I’m strongest, based on project depth rather than self-rating.</p></div>
-    <div class="skills">
-      <div class="card rv">
-        <h3>⚡ Power &amp; simulation</h3>
-        <div class="bar"><div class="lbl"><span>MATLAB / Simulink</span><span>5 projects</span></div><div class="trk"><div class="fill" data-w="88"></div></div></div>
-        <div class="bar"><div class="lbl"><span>PowerWorld</span><span>EE451</span></div><div class="trk"><div class="fill" data-w="76"></div></div></div>
-        <div class="bar"><div class="lbl"><span>Proteus</span><span>EE366</span></div><div class="trk"><div class="fill" data-w="72"></div></div></div>
-        <div class="bar"><div class="lbl"><span>PSCAD</span><span>coursework</span></div><div class="trk"><div class="fill" data-w="66"></div></div></div>
-        <div class="bar"><div class="lbl"><span>LTspice</span><span>coursework</span></div><div class="trk"><div class="fill" data-w="66"></div></div></div>
-        <div class="bar"><div class="lbl"><span>Quanser QLabs</span><span>EE490</span></div><div class="trk"><div class="fill" data-w="70"></div></div></div>
-      </div>
-      <div class="card rv">
-        <h3>🔌 Programming &amp; embedded</h3>
-        <div class="bar"><div class="lbl"><span>Python (data analysis)</span><span>EE490</span></div><div class="trk"><div class="fill" data-w="80"></div></div></div>
-        <div class="bar"><div class="lbl"><span>C / C++ (PIC18, Arduino)</span><span>EE366</span></div><div class="trk"><div class="fill" data-w="74"></div></div></div>
-        <div class="bar"><div class="lbl"><span>ESP32 Wi-Fi / HTTP</span><span>EE366</span></div><div class="trk"><div class="fill" data-w="68"></div></div></div>
-        <div class="bar"><div class="lbl"><span>Arduino firmware (Timer / PWM)</span><span>EE442</span></div><div class="trk"><div class="fill" data-w="74"></div></div></div>
-        <div class="bar"><div class="lbl"><span>Verilog (Quartus)</span><span>EE360</span></div><div class="trk"><div class="fill" data-w="64"></div></div></div>
-        <div class="bar"><div class="lbl"><span>Python GUI (PyQt5)</span><span>EE202</span></div><div class="trk"><div class="fill" data-w="70"></div></div></div>
-        <div class="bar"><div class="lbl"><span>HTML / JS tools</span><span>Mizan · Khitatak · Gems Store</span></div><div class="trk"><div class="fill" data-w="72"></div></div></div>
-        <div class="bar"><div class="lbl"><span>Advanced Excel reporting</span><span>work</span></div><div class="trk"><div class="fill" data-w="86"></div></div></div>
-      </div>
-      <div class="card rv">
-        <h3>🤝 Professional &amp; soft skills</h3>
-        <div class="pill-list">
-          <span class="pill">Team leadership</span><span class="pill">Teaching &amp; public speaking</span><span class="pill">Technical writing</span><span class="pill">Problem solving</span><span class="pill">Time management</span><span class="pill">Adaptability</span><span class="pill">LaTeX / Overleaf</span><span class="pill">Prompt engineering</span><span class="pill">AI-assisted development</span><span class="pill">WBS &amp; Gantt</span><span class="pill">Pugh matrix</span><span class="pill">Engineering standards</span><span class="pill">Motion graphics</span>
-        </div>
-        <h3 style="margin-top:20px">🎯 Hobbies</h3>
-        <div class="pill-list"><span class="pill">Reading (100+ books)</span><span class="pill">Educational game design</span><span class="pill">Car mechanics</span><span class="pill">Fitness</span><span class="pill">3D modeling</span></div>
-      </div>
+    <div class="head rv"><h2>Toolbox</h2></div>
+    <div class="skills rv">
+      <div><h3>Power &amp; simulation</h3><div class="pills"><span class="pill">MATLAB / Simulink</span><span class="pill">PowerWorld</span><span class="pill">PSCAD</span><span class="pill">Proteus</span><span class="pill">LTspice</span><span class="pill">Quanser QLabs</span></div></div>
+      <div><h3>Programming &amp; embedded</h3><div class="pills"><span class="pill">Python</span><span class="pill">C / C++</span><span class="pill">PIC18</span><span class="pill">ESP32</span><span class="pill">Arduino</span><span class="pill">Verilog</span><span class="pill">HTML / JS</span></div></div>
+      <div><h3>Reporting &amp; planning</h3><div class="pills"><span class="pill">Advanced Excel</span><span class="pill">LaTeX / Overleaf</span><span class="pill">WBS &amp; Gantt</span><span class="pill">Pugh matrix</span><span class="pill">Engineering standards</span><span class="pill">Motion graphics</span></div></div>
+      <div><h3>Working with people</h3><div class="pills"><span class="pill">Team leadership</span><span class="pill">Teaching &amp; public speaking</span><span class="pill">Technical writing</span><span class="pill">AI-assisted development</span></div></div>
     </div>
   </div>
 </section>
@@ -636,29 +525,25 @@
 <div class="wrap" id="contact">
   <div class="contact rv">
     <div>
-      <div class="kicker">08 · Contact</div>
       <h2>Let’s talk</h2>
-      <p>I’m looking for internships, co-op roles and graduate positions in power systems, utilities and energy. The fastest way to reach me is email.</p>
+      <p>Looking for internships, co-op roles and graduate positions in power systems, utilities and energy.</p>
       <div class="btns">
-        <a class="btn primary" href="mailto:ali.y.khudhayr@gmail.com">✉️ ali.y.khudhayr@gmail.com</a>
-        <a class="btn" href="tel:+966570336515">📞 +966 57 033 6515</a>
+        <a class="btn primary" href="mailto:ali.y.khudhayr@gmail.com">ali.y.khudhayr@gmail.com</a>
+        <a class="btn" href="tel:+966570336515">+966 57 033 6515</a>
         <a class="btn" href="https://www.linkedin.com/in/ali-khudhayr" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a class="btn" href="assets/Ali-Khudhayr-CV.pdf" target="_blank" rel="noopener">Download CV</a>
       </div>
     </div>
-    <div class="qr" style="width:170px;height:170px"><img src="assets/qr-drive.svg" alt="QR code to certificates folder"></div>
+    <div class="qr"><img src="assets/qr-drive.svg" alt="QR code to certificates folder" loading="lazy"></div>
   </div>
 </div>
-</main>
-
 <footer>© 2026 Ali Yasser Khudhayr · Jeddah, Saudi Arabia</footer>
 
 <script>
-// ---- certificates data ----
-const F={
-  ex:'18o4TT3vrgXgqkQeix0eAkykA2igpBmf2', te:'14_Seo6ZBpmyJIzCcR_HRWYLFKIKhoFOl', vo:'1UmXWkQFjIoLXzpu9xxn-ycDvcJlC2v3t',
-  pd:'115trJJ1CrQdllEPK0jjyOkHj3PTdVvft', ot:'18NbMwSEgppKCTT66eKhaHD4sUV43wKP1', qt:'1vg21q6CBqo_Pq4nl4ghWKRBpA-814SXq'};
-const CAT={ex:['Excellence','🏅'],te:['Technical','⚙️'],vo:['Volunteering','🤝'],pd:['Development','📈'],ot:['Other','📎'],qt:['Qur’an & texts','📖']};
+// ---- certificates ----
+const F={ex:'18o4TT3vrgXgqkQeix0eAkykA2igpBmf2',te:'14_Seo6ZBpmyJIzCcR_HRWYLFKIKhoFOl',vo:'1UmXWkQFjIoLXzpu9xxn-ycDvcJlC2v3t',pd:'115trJJ1CrQdllEPK0jjyOkHj3PTdVvft',ot:'18NbMwSEgppKCTT66eKhaHD4sUV43wKP1',qt:'1vg21q6CBqo_Pq4nl4ghWKRBpA-814SXq'};
+const CAT={ex:'Excellence',te:'Technical',vo:'Volunteering',pd:'Development',ot:'Other',qt:'Qur’an & texts'};
+const TOP=['Certificate of Academic Excellence','First in Class (99.83%), Grade 12','IELTS Preparation Program · 20 h','Generative AI Fundamentals · 1 h','Introduction to Agentic Programming','An Introduction to LaTeX Using Overleaf','Microsoft Office 365: Word, Excel, PowerPoint · 25 h','Advanced Self-Development Skills · 60 h','Al-Raed Volunteer Leader Program · 48 h','Sports Hall Organizer · 50 volunteer hours','Qader: Cultural & Competitive Program Design · 12 h','Ideathon Creative Content Challenge · 40 h'];
 const C=[
  ['ex','Certificate of Academic Excellence','KAU Deanship of Student Affairs','2024–25'],
  ['te','Generative AI Fundamentals · 1 h','IBM SkillsBuild','31 Oct 2026'],
@@ -716,28 +601,104 @@ const C=[
 ];
 const ORD=Object.keys(CAT), MON='JanFebMarAprMayJunJulAugSepOctNovDec';
 function dkey(d){const y=(d.match(/\d{4}/)||['0'])[0]; const m=d.match(/[A-Z][a-z]{2}/); return +y*100+(m?MON.indexOf(m[0])/3+1:0);}
-C.sort((a,b)=>ORD.indexOf(a[0])-ORD.indexOf(b[0]) || dkey(b[3])-dkey(a[3]));
+C.sort((a,b)=>{const x=TOP.indexOf(a[1]),y=TOP.indexOf(b[1]); if(x>=0&&y>=0) return x-y; if(x>=0) return -1; if(y>=0) return 1; return ORD.indexOf(a[0])-ORD.indexOf(b[0])||dkey(b[3])-dkey(a[3]);});
 const certs=document.getElementById('certs'), chips=document.getElementById('chips');
-certs.innerHTML=C.map(([k,t,s,d])=>`<a class="cert" data-k="${k}" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/${F[k]}"><span class="ic">${CAT[k][1]}</span><span><span class="t">${t}</span><br><span class="s">${s}</span></span><span class="d">${d}</span></a>`).join('');
-const keys=['all',...Object.keys(CAT)];
-chips.innerHTML=keys.map(k=>{const n=k==='all'?C.length:C.filter(c=>c[0]===k).length;return `<button class="chip${k==='all'?' on':''}" data-k="${k}">${k==='all'?'All':CAT[k][0]}<span class="c">${n}</span></button>`}).join('');
+const esc=s=>s.replace(/&/g,'&amp;');
+certs.innerHTML=C.map(([k,t,s,d])=>`<a class="cert" data-k="${k}" data-top="${TOP.includes(t)?1:0}" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/${F[k]}"><span><span class="t">${esc(t)}</span><br><span class="s">${esc(s)}</span></span><span class="d">${d}</span></a>`).join('');
+const keys=['top','all',...ORD], names={top:'Recommended',all:'All',...CAT};
+chips.innerHTML=keys.map(k=>{const n=k==='top'?TOP.length:k==='all'?C.length:C.filter(c=>c[0]===k).length;return `<button type="button" class="chip${k==='top'?' on':''}" data-k="${k}" aria-pressed="${k==='top'}">${esc(names[k])}<span class="c">${n}</span></button>`}).join('');
+function filt(k){certs.querySelectorAll('.cert').forEach(c=>c.hidden=!(k==='all'||(k==='top'?c.dataset.top==='1':c.dataset.k===k)));}
+filt('top');
 chips.addEventListener('click',e=>{const b=e.target.closest('.chip'); if(!b) return;
-  chips.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));
-  certs.querySelectorAll('.cert').forEach(c=>c.hidden=!(b.dataset.k==='all'||c.dataset.k===b.dataset.k));});
+  chips.querySelectorAll('.chip').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
+  filt(b.dataset.k); window.dispatchEvent(new Event('resize'));});
 
-// ---- reveal + counters + bars ----
+// ---- language switch (English is the page's own text) ----
+(function(){
+  const AR={"Ali Khudhayr": "علي خضير", "About": "نبذة", "Experience": "الخبرات", "Projects": "المشاريع", "Videos": "الفيديوهات", "Certificates": "الشهادات", "Community": "المجتمع", "Skills": "المهارات", "Download CV": "تحميل السيرة", "Open to internships & graduate roles · 2027": "متاح للتدريب ووظائف الخريجين · 2027", "Ali Yasser": "علي ياسر", "Khudhayr": "خضير", "علي ياسر خضير": "Ali Yasser Khudhayr", "Final-year": "طالب في السنة الأخيرة، تخصص", "Electrical Engineering (Power & Machines)": "الهندسة الكهربائية (قوى وآلات)", "Download CV (PDF)": "السيرة الذاتية (PDF بالإنجليزية)", "Contact": "تواصل معي", "Cumulative GPA": "المعدل التراكمي", "Excellent": "ممتاز", "Academic Excellence 2024–25": "التفوق الأكاديمي 2024–2025", "juz": "جزءًا", "Power & Machines": "القوى والآلات", "Born": "تاريخ الميلاد", "10 January 2004": "10 يناير 2004", "Nationality": "الجنسية", "Palestinian · resident of Jeddah": "فلسطيني · مقيم في جدة", "Languages": "اللغات", "Arabic (native) · English (very good)": "العربية (اللغة الأم) · الإنجليزية (جيد جدًا)", "Ideathon": "Ideathon", "“Masarat Summer 2026”": "«صيف مسارات 2026»", "Where I’ve worked & led": "أين عملت وقدت", "Research Assistant": "مساعد باحث", "Power electronics": "إلكترونيات القوى", "Vice President & Treasurer": "نائب الرئيس وأمين النادي", "Planning": "التخطيط", "Operations & Data Reporting Assistant": "مساعد عمليات وتقارير بيانات", "· Part-time": "· دوام جزئي", "Retail field-operations project · Jeddah": "مشروع عمليات ميدانية في قطاع التجزئة · جدة", "Reporting": "التقارير", "Industrial Field Visits": "زيارات ميدانية صناعية", "Al-Taqa Energy · Hala Company · Al-Rowad Factory · Savola Group (Afia)": "الطاقة · شركة هلا · مصنع الرواد · مجموعة صافولا (عافية)", "Teaching Assistant": "مساعد تدريس", "Department of Electrical & Computer Engineering · KAU": "قسم الهندسة الكهربائية وهندسة الحاسبات · جامعة الملك عبدالعزيز", "Teaching": "التدريس", "Organizers Supervisor": "مشرف المنظمين", "Fitness Club · Deanship of Student Affairs · KAU": "نادي اللياقة البدنية · عمادة شؤون الطلاب · جامعة الملك عبدالعزيز", "Engineering projects": "المشاريع الهندسية", "Smart Home Energy Management with Priority-Based Load Control": "إدارة الطاقة في المنزل الذكي مع التحكم في الأحمال حسب الأولوية", "design objectives": "أهداف تصميمية", "graduation demo": "العرض النهائي", "Read report 1 ↗": "اقرأ التقرير الأول ↗", "QCar 2 Steering & Speed Calibration": "معايرة التوجيه والسرعة لمركبة QCar 2", "Proposal ↗": "المقترح ↗", "Single-Phase SPWM Inverter: 12 V DC to 220 V AC": "عاكس SPWM أحادي الطور: من 12 فولت DC إلى 220 فولت AC", "output, <0.34% error": "الخرج، بخطأ أقل من 0.34%", "step SPWM lookup": "خطوة في جدول SPWM", "RMS measured": "قيمة RMS المقاسة", "Report ↗": "التقرير ↗", "Firmware ↗": "البرنامج الثابت ↗", "IoT Parking-Slot Occupancy Detection": "كشف إشغال مواقف السيارات عبر إنترنت الأشياء", "Power Flow & Fault Analysis": "تحليل سريان القدرة والأعطال", "Synchronous Motor V-Curves": "منحنيات V للمحرك المتزامن", "Power Converter Simulations": "محاكاة محولات القدرة", "Signed Arithmetic Circuit in Verilog": "دائرة حسابية للأعداد ذات الإشارة بلغة Verilog", "Rankine Cycle Analysis + 2 Labs": "تحليل دورة رانكين + تجربتان معمليتان", "Reports ↗": "التقارير ↗", "Feedback Control System Design": "تصميم نظام تحكم بالتغذية الراجعة", "Course project": "مشروع مادة", "12 reports ↗": "12 تقريرًا ↗", "Power System Protection": "حماية أنظمة القوى", "High-Voltage Engineering": "هندسة الجهد العالي", "Power System Analysis": "تحليل أنظمة القوى", "Power Electronics": "إلكترونيات القوى", "Electric Machines": "الآلات الكهربائية", "Machines Lab": "معمل الآلات", "Watch samples ↗": "شاهد نماذج ↗", "Certificates you can verify": "شهادات يمكنك التحقق منها", "Open folder ↗": "افتح المجلد ↗", "All": "الكل", "Excellence": "التفوق", "Technical": "التقنية", "Volunteering": "التطوع", "Development": "التطوير", "Other": "أخرى", "Qur’an & texts": "القرآن والمتون", "Certificate of Academic Excellence": "شهادة التفوق الأكاديمي", "KAU Deanship of Student Affairs": "عمادة شؤون الطلاب، جامعة الملك عبدالعزيز", "Generative AI Fundamentals · 1 h": "أساسيات الذكاء الاصطناعي التوليدي · ساعة واحدة", "Writing Without Sound: Inclusive EFL Writing for Deaf and Hard-of-Hearing Learners": "Writing Without Sound: تعليم الكتابة بالإنجليزية للصم وضعاف السمع", "KAU Writing Center": "مركز الكتابة، جامعة الملك عبدالعزيز", "Understanding Plagiarism: Why It Happens and How to Avoid It Ethically · 1 h": "فهم الانتحال العلمي: أسبابه وكيف نتجنبه أخلاقيًا · ساعة واحدة", "Introduction to Agentic Programming": "مقدمة في البرمجة التوكيلية", "Google Developer Group · KAU": "Google Developer Group · جامعة الملك عبدالعزيز", "An Introduction to LaTeX Using Overleaf": "مقدمة في LaTeX باستخدام Overleaf", "Image Generation Workshop": "ورشة توليد الصور", "AI Club · KAU": "نادي الذكاء الاصطناعي · جامعة الملك عبدالعزيز", "Prompt Engineering Fundamentals": "أساسيات هندسة الأوامر", "Engineering Innovation Club · KAU": "نادي الإبداع الهندسي · جامعة الملك عبدالعزيز", "Microsoft Office 365: Word, Excel, PowerPoint · 25 h": "حزمة Microsoft Office 365 · 25 ساعة", "KAU Continuing Education": "التعليم المستمر، جامعة الملك عبدالعزيز", "Appreciation · Active Member": "شكر وتقدير · عضو فاعل", "ECE Club · KAU": "نادي الهندسة الكهربائية وهندسة الحاسبات · جامعة الملك عبدالعزيز", "Sports Hall Organizer · 50 volunteer hours": "تنظيم الصالة الرياضية · 50 ساعة تطوعية", "National Volunteering Platform": "المنصة الوطنية للعمل التطوعي", "Appreciation · Crowd Management": "شكر وتقدير · إدارة الحشود", "Al-Raed Volunteer Leader Program · 48 h": "برنامج الرائد التطوعي · 48 ساعة", "KAU Community Service": "خدمة المجتمع، جامعة الملك عبدالعزيز", "IELTS Preparation Program · 20 h": "برنامج تحضير IELTS · 20 ساعة", "Personal Planning": "التخطيط الشخصي", "KAU Human Capacity Development Center": "مركز تنمية القدرات البشرية، جامعة الملك عبدالعزيز", "Self-Discipline": "الانضباط الذاتي", "Balanced Wheel of Life": "عجلة الحياة المتوازنة", "Self-Esteem and Self-Confidence": "تقدير الذات والثقة بالنفس", "Credit Cards · FinTech series": "البطاقات الائتمانية · سلسلة التقنية المالية", "KAU Entrepreneurship Club": "نادي ريادة الأعمال، جامعة الملك عبدالعزيز", "Open Banking · FinTech series": "المصرفية المفتوحة · سلسلة التقنية المالية", "FinTech": "التقنية المالية", "Advanced Self-Development Skills · 60 h": "مهارات متقدمة في تطوير الذات · 60 ساعة", "Asas Training Center (TVTC)": "مركز أساس المتميز (المؤسسة العامة للتدريب التقني والمهني)", "Multiple Intelligences Workshop": "ورشة الذكاءات المتعددة", "HRDF (Hadaf)": "صندوق تنمية الموارد البشرية (هدف)", "Why the Non-Profit Sector?": "لماذا القطاع غير الربحي؟", "Jusoor Youth Association": "جمعية جسور الشبابية", "Engineering Gate": "بوابة الهندسة", "KAU Faculty of Engineering": "كلية الهندسة، جامعة الملك عبدالعزيز", "Developing Entrepreneurial Skills": "فن تطوير المهارات الريادية", "KAU Faculty of Computing": "كلية الحاسبات، جامعة الملك عبدالعزيز", "Mastery Intelligence": "ذكاء الإتقان", "KAU Academic Advising": "الإرشاد الجامعي، جامعة الملك عبدالعزيز", "Google Drive Cloud Apps": "تطبيقات قوقل درايف السحابية", "Al-Naeem Community Center": "مركز حي النعيم", "Graphic Design Skills": "مهارات التصميم الجرافيكي", "Ghiras Track Graduation · 2-year program": "التخرج من مسار غراس · برنامج لسنتين", "Rising Generation Academy": "أكاديمية الجيل الصاعد", "Al-Nazm Al-Bayyin · 90%": "النظم البيّن في الفقه المتعيّن · 90%", "Huffaz Al-Mutoon": "حفظ المتون", "Al-Bayquniyyah · 100%": "المنظومة البيقونية · 100%", "Nazm Al-Ajrumiyyah · 90%": "نظم الآجرومية · 90%", "Al-Qasida Al-Lamiyya · 90%": "القصيدة اللامية · 90%", "Tuhfat Al-Atfal · 92%": "تحفة الأطفال · 92%", "Al-Urjuza Al-Mi’iyya · 80%": "الأرجوزة الميئية · 80%", "First in Class (99.83%), Grade 12": "الأول مكرر (99.83%)، الصف الثالث الثانوي", "Al-Rahmaniyah Secondary School": "ثانوية الرحمانية", "Academic Excellence, 1st Semester": "التفوق الدراسي، الفصل الأول", "Volunteer · Ramadan Food Basket Distribution": "متطوع · توزيع السلال الرمضانية", "Ith’am Food Bank": "جمعية إطعام", "Qader: Cultural & Competitive Program Design · 12 h": "قادر: تصميم البرامج الثقافية والتنافسية · 12 ساعة", "Ajyal Care Association": "جمعية رعاية الأجيال", "Educator Competencies: Growth Characteristics · 15 h": "كفايات المربي: خصائص النمو · 15 ساعة", "Masarat Youth Association": "جمعية مسارات", "Ideathon Creative Content Challenge · 40 h": "تحدي Ideathon للمحتوى الإبداعي · 40 ساعة", "Citizenship: Rights and Duties": "المواطنة: حقوق وواجبات", "Al-Khaif School Neighborhood Club": "نادي الحي بمدرسة الخيف", "Qur’an Level 9 · 20 juz · 95%": "القرآن الكريم، الفرع التاسع · 20 جزءًا · 95%", "Khairukum Association": "جمعية خيركم", "Qur’an Level 8 · 15 juz · 91%": "القرآن الكريم، الفرع الثامن · 15 جزءًا · 91%", "Distinction in Aqeedah · University Circle": "التميز في مادة العقيدة · الحلقة الجامعية", "Al-Bayan Mosque": "جامع البيان", "Appreciation · Quranic Day": "شكر وتقدير · اليوم القرآني", "Umm Al-Qura Mosque": "جامع أم القرى", "Qur’an Level 7 · 13 juz · 95%": "القرآن الكريم، الفرع السابع · 13 جزءًا · 95%", "Qur’an Level 6 · 10 juz · 90%": "القرآن الكريم، الفرع السادس · 10 أجزاء · 90%", "Qur’an Level 5 · 8 juz · 91%": "القرآن الكريم، الفرع الخامس · 8 أجزاء · 91%", "Qur’an Level 4 · 5 juz · 95%": "القرآن الكريم، الفرع الرابع · 5 أجزاء · 95%", "Appreciation · Summer Talent Club": "شكر وتقدير · النادي الصيفي لتنمية المواهب", "Al-Thakireen & Al-Bayan Mosques": "جامع الذاكرين وجامع البيان", "Appreciation · “Ana Mubdi” Program": "شكر وتقدير · برنامج «أنا مبدع»", "Teaching, volunteering & tools I built": "التعليم والتطوع والأدوات التي بنيتها", "Volunteer Teacher & Program Supervisor": "معلم متطوع ومشرف برامج", "Built": "بنيت", "Active Member & Event Organizer": "عضو فاعل ومنظم فعاليات", "· ECE Club, KAU": "· نادي الهندسة الكهربائية وهندسة الحاسبات، جامعة الملك عبدالعزيز", "Event Organizer": "منظم فعاليات", "Peer Mentor": "مرشد أقران", "During studies": "أثناء الدراسة", "Al-Raed Volunteer Leader Program": "برنامج الرائد التطوعي", "Ramadan Food Basket Distribution": "توزيع السلال الرمضانية", "Educator Competencies": "كفايات المربي", "Toolbox": "صندوق الأدوات", "work": "عمل", "Team leadership": "قيادة الفرق", "Teaching & public speaking": "التدريس والإلقاء", "Technical writing": "الكتابة التقنية", "AI-assisted development": "التطوير بمساعدة الذكاء الاصطناعي", "Pugh matrix": "مصفوفة Pugh", "Engineering standards": "المعايير الهندسية", "Motion graphics": "موشن جرافيك", "Fitness": "اللياقة البدنية", "Let’s talk": "لنتحدث", "© 2026 Ali Yasser Khudhayr · Jeddah, Saudi Arabia": "© 2026 علي ياسر خضير · جدة، المملكة العربية السعودية", "Portrait of Ali Yasser Khudhayr": "صورة علي ياسر خضير", "Inverter hardware prototype with Arduino, MOSFETs and transformer": "نموذج العاكس مع Arduino وMOSFET والمحول", "Oscilloscope showing the sinusoidal inverter output": "أوسيلوسكوب يعرض خرج العاكس الجيبي", "Battleship game board during play, showing hits and misses": "لوحة لعبة Battleship أثناء اللعب", "QR code to the certificates and portfolio folder": "رمز QR لمجلد الشهادات والأعمال", "Screenshot of the Gems Store reward app with weekly leaderboard": "لقطة من تطبيق متجر الجواهر مع لوحة الصدارة الأسبوعية", "QR code to certificates folder": "رمز QR لمجلد الشهادات", "Menu": "القائمة", "Top": "الأعلى", "Page progress": "تقدم القراءة في الصفحة", "student at King Abdulaziz University. I analyze power systems, build prototypes, and turn hard engineering into clear tools and videos.": "في جامعة الملك عبدالعزيز. أحلل أنظمة القوى، وأبني النماذج العملية، وأحوّل الهندسة الصعبة إلى أدوات وفيديوهات واضحة.", "Jeddah, Saudi Arabia": "جدة، المملكة العربية السعودية", "See my work": "شاهد أعمالي", "Explainer videos": "فيديو شرح", "Training hours": "ساعة تدريب", "Organizers supervised": "منظم تحت إشرافي", "Volunteer hours": "ساعة تطوع", "I want to join a leading Saudi energy company as a": "أطمح للانضمام إلى شركة طاقة سعودية رائدة", "power systems engineer": "مهندسًا لأنظمة القوى", ", and grow into a technical leader in renewable energy.": "، وأن أصبح قائدًا تقنيًا في الطاقة المتجددة.", "Research assistant at KAU’s renewable-energy center, with a co-authored manuscript under review.": "مساعد باحث في مركز الطاقة المتجددة بجامعة الملك عبدالعزيز، ولي بحث مشترك قيد التحكيم.", "Certificate of Academic Excellence, KAU, 2024–2025.": "شهادة التفوق الأكاديمي، جامعة الملك عبدالعزيز، 2024–2025.", "Third, then second place in two Ideathon challenges with Ajyal Care Association.": "المركز الثالث ثم الثاني في تحديين من Ideathon مع جمعية رعاية الأجيال.", "Designed the full “Masarat Summer 2026” student program.": "صممت برنامج «صيف مسارات 2026» الطلابي كاملًا.", "Degree": "الدرجة", "B.Sc., expected May 2027": "بكالوريوس، التخرج المتوقع مايو 2027", "GPA": "المعدل", "All 12 reports ↗": "جميع التقارير الـ12 ↗", "EE499 · Senior design · Team 16": "EE499 · مشروع التخرج · الفريق 16", "Monitors every appliance and sheds low-priority loads automatically, so bills drop while essential loads stay on.": "يراقب كل جهاز ويفصل الأحمال الأقل أولوية تلقائيًا، فتقل الفاتورة وتبقى الأحمال الأساسية متصلة.", "SAR of a 1,000 SAR budget": "ريالًا من ميزانية 1,000 ريال", "EE442 · Power electronics · Hardware": "EE442 · إلكترونيات القوى · عتاد", "Built and tested on the bench with an Arduino UNO, two MOSFETs and a step-up transformer.": "بُني واختُبر عمليًا باستخدام Arduino UNO وترانزستوري MOSFET ومحول رافع.", "Freelance · Software": "عمل حر · برمجيات", "Mizan: offline bookkeeping app": "ميزان: تطبيق محاسبة يعمل بدون إنترنت", "Replaced a shop’s paper ledger, stress-tested with 40,000 sales. Shown with demo data.": "حل محل الدفتر الورقي لمحل تجاري، واختُبر بـ 40,000 عملية بيع. معروض ببيانات تجريبية.", "EE441 · Electric machines": "EE441 · الآلات الكهربائية", "Lab measurements compared with a MATLAB/Simulink model.": "مقارنة القياسات المعملية بنموذج في MATLAB/Simulink.", "EE451 · Power system analysis": "EE451 · تحليل أنظمة القوى", "PowerWorld and Simulink, checked by hand. Team of 5.": "باستخدام PowerWorld وSimulink، مع تحقق يدوي. ضمن فريق من 5.", "EE442 · Power electronics": "EE442 · إلكترونيات القوى", "AC-DC, DC-DC and DC-AC in Simulink, down to 2.98% THD.": "محولات AC-DC وDC-DC وDC-AC في Simulink، حتى THD بنسبة 2.98%.", "EE202 · Programming · Team of 6": "EE202 · البرمجة · فريق من 6", "Battleship with an AI Opponent": "لعبة Battleship بخصم ذكي", "About 760 lines of Python with a PyQt5 interface.": "نحو 760 سطرًا بلغة Python مع واجهة PyQt5.", "Calibration lead: 90 trials at 100 Hz, aiming for 30% lower route error.": "مسؤول المعايرة: 90 تجربة بتردد 100 هرتز، بهدف خفض خطأ المسار 30%.", "PIC18F4580 and an ESP32 Wi-Fi bridge, verified in Proteus.": "متحكم PIC18F4580 وجسر Wi-Fi بـ ESP32، مع التحقق في Proteus.", "Structural Verilog simulated in Quartus. Team of 4.": "Verilog هيكلية مع محاكاة في Quartus. ضمن فريق من 4.", "Solved by hand and in Excel, with two lab reports.": "الحل يدويًا وفي Excel، مع تقريرين معمليين.", "Controller designed with root locus in MATLAB.": "تصميم المتحكم بالمحل الهندسي للجذور في MATLAB.", "48+ animated lessons on power engineering": "أكثر من 48 درسًا متحركًا في هندسة القوى", "Control Systems": "أنظمة التحكم", "Measurements": "القياسات", "Compare PSO, TDO and hybrid tuning of a buck-converter PI controller. Co-author of the manuscript under review at": "أقارن ضبط متحكم PI لمحول Buck بخوارزميات PSO وTDO والهجين بينهما. ومشارك في تأليف البحث قيد التحكيم في مجلة", "Hospital Management Club · KAU": "نادي إدارة المستشفيات · جامعة الملك عبدالعزيز", "Own the term plan (10 events, 39 tracked tasks), budget and event reports.": "مسؤول عن خطة الفصل (10 فعاليات و39 مهمة متابَعة) والميزانية وتقارير الفعاليات.", "Retail field-operations project · Jeddah · Part-time": "مشروع عمليات ميدانية في التجزئة · جدة · دوام جزئي", "14 invoice reports and an Excel log ranking 9 staff at 10 sites across 5 cities.": "14 تقريرًا للفواتير، وسجل Excel يرتب 9 موظفين في 10 مواقع بخمس مدن.", "Center of Excellence in Renewable Energy & Electric Power Systems Research · KAU": "مركز التميز لأبحاث الطاقة المتجددة وأنظمة القوى الكهربائية · جامعة الملك عبدالعزيز", "Led 8 student organizers across two daily shifts, with weekly reports to management.": "قدت 8 منظمين من الطلاب في فترتين يوميًا، مع تقارير أسبوعية للإدارة.", "A library of classroom games": "مكتبة ألعاب تعليمية", "Designed for my Qur’an memorization circle and played by real students.": "صممتها لحلقة التحفيظ، ويلعبها طلاب فعليًا.", "HTML games": "لعبة HTML", "movement games": "لعبة حركية", "reviewed questions": "سؤال مراجَع", "Play the games ↗": "العب الآن ↗", "Open the games": "افتح الألعاب", "Khitatak": "خطتك", "An offline app that writes each student’s weekly memorization plan. Shown with sample names.": "تطبيق يعمل بدون إنترنت يكتب خطة الحفظ الأسبوعية لكل طالب. معروض بأسماء تجريبية.", "Gems Store": "متجر الجواهر", "An offline reward economy with leaderboards, badges and auctions. Shown with demo data.": "نظام جوائز يعمل بدون إنترنت، فيه لوحات صدارة وأوسمة ومزادات. معروض ببيانات تجريبية.", "· Umm Al-Qura Mosque, Jeddah": "· جامع أم القرى، جدة", "· KAU Sports Hall & KAU-ROBOCON 2023": "· الصالة الرياضية بالجامعة وKAU-ROBOCON 2023", "· simulation tools & programming, KAU": "· أدوات المحاكاة والبرمجة، جامعة الملك عبدالعزيز", "Qur’an memorization": "حفظ القرآن الكريم", "20 of 30 juz · six certified levels, all rated Excellent": "20 من 30 جزءًا · ستة مستويات معتمدة، جميعها بتقدير ممتاز", "Recommended": "المقترحة", "Filter certificates": "تصفية الشهادات", "Every original, in one folder": "كل الأصول في مجلد واحد", "Certificates, reports, code and video samples. View only, with ID numbers hidden.": "الشهادات والتقارير والكود ونماذج الفيديو. للعرض فقط، مع إخفاء أرقام الهوية.", "Power & simulation": "القوى والمحاكاة", "Programming & embedded": "البرمجة والأنظمة المدمجة", "Reporting & planning": "التقارير والتخطيط", "Working with people": "العمل مع الناس", "Advanced Excel": "Excel المتقدم", "Looking for internships, co-op roles and graduate positions in power systems, utilities and energy.": "أبحث عن فرص تدريب وتدريب تعاوني ووظائف خريجين في أنظمة القوى والمرافق والطاقة.", "Block diagram of the smart home energy management system": "مخطط نظام إدارة الطاقة في المنزل الذكي", "Mizan app dashboard with demo data": "لوحة تطبيق ميزان ببيانات تجريبية", "Synchronous machine test bench in the lab": "منصة اختبار الآلة المتزامنة في المعمل", "Simulated fault current waveform": "موجة تيار عطل من المحاكاة", "Simulated converter output waveform": "موجة خرج محول من المحاكاة", "Stock market quiz game start screen": "شاشة بداية لعبة سوق الأسهم", "Car showroom quiz game start screen": "شاشة بداية لعبة حراج السيارات", "Sin Jeem quiz game start screen": "شاشة بداية لعبة سين جيم", "Picture guessing game start screen": "شاشة بداية لعبة حزر أيش", "Khitatak weekly plan screen with sample students": "شاشة الخطة الأسبوعية في خطتك بأسماء تجريبية"};
+  const META={title:'علي ياسر خضير | هندسة القوى الكهربائية',desc:'علي ياسر خضير، طالب هندسة كهربائية (قوى وآلات) في السنة الأخيرة بجامعة الملك عبدالعزيز. المشاريع والفيديوهات والشهادات ونماذج الأعمال.'};
+  const MON={Jan:'يناير',Feb:'فبراير',Mar:'مارس',Apr:'أبريل',May:'مايو',Jun:'يونيو',Jul:'يوليو',Aug:'أغسطس',Sep:'سبتمبر',Oct:'أكتوبر',Nov:'نوفمبر',Dec:'ديسمبر',Present:'حتى الآن'};
+  const DATE=/^[\d\s–—-]*(?:(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Present)[\d\s–—-]*)+$/;
+  const LRI='⁦',PDI='⁩';
+  const nodes=[];
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(n){
+    const e=n.parentElement;
+    if(!n.nodeValue.trim()||e.closest('script,style,#lang,.pct,[data-count]')) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT}});
+  while(w.nextNode()) nodes.push({n:w.currentNode,en:w.currentNode.nodeValue});
+  const attrs=[];
+  document.querySelectorAll('img[alt],[aria-label]:not(#lang)').forEach(e=>{['alt','aria-label'].forEach(a=>{if(e.hasAttribute(a)) attrs.push({e,a,en:e.getAttribute(a)})})});
+  const desc=document.querySelector('meta[name=description]'), en={title:document.title,desc:desc.content};
+  function tr(raw){
+    const m=raw.match(/^(\s*)([\s\S]*?)(\s*)$/), key=m[2].replace(/\s+/g,' ');
+    let t=Object.prototype.hasOwnProperty.call(AR,key)?AR[key]:null;
+    if(t===null&&DATE.test(key)) t=key.replace(/Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Present/g,x=>MON[x]);
+    if(t===null) t=key;
+    if(!/[؀-ۿ]/.test(t)&&/[A-Za-z0-9]/.test(t)&&!/^[\d.,%+]+$/.test(t)) t=LRI+t+PDI;
+    return m[1]+t+m[3];
+  }
+  const btn=document.getElementById('lang');
+  function set(l){
+    const ar=l==='ar';
+    document.documentElement.lang=ar?'ar':'en';
+    document.documentElement.dir=ar?'rtl':'ltr';
+    nodes.forEach(o=>{o.n.nodeValue=ar?tr(o.en):o.en});
+    attrs.forEach(o=>{o.e.setAttribute(o.a,ar?(AR[o.en]||o.en):o.en)});
+    document.title=ar?META.title:en.title; desc.content=ar?META.desc:en.desc;
+    btn.textContent=ar?'English':'العربية';
+    btn.lang=ar?'en':'ar';
+    btn.setAttribute('aria-label',ar?'View the site in English':'عرض الموقع بالعربية');
+  }
+  let saved=null;
+  const q=new URLSearchParams(location.search).get('lang');
+  try{saved=localStorage.getItem('site-lang')}catch(e){}
+  const first=q==='ar'||q==='en'?q:(saved==='ar'||saved==='en'?saved:'en');
+  if(first==='ar') set('ar');
+  btn.addEventListener('click',()=>{
+    const next=document.documentElement.lang==='ar'?'en':'ar';
+    const y=scrollY/Math.max(1,document.documentElement.scrollHeight);
+    set(next);
+    scrollTo({top:y*document.documentElement.scrollHeight,behavior:'instant'});
+    dispatchEvent(new Event('resize'));
+    try{localStorage.setItem('site-lang',next)}catch(e){}
+    try{const u=new URL(location.href);u.searchParams.set('lang',next);history.replaceState(null,'',u)}catch(e){}
+  });
+})();
+
+// ---- reveal + counters ----
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function count(el){const to=+el.dataset.count; if(reduce){el.textContent=to;return} const t0=performance.now(),dur=1400;
+function count(el){const to=+el.dataset.count; if(reduce){el.textContent=to;return} const t0=performance.now(),dur=1300;
   (function f(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3); el.textContent=Math.round(to*e); if(p<1) requestAnimationFrame(f)})(t0);}
 const io=new IntersectionObserver(es=>es.forEach(en=>{ if(!en.isIntersecting) return; const el=en.target; el.classList.add('in');
-  el.querySelectorAll('[data-count]').forEach(count); el.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%'); io.unobserve(el);}),{threshold:.15});
+  el.querySelectorAll('[data-count]').forEach(count);
+  const q=el.querySelector('#qfill'); if(q) q.style.width=q.dataset.w+'%';
+  io.unobserve(el);}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
 
-// ---- three-phase waveform ----
-const paths=[w1,w2,w3].map(id=>id); let ph=0;
-function draw(){ for(let k=0;k<3;k++){ let d=''; for(let x=0;x<=1200;x+=12){ const y=70+42*Math.sin(x/115+ph+k*2.094); d+=(x?'L':'M')+x+' '+y.toFixed(1);} paths[k].setAttribute('d',d);} }
-draw(); if(!reduce){ (function loop(){ ph+=0.012; draw(); requestAnimationFrame(loop) })(); }
+// ---- clips play only while on screen ----
+if(!reduce){const vio=new IntersectionObserver(es=>es.forEach(en=>{const v=en.target; if(en.isIntersecting){const p=v.play(); if(p) p.catch(()=>{})} else v.pause();}),{threshold:.35});
+  document.querySelectorAll('.vc video').forEach(v=>vio.observe(v));}
+
+// ---- single-line diagram scroll meter ----
+const root=document.documentElement, rail=document.querySelector('.rail'), pct=rail.querySelector('.pct'), stops=[...rail.querySelectorAll('a')];
+function place(){const max=Math.max(1,root.scrollHeight-innerHeight);
+  stops.forEach(a=>{const s=document.getElementById(a.dataset.s); const y=s.getBoundingClientRect().top+scrollY-innerHeight*.3; a.dataset.at=Math.min(1,Math.max(0,y/max)); a.style.top=(a.dataset.at*100)+'%';});
+  meter();}
+let vel=0,lastY=scrollY;
+function meter(){const max=Math.max(1,root.scrollHeight-innerHeight), p=Math.min(1,Math.max(0,scrollY/max));
+  root.style.setProperty('--p',p.toFixed(4)); pct.textContent=Math.round(p*100)+'%';
+  let now=null; stops.forEach(a=>{const on=p+.0005>=+a.dataset.at; a.classList.toggle('on',on); a.classList.remove('now'); if(on) now=a;}); if(now) now.classList.add('now');
+  vel=Math.min(30,vel+Math.abs(scrollY-lastY)*.05); lastY=scrollY;}
+addEventListener('scroll',meter,{passive:true}); addEventListener('resize',place); addEventListener('load',place);
+new ResizeObserver(place).observe(document.body); place();
+
+// ---- three-phase waveform: scrolling feeds it energy ----
+const paths=[w1,w2,w3]; let ph=0, heroOn=true;
+function draw(){const amp=42+Math.min(14,vel*.7); for(let k=0;k<3;k++){ let d=''; for(let x=0;x<=1200;x+=12){ const y=70+amp*Math.sin(x/115+ph+k*2.094); d+=(x?'L':'M')+x+' '+y.toFixed(1);} paths[k].setAttribute('d',d);} }
+draw();
+if(!reduce){new IntersectionObserver(e=>{heroOn=e[0].isIntersecting}).observe(document.querySelector('.hero'));
+  (function loop(){ if(heroOn){ph+=0.012+vel*.0012; vel*=.94; draw();} requestAnimationFrame(loop) })();}
 </script>
 </body>
 </html>
