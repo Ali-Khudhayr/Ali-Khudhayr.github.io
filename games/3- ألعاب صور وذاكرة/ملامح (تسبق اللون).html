@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+<!--/*perf-pass-2026-11-05*/-->
 <head>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' data: blob:; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<meta name="referrer" content="no-referrer">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f3f1e8">
@@ -1408,10 +1410,10 @@ function createTutorial(container){
   const renderer=new ArtRenderer(container.querySelector('canvas')),label=container.querySelector('[role=status]'),percent=container.querySelector('output'),counter=container.querySelector('.tutorial-count'),toggle=container.querySelector('[data-tutorial-toggle]');
   const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
   let visible=false,intersecting=true,paused=false,destroyed=false,elapsed=0,index=-1,ready=false,loading=false,frameId,last=null,version=0;
-  function paint(progress){renderer.draw(progress);percent.value=Math.round(progress*100).toLocaleString('ar-SA')+'٪';counter.textContent=`${(index+1).toLocaleString('ar-SA')} / ٢`;label.textContent=progress===1?`${TUTORIAL_ART[index].name}… اكتملت الملامح.`:progress<.64?'خطوط سوداء أولًا… متى تعرفها؟':'لونٌ بعد لون… والنقاط في المسابقة تتناقص.';}
+  function paint(progress){renderer.draw(progress);const pv=Math.round(progress*100).toLocaleString('ar-SA')+'٪',cv=`${(index+1).toLocaleString('ar-SA')} / ٢`,lv=progress===1?`${TUTORIAL_ART[index].name}… اكتملت الملامح.`:progress<.64?'خطوط سوداء أولًا… متى تعرفها؟':'لونٌ بعد لون… والنقاط في المسابقة تتناقص.';if(percent.value!==pv)percent.value=pv;if(counter.textContent!==cv)counter.textContent=cv;if(label.textContent!==lv)label.textContent=lv;}
   async function load(next){loading=true;ready=false;const run=++version;index=next;label.textContent='نجهّز المثال التعليمي…';try{await renderer.set(TUTORIAL_ART[next]);if(run!==version||destroyed)return;ready=true;paint(reduced?1:tutorialStage(elapsed).progress);prepareArt(TUTORIAL_ART[1-next]).catch(()=>{});}catch{label.textContent='تعذر تحميل المثال. اضغط «أعد المثالين» للمحاولة.';paused=true;toggle.textContent='استئناف الشرح';}finally{if(run===version){loading=false;schedule();}}}
   function schedule(){cancelAnimationFrame(frameId);if(!visible||!intersecting||paused||destroyed||reduced||loading)return;last=null;frameId=requestAnimationFrame(frame);}
-  function frame(now){if(!visible||!intersecting||paused||destroyed)return;elapsed+=last===null?0:Math.min(.1,(now-last)/1000);last=now;const stage=tutorialStage(elapsed);if(stage.index!==index){load(stage.index);return;}if(ready)paint(stage.progress);frameId=requestAnimationFrame(frame);}
+  function frame(now){if(!visible||!intersecting||paused||destroyed)return;elapsed+=last===null?0:Math.min(.1,(now-last)/1000);last=now;const stage=tutorialStage(elapsed);if(stage.index!==index){load(stage.index);return;}if(ready&&!(now-(frame.l||0)<80&&stage.progress<1)){frame.l=now;paint(stage.progress);}frameId=requestAnimationFrame(frame);}
   const observer=new IntersectionObserver(entries=>{intersecting=entries[0].isIntersecting;schedule();});observer.observe(container);
   toggle.onclick=()=>{if(reduced){elapsed=index===0?22:0;load(tutorialStage(elapsed).index);return;}paused=!paused;toggle.textContent=paused?'استئناف الشرح':'إيقاف الشرح';if(index<0)load(0);else schedule();};
   container.querySelector('[data-tutorial-replay]').onclick=()=>{elapsed=0;paused=false;toggle.textContent=reduced?'المثال التالي':'إيقاف الشرح';load(0);};
