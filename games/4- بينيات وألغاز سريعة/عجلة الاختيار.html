@@ -240,6 +240,97 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 @media (max-width:900px){.solo-hero{grid-template-columns:1fr}.solo-art{max-width:36vh}.solo-copy{align-items:center;text-align:center}.wm{justify-content:center}}
 
 :root{--bg:#072f40;--bg2:#0a4a62;--bg3:#0f6484;--gold:#ffd21f;--gold2:#ffe98f;--mut:#b5dbe8;--page:radial-gradient(120% 95% at 50% 0%,#19a6c9 0%,#0b5f80 50%,#062a3a 100%);--pat:repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,255,255,.045) 0 15deg,transparent 15deg 30deg);--font:'Baloo Bhaijaan 2';--dw:800;--wink:#07303f}
+
+/* ui-setup v1: شاشة الإعداد الموحدة (أساسي · إعدادات إضافية · للمشرف) */
+.stage.su{justify-content:flex-start;gap:0;padding:.3rem 1.2rem 5.4rem;text-align:start}
+.stage.su>:first-child{margin-top:0}.stage.su>:last-child{margin-bottom:0}
+.usetup{display:flex;flex-direction:column;gap:.55rem;width:min(72rem,100%);margin:0 auto}
+.usetup .card{max-width:none;width:100%}
+.usetup .card.us-card{padding:.6rem 1rem;border-radius:1.1rem}
+.usetup .chips{justify-content:flex-start}
+.us-h{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.us-h>b{font-size:1.12rem}
+.us-h>.hint,.us-h>.us-by{margin-inline-start:auto}
+.us-cnt{gap:.45rem}.us-cnt .ib{width:2.3rem;height:2.3rem}
+.us-n{font-size:1.3rem;min-width:1.4ch;text-align:center}
+.us-hint{margin-inline-start:auto;font-size:.85rem}
+.us-line{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.pmodes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem;margin-top:.45rem}
+.pm{display:flex;flex-direction:column;align-items:flex-start;gap:.15rem;text-align:start;border:0;border-radius:1rem;padding:.5rem .75rem;cursor:pointer;background:var(--panel);box-shadow:inset 0 0 0 2px var(--line);font-weight:700;transition:transform .15s,box-shadow .15s,background .15s}
+.pm:hover{transform:translateY(-2px)}
+.pm .pt{display:flex;align-items:center;gap:.45rem}
+.pm .pi{font-size:1.45rem;line-height:1.1}
+.pm b{font-size:1.15rem;font-weight:800}
+.pm small{color:var(--mut);font-weight:700;font-size:.8rem;line-height:1.45}
+.pm.on{background:color-mix(in srgb,var(--gold) 22%,transparent);box-shadow:inset 0 0 0 2.5px var(--gold),0 .25rem 0 color-mix(in srgb,var(--gold) 45%,transparent)}
+.pm.on small{color:var(--ink)}
+.pm:focus-visible,.sz:focus-visible,.mod:focus-visible,.pcard:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.tagc{background:var(--gold);color:var(--on-gold,#2a1d00);border-radius:99px;padding:.05em .75em;font-weight:800;font-size:.85rem}
+.tagc[hidden]{display:none}
+.sizes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem;margin-top:.45rem}
+.sz{border:0;border-radius:.9rem;padding:.35rem .5rem;cursor:pointer;background:var(--panel);box-shadow:inset 0 0 0 2px var(--line);display:flex;flex-direction:column;align-items:center;font-weight:800;line-height:1.35;transition:transform .15s}
+.sz:hover{transform:translateY(-2px)}
+.sz b{font-size:1.08rem}.sz span{font-size:.95rem}.sz small{color:var(--mut);font-weight:700;font-size:.82rem}
+.sz.on{background:var(--gold);color:var(--on-gold,#2a1d00);box-shadow:0 .25rem 0 color-mix(in srgb,var(--gold) 55%,#000)}.sz.on small{color:inherit;opacity:.85}
+.us-teams{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));gap:.45rem;margin-top:.45rem}
+.us-teams .trow input{min-width:0;padding:.4em .7em}
+.us-teams .trow .ib{width:2.5rem;height:2.5rem;font-size:1.35rem;border-width:2px}
+.us-juz{grid-template-columns:repeat(30,minmax(0,1fr));width:100%;margin-top:.45rem;gap:.25rem}
+.us-juz .chip{font-size:.85rem;padding:.3em 0}
+.us-quick .chip{padding:.3em .8em;font-size:.9rem}
+details.more{padding:0!important;overflow:hidden}
+details.more>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.7rem;padding:.6rem 1rem;flex-wrap:wrap}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"▾";margin-inline-start:auto;font-size:1.2rem;color:var(--mut);transition:transform .2s}
+details.more[open]>summary::after{transform:rotate(180deg)}
+.more-in{display:flex;flex-direction:column;gap:.75rem;padding:.75rem 1rem .9rem;border-top:1.5px dashed var(--line)}
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:.45rem}
+.mod{display:flex;align-items:center;gap:.6rem;text-align:start;border:0;border-radius:.9rem;padding:.45rem .7rem;background:var(--panel);box-shadow:inset 0 0 0 1.5px var(--line);cursor:pointer;font-weight:700}
+.mod .mi{font-size:1.35rem;flex:none;width:1.8rem;text-align:center}
+.mod .mt{flex:1;min-width:0}
+.mod b{display:block;font-size:.98rem}
+.mod small{display:block;color:var(--mut);font-size:.8rem;font-weight:700;line-height:1.35}
+.mod .sw{flex:none;width:2.6rem;height:1.5rem;border-radius:99px;background:rgba(0,0,0,.35);box-shadow:inset 0 0 0 1px var(--line);position:relative;transition:background .2s}
+.mod .sw::after{content:"";position:absolute;top:.2rem;inset-inline-start:.2rem;width:1.1rem;height:1.1rem;border-radius:50%;background:#fff;transition:inset-inline-start .2s}
+.mod.on{box-shadow:inset 0 0 0 2px var(--good)}
+.mod.on .sw{background:var(--good)}
+.mod.on .sw::after{inset-inline-start:1.3rem}
+.mod.pct{cursor:default}
+.mod.pct input{width:4.4rem;text-align:center;padding:.3em .3em}
+.mod .pu{font-weight:800;color:var(--mut)}
+.startbar{position:fixed;inset-inline:0;bottom:0;z-index:5;display:flex;align-items:center;gap:.7rem;padding:.6rem max(1rem,calc(50% - 36rem));background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -.5rem 1.4rem rgba(0,0,0,.3);border-top:1px solid var(--line)}
+.startbar .sum{flex:1;font-weight:800;font-size:1.05rem;min-width:0}
+.startbar .btn.big{font-size:clamp(1.05rem,2.6vh,1.4rem);padding:.55em 1.4em}
+/* داخل اللعب */
+.turn{--tc:#888;display:inline-flex;align-items:center;gap:.4rem;padding:.25em 1em;border-radius:99px;background:color-mix(in srgb,var(--tc) 30%,transparent);border:2px solid var(--tc);font-weight:800;font-size:clamp(1rem,2.6vh,1.35rem)}
+.tagx{display:inline-block;padding:.15em .8em;border-radius:99px;background:var(--panel2);font-weight:800;font-size:.95rem;vertical-align:middle}
+.tagx.gold{background:var(--gold);color:var(--on-gold,#2a1d00)}
+.pcards{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap}
+.pcard{border:1.5px dashed var(--gold);background:color-mix(in srgb,var(--gold) 14%,transparent);border-radius:.7rem;padding:.3em .75em;font-weight:800;cursor:pointer;font-size:.92rem;transition:transform .12s}
+.pcard:hover{transform:translateY(-2px)}
+.pcard[disabled]{opacity:.3;text-decoration:line-through;cursor:default;transform:none}
+.pads.pc{gap:1rem}
+.bids{display:flex;gap:1.5rem;align-items:center;justify-content:center;flex-wrap:wrap}
+.bid{--tc:#888;border:2px solid var(--tc);background:color-mix(in srgb,var(--tc) 18%,transparent);border-radius:1.2rem;padding:.8rem 1.6rem;display:flex;flex-direction:column;gap:.5rem;align-items:center}
+.bid .nm{font-weight:800;font-size:1.3rem}
+.bid .bv{font-family:var(--disp);font-size:3rem;min-width:2ch;text-align:center;line-height:1}
+.vs{font-size:2rem}
+.wh-res .who.sm{font-size:clamp(1.7rem,5.5vh,3.1rem)}
+.wh-res .who .vs{display:block;font-size:.55em;margin:.15em 0}
+.who.drum{animation:pulse .25s infinite alternate}
+.wh-hist{background:var(--panel);border:1px solid var(--line);border-radius:.9rem;padding:.5rem .9rem;min-width:15rem;max-width:24rem;text-align:start;font-weight:700}
+.wh-hist ol{list-style:none;margin:.3rem 0 0;padding:0;display:grid;gap:.2rem;max-height:24vh;overflow:auto}
+.wh-hist li b{color:var(--gold)}
+.qr.hintq{font-size:clamp(1.3rem,4vh,2.2rem);color:var(--gold2);line-height:1.8}
+.podium{display:flex;align-items:flex-end;gap:clamp(.6rem,1.5vw,1.2rem);justify-content:center}
+.pod{--tc:#888;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:.15rem;width:clamp(8rem,15vw,12rem);border-radius:1.2rem 1.2rem .5rem .5rem;padding:.7rem .5rem;color:#fff;background:linear-gradient(180deg,color-mix(in srgb,var(--tc) 85%,#fff),color-mix(in srgb,var(--tc) 65%,#000));box-shadow:0 .4rem 0 color-mix(in srgb,var(--tc) 45%,#000);animation:rise .6s both}
+.pod.p1{height:clamp(11rem,30vh,16rem);animation-delay:.25s}.pod.p2{height:clamp(8.5rem,23vh,12.5rem);animation-delay:.1s}.pod.p3{height:clamp(7rem,18vh,10rem)}
+.pod i{font-style:normal;font-size:1.9rem;line-height:1}
+.pod .e{font-size:clamp(2rem,6vh,3rem);line-height:1}
+.pod b{font-size:1.05rem;text-align:center;line-height:1.3}
+.pod .sc{font-family:var(--disp);font-size:clamp(1.8rem,5vh,2.6rem);line-height:1}
+@media (max-width:1100px){.us-juz{grid-template-columns:repeat(15,minmax(0,1fr))}}
+@media (max-width:900px){.pmodes,.sizes{grid-template-columns:repeat(2,minmax(0,1fr))}.startbar{flex-wrap:wrap}.startbar .sum{flex-basis:100%}}
 </style>
 </head>
 <body data-tool="wheel">
@@ -249,6 +340,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div class="top">
     <button class="ib" data-act="home" title="الرئيسية" aria-label="الرئيسية">→</button>
     <h2 id="t-title"></h2>
+    <button class="ib" data-act="u-setup" title="الإعداد" aria-label="الإعداد">⚙</button>
     <button class="ib" data-act="teams" title="الفرق" aria-label="الفرق">👥</button>
     <button class="ib" id="sb-btn" data-act="sb" title="لوحة النقاط" aria-label="لوحة النقاط">🏆</button>
     <button class="ib snd-btn" data-act="sound" title="الصوت (M)" aria-label="الصوت">🔊</button>
@@ -466,7 +558,7 @@ function makeTimer(total, onTick, onEnd) {
       const s = Math.ceil(left); if (s !== lastSec) { lastSec = s; if (s > 0 && s <= 5) Snd.tick(); }
       onTick(left); if (left <= 0) { clearInterval(iv); onEnd(); }
     }, 100); },
-    stop() { clearInterval(iv); }, pause(p) { paused = p; },
+    stop() { clearInterval(iv); }, pause(p) { paused = p; }, add(s) { left += s; },
   };
   return T;
 }
@@ -497,6 +589,121 @@ function addScore(i, d) {
 let cur = null;              // الفقرة المفتوحة
 const stage = () => $('#stage');
 
+/* ==========================================================================
+   ui-setup v1: شاشة الإعداد الموحدة (نمط اللعب · الفرق · الحجم ← ⚙️ إعدادات إضافية ← 🛠️ للمشرف)
+   كل فقرة فيها S: أنماطها الأربعة (قيم جاهزة لإعداداتها)، وحجمها، وطبقاتها
+   ========================================================================== */
+const PMODES = [['classic', '🎯', 'كلاسيكي'], ['hype', '🔥', 'حماسي'], ['adv', '🧠', 'متقدم'], ['cup', '🏆', 'بطولة']];
+const SIZES = [['s', 'صغير', .6], ['m', 'متوسط', 1], ['l', 'كبير', 1.5], ['xl', 'ضخم', 2]];
+const sizeF = s => (SIZES.find(x => x[0] === s) || SIZES[1])[2];
+prefs.ui = Object.assign({ open1: false, open2: false, zero: true }, prefs.ui || {});
+const clone = v => JSON.parse(JSON.stringify(v));
+const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const chance = pct => Math.random() * 100 < pct;
+const modeOf = t => { const p = prefs[t.id], m = PMODES.find(([id]) => Object.entries(t.S.modes[id]).every(([k, v]) => same(p[k], v))); return m ? m[0] : 'custom'; };
+const modeName = id => id === 'custom' ? 'مخصص' : PMODES.find(x => x[0] === id)[2];
+function initMode(t) {   // الإعدادات القديمة تبقى، والجديدة تاخذ قيم الكلاسيكي
+  const p = prefs[t.id]; if (t.S.migrate) t.S.migrate(p);
+  const c = t.S.modes.classic; for (const k in c) if (p[k] === undefined || typeof p[k] !== typeof c[k]) p[k] = clone(c[k]);
+  if (!SIZES.some(x => x[0] === p.size)) p.size = 'm';
+  p.pm = modeOf(t);
+}
+function applyMode(t, id) {
+  const p = prefs[t.id]; Object.assign(p, clone(t.S.modes[id]));
+  if (id === 'cup' && t.S.sizeN && (p.size === 's' || p.size === 'm')) p.size = 'l';   // البطولة: لعبة أكبر
+  p.pm = id; savePrefs();
+}
+const zeroScores = () => { scores = [0, 0, 0, 0, 0, 0]; saveScores(); };
+const uPlay = () => { stage().classList.remove('su'); if (prefs.ui.zero && cur && cur.S.score) zeroScores(); renderSB(); };
+const isLast = i => { const S = teams().map((_, j) => scores[j] || 0), mn = Math.min(...S); return S[i] === mn && Math.max(...S) > mn && S.filter(x => x === mn).length === 1; };
+const top2 = () => teams().map((_, i) => i).sort((a, b) => (scores[b] || 0) - (scores[a] || 0) || a - b).slice(0, 2);
+const turnHTML = (i, extra = '') => { const t = teams()[i % prefs.teamCount]; return `<div class="turn" style="--tc:${t.c}">${t.e} دور ${esc(t.n)}${extra}</div>`; };
+const cardBar = (t, i, list) => { const G = t.G; if (!G || !G.cards || !G.cards[i]) return ''; return `<div class="pcards">${list.map(([k, ic, nm]) => `<button class="pcard" data-act="u-card" data-c="${k}" data-i="${i}" ${G.cards[i].has(k) ? '' : 'disabled'} title="بطاقة: ${nm}">${ic} ${nm}</button>`).join('')}</div>`; };
+
+/* عناصر الطبقة الثانية */
+const uTog = (t, k, ic, nm, ds) => { const on = !!prefs[t.id][k]; return `<button class="mod ${on ? 'on' : ''}" data-act="u-tog" data-k="${k}" aria-pressed="${on}"><span class="mi">${ic}</span><span class="mt"><b>${nm}</b><small>${ds}</small></span><span class="sw"></span></button>`; };
+const uPct = (t, k, ic, nm, ds) => `<label class="mod pct"><span class="mi">${ic}</span><span class="mt"><b>${nm}</b><small>${ds}</small></span><input class="fld" type="number" min="0" max="100" step="5" data-unum="${k}" value="${prefs[t.id][k]}" aria-label="${nm} (نسبة الظهور)"><span class="pu">٪</span></label>`;
+const uSeg = (lbl, key, obj, vals) => `<div class="us-line"><span class="lbl">${lbl}</span>${seg(key, obj, vals)}</div>`;
+const uGlobal = score => `<button class="mod ${prefs.sound ? 'on' : ''}" data-act="u-snd" aria-pressed="${prefs.sound}"><span class="mi">🔊</span><span class="mt"><b>الأصوات</b><small>المؤثرات والتصفيق</small></span><span class="sw"></span></button>`
+  + (score ? `<button class="mod ${prefs.ui.zero ? 'on' : ''}" data-act="u-zero" aria-pressed="${prefs.ui.zero}"><span class="mi">↺</span><span class="mt"><b>النقاط تبدأ من صفر</b><small>مع كل لعبة جديدة</small></span><span class="sw"></span></button>` : '');
+const uZeroNow = () => `<button class="btn ghost" data-act="u-zero-now">↺ تصفير لوحة النقاط</button>`;
+
+function uTeams() {
+  const T = teams(), n = prefs.teamCount;
+  return `<div class="card us-card"><div class="us-h"><b>الفرق</b><div class="row us-cnt"><button class="ib" data-act="u-tn" data-d="-1" ${n <= 2 ? 'disabled' : ''} aria-label="فريق أقل">−</button><b class="us-n">${arNum(n)}</b><button class="ib" data-act="u-tn" data-d="1" ${n >= 6 ? 'disabled' : ''} aria-label="فريق أكثر">+</button></div><span class="hint us-hint">اضغط الشعار عشان تغيّره</span></div>
+    <div class="us-teams">${T.map((t, i) => `<div class="trow" style="--tc:${t.c}"><button class="ib" data-act="u-emoji" data-i="${i}" title="غيّر الشعار" aria-label="شعار الفريق ${arNum(i + 1)}">${t.e}</button><input class="fld" data-uname="${i}" maxlength="22" value="${esc(prefs.names[i] || TEAM_PRESETS[i].n)}" aria-label="اسم الفريق ${arNum(i + 1)}"></div>`).join('')}</div></div>`;
+}
+function uSize(t) {
+  const p = prefs[t.id], S = t.S;
+  return `<div class="card us-card"><div class="us-h"><b>حجم اللعبة</b><span class="hint">${S.sizeHint || 'اختر حسب وقتك'}</span></div><div class="sizes">${SIZES.map(([id, nm]) => { const c = S.sizeN(id); return `<button class="sz ${p.size === id ? 'on' : ''}" data-act="u-size" data-v="${id}" aria-pressed="${p.size === id}"><b>${nm}</b><span>${arNum(c)} ${S.unit} <small>· ≈ ${arNum(S.mins(c))} دقيقة</small></span></button>`; }).join('')}</div></div>`;
+}
+const showTeams = t => !(t.S.teams && !t.S.teams());
+const sumLine = t => [modeName(prefs[t.id].pm), showTeams(t) && !t.S.noTeamSum ? `${arNum(prefs.teamCount)} فرق` : '', ...t.S.sum()].filter(Boolean).join(' · ');
+function renderSetup(t) {
+  const S = t.S, p = prefs[t.id]; p.pm = modeOf(t); t.phase = 'setup';
+  if (t.leave) t.leave();
+  $('#sb').hidden = true; stage().classList.add('su');
+  const md = p.pm;
+  const modes = `<div class="card us-card"><div class="us-h"><b>نمط اللعب</b><span class="tagc" id="u-tag" ${md === 'custom' ? '' : 'hidden'}>مخصص</span></div>
+    <div class="pmodes">${PMODES.map(([id, ic, nm], i) => `<button class="pm ${md === id ? 'on' : ''}" data-act="u-mode" data-m="${id}" aria-pressed="${md === id}"><span class="pt"><span class="pi">${ic}</span><b>${nm}</b></span><small>${S.desc[i]}</small></button>`).join('')}</div></div>`;
+  const blocks = (S.order || ['teams', 'size', 'basic']).map(b => b === 'teams' ? (showTeams(t) ? uTeams() : '') : b === 'size' ? (S.sizeN ? uSize(t) : '') : S.basic ? S.basic() : '').join('');
+  const more = `<details class="more card" data-more="1" ${prefs.ui.open1 ? 'open' : ''}><summary><b>⚙️ إعدادات إضافية</b><span class="hint">${S.moreHint}</span></summary><div class="more-in">${S.more()}</div></details>`;
+  const admin = S.admin ? `<details class="more card" data-more="2" ${prefs.ui.open2 ? 'open' : ''}><summary><b>🛠️ للمشرف</b><span class="hint">${S.adminHint}</span></summary><div class="more-in">${S.admin()}</div></details>` : '';
+  stage().innerHTML = `<div class="usetup">${modes}${blocks}${more}${admin}</div>
+    <div class="startbar"><span class="sum" id="u-sum">${sumLine(t)}</span><button class="btn ghost" data-act="home">→ رجوع</button><button class="btn gold big" data-act="u-start">▶ ابدأ اللعبة<kbd>Enter</kbd></button></div>`;
+  if (S.after) S.after();
+}
+function paintMode(t) {
+  const p = prefs[t.id]; p.pm = modeOf(t);
+  $$('.pm').forEach(b => { const on = b.dataset.m === p.pm; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+  const tg = $('#u-tag'); if (tg) tg.hidden = p.pm !== 'custom';
+  const s = $('#u-sum'); if (s) s.textContent = sumLine(t);
+}
+/* الختام: منصة التتويج */
+function ceremony(t, note = '') {
+  if (t.leave) t.leave(); t.phase = 'end';
+  const T = teams(), ord = T.map((x, i) => ({ ...x, i, s: scores[i] || 0 })).sort((a, b) => b.s - a.s || a.i - b.i);
+  const tie = ord.length > 1 && ord[1].s === ord[0].s;
+  const pod = [[ord[1], 2, '🥈'], [ord[0], 1, '🥇'], [ord[2], 3, '🥉']].map(([x, k, m]) => x ? `<div class="pod p${k}" style="--tc:${x.c}"><i>${m}</i><span class="e">${x.e}</span><b>${esc(x.n)}</b><span class="sc">${arNum(x.s)}</span></div>` : '').join('');
+  const rest = ord.slice(3).map(x => `<span class="chip" style="cursor:default">${x.e} ${esc(x.n)} · ${arNum(x.s)}</span>`).join('');
+  stage().innerHTML = `<div class="kicker">🏁 انتهت اللعبة${note ? ' · ' + note : ''}</div>
+    <div class="banner gold">${tie ? '🤝 تعادل على الصدارة!' : `🏆 ${ord[0].e} ${esc(ord[0].n)} بطل اللعبة!`}</div>
+    <div class="podium">${pod}</div>${rest ? `<div class="chips">${rest}</div>` : ''}
+    <div class="row"><button class="btn gold big" data-act="u-again">🔁 لعبة جديدة<kbd>Enter</kbd></button><button class="btn ghost" data-act="home">→ الرئيسية</button></div>`;
+  Snd.win(); FX.burst(200); setTimeout(() => FX.burst(140, innerWidth * .3, innerHeight * .3), 500);
+}
+/* مفاتيح مشتركة: 'go' = كمّل لمفاتيح الفقرة */
+function uKey(t, e) {
+  if (t.phase === 'setup') { if (e.code === 'Enter') { t.begin(); return true; } return false; }
+  if (t.phase === 'end') { if (e.code === 'Enter') { renderSetup(t); return true; } return false; }
+  return 'go';
+}
+const UACT = {
+  'u-mode'(el) { applyMode(cur, el.dataset.m); renderSetup(cur); Snd.pop(); },
+  'u-size'(el) { prefs[cur.id].size = el.dataset.v; savePrefs(); renderSetup(cur); Snd.pop(); },
+  'u-tog'(el) { const p = prefs[cur.id], k = el.dataset.k; p[k] = !p[k]; savePrefs(); renderSetup(cur); Snd.pop(); },
+  'u-tn'(el) { prefs.teamCount = Math.max(2, Math.min(6, prefs.teamCount + +el.dataset.d)); savePrefs(); renderSetup(cur); Snd.pop(); },
+  'u-emoji'(el) { const i = +el.dataset.i, used = teams().map(t => t.e); let j = EMOJIS.indexOf(teams()[i].e); do { j = (j + 1) % EMOJIS.length; } while (used.includes(EMOJIS[j])); prefs.emojis[i] = EMOJIS[j]; savePrefs(); renderSetup(cur); Snd.pop(); },
+  'u-snd'() { prefs.sound = !prefs.sound; savePrefs(); applySound(); renderSetup(cur); Snd.pop(); },
+  'u-zero'() { prefs.ui.zero = !prefs.ui.zero; savePrefs(); renderSetup(cur); Snd.pop(); },
+  'u-zero-now'() { zeroScores(); renderSB(); toast('تم تصفير لوحة النقاط'); Snd.pop(); },
+  'u-start'() { if (cur && cur.phase === 'setup') cur.begin(); },
+  'u-again'() { renderSetup(cur); Snd.pop(); },
+  'u-setup'() {
+    const t = cur; if (!t || !t.S) return;
+    if (t.busy && t.busy()) { const d = dialog(`<h3>ترجع للإعداد؟</h3><p style="margin:0">اللعبة الحالية بتنتهي.</p><div class="acts"><button class="btn bad" id="go-set">نعم، ارجع</button><button class="btn ghost" data-close>كمّل اللعبة</button></div>`); $('#go-set', d).onclick = () => { closeDialog(); renderSetup(t); }; return; }
+    renderSetup(t);
+  },
+  'u-card'(el) { if (cur && cur.card) cur.card(el.dataset.c, +el.dataset.i); },
+};
+document.addEventListener('input', e => {
+  const el = e.target; if (!cur || !cur.S || !el.dataset) return;
+  if (el.dataset.uname != null) { prefs.names[+el.dataset.uname] = el.value; savePrefs(); renderSB(); }
+  else if (el.dataset.unum != null) { prefs[cur.id][el.dataset.unum] = Math.max(0, Math.min(100, Math.round(+el.value || 0))); savePrefs(); paintMode(cur); }
+});
+document.addEventListener('change', e => { const el = e.target; if (cur && cur.S && el.dataset && el.dataset.uin != null && cur.S.input) cur.S.input(el); });
+document.addEventListener('toggle', e => { const d = e.target; if (d && d.dataset && d.dataset.more) { prefs.ui['open' + d.dataset.more] = d.open; savePrefs(); } }, true);
+
 /* ---------- العدّاد ---------- */
 function parseCounter(text) {
   let sec = '';
@@ -506,91 +713,245 @@ function parseCounter(text) {
     return t ? { t, n: Math.max(1, Math.min(20, parseInt(n, 10) || 5)), s: sec } : null;
   }).filter(Boolean);
 }
+const CNT_PER = { s: 2, m: 3, l: 5, xl: 6 };   // تصنيفات لكل فريق حسب الحجم (×٠٫٦ ×١ ×١٫٥ ×٢)
+const CNT_CARDS = [['swap', '🔄', 'بدّل التصنيف'], ['x2', '✌️', 'ضاعف النقاط'], ['time', '⏱️', '+١٠ ثواني']];
 const Counter = {
   id: 'counter', icon: '⏱️', title: 'العدّاد', desc: 'عدّدوا 5 أو 7 أشياء من تصنيف قبل ما يخلص الوقت',
-  enter() { this.list = parseCounter(prefs.counter.text); if (!this.list.length) this.list = parseCounter(DEFAULT_COUNTER); this.order = shuffle(this.list.map((_, i) => i)); this.k = 0; this.load(); },
+  phase: 'setup',
+  S: {
+    score: true,
+    desc: ['تصنيف لكل فريق بالدور، واللي يكمّل ياخذ ٣ نقاط.', 'كل إجابة بنقطة، وسرقة، وتصنيفات مضاعفة.', 'أعداد أكبر ووقت أطول، وبطاقات قوى.', 'كل المتقدم في لعبة أكبر، وختامها مزاد العدّ.'],
+    modes: {
+      classic: { time: 15, score: 'full', steal: false, dbl: 0, catchup: false, harder: false, cards: false, finale: false },
+      hype: { time: 15, score: 'each', steal: true, dbl: 20, catchup: true, harder: false, cards: false, finale: false },
+      adv: { time: 20, score: 'each', steal: true, dbl: 20, catchup: true, harder: true, cards: true, finale: false },
+      cup: { time: 20, score: 'each', steal: true, dbl: 20, catchup: true, harder: true, cards: true, finale: true },
+    },
+    sizeN: s => (CNT_PER[s] || 3) * prefs.teamCount, unit: 'تصنيف', sizeHint: 'كل فريق ياخذ نفس عدد الأدوار',
+    mins: n => Math.max(2, Math.round(n * (prefs.counter.time + 35) / 60)),
+    sum: () => { const n = Counter.S.sizeN(prefs.counter.size); return [`${arNum(n)} تصنيف`, `≈ ${arNum(Counter.S.mins(n))} دقيقة`]; },
+    moreHint: 'الوقت · النقاط · المفاجآت · البطاقات',
+    more: () => { const p = prefs.counter, t = Counter; return uSeg('⏱️ وقت كل تصنيف', 'time', p, [[10, '١٠ ث'], [15, '١٥ ث'], [20, '٢٠ ث'], [30, '٣٠ ث'], [45, '٤٥ ث']])
+      + uSeg('🎯 النقاط', 'score', p, [['full', 'اللي يكمّل ياخذ ٣'], ['each', 'كل إجابة بنقطة، والإكمال +٢']])
+      + `<div class="mods">${uTog(t, 'steal', '🏴‍☠️', 'السرقة', 'اللي ما كمّل، يسرقها الفريق اللي بعده بنقطتين')}${uPct(t, 'dbl', '⚡', 'تصنيف مضاعف', 'نسبة ظهوره، ونقاطه ×٢')}${uTog(t, 'catchup', '🆘', 'فرصة للمتأخر', 'الفريق الأخير ياخذ ٥ ثواني زيادة')}${uTog(t, 'harder', '🧠', 'أعداد أكبر', 'كل تصنيف يطلب شيئين زيادة')}${uTog(t, 'cards', '🃏', 'بطاقات القوى', 'لكل فريق: بدّل · ضاعف · +١٠ ثواني')}${uTog(t, 'finale', '🏆', 'مزاد العدّ', 'الختام بين أول فريقين: الأعلى مزايدة يعدّد')}${uGlobal(true)}</div>`; },
+    adminHint: 'التصنيفات · لوحة النقاط',
+    admin: () => { const L = parseCounter(prefs.counter.text); return `<div class="us-line" style="justify-content:space-between"><span class="hint">${arNum(L.length)} تصنيف في ${arNum(new Set(L.map(x => x.s)).size)} أقسام</span><div class="row"><button class="btn ghost" data-act="c-edit">✏️ تعديل التصنيفات</button>${uZeroNow()}</div></div>`; },
+  },
+  enter() { renderSetup(this); },
   leave() { if (this.T) this.T.stop(); },
-  load() { if (this.T) this.T.stop(); this.c = this.list[this.order[this.k % this.order.length]]; this.got = 0; this.phase = 'ready'; this.render(); },
+  busy() { return !!this.G && !['setup', 'end'].includes(this.phase) && (this.G.round > 0 || this.phase !== 'ready'); },
+  begin() {
+    const p = prefs.counter; uPlay();
+    this.list = parseCounter(p.text); if (!this.list.length) this.list = parseCounter(DEFAULT_COUNTER);
+    this.order = shuffle(this.list.map((_, i) => i)); this.k = 0; this.F = null;
+    this.G = { round: 0, total: this.S.sizeN(p.size), cards: p.cards ? teams().map(() => new Set(CNT_CARDS.map(c => c[0]))) : null };
+    Snd.whistle(); this.load();
+  },
+  pickCat() { const c = this.list[this.order[this.k % this.order.length]]; this.k++; return c; },
+  need: c => Math.min(20, c.n + (prefs.counter.harder ? 2 : 0)),
+  load() {
+    if (this.T) this.T.stop(); const p = prefs.counter, G = this.G, team = G.round % prefs.teamCount, c = this.pickCat(), late = p.catchup && isLast(team);
+    this.R = { team, c, n: this.need(c), time: p.time + (late ? 5 : 0), late, mult: p.dbl > 0 && chance(p.dbl) ? 2 : 1, x2: false, extra: false, pts: 0, msg: '' };
+    this.got = 0; this.phase = 'ready'; this.render(); if (this.R.mult > 1) Snd.ding();
+  },
   render() {
-    const c = this.c, ph = this.phase, tt = prefs.counter.time;
-    const ctl = ph === 'ready' ? `<button class="btn gold big" data-act="c-start">▶ ابدأ العدّ<kbd>Enter</kbd></button><button class="btn big" data-act="c-next">⟳ تصنيف ثاني<kbd>N</kbd></button>`
-      : ph === 'run' ? `<button class="btn good big" data-act="c-plus">✓ صح +1<kbd>مسافة</kbd></button><button class="btn big" data-act="c-minus">−1<kbd>⌫</kbd></button>`
-      : `<button class="btn gold big" data-act="c-next">التصنيف التالي ←<kbd>Enter</kbd></button><button class="btn big" data-act="c-again">↺ نفس التصنيف</button>`;
-    stage().innerHTML = `
-      <div class="kicker">${c.s ? esc(c.s) + ' · ' : ''}${arNum(this.k % this.order.length + 1)} من ${arNum(this.order.length)}</div>
-      <div class="cnt-t"><small>عدّدوا ${arNum(c.n)} من:</small>${esc(c.t)}</div>
-      <div class="cnt-mid"><div id="c-ring">${ringHTML(ph === 'ready' ? tt : this.T ? this.T.left : 0, tt, 'clamp(7rem,20vh,11rem)')}</div><div class="dots" id="c-dots">${Array.from({ length: c.n }, (_, i) => `<i class="${i < this.got ? 'on' : ''}">${arNum(i + 1)}</i>`).join('')}</div></div>
-      <div id="c-msg">${ph === 'win' ? '<div class="banner good">أحسنتم! كمّلتوها 🎉</div>' : ph === 'lose' ? `<div class="banner bad">خلص الوقت! (${arNum(this.got)} من ${arNum(c.n)})</div>` : ''}</div>
-      <div class="row">${ctl}</div>
-      ${ph === 'ready' ? `<div class="row"><span class="lbl">الوقت:</span>${seg('time', prefs.counter, [[10, '10 ث'], [15, '15 ث'], [20, '20 ث'], [30, '30 ث'], [45, '45 ث']])}<button class="btn ghost" data-act="c-edit">✏️ التصنيفات</button></div>` : ''}`;
+    const R = this.R, c = R.c, ph = this.phase, G = this.G, T = teams();
+    const head = R.final ? '<div class="kicker">🏆 الختام: مزاد العدّ</div>' : `<div class="kicker">الجولة ${arNum(G.round + 1)} من ${arNum(G.total)}${c.s ? ' · ' + esc(c.s) : ''}</div>`;
+    const tags = [R.mult > 1 ? '<span class="tagx gold">⚡ تصنيف مضاعف ×٢</span>' : '', R.x2 ? '<span class="tagx gold">✌️ النقاط مضاعفة</span>' : '', R.late ? '<span class="tagx">🆘 +٥ ثواني للمتأخر</span>' : '', R.extra ? '<span class="tagx">⏱️ +١٠ ثواني</span>' : ''].join('');
+    const lastRound = G.round + 1 >= G.total, toFinal = prefs.counter.finale && prefs.teamCount >= 2;
+    const ctl = ph === 'ready' ? `<button class="btn gold big" data-act="c-start">▶ ابدأ العدّ<kbd>Enter</kbd></button>${!G.cards && !R.final ? '<button class="btn big" data-act="c-next">⟳ تصنيف ثاني<kbd>N</kbd></button>' : ''}`
+      : ph === 'run' ? '<button class="btn good big" data-act="c-plus">✓ صح +١<kbd>مسافة</kbd></button><button class="btn big" data-act="c-minus">−١<kbd>⌫</kbd></button>'
+      : `${ph === 'lose' && R.canSteal && !R.stolen ? `<button class="btn big" data-act="c-steal">🏴‍☠️ سرقها ${T[R.thief].e} ${esc(T[R.thief].n)} +${arNum(2 * R.mult)}</button>` : ''}<button class="btn gold big" data-act="c-after">${R.final || (lastRound && !toFinal) ? '🏁 النتيجة النهائية' : lastRound ? '🏆 إلى المزاد الختامي' : 'التصنيف التالي'} ←<kbd>Enter</kbd></button>`;
+    const cards = G.cards && !R.final && ph === 'ready' ? cardBar(this, R.team, CNT_CARDS) : '';
+    stage().innerHTML = `${head}${turnHTML(R.team)}${tags ? `<div class="row">${tags}</div>` : ''}
+      <div class="cnt-t"><small>عدّدوا ${arNum(R.n)} من:</small>${esc(c.t)}</div>
+      <div class="cnt-mid"><div id="c-ring">${ringHTML(ph === 'ready' ? R.time : this.T ? this.T.left : 0, R.time, 'clamp(7rem,20vh,11rem)')}</div><div class="dots" id="c-dots">${Array.from({ length: R.n }, (_, i) => `<i class="${i < this.got ? 'on' : ''}">${arNum(i + 1)}</i>`).join('')}</div></div>
+      <div id="c-msg">${ph === 'win' || ph === 'lose' ? R.msg : ''}</div>
+      <div class="row">${ctl}</div>${cards}`;
   },
   paintDots() { $$('#c-dots i').forEach((d, i) => d.classList.toggle('on', i < this.got)); },
   start() {
-    if (this.phase !== 'ready') return; this.phase = 'run'; Snd.whistle();
-    this.T = makeTimer(prefs.counter.time, l => paintRing($('#c-ring .ring'), l, prefs.counter.time), () => { if (this.phase !== 'run') return; this.phase = 'lose'; Snd.buzz(); this.render(); });
+    if (this.phase !== 'ready') return; this.phase = 'run'; Snd.whistle(); const R = this.R;
+    this.T = makeTimer(R.time, l => paintRing($('#c-ring .ring'), l, R.time), () => { if (this.phase === 'run') this.finish(false); });
     this.render(); this.T.start();
   },
-  plus() {
-    if (this.phase !== 'run') return; this.got++; this.paintDots(); Snd.up();
-    if (this.got >= this.c.n) { this.T.stop(); this.phase = 'win'; Snd.win(); FX.burst(); this.render(); }
-  },
+  plus() { if (this.phase !== 'run') return; this.got++; this.paintDots(); Snd.up(); if (this.got >= this.R.n) { this.T.stop(); this.finish(true); } },
   minus() { if (this.phase === 'run' && this.got > 0) { this.got--; this.paintDots(); Snd.down(); } },
-  next() { this.k++; this.load(); Snd.pop(); },
+  finish(win) {
+    const R = this.R, p = prefs.counter, T = teams(); this.phase = win ? 'win' : 'lose';
+    if (R.final) {
+      const to = win ? R.team : this.F.other; addScore(to, R.n);
+      R.msg = win ? `<div class="banner good">كمّلوها! +${arNum(R.n)} لـ ${esc(T[to].n)} 🎉</div>` : `<div class="banner bad">ما كمّلوا (${arNum(this.got)} من ${arNum(R.n)}) · النقاط +${arNum(R.n)} لـ ${esc(T[to].n)}</div>`;
+    } else {
+      const base = p.score === 'each' ? this.got + (win ? 2 : 0) : win ? 3 : 0;
+      R.pts = base * R.mult * (R.x2 ? 2 : 1); if (R.pts) addScore(R.team, R.pts);
+      R.canSteal = !win && p.steal && prefs.teamCount > 1; R.thief = (R.team + 1) % prefs.teamCount;
+      R.msg = win ? `<div class="banner good">أحسنتم! كمّلتوها 🎉 +${arNum(R.pts)}</div>` : `<div class="banner bad">خلص الوقت! (${arNum(this.got)} من ${arNum(R.n)})${R.pts ? ' · +' + arNum(R.pts) : ''}</div>`;
+    }
+    win ? (Snd.win(), FX.burst()) : Snd.buzz(); this.render();
+  },
+  steal() {
+    const R = this.R; if (this.phase !== 'lose' || !R.canSteal || R.stolen) return; R.stolen = true;
+    addScore(R.thief, 2 * R.mult); Snd.good(); FX.burst(70); toast(`🏴‍☠️ +${arNum(2 * R.mult)} لـ ${teams()[R.thief].n}`); this.render();
+  },
+  after() {
+    if (this.phase !== 'win' && this.phase !== 'lose') return;
+    if (this.R.final) return ceremony(this, 'مزاد العدّ');
+    const G = this.G; G.round++;
+    if (G.round >= G.total) return prefs.counter.finale && prefs.teamCount >= 2 ? this.auction() : ceremony(this);
+    this.load(); Snd.pop();
+  },
+  skip() { const R = this.R; if (this.phase !== 'ready' || this.G.cards || R.final) return; R.c = this.pickCat(); R.n = this.need(R.c); this.render(); Snd.pop(); },
+  card(k, i) {
+    const G = this.G, R = this.R; if (!G || !G.cards || this.phase !== 'ready' || R.final || i !== R.team || !G.cards[i].has(k)) return;
+    G.cards[i].delete(k); Snd.ding();
+    if (k === 'swap') { R.c = this.pickCat(); R.n = this.need(R.c); toast('🔄 تصنيف جديد'); }
+    else if (k === 'x2') R.x2 = true;
+    else { R.time += 10; R.extra = true; }
+    this.render();
+  },
+  /* الختام: مزاد العدّ بين أول فريقين */
+  auction() { const [a, b] = top2(); this.F = { a, b, bid: [3, 3], c: this.pickCat() }; this.phase = 'bid'; this.renderBid(); Snd.whistle(); },
+  renderBid() {
+    const F = this.F, T = teams();
+    stage().innerHTML = `<div class="kicker">🏆 الختام: مزاد العدّ</div><div class="cnt-t"><small>التصنيف:</small>${esc(F.c.t)}</div>
+      <p class="hint" style="font-size:1.1rem;margin:0">كم شي تقدرون تعدّدون؟ الأعلى مزايدة يعدّد، ولو ما كمّل تروح النقاط لخصمه. التعادل للمتأخر.</p>
+      <div class="bids">${[F.a, F.b].map((ti, s) => `<div class="bid" style="--tc:${T[ti].c}"><div class="nm">${T[ti].e} ${esc(T[ti].n)}</div><div class="row"><button class="ib" data-act="c-bid" data-s="${s}" data-d="-1" aria-label="أقل">−</button><b class="bv">${arNum(F.bid[s])}</b><button class="ib" data-act="c-bid" data-s="${s}" data-d="1" aria-label="أكثر">+</button></div></div>`).join('<div class="vs">🆚</div>')}</div>
+      <div class="row"><button class="btn gold big" data-act="c-sold">🔨 تمّ المزاد<kbd>Enter</kbd></button></div>`;
+  },
+  sold() {
+    const F = this.F; if (this.phase !== 'bid') return; const s = F.bid[0] > F.bid[1] ? 0 : 1, n = F.bid[s];
+    F.other = s ? F.a : F.b;
+    this.R = { team: s ? F.b : F.a, c: F.c, n, time: Math.max(prefs.counter.time, n * 3), mult: 1, final: true, msg: '' };
+    this.got = 0; this.phase = 'ready'; this.render(); Snd.ding();
+  },
   edit() {
     const d = dialog(`<h3>✏️ تصنيفات العدّاد</h3><p class="hint" style="margin:0">كل سطر: <b>التصنيف | العدد</b>. والسطر اللي يبدأ بـ # عنوان قسم.</p><textarea class="fld" id="c-text">${esc(prefs.counter.text)}</textarea>
       <div class="acts"><button class="btn gold" id="c-save">حفظ</button><button class="btn ghost" id="c-def">الرجوع للأصلية</button><button class="btn ghost" data-close>إلغاء</button></div>`);
     $('#c-def', d).onclick = () => { $('#c-text', d).value = DEFAULT_COUNTER; };
-    $('#c-save', d).onclick = () => { const v = $('#c-text', d).value; if (!parseCounter(v).length) return toast('اكتب تصنيف واحد على الأقل'); prefs.counter.text = v; savePrefs(); closeDialog(); this.enter(); toast('تم الحفظ'); };
+    $('#c-save', d).onclick = () => { const v = $('#c-text', d).value; if (!parseCounter(v).length) return toast('اكتب تصنيف واحد على الأقل'); prefs.counter.text = v; savePrefs(); closeDialog(); renderSetup(this); toast('تم الحفظ'); };
   },
-  act: { 'c-start'() { Counter.start(); }, 'c-plus'() { Counter.plus(); }, 'c-minus'() { Counter.minus(); }, 'c-next'() { Counter.next(); }, 'c-again'() { Counter.load(); }, 'c-edit'() { Counter.edit(); } },
-  set() { this.render(); },
+  act: {
+    'c-start'() { Counter.start(); }, 'c-plus'() { Counter.plus(); }, 'c-minus'() { Counter.minus(); }, 'c-next'() { Counter.skip(); },
+    'c-after'() { Counter.after(); }, 'c-steal'() { Counter.steal(); }, 'c-edit'() { Counter.edit(); },
+    'c-bid'(el) { const F = Counter.F, s = +el.dataset.s; F.bid[s] = Math.max(1, Math.min(20, F.bid[s] + +el.dataset.d)); Snd.pop(); Counter.renderBid(); },
+    'c-sold'() { Counter.sold(); },
+  },
+  set() { if (this.phase === 'setup') renderSetup(this); else if (this.R && this.phase !== 'end' && this.phase !== 'bid') this.render(); },
   key(e) {
-    if (e.code === 'Enter') { this.phase === 'ready' ? this.start() : this.phase !== 'run' ? this.next() : null; }
+    const u = uKey(this, e); if (u !== 'go') return u ? undefined : false;
+    const ph = this.phase;
+    if (ph === 'bid') { if (e.code === 'Enter') this.sold(); else return false; return; }
+    if (e.code === 'Enter') { if (ph === 'ready') this.start(); else if (ph === 'win' || ph === 'lose') this.after(); }
     else if (e.code === 'Space') this.plus();
     else if (e.code === 'Backspace') this.minus();
-    else if (e.code === 'KeyN' && this.phase === 'ready') this.next();
+    else if (e.code === 'KeyN' && ph === 'ready') this.skip();
     else return false;
   },
 };
 
 /* ---------- أسرع إصبع ---------- */
+const BZ_CARDS = [['x2', '✌️', 'ضاعف'], ['freeze', '❄️', 'جمّد المتصدّر'], ['retry', '🔁', 'فرصة ثانية']];
 const Buzz = {
   id: 'buzz', icon: '🔔', title: 'أسرع إصبع', desc: 'جرس لكل فريق: أول من يضغط زره يجاوب',
-  enter() { this.reset(); },
-  leave() { clearTimeout(this.tm); },
-  reset() { this.open = false; this.win = null; this.out = new Set(); this.render(); },
+  phase: 'setup',
+  S: {
+    score: true,
+    desc: ['المقدّم يسأل، وأسرع فريق يضغط زره ويجاوب.', 'مؤقت للإجابة، وأسئلة ذهبية، ودبل للمتأخر.', 'الخطأ يخصم، ومؤقت أسرع، وبطاقات قوى.', 'كل المتقدم في لعبة أكبر، وختامها نهائي بين أول فريقين.'],
+    modes: {
+      classic: { early: true, pts: 1, pen: false, ansT: 0, gold: 0, catchup: false, cards: false, finale: false },
+      hype: { early: true, pts: 1, pen: false, ansT: 10, gold: 20, catchup: true, cards: false, finale: false },
+      adv: { early: true, pts: 1, pen: true, ansT: 5, gold: 20, catchup: true, cards: true, finale: false },
+      cup: { early: true, pts: 1, pen: true, ansT: 5, gold: 20, catchup: true, cards: true, finale: true },
+    },
+    sizeN: s => Math.round(10 * sizeF(s)), unit: 'سؤال', sizeHint: 'المقدّم يقرأ الأسئلة من عنده',
+    mins: n => Math.max(2, Math.round(n * 30 / 60)),
+    sum: () => { const n = Buzz.S.sizeN(prefs.buzz.size); return [`${arNum(n)} سؤال`, `≈ ${arNum(Buzz.S.mins(n))} دقيقة`]; },
+    moreHint: 'النقاط · المؤقت · المفاجآت · البطاقات',
+    more: () => { const p = prefs.buzz, t = Buzz; return uSeg('🎯 نقاط الصح', 'pts', p, [[1, '١'], [2, '٢'], [5, '٥'], [10, '١٠']])
+      + uSeg('⏱️ وقت الإجابة بعد الجرس', 'ansT', p, [[0, 'بدون'], [5, '٥ ث'], [10, '١٠ ث']])
+      + `<div class="mods">${uTog(t, 'early', '🚫', 'الاستعجال يطلّع', 'اللي يضغط قبل فتح الجرس يطلع من السؤال')}${uTog(t, 'pen', '➖', 'الخطأ يخصم', 'الإجابة الخطأ تنقص نقطة')}${uPct(t, 'gold', '⭐', 'سؤال ذهبي', 'نسبة ظهوره، ونقاطه ×٣')}${uTog(t, 'catchup', '🆘', 'دبل للمتأخر', 'الفريق الأخير لو جاوب صح ياخذ الضعف')}${uTog(t, 'cards', '🃏', 'بطاقات القوى', 'لكل فريق: ضاعف · جمّد المتصدّر · فرصة ثانية')}${uTog(t, 'finale', '🏆', 'النهائي', 'أول فريقين: أول واحد يجاوب ٣ صح ياخذ الكأس +٥')}${uGlobal(true)}</div>`; },
+    adminHint: 'الأزرار · لوحة النقاط',
+    admin: () => `<div class="us-line" style="justify-content:space-between"><span class="hint">كل فريق زرّه رقمه في الكيبورد (١، ٢، ٣…) أو يضغط مربّعه على الشاشة.</span>${uZeroNow()}</div>`,
+  },
+  enter() { renderSetup(this); },
+  leave() { clearTimeout(this.tm); if (this.AT) this.AT.stop(); },
+  busy() { return !!this.G && this.phase === 'play' && (this.G.q > 0 || !!this.G.fin); },
+  begin() {
+    const p = prefs.buzz; uPlay();
+    this.G = { q: 0, total: this.S.sizeN(p.size), cards: p.cards ? teams().map(() => new Set(BZ_CARDS.map(c => c[0]))) : null, fin: null };
+    this.phase = 'play'; Snd.whistle(); this.reset();
+  },
+  reset() {
+    clearTimeout(this.tm); if (this.AT) this.AT.stop(); const G = this.G, p = prefs.buzz;
+    this.open = false; this.win = null; this.out = new Set(); this.bench = new Set(); this.frozen = new Set(); this.x2 = new Set(); this.retry = new Set();
+    this.gold = !G.fin && p.gold > 0 && chance(p.gold);
+    if (G.fin) teams().forEach((_, i) => { if (!G.fin.t.includes(i)) this.bench.add(i); });
+    this.render(); if (this.gold) Snd.ding();
+  },
+  blocked(i) { return this.out.has(i) || this.bench.has(i) || this.frozen.has(i); },
   render() {
-    const T = teams(), n = T.length;
-    const status = this.win != null ? `<div class="bz-status" style="color:${T[this.win].c}">${T[this.win].e} ${esc(T[this.win].n)} أسرع! <span class="muted" style="font-size:.55em">(${(this.ms / 1000).toFixed(2)} ثانية)</span></div>`
+    const T = teams(), n = T.length, G = this.G, p = prefs.buzz, w = this.win;
+    const head = G.fin ? `<div class="kicker">🏆 النهائي · أول فريق يجاوب ${arNum(3)} صح · ${G.fin.t.map(i => `${T[i].e} ${esc(T[i].n)} ${arNum(G.fin.got[i] || 0)}`).join(' – ')}</div>`
+      : `<div class="kicker">السؤال ${arNum(G.q + 1)} من ${arNum(G.total)}</div>${this.gold ? '<div class="row"><span class="tagx gold">⭐ سؤال ذهبي: النقاط ×٣</span></div>' : ''}`;
+    const status = w != null ? `<div class="bz-status" style="color:${T[w].c}">${T[w].e} ${esc(T[w].n)} أسرع! <span class="muted" style="font-size:.55em">(${(this.ms / 1000).toFixed(2)} ثانية)</span></div>${p.ansT ? `<div id="b-ring">${ringHTML(p.ansT, p.ansT, 'clamp(4rem,10vh,5.5rem)')}</div>` : ''}`
       : this.open ? '<div class="bz-status open">الجرس مفتوح! أسرع فريق يضغط زره</div>'
       : '<div class="bz-status">المقدّم يقرأ السؤال… ثم يفتح الجرس</div>';
-    const ctl = this.win != null ? `<button class="btn good big" data-act="b-right">✓ صح +${arNum(prefs.buzz.pts)}<kbd>Enter</kbd></button><button class="btn bad big" data-act="b-wrong">✗ خطأ: الجرس للباقين<kbd>⌫</kbd></button><button class="btn big" data-act="b-reset">سؤال جديد<kbd>مسافة</kbd></button>`
-      : this.open ? `<button class="btn big" data-act="b-reset">إلغاء وإعادة<kbd>مسافة</kbd></button>`
-      : `<button class="btn gold big" data-act="b-open">🔔 افتح الجرس<kbd>مسافة</kbd></button>`;
-    stage().innerHTML = `${status}
-      <div class="pads" style="--n:${n}">${T.map((t, i) => `<button class="pad ${this.win === i ? 'win' : this.win != null ? 'dim' : this.out.has(i) ? 'out' : ''}" style="--tc:${t.c}" data-act="b-press" data-i="${i}"><span class="e">${t.e}</span><span class="nm">${esc(t.n)}</span><span class="key">${arNum(i + 1)}</span>${this.out.has(i) && this.win !== i ? '<span class="hint" style="color:#fff">طالع من هالسؤال</span>' : ''}</button>`).join('')}</div>
-      <div class="row">${ctl}</div>
-      <div class="row"><span class="lbl">الضغط قبل فتح الجرس:</span>${seg('early', prefs.buzz, [[true, 'يطلّع الفريق من السؤال'], [false, 'ما يحسب']])}<span class="lbl">نقاط الصح:</span>${seg('pts', prefs.buzz, [[1, '1'], [2, '2'], [5, '5'], [10, '10']])}</div>
-      <p class="hint">كل فريق زرّه رقمه في الكيبورد (١، ٢، ٣…) أو يضغط على مربّعه.</p>`;
+    const ctl = w != null ? `<button class="btn good big" data-act="b-right">✓ صح<kbd>Enter</kbd></button><button class="btn bad big" data-act="b-wrong">✗ خطأ: الجرس للباقين<kbd>⌫</kbd></button><button class="btn big" data-act="b-reset">⟳ تخطّي السؤال<kbd>مسافة</kbd></button>`
+      : this.open ? '<button class="btn big" data-act="b-reset">إلغاء وإعادة<kbd>مسافة</kbd></button>'
+      : '<button class="btn gold big" data-act="b-open">🔔 افتح الجرس<kbd>مسافة</kbd></button>';
+    const lab = i => this.bench.has(i) ? 'خارج النهائي' : this.frozen.has(i) ? '❄️ مجمّد في هالسؤال' : this.out.has(i) && w !== i ? 'طالع من هالسؤال' : '';
+    const badge = i => (this.x2.has(i) ? '✌️' : '') + (this.retry.has(i) ? '🔁' : '');
+    const cards = G.cards && !G.fin && !this.open && w == null ? `<div class="pads pc" style="--n:${n}">${T.map((_, i) => cardBar(this, i, BZ_CARDS)).join('')}</div>` : '';
+    stage().innerHTML = `${head}${status}
+      <div class="pads" style="--n:${n}">${T.map((t, i) => `<button class="pad ${w === i ? 'win' : w != null ? 'dim' : this.blocked(i) ? 'out' : ''}" style="--tc:${t.c}" data-act="b-press" data-i="${i}"><span class="e">${t.e}</span><span class="nm">${esc(t.n)} ${badge(i)}</span><span class="key">${arNum(i + 1)}</span>${lab(i) ? `<span class="hint" style="color:#fff">${lab(i)}</span>` : ''}</button>`).join('')}</div>
+      ${cards}<div class="row">${ctl}</div>`;
   },
-  openBell() { if (this.win != null) return; this.open = true; this.t0 = performance.now(); Snd.tick(); this.render(); },
+  openBell() { if (this.phase !== 'play' || this.win != null) return; this.open = true; this.t0 = performance.now(); Snd.tick(); this.render(); },
   press(i) {
-    if (i >= prefs.teamCount || this.win != null || this.out.has(i)) return;
+    if (this.phase !== 'play' || i >= prefs.teamCount || this.win != null || this.blocked(i)) return;
     if (!this.open) { if (prefs.buzz.early) { this.out.add(i); Snd.bad(); this.render(); toast(`${teams()[i].n} استعجل! طالع من هالسؤال`); } return; }
     this.win = i; this.ms = performance.now() - this.t0; this.open = false; Snd.ding(); this.render();
+    const at = prefs.buzz.ansT; if (at) { this.AT = makeTimer(at, l => paintRing($('#b-ring .ring'), l, at), () => { Snd.buzz(); toast('خلص وقت الإجابة!'); }); this.AT.start(); }
   },
-  right() { if (this.win == null) return; addScore(this.win, prefs.buzz.pts); Snd.good(); FX.burst(90); this.tm = setTimeout(() => this.reset(), 900); this.win = -1; },
+  right() {
+    if (this.win == null || this.win < 0) return; const w = this.win, G = this.G, p = prefs.buzz;
+    const pts = p.pts * (this.gold ? 3 : 1) * (this.x2.has(w) ? 2 : 1) * (p.catchup && !G.fin && isLast(w) ? 2 : 1);
+    if (this.AT) this.AT.stop(); addScore(w, pts); Snd.good(); FX.burst(90); toast(`+${arNum(pts)} لـ ${teams()[w].n}`);
+    this.win = -1;
+    if (G.fin) { G.fin.got[w] = (G.fin.got[w] || 0) + 1; if (G.fin.got[w] >= 3) { addScore(w, 5); this.tm = setTimeout(() => ceremony(this, `${teams()[w].n} فاز بالنهائي +٥`), 900); return; } }
+    else G.q++;
+    this.tm = setTimeout(() => this.nextQ(), 900);
+  },
+  nextQ() {
+    const G = this.G;
+    if (!G.fin && G.q >= G.total) { if (prefs.buzz.finale && prefs.teamCount >= 2) { G.fin = { t: top2(), got: {} }; toast('🏆 النهائي!'); Snd.whistle(); } else return ceremony(this); }
+    this.reset();
+  },
   wrong() {
-    if (this.win == null || this.win < 0) return; this.out.add(this.win); this.win = null; Snd.bad();
-    if (this.out.size >= prefs.teamCount) { toast('ما بقى أحد — سؤال جديد'); this.reset(); return; }
+    if (this.win == null || this.win < 0) return; const w = this.win; if (this.AT) this.AT.stop();
+    if (prefs.buzz.pen) addScore(w, -1);
+    if (this.retry.has(w)) { this.retry.delete(w); toast('🔁 فرصة ثانية: الفريق باقي في السؤال'); } else this.out.add(w);
+    this.win = null; Snd.bad();
+    if (!teams().some((_, i) => !this.blocked(i))) { toast('ما بقى أحد — السؤال التالي'); if (!this.G.fin) this.G.q++; return this.nextQ(); }
     this.open = true; this.t0 = performance.now(); this.render();
   },
-  act: { 'b-open'() { Buzz.openBell(); }, 'b-press'(el) { Buzz.press(+el.dataset.i); }, 'b-right'() { Buzz.right(); }, 'b-wrong'() { Buzz.wrong(); }, 'b-reset'() { Buzz.reset(); Snd.pop(); } },
-  set() { this.render(); },
+  skip() { if (this.phase !== 'play' || this.win === -1) return; this.reset(); Snd.pop(); },
+  card(k, i) {
+    const G = this.G; if (!G || !G.cards || G.fin || this.open || this.win != null || !G.cards[i] || !G.cards[i].has(k)) return;
+    if (k === 'freeze') {
+      const S = teams().map((_, j) => j).filter(j => j !== i && !this.blocked(j)).sort((a, b) => (scores[b] || 0) - (scores[a] || 0) || a - b);
+      if (!S.length) return toast('ما فيه فريق تجمّده'); this.frozen.add(S[0]); toast(`❄️ ${teams()[S[0]].n} مجمّد في هالسؤال`);
+    } else (k === 'x2' ? this.x2 : this.retry).add(i);
+    G.cards[i].delete(k); Snd.ding(); this.render();
+  },
+  act: { 'b-open'() { Buzz.openBell(); }, 'b-press'(el) { Buzz.press(+el.dataset.i); }, 'b-right'() { Buzz.right(); }, 'b-wrong'() { Buzz.wrong(); }, 'b-reset'() { Buzz.skip(); } },
+  set() { if (this.phase === 'setup') renderSetup(this); else if (this.phase === 'play' && this.win !== -1) this.render(); },
   key(e) {
+    const u = uKey(this, e); if (u !== 'go') return u ? undefined : false;
     const m = /^(?:Digit|Numpad)([1-6])$/.exec(e.code);
     if (m) this.press(+m[1] - 1);
-    else if (e.code === 'Space') { this.win != null || this.open ? this.reset() : this.openBell(); }
+    else if (e.code === 'Space') { this.win != null || this.open ? this.skip() : this.openBell(); }
     else if (e.code === 'Enter') this.right();
     else if (e.code === 'Backspace') this.wrong();
     else return false;
@@ -601,7 +962,30 @@ const Buzz = {
 const WHEEL_COLORS = ['#FF5A4D', '#4DA3FF', '#34C98B', '#FFB62E', '#A78BFA', '#F472B6', '#2DD4BF', '#FB923C'];
 const Wheel = {
   id: 'wheel', icon: '🎡', title: 'عجلة الاختيار', desc: 'قرعة لاختيار طالب أو فريق أو فقرة',
-  a: 0,
+  a: 0, phase: 'setup', hist: [], pool: [], res: null,
+  S: {
+    desc: ['لفّة وتطلع نتيجة، والكل يبقى في العجلة.', 'لفّة بتشويق، واللي يطلع ينشال عشان الكل ياخذ دوره.', 'اختيارين في كل لفّة، مع سجل باللي طلعوا.', 'قرعة مواجهات كاملة: كل اثنين ضد بعض.'],
+    modes: {
+      classic: { remove: false, suspense: false, picks: 1, pairs: false },
+      hype: { remove: true, suspense: true, picks: 1, pairs: false },
+      adv: { remove: true, suspense: true, picks: 2, pairs: false },
+      cup: { remove: true, suspense: true, picks: 2, pairs: true },
+    },
+    order: ['basic', 'teams'], teams: () => prefs.wheel.src === 'teams', noTeamSum: true,
+    basic: () => {
+      const w = prefs.wheel, n = Wheel.entries().length;
+      return `<div class="card us-card"><div class="us-h"><b>العجلة فيها</b><span class="hint">${arNum(n)} خيار</span></div><div class="us-line" style="margin-top:.5rem">${seg('src', w, [['teams', '👥 الفرق'], ['nums', '🔢 أرقام'], ['custom', '✍️ أسماء من عندي']])}
+        ${w.src === 'nums' ? `<span class="lbl">من ١ إلى</span><input class="fld" type="number" min="2" max="60" value="${w.nums}" data-uin="nums" style="width:5.5rem" aria-label="آخر رقم">` : ''}
+        ${w.src === 'custom' ? `<button class="btn ghost" data-act="w-edit">✏️ الأسماء${n ? ` (${arNum(n)})` : ''}</button>` : ''}</div></div>`;
+    },
+    input: el => { const w = prefs.wheel; w.nums = Math.max(2, Math.min(60, +el.value || 20)); savePrefs(); renderSetup(Wheel); },
+    sum: () => { const w = prefs.wheel, n = Wheel.entries().length; return [`${arNum(n)} خيار في العجلة`, w.pairs ? 'مواجهات' : w.picks > 1 ? `${arNum(w.picks)} في كل لفّة` : '', w.remove ? 'اللي يطلع ينشال' : '']; },
+    moreHint: 'الاختيارات · التشويق · المواجهات',
+    more: () => { const w = prefs.wheel, t = Wheel; return uSeg('🎯 كم اختيار في كل لفّة', 'picks', w, [[1, 'واحد'], [2, 'اثنين'], [3, 'ثلاثة']])
+      + `<div class="mods">${uTog(t, 'remove', '🧺', 'اللي يطلع ينشال', 'ما يتكرر لين يطلع الكل')}${uTog(t, 'suspense', '🥁', 'لفّة التشويق', 'أطول وأبطأ في آخرها، وطبول قبل النتيجة')}${uTog(t, 'pairs', '🆚', 'قرعة مواجهات', 'كل لفّة تطلّع اثنين ضد بعض')}${uGlobal(false)}</div>`; },
+    adminHint: 'قائمة الأسماء',
+    admin: () => { const L = prefs.wheel.text.split(/\r?\n/).map(s => s.trim()).filter(Boolean); return `<div class="us-line" style="justify-content:space-between"><span class="hint">${L.length ? `${arNum(Math.min(60, L.length))} اسم محفوظ` : 'ما فيه أسماء محفوظة'} · حتى ٦٠ اسم</span><button class="btn ghost" data-act="w-edit">✏️ تعديل الأسماء</button></div>`; },
+  },
   entries() {
     const w = prefs.wheel;
     if (w.src === 'teams') return teams().map(t => t.e + ' ' + t.n);
@@ -609,26 +993,32 @@ const Wheel = {
     if (w.src === 'tools') { w.src = 'teams'; return teams().map(t => t.e + ' ' + t.n); }
     return w.text.split(/\r?\n/).map(s => s.trim()).filter(Boolean).slice(0, 60);
   },
-  enter() { this.pool = this.entries(); this.res = null; this.spinning = false; this.render(); },
-  leave() { cancelAnimationFrame(this.raf); this.spinning = false; },
+  enter() { renderSetup(this); },
+  leave() { cancelAnimationFrame(this.raf); this.spinning = false; this.sid = (this.sid || 0) + 1; },
+  busy() { return this.phase === 'play' && this.hist.length > 0; },
+  begin() {
+    const all = this.entries(); if (all.length < 2) { toast('أضف خيارين على الأقل'); return; }
+    uPlay(); this.sid = (this.sid || 0) + 1; this.phase = 'play'; this.pool = all; this.res = null; this.hist = []; this.spinning = false; this.a = 0; this.render(); Snd.pop();
+  },
   render() {
-    const w = prefs.wheel;
     stage().innerHTML = `<div class="wh-side">
       <div class="wheel-wrap" style="--ws:min(62vh,46vw)"><div class="pointer"></div><canvas id="wheel" width="900" height="900"></canvas><button class="wh-hub" data-act="w-spin" aria-label="لف العجلة">🎯</button></div>
-      <div class="wh-res" id="w-res">${this.resHTML()}</div></div>
-      <div class="row"><span class="lbl">العجلة فيها:</span>${seg('src', w, [['teams', '👥 الفرق'], ['nums', '🔢 أرقام'], ['custom', '✍️ أسماء من عندي']])}
-        ${w.src === 'nums' ? `<span class="lbl">إلى</span><input class="fld" type="number" min="2" max="60" value="${w.nums}" id="w-nums" style="width:5rem">` : ''}
-        ${w.src === 'custom' ? '<button class="btn ghost" data-act="w-edit">✏️ الأسماء</button>' : ''}
-        <span class="lbl">بعد الاختيار:</span>${seg('remove', w, [[false, 'يبقى في العجلة'], [true, 'ينشال منها']])}</div>`;
+      <div class="wh-res" id="w-res">${this.resHTML()}</div></div>`;
     this.draw();
-    const ni = $('#w-nums'); if (ni) ni.onchange = () => { w.nums = Math.max(2, Math.min(60, +ni.value || 20)); savePrefs(); this.enter(); };
+  },
+  per() { const w = prefs.wheel; return w.pairs ? 2 : Math.max(1, Math.min(3, w.picks)); },
+  histHTML() {
+    if (!this.hist.length) return ''; const w = prefs.wheel;
+    const rows = this.hist.map((h, i) => `<li><b>${arNum(i + 1)}.</b> ${w.pairs ? (h[1] != null ? `${esc(h[0])} 🆚 ${esc(h[1])}` : `${esc(h[0])} · تأهل مباشر`) : h.map(esc).join('، ')}</li>`);
+    return `<div class="wh-hist"><b>${w.pairs ? '🆚 المواجهات' : '📋 اللي طلعوا'}</b><ol>${rows.slice(-10).join('')}</ol></div>`;
   },
   resHTML() {
-    if (this.res == null) return `<div class="hint">${this.pool.length ? `${arNum(this.pool.length)} خيار في العجلة` : 'العجلة فاضية'}</div><button class="btn gold big" data-act="w-spin" ${this.pool.length < 2 ? 'disabled' : ''}>🎡 لفّ العجلة<kbd>مسافة</kbd></button>${this.pool.length < this.entries().length ? '<button class="btn ghost" data-act="w-refill">↺ رجّع كل الخيارات</button>' : ''}`;
-    const tool = prefs.wheel.src === 'tools' ? TOOLS.find(t => t.icon + ' ' + t.title === this.res) : null;
-    return `<div class="kicker">وقعت القرعة على</div><div class="who">${esc(this.res)}</div>
-      ${tool ? `<button class="btn gold big" data-act="w-go" data-id="${tool.id}">ابدأ الفقرة ←</button>` : ''}
-      <button class="btn big" data-act="w-again">🎡 لفّة جديدة<kbd>مسافة</kbd></button>`;
+    const w = prefs.wheel, more = this.pool.length >= (w.pairs ? 1 : 2), refill = this.pool.length < this.entries().length ? '<button class="btn ghost" data-act="w-refill">↺ رجّع كل الخيارات</button>' : '';
+    if (this.res == null) return `<div class="hint">${this.pool.length ? `${arNum(this.pool.length)} خيار في العجلة` : 'العجلة فاضية'}</div><button class="btn gold big" data-act="w-spin" ${more ? '' : 'disabled'}>🎡 لفّ العجلة<kbd>مسافة</kbd></button>${refill}${this.histHTML()}`;
+    const r = this.res, duel = w.pairs && r.length === 2;
+    return `<div class="kicker">${duel ? `المواجهة ${arNum(this.hist.length)}` : w.pairs ? 'بدون خصم' : 'وقعت القرعة على'}</div>
+      <div class="who ${r.length > 1 ? 'sm' : ''}">${duel ? `${esc(r[0])}<span class="vs">🆚</span>${esc(r[1])}` : r.map(esc).join('<br>')}</div>${w.pairs && r.length === 1 ? '<div class="hint">تأهل مباشر</div>' : ''}
+      ${more ? `<button class="btn big" data-act="w-again">🎡 ${w.pairs ? 'المواجهة التالية' : 'لفّة جديدة'}<kbd>مسافة</kbd></button>` : '<div class="hint">خلصت الخيارات 🎉</div>'}${refill}${this.histHTML()}`;
   },
   draw() {
     const cv = $('#wheel'); if (!cv) return; const x = cv.getContext('2d'), R = 450, n = this.pool.length;
@@ -647,32 +1037,56 @@ const Wheel = {
       x.fillText(t, R - 34, 0); x.restore();
     }
   },
-  spin() {
-    if (this.spinning || this.pool.length < 2) return;
-    this.spinning = true; this.res = null; $('#w-res').innerHTML = '<div class="kicker">… تلفّ …</div>'; Snd.whistle();
-    const n = this.pool.length, sw = Math.PI * 2 / n, pick = Math.random() * n | 0;
-    // نوقف بحيث يكون منتصف الخيار المختار تحت المؤشر (فوق)
-    const TAU = Math.PI * 2, base = -(pick * sw + sw / 2) + (Math.random() - .5) * sw * .7, turns = 5 + Math.random() * 2 | 0;
-    const from = this.a, target = from - (TAU * turns + ((from - base) % TAU + TAU) % TAU);
-    const dur = RM ? 300 : 5200, t0 = performance.now(); let lastSeg = Math.floor(-from / sw);
-    const ease = t => 1 - Math.pow(1 - t, 4);
-    const step = now => {
-      if (cur !== Wheel) { this.spinning = false; return; }   // طلع المقدّم من العجلة أثناء اللف
-      const t = Math.min(1, (now - t0) / dur); this.a = from + (target - from) * ease(t); this.draw();
-      const sg = Math.floor(-this.a / sw); if (sg !== lastSeg) { lastSeg = sg; Snd.tick(); }
-      if (t < 1) this.raf = requestAnimationFrame(step);
-      else { this.spinning = false; this.res = this.pool[pick]; Snd.win(); FX.burst(110); if (prefs.wheel.remove) { this.pool.splice(pick, 1); } $('#w-res').innerHTML = this.resHTML(); if (prefs.wheel.remove) { this.a = 0; this.draw(); } }
-    };
-    this.raf = requestAnimationFrame(step);
+  spinOnce(dur, sus) {   // لفّة وحدة، ترجع رقم الخيار اللي وقف عليه المؤشر
+    return new Promise(done => {
+      const id = this.sid, live = () => cur === Wheel && this.phase === 'play' && this.sid === id, n = this.pool.length, sw = Math.PI * 2 / n, pick = Math.random() * n | 0, TAU = Math.PI * 2;
+      // نوقف بحيث يكون منتصف الخيار المختار تحت المؤشر (فوق)
+      const base = -(pick * sw + sw / 2) + (Math.random() - .5) * sw * .7, turns = (sus ? 7 : 5) + Math.random() * 2 | 0;
+      const from = this.a, target = from - (TAU * turns + ((from - base) % TAU + TAU) % TAU);
+      const D = RM ? 300 : dur, t0 = performance.now(); let lastSeg = Math.floor(-from / sw);
+      const ease = sus ? t => 1 - Math.pow(1 - t, 5) : t => 1 - Math.pow(1 - t, 4);
+      const step = now => {
+        if (!live()) return done(null);   // طلع المقدّم من العجلة أثناء اللف
+        const t = Math.min(1, (now - t0) / D); this.a = from + (target - from) * ease(t); this.draw();
+        const sg = Math.floor(-this.a / sw); if (sg !== lastSeg) { lastSeg = sg; Snd.tick(); }
+        if (t < 1) { this.raf = requestAnimationFrame(step); return; }
+        if (!sus || RM) return done(pick);
+        const r = $('#w-res'); if (r) r.innerHTML = '<div class="who drum">🥁</div>';
+        for (let i = 0; i < 9; i++) setTimeout(() => Snd.tick(), i * 85);
+        setTimeout(() => done(live() ? pick : null), 950);
+      };
+      this.raf = requestAnimationFrame(step);
+    });
+  },
+  async spin() {
+    if (this.phase !== 'play' || this.spinning) return; const w = prefs.wheel, k = this.per();
+    if (this.pool.length < 2 && !(w.pairs && this.pool.length === 1)) return;
+    this.spinning = true; this.res = null; const got = []; Snd.whistle();
+    while (got.length < k && this.pool.length) {
+      let i = 0;
+      if (this.pool.length > 1) {
+        const r = $('#w-res'); if (r) r.innerHTML = `<div class="kicker">${got.length ? `الاختيار ${arNum(got.length + 1)} …` : '… تلفّ …'}</div>${got.length ? `<div class="who sm">${got.map(esc).join('<br>')}</div>` : ''}`;
+        i = await this.spinOnce(got.length ? 2600 : w.suspense ? 8000 : 5200, w.suspense && !got.length);
+        if (i == null) return;
+      }
+      got.push(this.pool.splice(i, 1)[0]); this.a = 0; this.draw();
+      if (got.length < k && this.pool.length) { Snd.ding(); const id = this.sid; await sleep(RM ? 50 : 500); if (cur !== Wheel || this.phase !== 'play' || this.sid !== id) return; }
+    }
+    if (!w.remove) { this.pool = this.entries(); this.draw(); }
+    this.spinning = false; this.res = got; this.hist.push(w.pairs ? [got[0], got[1] != null ? got[1] : null] : got);
+    Snd.win(); FX.burst(110); const r = $('#w-res'); if (r) r.innerHTML = this.resHTML();
   },
   edit() {
-    const d = dialog(`<h3>✍️ أسماء العجلة</h3><p class="hint" style="margin:0">كل اسم في سطر (حتى 60).</p><textarea class="fld" id="w-text" placeholder="محمد&#10;عبدالله&#10;خالد">${esc(prefs.wheel.text)}</textarea>
+    const d = dialog(`<h3>✍️ أسماء العجلة</h3><p class="hint" style="margin:0">كل اسم في سطر (حتى ٦٠).</p><textarea class="fld" id="w-text" placeholder="محمد&#10;عبدالله&#10;خالد">${esc(prefs.wheel.text)}</textarea>
       <div class="acts"><button class="btn gold" id="w-save">حفظ</button><button class="btn ghost" data-close>إلغاء</button></div>`);
-    $('#w-save', d).onclick = () => { prefs.wheel.text = $('#w-text', d).value; savePrefs(); closeDialog(); this.enter(); };
+    $('#w-save', d).onclick = () => { prefs.wheel.text = $('#w-text', d).value; savePrefs(); closeDialog(); if (this.phase === 'play') this.begin(); else renderSetup(this); };
   },
-  act: { 'w-spin'() { Wheel.spin(); }, 'w-again'() { Wheel.res = null; Wheel.spin(); }, 'w-edit'() { Wheel.edit(); }, 'w-refill'() { Wheel.enter(); }, 'w-go'(el) { open(el.dataset.id); } },
-  set() { this.enter(); },
-  key(e) { if (e.code === 'Space' || e.code === 'Enter') { this.res = null; this.spin(); } else return false; },
+  act: { 'w-spin'() { Wheel.spin(); }, 'w-again'() { Wheel.spin(); }, 'w-edit'() { Wheel.edit(); }, 'w-refill'() { if (!Wheel.spinning) { Wheel.pool = Wheel.entries(); Wheel.res = null; Wheel.a = 0; Wheel.render(); Snd.pop(); } }, 'w-go'(el) { open(el.dataset.id); } },
+  set() { if (this.phase === 'setup') renderSetup(this); },
+  key(e) {
+    const u = uKey(this, e); if (u !== 'go') return u ? undefined : false;
+    if (e.code === 'Space' || e.code === 'Enter') this.spin(); else return false;
+  },
 };
 
 /* ---------- بنك الأسئلة (لضربات الجزاء وصح أو خطأ) ---------- */
@@ -878,76 +1292,160 @@ const JUZ_OF = (() => {   // رقم الجزء لكل آية (بالترتيب �
 })();
 const MARK = /^[ؐ-ؚۖ-ۭ]+$/;   // علامات الوقف تلتصق بالكلمة اللي قبلها
 const words = t => t.split(' ').reduce((a, w) => { if (MARK.test(w) && a.length) a[a.length - 1] += ' ' + w; else a.push(w); return a; }, []);
+const AY_TYPES = [['complete', 'أكمل الآية'], ['next', 'الآية التالية'], ['which', 'من أي سورة؟']];
+const AY_CARDS = [['hint', '💡', 'تلميح'], ['time', '⏱️', '+١٠ ثواني'], ['swap', '🔄', 'آية ثانية']];
+const AY_FIN = 4;   // أسئلة جولة الحسم (٢ لكل فريق)
+const ayOK = (type, si, ai, n) => type === 'complete' ? n >= 4 : type === 'next' ? ai < QS[si][1].length - 1 && n >= 2 : n >= 3;
 const Ayat = {
   id: 'ayat', icon: '📖', title: 'أكمل الآية', desc: 'أكمل الآية، والآية التالية، ومن أي سورة؟',
-  enter() { this.phase = 'setup'; this.renderSetup(); },
+  phase: 'setup',
+  S: {
+    score: true,
+    desc: ['أكمل الآية، فريق بعد فريق، واسم السورة تلميح.', 'أكمل والتالية، بمؤقت وسرقة وآيات ذهبية.', 'كل الأنواع بدون تلميح، وبطاقات قوى.', 'كل المتقدم في لعبة أكبر، وختامها جولة الحسم.'],
+    modes: {
+      classic: { types: ['complete'], timer: 0, hint: true, steal: false, gold: 0, cards: false, finale: false },
+      hype: { types: ['complete', 'next'], timer: 15, hint: true, steal: true, gold: 20, cards: false, finale: false },
+      adv: { types: ['complete', 'next', 'which'], timer: 15, hint: false, steal: true, gold: 20, cards: true, finale: false },
+      cup: { types: ['complete', 'next', 'which'], timer: 15, hint: false, steal: true, gold: 20, cards: true, finale: true },
+    },
+    migrate: p => { if (!Array.isArray(p.types) || !p.types.length) p.types = [AY_TYPES.some(x => x[0] === p.mode) ? p.mode : 'complete']; if (!Array.isArray(p.juz)) p.juz = [30]; },
+    sizeN: s => Math.round(10 * sizeF(s)), unit: 'آية', sizeHint: 'آية لكل دور',
+    mins: n => Math.max(2, Math.round(n * 45 / 60)),
+    sum: () => { const p = prefs.ayat, want = Ayat.S.sizeN(p.size), N = Math.min(want, Ayat.pool().length); return [`${arNum(N)} آية${N < want ? ' (المتاح)' : ''}`, `≈ ${arNum(Ayat.S.mins(N))} دقيقة`]; },
+    basic: () => {
+      const p = prefs.ayat, n = Ayat.pool().length;
+      const opts = QS.map((s, i) => `<option value="${i + 1}">${arNum(i + 1)}. ${esc(s[0])}</option>`).join('');
+      return `<div class="card us-card"><div class="us-h"><b>المقرّر</b>${seg('by', p, [['juz', 'بالأجزاء'], ['surah', 'بالسور']])}${p.by === 'juz' ? `<div class="chips us-quick"><button class="chip" data-act="a-quick" data-v="30">جزء عمّ</button><button class="chip" data-act="a-quick" data-v="29">تبارك</button><button class="chip" data-act="a-quick" data-v="28">قد سمع</button><button class="chip" data-act="a-quick" data-v="28,29,30">آخر ٣ أجزاء</button><button class="chip" data-act="a-quick" data-v="all">الكل</button></div>` : ''}<span class="hint us-by">${arNum(n)} آية متاحة</span></div>
+        ${p.by === 'juz' ? `<div class="juz-grid us-juz">${Array.from({ length: 30 }, (_, i) => `<button class="chip ${p.juz.includes(i + 1) ? 'on' : ''}" data-act="a-juz" data-v="${i + 1}" title="الجزء ${i + 1}">${arNum(i + 1)}</button>`).join('')}</div>`
+        : `<div class="us-line" style="margin-top:.45rem"><span class="lbl">من سورة</span><select class="fld" id="a-from">${opts}</select><span class="lbl">إلى سورة</span><select class="fld" id="a-to">${opts}</select></div>`}</div>`;
+    },
+    after: () => { const p = prefs.ayat, f = $('#a-from'), t = $('#a-to'); if (f) { f.value = p.from; t.value = p.to; f.onchange = t.onchange = () => { p.from = +f.value; p.to = +t.value; savePrefs(); renderSetup(Ayat); }; } },
+    moreHint: 'أنواع الأسئلة · المؤقت · المفاجآت · البطاقات',
+    more: () => { const p = prefs.ayat, t = Ayat; return `<div class="us-line"><span class="lbl">📖 أنواع الأسئلة</span><div class="chips">${AY_TYPES.map(([k, l]) => `<button class="chip ${p.types.includes(k) ? 'on' : ''}" data-act="a-type" data-v="${k}" aria-pressed="${p.types.includes(k)}">${l}</button>`).join('')}</div></div>`
+      + uSeg('⏱️ مؤقت لكل آية', 'timer', p, [[0, 'بدون'], [15, '١٥ ث'], [30, '٣٠ ث']])
+      + `<div class="mods">${uTog(t, 'hint', '🏷️', 'اسم السورة كتلميح', 'يظهر فوق الآية (ما عدا «من أي سورة»)')}${uTog(t, 'steal', '🏴‍☠️', 'السرقة', 'الخطأ يروح للفريق اللي بعده قبل كشف الجواب')}${uPct(t, 'gold', '⭐', 'آية ذهبية', 'نسبة ظهورها، ونقاطها ×٢')}${uTog(t, 'cards', '🃏', 'بطاقات القوى', 'لكل فريق: تلميح · +١٠ ثواني · آية ثانية')}${uTog(t, 'finale', '🏆', 'جولة الحسم', 'الختام بين أول فريقين: ٤ آيات «التالية» بنقاط ×٢')}${uGlobal(true)}</div>`; },
+    adminHint: 'المصدر · لوحة النقاط',
+    admin: () => `<div class="us-line" style="justify-content:space-between"><span class="hint">النص من مصحف المدينة برواية حفص (الرسم العثماني، مشروع تنزيل).</span>${uZeroNow()}</div>`,
+  },
+  enter() { renderSetup(this); },
   leave() { if (this.T) this.T.stop(); },
+  busy() { return !!this.G && this.phase === 'run' && (this.G.k > 0 || !!this.G.fin); },
   pool() {
-    const p = prefs.ayat, out = [];
+    const p = prefs.ayat, out = [], lo = Math.min(p.from, p.to), hi = Math.max(p.from, p.to);
     QS.forEach((s, si) => s[1].forEach((t, ai) => {
-      const g = OFF[si] + ai;
-      if (p.by === 'juz' ? !p.juz.includes(JUZ_OF[g]) : (si + 1 < Math.min(p.from, p.to) || si + 1 > Math.max(p.from, p.to))) return;
+      if (p.by === 'juz' ? !p.juz.includes(JUZ_OF[OFF[si] + ai]) : (si + 1 < lo || si + 1 > hi)) return;
       const n = words(t).length;
-      if (p.mode === 'complete' ? n >= 4 : p.mode === 'next' ? ai < s[1].length - 1 && n >= 2 : n >= 3) out.push([si, ai]);
+      if (p.types.some(tp => ayOK(tp, si, ai, n))) out.push([si, ai, n]);
     }));
     return out;
   },
-  renderSetup() {
-    const p = prefs.ayat, n = this.pool().length;
-    const opts = QS.map((s, i) => `<option value="${i + 1}">${arNum(i + 1)}. ${esc(s[0])}</option>`).join('');
-    stage().innerHTML = `<div class="setup">
-      <div class="big-q" style="font-size:clamp(2rem,6vh,3.4rem)">📖 أكمل الآية</div>
-      <div class="opt"><span class="lbl">نوع السؤال</span>${seg('mode', p, [['complete', 'أكمل الآية'], ['next', 'ما الآية التالية؟'], ['which', 'من أي سورة؟']])}</div>
-      <div class="opt"><span class="lbl">المقرّر</span>${seg('by', p, [['juz', 'بالأجزاء'], ['surah', 'بالسور']])}</div>
-      ${p.by === 'juz' ? `<div class="chips"><button class="chip" data-act="a-quick" data-v="30">جزء عمّ</button><button class="chip" data-act="a-quick" data-v="29">تبارك</button><button class="chip" data-act="a-quick" data-v="28">قد سمع</button><button class="chip" data-act="a-quick" data-v="28,29,30">آخر ٣ أجزاء</button><button class="chip" data-act="a-quick" data-v="all">الكل</button></div>
-        <div class="juz-grid">${Array.from({ length: 30 }, (_, i) => `<button class="chip ${p.juz.includes(i + 1) ? 'on' : ''}" data-act="a-juz" data-v="${i + 1}" title="الجزء ${i + 1}">${arNum(i + 1)}</button>`).join('')}</div>`
-      : `<div class="row"><span class="lbl">من سورة</span><select class="fld" id="a-from">${opts}</select><span class="lbl">إلى سورة</span><select class="fld" id="a-to">${opts}</select></div>`}
-      <div class="opt"><span class="lbl">مؤقت لكل آية</span>${seg('timer', p, [[0, 'بدون'], [15, '15 ث'], [30, '30 ث']])}</div>
-      ${p.mode !== 'which' ? `<div class="opt">${seg('hint', p, [[true, 'نكتب اسم السورة كتلميح'], [false, 'بدون تلميح']])}</div>` : ''}
-      <button class="btn gold big" data-act="a-start" ${n ? '' : 'disabled'}>▶ ابدأ (${arNum(n)} آية)<kbd>Enter</kbd></button>
-      <p class="hint">النص من مصحف المدينة برواية حفص (الرسم العثماني، مشروع تنزيل).</p></div>`;
-    const f = $('#a-from'), t = $('#a-to');
-    if (f) { f.value = p.from; t.value = p.to; f.onchange = t.onchange = () => { p.from = +f.value; p.to = +t.value; savePrefs(); this.renderSetup(); }; }
+  begin() {
+    const p = prefs.ayat, pool = this.pool(); if (!pool.length) return toast('ما فيه آيات بهالاختيار');
+    uPlay(); this.bag = shuffle(pool);
+    this.G = { k: 0, total: Math.min(pool.length, this.S.sizeN(p.size)), cards: p.cards ? teams().map(() => new Set(AY_CARDS.map(c => c[0]))) : null, fin: null };
+    this.phase = 'run'; Snd.whistle(); this.load();
   },
-  start() { this.list = shuffle(this.pool()); this.k = 0; if (!this.list.length) return; this.phase = 'run'; Snd.whistle(); this.show(); },
+  pick(types) {   // آية من الكيس تناسب أحد الأنواع (ما تتكرر لين يخلص الكيس)
+    for (let i = 0; i < this.bag.length; i++) { const it = this.bag.shift(); this.bag.push(it); const ok = types.filter(tp => ayOK(tp, it[0], it[1], it[2])); if (ok.length) return { si: it[0], ai: it[1], type: rnd(ok) }; }
+    return null;
+  },
+  load() {
+    if (this.T) this.T.stop(); const G = this.G, p = prefs.ayat, fin = G.fin;
+    const team = fin ? fin.t[fin.k % 2] : G.k % prefs.teamCount, q = fin ? (this.pick(['next']) || this.pick(p.types)) : this.pick(p.types);
+    this.Q = { ...q, team, mult: fin ? 2 : p.gold > 0 && chance(p.gold) ? 2 : 1, time: p.timer, hintN: 0, st: 'ask' };
+    this.show();
+  },
+  textHTML() {
+    const Q = this.Q, w = words(QS[Q.si][1][Q.ai]);
+    if (Q.type !== 'complete') return `﴿ ${QS[Q.si][1][Q.ai]} ﴾`;
+    return `﴿ ${w.slice(0, Math.min(w.length - 1, this.cut + Q.hintN)).join(' ')} <span class="gap">…</span> ﴾`;
+  },
+  hintHTML() {
+    const Q = this.Q; if (!Q.hintN || this.revealed) return '';
+    if (Q.type === 'next') return `<div class="qr hintq">💡 تبدأ بـ: ${words(QS[Q.si][1][Q.ai + 1]).slice(0, Q.hintN).join(' ')} …</div>`;
+    if (Q.type === 'which') return `<div class="ref">💡 من الجزء ${arNum(JUZ_OF[OFF[Q.si] + Q.ai])}</div>`;
+    return '';
+  },
   show() {
-    if (this.T) this.T.stop();
-    const [si, ai] = this.list[this.k % this.list.length], p = prefs.ayat, s = QS[si], text = s[1][ai];
-    this.cur = [si, ai]; this.revealed = false;
-    const w = words(text), cut = Math.max(2, Math.min(w.length - 2, Math.round(w.length * .45)));
-    this.cut = cut;
-    const prompt = p.mode === 'complete' ? 'أكمل الآية' : p.mode === 'next' ? 'ما الآية التالية؟' : 'من أي سورة هذه الآية؟';
-    const body = p.mode === 'complete' ? `${w.slice(0, cut).join(' ')} <span class="gap">…</span>` : text;
-    stage().innerHTML = `<div class="kicker">${prompt}${p.mode !== 'which' && p.hint ? ` · سورة ${esc(s[0])}` : ''} · ${arNum(this.k % this.list.length + 1)} من ${arNum(this.list.length)}</div>
-      ${p.timer ? `<div id="a-ring">${ringHTML(p.timer, p.timer, 'clamp(4.5rem,11vh,6rem)')}</div>` : ''}
-      <div class="card"><div class="qr" id="a-text">﴿ ${body} ﴾</div><div id="a-ans"></div></div>
-      <div class="row" id="a-ctl"><button class="btn gold big" data-act="a-reveal">👁 أظهر الجواب<kbd>مسافة</kbd></button><button class="btn big" data-act="a-next">التالي ←<kbd>Enter</kbd></button><button class="btn ghost" data-act="a-setup">⚙ الإعداد</button></div>`;
-    if (p.timer) { this.T = makeTimer(p.timer, l => paintRing($('#a-ring .ring'), l, p.timer), () => { Snd.buzz(); }); this.T.start(); }
+    if (this.T) this.T.stop(); const Q = this.Q, p = prefs.ayat, s = QS[Q.si], G = this.G, w = words(s[1][Q.ai]);
+    this.cut = Math.max(2, Math.min(w.length - 2, Math.round(w.length * .45))); this.revealed = false;
+    const prompt = Q.type === 'complete' ? 'أكمل الآية' : Q.type === 'next' ? 'ما الآية التالية؟' : 'من أي سورة هذه الآية؟';
+    const head = G.fin ? `🏆 جولة الحسم · ${arNum(G.fin.k + 1)} من ${arNum(AY_FIN)}` : `${arNum(G.k + 1)} من ${arNum(G.total)}`;
+    const tag = Q.mult > 1 ? `<span class="tagx gold" style="margin-inline-start:.5rem">${G.fin ? 'النقاط ×٢' : '⭐ آية ذهبية ×٢'}</span>` : '';
+    stage().innerHTML = `<div class="kicker">${prompt}${p.hint && Q.type !== 'which' ? ` · سورة ${esc(s[0])}` : ''} · ${head}</div>
+      ${turnHTML(Q.team, tag)}
+      ${Q.time ? `<div id="a-ring">${ringHTML(Q.time, Q.time, 'clamp(4.5rem,11vh,6rem)')}</div>` : ''}
+      <div class="card"><div class="qr" id="a-text">${this.textHTML()}</div><div id="a-hint">${this.hintHTML()}</div><div id="a-ans"></div></div>
+      <div class="row" id="a-ctl">${this.ctlHTML()}</div><div id="a-cards">${this.cardsHTML()}</div>`;
+    if (Q.time) { this.T = makeTimer(Q.time, l => paintRing($('#a-ring .ring'), l, this.Q.time), () => { Snd.buzz(); }); this.T.start(); }
   },
+  cardsHTML() { const Q = this.Q, G = this.G; return G.cards && !G.fin && Q.st === 'ask' && !this.revealed ? cardBar(this, Q.team, AY_CARDS.filter(c => c[0] !== 'time' || Q.time)) : ''; },
+  ctlHTML() {
+    const Q = this.Q, T = teams(), G = this.G;
+    if (Q.st === 'ask') return `${this.revealed ? '' : '<button class="btn big" data-act="a-reveal">👁 الجواب<kbd>مسافة</kbd></button>'}<button class="btn good big" data-act="a-ok">✓ صح +${arNum(Q.mult)}<kbd>Enter</kbd></button><button class="btn bad big" data-act="a-no">✗ خطأ<kbd>⌫</kbd></button>${!G.cards && !G.fin && !this.revealed ? '<button class="btn ghost" data-act="a-skip">⟳ آية ثانية</button>' : ''}`;
+    if (Q.st === 'steal') { const th = T[(Q.team + 1) % T.length]; return `<span class="turn" style="--tc:${th.c}">🏴‍☠️ فرصة السرقة: ${th.e} ${esc(th.n)}</span><button class="btn good big" data-act="a-ok">✓ سرقوها +${arNum(Q.mult)}<kbd>Enter</kbd></button><button class="btn bad big" data-act="a-no">✗ ما عرفوا<kbd>⌫</kbd></button>`; }
+    const last = G.fin ? G.fin.k + 1 >= AY_FIN : G.k + 1 >= G.total;
+    return `<button class="btn gold big" data-act="a-next">${!last ? 'التالي' : !G.fin && prefs.ayat.finale && prefs.teamCount >= 2 ? '🏆 إلى جولة الحسم' : '🏁 النتيجة النهائية'} ←<kbd>Enter</kbd></button>`;
+  },
+  paint() { const c = $('#a-ctl'); if (c) c.innerHTML = this.ctlHTML(); const k = $('#a-cards'); if (k) k.innerHTML = this.cardsHTML(); },
   reveal() {
     if (this.phase !== 'run' || this.revealed) return; this.revealed = true; if (this.T) this.T.stop(); Snd.ding();
-    const [si, ai] = this.cur, p = prefs.ayat, s = QS[si], ref = `<div class="ref">سورة ${esc(s[0])} · الآية ${arNum(ai + 1)}</div>`;
-    if (p.mode === 'complete') { const w = words(s[1][ai]); $('#a-text').innerHTML = `﴿ ${w.slice(0, this.cut).join(' ')} <span class="rest">${w.slice(this.cut).join(' ')}</span> ﴾`; $('#a-ans').innerHTML = ref; }
-    else if (p.mode === 'next') $('#a-ans').innerHTML = `<div class="qr next">﴿ <span class="rest">${s[1][ai + 1]}</span> ﴾</div><div class="ref">سورة ${esc(s[0])} · الآية ${arNum(ai + 2)}</div>`;
-    else $('#a-ans').innerHTML = `<div class="ans" style="font-size:clamp(1.6rem,5vh,2.8rem)">سورة ${esc(s[0])}</div><div class="ref" style="margin-top:.6rem">الآية ${arNum(ai + 1)} · الجزء ${arNum(JUZ_OF[OFF[si] + ai])}</div>`;
-    const r = $('[data-act="a-reveal"]'); if (r) r.remove();
+    const Q = this.Q, s = QS[Q.si], ai = Q.ai, ref = `<div class="ref">سورة ${esc(s[0])} · الآية ${arNum(ai + 1)}</div>`;
+    $('#a-hint').innerHTML = '';
+    if (Q.type === 'complete') { const w = words(s[1][ai]), v = Math.min(w.length - 1, this.cut + Q.hintN); $('#a-text').innerHTML = `﴿ ${w.slice(0, v).join(' ')} <span class="rest">${w.slice(v).join(' ')}</span> ﴾`; $('#a-ans').innerHTML = ref; }
+    else if (Q.type === 'next') $('#a-ans').innerHTML = `<div class="qr next">﴿ <span class="rest">${s[1][ai + 1]}</span> ﴾</div><div class="ref">سورة ${esc(s[0])} · الآية ${arNum(ai + 2)}</div>`;
+    else $('#a-ans').innerHTML = `<div class="ans" style="font-size:clamp(1.6rem,5vh,2.8rem)">سورة ${esc(s[0])}</div><div class="ref" style="margin-top:.6rem">الآية ${arNum(ai + 1)} · الجزء ${arNum(JUZ_OF[OFF[Q.si] + ai])}</div>`;
+    this.paint();
+  },
+  award(i, m) { addScore(i, m); Snd.good(); FX.burst(70); toast(`+${arNum(m)} لـ ${teams()[i].n}`); },
+  judge(ok) {
+    const Q = this.Q; if (this.phase !== 'run' || Q.st === 'done') return;
+    if (Q.st === 'ask') {
+      if (ok) { this.award(Q.team, Q.mult); Q.st = 'done'; }
+      else if (prefs.ayat.steal && prefs.teamCount > 1 && !this.G.fin && !this.revealed) { Q.st = 'steal'; Snd.bad(); if (this.T) this.T.stop(); return this.paint(); }
+      else { Q.st = 'done'; Snd.bad(); }
+    } else { if (ok) this.award((Q.team + 1) % prefs.teamCount, Q.mult); else Snd.bad(); Q.st = 'done'; }
+    if (this.revealed) this.paint(); else this.reveal();
+  },
+  next() {
+    const G = this.G; if (this.Q.st !== 'done') return;
+    if (G.fin) { G.fin.k++; return G.fin.k >= AY_FIN ? ceremony(this, 'جولة الحسم') : this.load(); }
+    G.k++;
+    if (G.k >= G.total) { if (prefs.ayat.finale && prefs.teamCount >= 2) { G.fin = { t: top2(), k: 0 }; toast('🏆 جولة الحسم!'); Snd.whistle(); return this.load(); } return ceremony(this); }
+    this.load(); Snd.pop();
+  },
+  skip() { const Q = this.Q; if (this.phase !== 'run' || Q.st !== 'ask' || this.revealed || this.G.cards || this.G.fin) return; Object.assign(Q, this.pick(prefs.ayat.types), { hintN: 0 }); this.show(); Snd.pop(); },
+  card(k, i) {
+    const G = this.G, Q = this.Q; if (!G || !G.cards || G.fin || this.phase !== 'run' || Q.st !== 'ask' || this.revealed || i !== Q.team || !G.cards[i] || !G.cards[i].has(k)) return;
+    if (k === 'time' && !this.T) return;
+    if (k === 'hint' && Q.type === 'which' && Q.hintN) return;
+    G.cards[i].delete(k); Snd.ding();
+    if (k === 'swap') { Object.assign(Q, this.pick(prefs.ayat.types), { hintN: 0 }); return this.show(); }
+    if (k === 'time') { Q.time += 10; this.T.add(10); toast('⏱️ +١٠ ثواني'); }
+    else { Q.hintN += 2; $('#a-text').innerHTML = this.textHTML(); $('#a-hint').innerHTML = this.hintHTML(); }
+    this.paint();
   },
   act: {
-    'a-juz'(el) { const p = prefs.ayat, v = +el.dataset.v, i = p.juz.indexOf(v); if (i >= 0) p.juz.splice(i, 1); else p.juz.push(v); savePrefs(); Ayat.renderSetup(); },
-    'a-quick'(el) { prefs.ayat.juz = el.dataset.v === 'all' ? Array.from({ length: 30 }, (_, i) => i + 1) : el.dataset.v.split(',').map(Number); savePrefs(); Ayat.renderSetup(); Snd.pop(); },
-    'a-start'() { Ayat.start(); }, 'a-reveal'() { Ayat.reveal(); },
-    'a-next'() { Ayat.k++; Ayat.show(); Snd.pop(); }, 'a-setup'() { Ayat.enter(); },
+    'a-juz'(el) { const p = prefs.ayat, v = +el.dataset.v, i = p.juz.indexOf(v); if (i >= 0) p.juz.splice(i, 1); else p.juz.push(v); savePrefs(); renderSetup(Ayat); },
+    'a-quick'(el) { prefs.ayat.juz = el.dataset.v === 'all' ? Array.from({ length: 30 }, (_, i) => i + 1) : el.dataset.v.split(',').map(Number); savePrefs(); renderSetup(Ayat); Snd.pop(); },
+    'a-type'(el) { const p = prefs.ayat, v = el.dataset.v, on = p.types.includes(v); if (on && p.types.length === 1) return toast('اختر نوع واحد على الأقل'); p.types = AY_TYPES.map(x => x[0]).filter(k => k === v ? !on : p.types.includes(k)); p.mode = p.types[0]; savePrefs(); renderSetup(Ayat); Snd.pop(); },
+    'a-start'() { Ayat.begin(); }, 'a-reveal'() { Ayat.reveal(); }, 'a-ok'() { Ayat.judge(true); }, 'a-no'() { Ayat.judge(false); },
+    'a-next'() { Ayat.next(); }, 'a-skip'() { Ayat.skip(); }, 'a-setup'() { UACT['u-setup'](); },
   },
-  set() { this.renderSetup(); },
+  set() { if (this.phase === 'setup') renderSetup(this); },
   key(e) {
-    if (this.phase === 'setup') { if (e.code === 'Enter') this.start(); else return false; }
-    else if (e.code === 'Space') this.reveal();
-    else if (e.code === 'Enter' || e.code === 'ArrowLeft') this.act['a-next']();
+    const u = uKey(this, e); if (u !== 'go') return u ? undefined : false;
+    const Q = this.Q;
+    if (e.code === 'Space') this.reveal();
+    else if (e.code === 'Enter') { if (Q.st === 'done') this.next(); else this.judge(true); }
+    else if (e.code === 'Backspace') this.judge(false);
     else return false;
   },
 };
 
 const TOOLS = [Counter, Buzz, Wheel, PK, TF, Ayat].filter(t => t.id === SOLO);
+TOOLS.forEach(t => { if (!t.S) return; initMode(t); if (!t.dlgClosed) t.dlgClosed = function () { if (this.phase === 'setup') renderSetup(this); }; });
+savePrefs();
 
 /* ==========================================================================
    6) التنقّل والأوامر
@@ -997,7 +1495,7 @@ const HELP = `<h3>❓ طريقة الاستخدام</h3><div style="line-height:
 const ACT = {
   open: el => open(el.dataset.id),
   home: () => {
-    if (cur === PK && PK.busy()) { const d = dialog(`<h3>ترجع للرئيسية؟</h3><p style="margin:0">المباراة الحالية بتضيع.</p><div class="acts"><button class="btn bad" id="go-home">نعم، ارجع</button><button class="btn ghost" data-close>كمّل المباراة</button></div>`); $('#go-home', d).onclick = () => { closeDialog(); showHome(); }; return; }
+    if (cur && cur.busy && cur.busy()) { const d = dialog(`<h3>ترجع للرئيسية؟</h3><p style="margin:0">اللعبة الحالية بتضيع.</p><div class="acts"><button class="btn bad" id="go-home">نعم، ارجع</button><button class="btn ghost" data-close>كمّل اللعبة</button></div>`); $('#go-home', d).onclick = () => { closeDialog(); showHome(); }; return; }
     showHome();
   },
   sound: () => { prefs.sound = !prefs.sound; savePrefs(); applySound(); Snd.pop(); },
@@ -1017,7 +1515,7 @@ document.addEventListener('click', e => {
     savePrefs(); Snd.pop(); cur.set(); return;
   }
   const el = e.target.closest('[data-act]'); if (!el || el.disabled) return;
-  const a = el.dataset.act, f = ACT[a] || (cur && cur.act && cur.act[a]);
+  const a = el.dataset.act, f = ACT[a] || UACT[a] || (cur && cur.act && cur.act[a]);
   if (f) f(el, e);
 });
 addEventListener('keydown', e => {

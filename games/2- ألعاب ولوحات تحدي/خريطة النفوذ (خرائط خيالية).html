@@ -555,8 +555,70 @@ select.field option{background:var(--bg2);color:var(--ink)}
 [data-design=atlas] .home-feats span{background:#f7efdd;border-color:#baaa86}
 [data-design=atlas] .compass{opacity:.7}
 @media(max-width:600px){.design-toggle{font-size:.75rem;padding:.35rem .5rem}}
+
+/* ui-setup v1: شاشة الإعداد الموحدة (أساسي · إعدادات إضافية · للمشرف) */
+#setup .s-head{padding:.6rem 1.6rem .35rem}
+#setup .s-head h2{font-size:2rem}
+.s-body.uni{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-areas:"modes teams" "size teams" "q teams" "more more" "admin admin";grid-template-rows:repeat(5,max-content);gap:.7rem 1rem;padding:.2rem 1.6rem 6.2rem;align-content:start}
+.uni>.card{padding:.75rem 1.05rem}
+.uni>.card>h3{font-size:1.15rem;margin:0 0 .5rem}
+.c-modes{grid-area:modes}.c-teams{grid-area:teams;align-self:start}.c-size{grid-area:size}.c-q{grid-area:q}.c-more{grid-area:more}.c-admin{grid-area:admin}
+.tagc{background:var(--gold);color:#241703;border-radius:99px;padding:.05em .75em;font-size:.8rem;font-weight:800}
+.pmodes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem}
+.pm{display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;text-align:start;padding:.5rem .7rem;border-radius:1rem;background:var(--panel);border:1.5px solid var(--line);transition:.15s}
+.pm:hover,.sz:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--gold) 50%,transparent)}
+.pm .pi{font-size:1.5rem;line-height:1.15}.pm b{font-size:1.1rem}.pm small{color:var(--ink3);font-size:.78rem;line-height:1.35}
+.pm.on,.sz.on{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 18%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 18%,transparent)}
+.cnt{margin-inline-start:auto;display:flex;align-items:center;gap:.5rem}
+.cnt .ib{width:2.1rem;height:2.1rem;border-radius:.7rem;background:var(--panel2);border:1px solid var(--line);font-size:1.3rem;font-weight:900}
+.cnt .ib:disabled{opacity:.35}
+.cnt b{font-family:var(--display);font-size:1.5rem;min-width:1.4ch;text-align:center;color:var(--gold2)}
+.uni .trow{margin-bottom:.4rem;padding:.3rem .55rem;gap:.6rem}
+.uni .t-emo{width:2.6rem;height:2.6rem;font-size:1.5rem;border-radius:.8rem}
+.uni .t-name{flex:1;min-width:0;width:auto;font-size:1.05rem}
+.uni .t-cols{margin:0;gap:.28rem;flex-wrap:nowrap}
+.uni .sw{width:1.1rem;height:1.1rem}
+.sizes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem}
+.sz{display:flex;flex-direction:column;align-items:center;padding:.4rem .4rem;border-radius:1rem;background:var(--panel);border:1.5px solid var(--line);font-weight:800;transition:.15s;line-height:1.3}
+.sz b{font-size:1.1rem}.sz span{font-size:.95rem}.sz small{color:var(--ink3);font-size:.78rem;font-weight:600}
+.mapchips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem;align-items:center}
+.mapchips .ql{font-weight:800;color:var(--ink2);margin-inline-end:.3rem}
+.mapchips .chipb{opacity:.8;display:inline-flex;align-items:center;gap:.3rem;padding:.25rem .7rem;font-size:.88rem}
+.mapchips .chipb.on{opacity:1}
+.mapchips .map-mini{display:inline-block;width:1.8rem;height:1.1rem}
+.mapchips .map-mini svg{width:100%;height:100%}
+.qrow{display:flex;align-items:center;gap:.7rem;margin-top:.4rem}
+.qrow .ql{font-weight:800;color:var(--ink2);min-width:4.3rem}
+.qrow .seg{flex:1;gap:.35rem}
+.qrow .seg button{min-width:0;padding:.35rem .3rem;font-size:.95rem}
+.qrow .seg button small{margin-top:0}
+.uni details.more{padding:0}
+.uni details.more>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.8rem;padding:.7rem 1.1rem;flex-wrap:wrap}
+.uni details.more>summary::-webkit-details-marker{display:none}
+.uni details.more>summary b{font-size:1.1rem}
+.uni details.more>summary::after{content:"▾";margin-inline-start:auto;font-size:1.2rem;color:var(--ink3);transition:transform .2s}
+.uni details.more[open]>summary::after{transform:rotate(180deg)}
+.more-in{padding:.5rem 1.1rem 1rem;border-top:1.5px dashed var(--line)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:.8rem 1.6rem;align-items:start}
+.mgrid .blk.wide{grid-column:1/-1}
+.uni .mgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sub{padding:.6rem 0 .8rem;border-bottom:1px dashed var(--line)}
+.sub:last-child{border-bottom:0}
+.sub>h3{font-size:1.05rem;font-weight:900;margin:0 0 .5rem;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.uni .row-t{margin:.7rem 0 .4rem}
+.s-foot.uni-foot{padding:.7rem 1.6rem;background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);box-shadow:0 -.5rem 1.4rem rgba(0,0,0,.25);justify-content:flex-start}
+.uni-foot .s-sum{flex:1;font-size:1.05rem;color:var(--ink);min-width:0}
+.uni-foot .btn.big{font-size:1.15rem;padding:.7em 1.6em}
+.uni-foot kbd{font-size:.7em;padding:.05em .45em;border-radius:.4em;background:rgba(0,0,0,.2);margin-inline-start:.3em}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1rem 0}
+.qopt{display:flex;gap:.6rem;align-items:center;padding:.7rem 1rem;border-radius:1rem;background:var(--panel2);border:1.5px solid var(--line);font-weight:800;font-size:1.2rem;text-align:start}
+.qopt b{color:var(--gold2)}
+.qopt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 22%,transparent)}
+.qopt.dim{opacity:.45}
+.hintb{border-color:var(--gold)!important}.hintb small{opacity:.8;font-weight:600}
+@media (max-width:900px){.s-body.uni{grid-template-columns:1fr;grid-template-areas:"modes" "teams" "size" "q" "more" "admin";grid-template-rows:repeat(6,max-content)}.pmodes,.sizes{grid-template-columns:repeat(2,minmax(0,1fr))}.uni-foot{flex-wrap:wrap}.uni-foot .s-sum{flex-basis:100%}.qrow{flex-wrap:wrap}.uni .t-cols{flex-wrap:wrap}.qopts{grid-template-columns:1fr}.uni .mgrid{grid-template-columns:1fr}}
 </style>
-<style>/*perf-pass-2026-11-05*/*{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}</style>
+<style>/*perf-pass-2026-11-05*/*{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}</style>
 </head>
 <body>
 <div class="bg"></div>
@@ -1207,6 +1269,16 @@ const defaultDB = () => ({
   cats: BANK.cats.map(([id, name, icon, color]) => ({ id, name, icon, color, qs: BANK.q.map((r, i) => r[0] === id ? { id: 'q' + i, lvl: r[1], q: r[2], a: r[3], note: r[4] || '' } : null).filter(Boolean) })),
   ncats: BANK.ncats.map(([id, name, icon, color]) => ({ id, name, icon, color, qs: BANK.n.map((r, i) => r[0] === id ? { id: 'n' + i, q: r[1], a: r[2], unit: r[3], note: r[4] || '' } : null).filter(Boolean) })),
 });
+// حقول الموسوعة (اختيارية): المراحل، الجواب كخيار، 3 خيارات خاطئة، يحتاج خيارات، الصياغة المفتوحة
+function qExtra(q) {
+  const o = {};
+  if (Array.isArray(q.ages) && q.ages.length) o.ages = q.ages.filter(a => typeof a === 'string').slice(0, 5);
+  if (Array.isArray(q.wrong) && q.wrong.length) o.wrong = q.wrong.map(w => String(w ?? '').trim()).filter(Boolean).slice(0, 3);
+  if (q.opt && String(q.opt).trim()) o.opt = String(q.opt).trim();
+  if (q.no) o.no = 1;
+  if (q.qo && String(q.qo).trim()) o.qo = String(q.qo).trim();
+  return o;
+}
 function normDB(raw) {
   if (!raw || typeof raw !== 'object') return null;
   const list = (arr, num) => (Array.isArray(arr) ? arr : []).filter(c => c && typeof c.name === 'string' && Array.isArray(c.qs)).map(c => ({
@@ -1214,7 +1286,7 @@ function normDB(raw) {
     color: /^#[0-9a-f]{6}$/i.test(c.color) ? c.color : '#8f9bb3',
     qs: c.qs.filter(q => q && String(q.q ?? '').trim() && (num ? typeof q.a === 'number' && isFinite(q.a) : String(q.a ?? '').trim())).map(q => num
       ? { id: String(q.id || 'u' + uid()), q: String(q.q).trim(), a: q.a, unit: String(q.unit ?? '').trim().slice(0, 30), note: String(q.note ?? '').trim() }
-      : { id: String(q.id || 'u' + uid()), lvl: +q.lvl === 2 ? 2 : 1, q: String(q.q).trim(), a: String(q.a).trim(), note: String(q.note ?? '').trim() }),
+      : { id: String(q.id || 'u' + uid()), lvl: +q.lvl === 2 ? 2 : 1, q: String(q.q).trim(), a: String(q.a).trim(), note: String(q.note ?? '').trim(), ...qExtra(q) }),
   }));
   const cats = list(raw.cats, false), ncats = list(raw.ncats, true);
   return cats.length || ncats.length ? { v: 1, cats, ncats } : null;
@@ -1292,6 +1364,7 @@ const CARDS = {
   truce: { icon: '🕊️', name: 'هدنة', desc: 'ما أحد يقدر يهاجم أراضيك لين يرجع لك الدور.' },
   redo: { icon: '🔁', name: 'إعادة المعركة', desc: 'إذا خسرت معركة (مهاجم أو مدافع) تعيدها بسؤال جديد.' },
   ram: { icon: '🪨', name: 'المنجنيق', desc: 'فعّله قبل الهجوم: إذا فزت بالمعركة تاخذ الأرض حتى لو كانت محصّنة، ويتهدم حصنها.' },
+  opts: { icon: '🃏', name: 'اعرض الاختيارات', desc: 'وقت السؤال الثقافي: تنعرض 4 اختيارات (لأسئلة الموسوعة).' },
 };
 // أحداث الجولة: تغيّر القواعد جولة وحدة (cards/forts: تحتاج الورق/الحصون، free: تحتاج أراضي فاضية، now: مفعولها فوري)
 const EVENTS = {
@@ -1695,40 +1768,82 @@ delete S.names; delete S.namesBy;
 const nameKey = () => S.map + ':' + S.nameCategory + ':' + S.nameRound;
 const SN = () => ({ set: S.nameCategory, round: S.nameRound, over: S.nameOverrides[nameKey()] || {} });
 S.evs = Object.assign(defEvs(), S.events === false ? { on: false } : {}, S.evs); delete S.events;
-S.missions = Object.assign({ on: true, bonus: 4 }, S.missions);
+S.missions = Object.assign({ on: true, bonus: 4, print: false }, S.missions);
 const saveSetup = () => store.set(K_SETUP, S);
 const TIME = { 1: 20, 2: 30, battle: 30 };
 const qTime = lvl => G.opt.timer ? TIME[lvl] || TIME[1] : 0;
 const estMin = () => Math.round((S.teams.length * S.rounds * 1.5 + 6) / 5) * 5;
 
+/* ui-setup v1 */
+/* الإعداد الموحد: أنماط اللعب الأربعة، الحجم بالجولات، المستوى والمرحلة، وقواعد أسئلة الموسوعة */
+const STAGES = ['متوسط', 'ثانوي', 'جامعي', 'كبار'];
+const LVL_UI = [['easy', 'سهل', 'عادي فقط'], ['mid', 'متوسط', 'عادي أو صعب'], ['hard', 'صعب', 'صعب فقط'], ['grad', 'متدرج', 'يصعب مع الجولات']];
+const SIZE_UI = [['s', 'صغير', .6], ['m', 'متوسط', 1], ['l', 'كبير', 1.5], ['xl', 'ضخم', 2]];
+const roundsFor = (k, n = S.teams.length) => Math.max(3, Math.min(20, Math.round((REC_ROUNDS[n] || 8) * ((SIZE_UI.find(x => x[0] === k) || SIZE_UI[1])[2]))));
+const estMinR = r => Math.round((S.teams.length * r * 1.5 + 6) / 5) * 5;
+const FEATS = {
+  forts: [() => S.forts.on, v => { S.forts.on = v; }], evs: [() => S.evs.on, v => { S.evs.on = v; }], missions: [() => S.missions.on, v => { S.missions.on = v; }],
+  cards: [() => !!S.cards, v => { S.cards = v; }], sniper: [() => !!S.sniper, v => { S.sniper = v; }], hint: [() => S.hint, v => { S.hint = v; }], cup: [() => !!S.cupSeason, v => { S.cupSeason = v; }],
+};
+const ADV = { forts: true, evs: true, missions: true, cards: true, sniper: true, hint: 'card', cup: false };
+const PLAY_MODES = [
+  ['classic', '🎯', 'كلاسيكي', 'توسّع وتحصين ومعارك أرقام، بدون ورق.', { forts: true, evs: false, missions: false, cards: false, sniper: false, hint: 'off', cup: false }],
+  ['hype', '🔥', 'حماسي', 'أحداث تقلب الجولة، ومهام سرية تنكشف بالنهاية.', { forts: true, evs: true, missions: true, cards: false, sniper: false, hint: 'half', cup: false }],
+  ['adv', '🧠', 'متقدم', 'ورق النفوذ والقنّاص وكل الإضافات.', ADV],
+  ['cup', '🏆', 'بطولة', 'متقدم بجولات أكثر، والنتيجة في موسم البطولة.', { ...ADV, cup: true }, 'l'],
+];
+const modeMatch = id => { const m = PLAY_MODES.find(x => x[0] === id); return !!m && Object.keys(FEATS).every(k => FEATS[k][0]() === m[4][k]) && (!m[5] || S.rounds >= roundsFor(m[5])); };
+function fixMode() { if (modeMatch(S.pm)) return; const m = PLAY_MODES.find(x => modeMatch(x[0])); S.pm = m ? m[0] : 'custom'; }
+function applyMode(id) { const m = PLAY_MODES.find(x => x[0] === id); if (!m) return; S.pm = id; for (const k in FEATS) FEATS[k][1](m[4][k]); if (m[5] && S.rounds < roundsFor(m[5])) { S.size = m[5]; S.rounds = roundsFor(m[5]); } }
+// أسئلة السؤال والجواب: لا «أي مما يلي/اختر»، ولا سؤال يحتاج خيارات إلا بصياغته المفتوحة، وفلتر المرحلة لأسئلة الموسوعة
+const STEM_RX = /أي\s*مما\s*يلي|أيّ\s*مما|من\s*(بين\s*)?الخيارات|(^|[\s:،(«])اختر(\s|:|$)/;
+const qText = q => q.no && q.qo ? q.qo : q.q;
+function qUse(q, st = G && G.opt.stage) {
+  if (st && Array.isArray(q.ages) && q.ages.length && !q.ages.includes(st)) return false;
+  if (q.no && !q.qo) return false;
+  return !STEM_RX.test(qText(q));
+}
+function allowedTiers() {
+  const L = (G && G.opt.lvl) || 'mid';
+  if (L === 'easy') return [1];
+  if (L === 'hard') return [2];
+  if (L === 'grad') { const r = Math.floor(G.turnNo / N()) + 1, R = G.rounds; return r <= R / 3 ? [1] : r > R * 2 / 3 ? [2] : [1, 2]; }
+  return [1, 2];
+}
+// أول مرة بعد التحديث: الإعداد يتحول إلى «كلاسيكي»
+if (!S.pm) { const auto = S.autoRounds !== false; applyMode('classic'); S.size = auto ? 'm' : null; if (auto) S.rounds = roundsFor('m'); }
+if (!LVL_UI.some(x => x[0] === S.lvl)) S.lvl = 'mid';
+if (!STAGES.includes(S.stage)) S.stage = 'ثانوي';
+if (!['off', 'half', 'card'].includes(S.hint)) S.hint = 'off';
+if (S.size && !SIZE_UI.some(x => x[0] === S.size)) S.size = null;
+
 function mapPreview(m) {
   return `<svg viewBox="0 0 1280 755" aria-hidden="true">${m.terr.map(([id,,region]) => `<path d="${m.data.terr[id].f}" fill="${m.regions[region].color}" stroke="var(--bg)" stroke-width="6"/>`).join('')}</svg>`;
 }
 function renderSetup(keep = true) {
-  fixSetupCats(); useMap(S.map);
+  fixSetupCats(); useMap(S.map); fixMode(); saveSetup();
   const el = $('#setup'), oldBody = el.querySelector('.s-body'), keepY = keep && oldBody ? oldBody.scrollTop : 0, winY = scrollY;
   const qc = k => QS.filter(q => q.cat === k).length, nc = k => NQS.filter(q => q.cat === k).length;
+  const n = S.teams.length, md = S.pm, mName = md === 'custom' ? 'مخصص' : PLAY_MODES.find(x => x[0] === md)[2];
+  const pool = QS.filter(q => S.cats.includes(q.cat) && qUse(q, S.stage)).length;
+  const mapIc = (k, m) => typeof mapPreview === 'function' ? `<i class="map-mini">${mapPreview(m)}</i>` : m.icon;
   el.innerHTML = `
   <div class="s-head"><button class="ibtn" data-act="home" title="الرئيسية">→</button><h2>تجهيز المعركة</h2>
     <div class="corner-tools"><button class="ibtn" data-act="theme"></button><button class="ibtn" data-act="sound"></button><button class="ibtn" data-act="fs"></button></div></div>
-  <div class="s-body">
-    <div class="card"><h3>👥 الفرق <small>من فريقين إلى 6</small></h3>
-      ${S.teams.map((t, i) => `<div class="trow" style="--tc:${COLORS[t.color]}">
-        <button class="t-emo" data-act="emo" data-i="${i}" title="غيّر الشعار">${t.emblem}</button>
-        <div class="t-mid"><input class="t-name" data-i="${i}" value="${esc(t.name)}" maxlength="18" placeholder="اسم الفريق">
-          <div class="t-cols">${COLORS.map((c, k) => `<button class="sw${t.color === k ? ' on' : ''}" style="--sw:${c}" data-act="col" data-i="${i}" data-c="${k}" aria-label="لون"></button>`).join('')}</div></div>
-        ${S.teams.length > 2 ? `<button class="ibtn" data-act="rmteam" data-i="${i}" title="حذف الفريق">✕</button>` : ''}
-      </div>`).join('')}
-      ${S.teams.length < 6 ? `<button class="add-team" data-act="addteam">＋ إضافة فريق</button>` : ''}
-    </div>
-    <div class="card"><h3>🗺️ شكل الخريطة</h3><p class="s-note" style="margin:0 0 .8rem">اختر التضاريس؛ فئة الأسماء مستقلة عنها.</p>
-      <div class="seg list">${Object.entries(MAPS).map(([k, m]) => `<button class="${S.map === k ? 'on' : ''}" data-act="map" data-v="${k}"><i class="map-mini">${mapPreview(m)}</i><b>${m.label}</b><small>${m.sub}</small></button>`).join('')}</div>
-    </div>
-    <div class="card"><h3>🏷️ فئة أسماء المناطق</h3><p class="s-note" style="margin:0 0 .8rem">نفس الفئة متاحة مع كل خريطة. الأسماء للعب، ولا تعبّر عن مواقع حقيقية.</p>
-      <div class="seg list">${Object.entries(NAME_SETS).map(([k, v]) => `<button class="${SN().set === k ? 'on' : ''}" data-act="nameset" data-v="${k}"><i>${v.icon}</i><b>${v.label} <span class="bank-count">${NAME_BANKS[k].items.length} اسم</span></b><small>${CUR_MAP.preview.map(id => setName(k, IDX[id], S.nameRound)).join('، ')}…</small></button>`).join('')}</div>
-      <div class="row-t"><button class="btn glass sm" data-act="rerollnames">↻ أسماء جديدة</button><button class="btn glass sm" data-act="names">✏️ تعديل الأسماء يدويًا</button>${Object.keys(SN().over).length ? `<span class="muted">${Object.keys(SN().over).length} اسم معدّل</span>` : ''}</div>
-    </div>
-    <div class="card"><h3>🎮 نوع اللعبة</h3>
+  <div class="s-body uni">
+    <div class="card c-modes"><h3>نمط اللعب ${md === 'custom' ? '<span class="tagc">مخصص</span>' : ''}</h3>
+      <div class="pmodes">${PLAY_MODES.map(([id, ic, nm, ds]) => `<button class="pm ${md === id ? 'on' : ''}" data-act="pm" data-v="${id}" aria-pressed="${md === id}"><span class="pi">${ic}</span><b>${nm}</b><small>${ds}</small></button>`).join('')}</div></div>
+    <div class="card c-teams"><h3>الفرق <span class="cnt"><button class="ib" data-act="tn" data-d="-1" ${n <= 2 ? 'disabled' : ''} aria-label="فريق أقل">−</button><b>${n}</b><button class="ib" data-act="tn" data-d="1" ${n >= 6 ? 'disabled' : ''} aria-label="فريق أكثر">+</button></span></h3>
+      ${S.teams.map((t, i) => `<div class="trow" style="--tc:${COLORS[t.color]}"><button class="t-emo" data-act="emo" data-i="${i}" title="غيّر الشعار">${t.emblem}</button><input class="t-name" data-i="${i}" value="${esc(t.name)}" maxlength="18" placeholder="اسم الفريق"><div class="t-cols">${COLORS.map((c, k) => `<button class="sw${t.color === k ? ' on' : ''}" style="--sw:${c}" data-act="col" data-i="${i}" data-c="${k}" aria-label="لون"></button>`).join('')}</div></div>`).join('')}</div>
+    <div class="card c-size"><h3>حجم اللعبة</h3>
+      <div class="sizes">${SIZE_UI.map(([id, nm]) => { const r = roundsFor(id); return `<button class="sz ${S.size === id ? 'on' : ''}" data-act="sz" data-v="${id}" aria-pressed="${S.size === id}"><b>${nm}</b><span>${r} ${r > 10 ? 'جولة' : 'جولات'}</span><small>≈ ${estMinR(r)} دقيقة</small></button>`; }).join('')}</div>
+      <div class="mapchips"><span class="ql">الخريطة</span>${Object.entries(MAPS).map(([k, m]) => `<button class="chipb${S.map === k ? ' on' : ''}" style="--cc:var(--gold)" data-act="map" data-v="${k}" title="${esc(m.sub)}">${mapIc(k, m)} ${m.label}</button>`).join('')}</div></div>
+    <div class="card c-q"><h3>الأسئلة <small>${pool} سؤال ثقافي</small></h3>
+      <div class="qrow"><span class="ql">المستوى</span><div class="seg">${LVL_UI.map(([id, nm, ds]) => `<button data-act="lvl" data-v="${id}" class="${S.lvl === id ? 'on' : ''}" title="${ds}">${nm}</button>`).join('')}</div></div>
+      <div class="qrow"><span class="ql">المرحلة</span><div class="seg">${STAGES.map(s => `<button data-act="stage" data-v="${s}" class="${S.stage === s ? 'on' : ''}">${s}</button>`).join('')}</div></div></div>
+    <details class="card more c-more" data-more="1" ${S.open1 ? 'open' : ''}><summary><b>⚙️ إعدادات إضافية</b><span class="muted">نوع اللعبة · الأسماء · الحصون · الأحداث · المهام · الورق · الفئات</span></summary><div class="more-in"><div class="mgrid">
+      <div class="blk">
+    <div class="sub"><h3>🎮 نوع اللعبة</h3>
       <div class="seg tall"><button class="${S.mode === 'peace' ? 'on' : ''}" data-act="mode" data-v="peace"><b>🕊️ السلام</b><small>كل فريق يبدأ بعاصمة ويتوسّع على الأراضي الفاضية بالأسئلة</small></button>
         <button class="${S.mode === 'war' ? 'on' : ''}" data-act="mode" data-v="war"><b>⚔️ المعركة</b><small>الخريطة موزّعة من البداية، واللعب حروب وتخطيط بمعارك الأرقام</small></button></div>
       ${S.mode === 'war' ? `<div class="row-t">توزيع الأراضي</div>
@@ -1737,7 +1852,23 @@ function renderSetup(keep = true) {
       ${S.dist === 'region' ? '<p class="s-note">الأقاليم تختلف في الحجم ومكافأة النفوذ؛ راجعها على الخريطة قبل اختيار هذا التوزيع.</p>' : ''}
 ` : ''}
     </div>
-    <div class="card"><h3>🛡️ الحصون</h3>
+    <div class="sub"><h3>🏷️ فئة أسماء المناطق</h3><p class="s-note" style="margin:0 0 .8rem">نفس الفئة متاحة مع كل خريطة. الأسماء للعب، ولا تعبّر عن مواقع حقيقية.</p>
+      <div class="seg list">${Object.entries(NAME_SETS).map(([k, v]) => `<button class="${SN().set === k ? 'on' : ''}" data-act="nameset" data-v="${k}"><i>${v.icon}</i><b>${v.label} <span class="bank-count">${NAME_BANKS[k].items.length} اسم</span></b><small>${CUR_MAP.preview.map(id => setName(k, IDX[id], S.nameRound)).join('، ')}…</small></button>`).join('')}</div>
+      <div class="row-t"><button class="btn glass sm" data-act="rerollnames">↻ أسماء جديدة</button><button class="btn glass sm" data-act="names">✏️ تعديل الأسماء يدويًا</button>${Object.keys(SN().over).length ? `<span class="muted">${Object.keys(SN().over).length} اسم معدّل</span>` : ''}</div>
+    </div>
+    <div class="sub"><h3>⏳ مدة اللعبة</h3>
+      <div class="row-t">عدد الجولات</div>
+      <div class="step"><button data-act="rnd" data-d="-1">−</button><b>${S.rounds}</b><button data-act="rnd" data-d="1">+</button>
+        <span class="muted">كل فريق يلعب ${S.rounds} أدوار · ≈ ${estMin()} دقيقة</span></div>
+      <div class="row-t">مؤقت التفكير</div>
+      <div class="seg"><button class="${S.timer ? '' : 'on'}" data-act="timer" data-s="0">بدون مؤقت</button><button class="${S.timer ? 'on' : ''}" data-act="timer" data-s="1">عادي ${TIME[1]} ث · صعب ${TIME[2]} ث · المعارك ${TIME.battle} ث</button></div>
+      <div class="row-t">الخيارات</div>
+      <button class="tgl${S.cards ? ' on' : ''}" data-act="opt" data-k="cards"><span class="tgi">🃏</span><span class="tx"><b>ورق النفوذ</b><small>إنزال جوي، حصن فوري، هدنة، إعادة المعركة، المنجنيق</small></span><span class="sw-t"></span></button>
+      <button class="tgl${S.sniper ? ' on' : ''}" data-act="opt" data-k="sniper"><span class="tgi">🎯</span><span class="tx"><b>القنّاص</b><small>بقية الفرق تكتب رقمها في المعارك، والأقرب من الطرفين ياخذ ورقة</small></span><span class="sw-t"></span></button>
+    </div>
+      </div>
+      <div class="blk">
+    <div class="sub"><h3>🛡️ الحصون</h3>
       <button class="tgl${S.forts.on ? ' on' : ''}" data-act="fon"><span class="tgi">🏰</span><span class="tx"><b>الحصون مفعّلة</b><small>إذا قفلتها تصير كل معركة حاسمة، والسؤال الصعب يعطي ورقة نفوذ بدل الحصن</small></span><span class="sw-t"></span></button>
       ${S.forts.on ? `<div class="row-t">وش يسوي الحصن؟</div>
       <div class="seg tall"><button class="${S.forts.kind === 'edge' ? 'on' : ''}" data-act="fkind" data-v="edge"><b>⚡ أفضلية للمدافع (أسرع)</b><small>المهاجم لازم يكون أقرب بفارق واضح، وإذا فاز ياخذ الأرض على طول</small></button>
@@ -1748,21 +1879,41 @@ function renderSetup(keep = true) {
       <div class="seg">${[0, 1, 2, 3].map(v => `<button class="${S.forts.rebuild === v ? 'on' : ''}" data-act="freb" data-v="${v}">${['فورًا', 'بعد جولة', 'بعد جولتين', 'بعد 3 جولات'][v]}</button>`).join('')}</div>
       <button class="tgl${S.forts.cap ? ' on' : ''}" data-act="fcap" style="margin-top:.5rem"><span class="tgi">👑</span><span class="tx"><b>العواصم تبدأ محصّنة</b><small>حصن العاصمة يُحسب من الحد الأقصى</small></span><span class="sw-t"></span></button>` : ''}
     </div>
-    <div class="card"><h3>🎴 أحداث الجولات</h3>
+    <div class="sub"><h3>🎴 أحداث الجولات</h3>
       <button class="tgl${S.evs.on ? ' on' : ''}" data-act="evon"><span class="tgi">🎴</span><span class="tx"><b>حدث يغيّر القواعد</b><small>عاصفة بحرية، غنائم، نفير عام، زلزال… وتقدر تضيف أحداث من عندك</small></span><span class="sw-t"></span></button>
       ${S.evs.on ? `<div class="row-t">فرصة الحدث كل جولة</div>
       <div class="seg">${[100, 75, 50, 25].map(v => `<button class="${S.evs.chance === v ? 'on' : ''}" data-act="evch" data-v="${v}">${v}٪</button>`).join('')}</div>
       <div class="row-t">تبدأ الأحداث من</div>
       <div class="seg">${[1, 2, 3].map(v => `<button class="${S.evs.start === v ? 'on' : ''}" data-act="evst" data-v="${v}">الجولة ${v}</button>`).join('')}</div>
-      <div class="row-t"><button class="btn glass sm" data-act="evedit">✏️ تخصيص الأحداث</button><span class="muted">${evList(S.evs).filter(e => evCfg(S.evs, e.k).on).length} حدث مفعّل من ${evList(S.evs).length}</span></div>` : ''}
+      <div class="row-t"><span class="muted">${evList(S.evs).filter(e => evCfg(S.evs, e.k).on).length} حدث مفعّل من ${evList(S.evs).length}</span></div>` : ''}
     </div>
-    <div class="card"><h3>🎯 المهام السرية</h3>
+    <div class="sub"><h3>🎯 المهام السرية</h3>
       <button class="tgl${S.missions.on ? ' on' : ''}" data-act="mson"><span class="tgi">🔒</span><span class="tx"><b>مهمة سرية لكل فريق</b><small>مثل «اسقط عاصمة فريق كذا» أو «سيطر على إقليم كذا»، وتنكشف في النهاية</small></span><span class="sw-t"></span></button>
       ${S.missions.on ? `<div class="row-t">نقاط المهمة إذا تحققت</div>
       <div class="seg">${[3, 4, 5, 6].map(v => `<button class="${S.missions.bonus === v ? 'on' : ''}" data-act="msb" data-v="${v}">+${v} نفوذ</button>`).join('')}</div>
       <p class="s-note">بعد اختيار العواصم، كل فريق يشوف مهمته بالدور والباقين يلفون، أو تطبعها وتوزعها. وتقدر تشوفها مرة ثانية من زر 🔒 جنب اسم الفريق.</p>` : ''}
     </div>
-    <div class="card"><h3>🏆 الموسم</h3>
+      <div class="sub"><h3>🃏 اعرض الاختيارات <small>لأسئلة الموسوعة</small></h3>
+        <div class="seg">${[['off', 'مقفل', ''], ['half', 'متاح', 'بالصعب: بدون مكافأته'], ['card', 'ورقة نفوذ', 'تنسحب مع الورق']].map(([v, l, s]) => `<button class="${S.hint === v ? 'on' : ''}" data-act="hint" data-v="${v}"><b>${l}</b>${s ? `<small>${s}</small>` : ''}</button>`).join('')}</div>
+        <button class="tgl${S.cupSeason ? ' on' : ''}" data-act="cup" style="margin-top:.4rem"><span class="tgi">🏆</span><span class="tx"><b>سجّل في موسم البطولة</b><small>إذا ما فيه موسم نشط ينفتح واحد تلقائيًا</small></span><span class="sw-t"></span></button>
+        <button class="tgl${P.sound ? ' on' : ''}" data-act="sound"><span class="tgi">🔊</span><span class="tx"><b>الأصوات</b><small>مؤثرات المعارك والإجابات</small></span><span class="sw-t"></span></button></div>
+      </div>
+      <div class="blk wide">
+    <div class="sub"><h3>📚 فئات الأسئلة الثقافية <small>للتوسّع والتحصين</small><span class="quick"><button data-act="editor-setup">✏️ تعديل الأسئلة</button><button data-act="cats" data-v="all">الكل</button></span></h3>
+      <div class="chips">${CATS.map(c => `<button class="chipb${S.cats.includes(c.key) ? ' on' : ''}" style="--cc:${c.color}" data-act="cat" data-k="${c.key}" ${qc(c.key) ? '' : 'disabled title="ما فيها أسئلة"'}>${c.icon} ${c.name} <small>${qc(c.key)}</small></button>`).join('')}</div>
+      <h3 style="margin-top:1.3rem">🔢 فئات معارك الأرقام <small>المهاجم يختار منها</small><span class="quick"><button data-act="ncats" data-v="all">الكل</button></span></h3>
+      <div class="chips">${NCATS.map(c => `<button class="chipb${S.ncats.includes(c.key) ? ' on' : ''}" style="--cc:${c.color}" data-act="ncat" data-k="${c.key}" ${nc(c.key) ? '' : 'disabled title="ما فيها أسئلة"'}>${c.icon} ${c.name} <small>${nc(c.key)}</small></button>`).join('')}</div>
+    </div>
+      </div>
+    </div></div></details>
+    <details class="card more c-admin" data-more="2" ${S.open2 ? 'open' : ''}><summary><b>🛠️ للمشرف</b><span class="muted">بنك الأسئلة · الأحداث · المهام السرية · الموسم · نسخة احتياطية</span></summary><div class="more-in"><div class="mgrid">
+      <div class="blk"><div class="sub"><h3>📝 بنك الأسئلة <small>${QS.length} ثقافي · ${NQS.length} أرقام</small></h3>
+        <div class="row-t"><button class="btn glass sm" data-act="editor-setup">✏️ تعديل الأسئلة</button><button class="btn gold sm" data-act="ed-enc">📚 من الموسوعة</button><button class="btn glass sm" data-act="ed-export">⬇ نسخة احتياطية</button><button class="btn glass sm" data-act="ed-import">⬆ استرجاع</button></div></div>
+        <div class="sub"><h3>🎴 الأحداث والمهام</h3>
+        <div class="row-t"><button class="btn glass sm" data-act="evedit">✏️ تخصيص الأحداث</button></div>
+        <button class="tgl${S.missions.print ? ' on' : ''}" data-act="msprint"><span class="tgi">🖨️</span><span class="tx"><b>اطبع المهام السرية بدل عرضها</b><small>تنطبع ورقة لكل فريق أول ما تبدأ الحرب</small></span><span class="sw-t"></span></button></div></div>
+      <div class="blk">
+    <div class="sub"><h3>🏆 الموسم</h3>
       <p class="s-note" style="margin-top:0">الموسم سلسلة ألعاب تتجمع فيها النقاط حسب الترتيب (الأول ${SEASON_PTS[0]}، الثاني ${SEASON_PTS[1]}، الثالث ${SEASON_PTS[2]}…)، والفرق تُعرف بأسمائها.</p>
       <div class="seg list">
         <button class="${SEA.active ? '' : 'on'}" data-act="sesel" data-v=""><i>🎲</i><b>لعبة منفردة</b><small>ما تنحسب في أي موسم</small></button>
@@ -1770,24 +1921,11 @@ function renderSetup(keep = true) {
       </div>
       <div class="row-t"><button class="btn glass sm" data-act="senew">＋ موسم جديد</button>${SEA.active ? '<button class="btn glass sm" data-act="setable">📊 جدول الموسم</button>' : ''}${SEA.active && seasonNext(curSeason()) && seasonNext(curSeason()) !== S.map ? `<button class="btn gold sm" data-act="map" data-v="${seasonNext(curSeason())}">🗺️ خريطة الموسم: ${MAPS[seasonNext(curSeason())].label}</button>` : ''}</div>
     </div>
-    <div class="card"><h3>⏳ مدة اللعبة</h3>
-      <div class="row-t">عدد الجولات</div>
-      <div class="step"><button data-act="rnd" data-d="-1">−</button><b>${S.rounds}</b><button data-act="rnd" data-d="1">+</button>
-        <span class="muted">كل فريق يلعب ${S.rounds} أدوار · تقريبًا ${estMin()} دقيقة${S.rounds === REC_ROUNDS[S.teams.length] ? ' · المقترح' : ''}</span></div>
-      <div class="row-t">مؤقت التفكير</div>
-      <div class="seg"><button class="${S.timer ? '' : 'on'}" data-act="timer" data-s="0">بدون مؤقت</button><button class="${S.timer ? 'on' : ''}" data-act="timer" data-s="1">عادي ${TIME[1]} ث · صعب ${TIME[2]} ث · المعارك ${TIME.battle} ث</button></div>
-      <div class="row-t">الخيارات</div>
-      <button class="tgl${S.cards ? ' on' : ''}" data-act="opt" data-k="cards"><span class="tgi">🃏</span><span class="tx"><b>ورق النفوذ</b><small>إنزال جوي، حصن فوري، هدنة، إعادة المعركة، المنجنيق</small></span><span class="sw-t"></span></button>
-      <button class="tgl${S.sniper ? ' on' : ''}" data-act="opt" data-k="sniper"><span class="tgi">🎯</span><span class="tx"><b>القنّاص</b><small>بقية الفرق تكتب رقمها في المعارك، والأقرب من الطرفين ياخذ ورقة</small></span><span class="sw-t"></span></button>
-    </div>
-    <div class="card wide"><h3>📚 فئات الأسئلة الثقافية <small>للتوسّع والتحصين</small><span class="quick"><button data-act="editor-setup">✏️ تعديل الأسئلة</button><button data-act="cats" data-v="all">الكل</button></span></h3>
-      <div class="chips">${CATS.map(c => `<button class="chipb${S.cats.includes(c.key) ? ' on' : ''}" style="--cc:${c.color}" data-act="cat" data-k="${c.key}" ${qc(c.key) ? '' : 'disabled title="ما فيها أسئلة"'}>${c.icon} ${c.name} <small>${qc(c.key)}</small></button>`).join('')}</div>
-      <h3 style="margin-top:1.3rem">🔢 فئات معارك الأرقام <small>المهاجم يختار منها</small><span class="quick"><button data-act="ncats" data-v="all">الكل</button></span></h3>
-      <div class="chips">${NCATS.map(c => `<button class="chipb${S.ncats.includes(c.key) ? ' on' : ''}" style="--cc:${c.color}" data-act="ncat" data-k="${c.key}" ${nc(c.key) ? '' : 'disabled title="ما فيها أسئلة"'}>${c.icon} ${c.name} <small>${nc(c.key)}</small></button>`).join('')}</div>
-    </div>
+      </div>
+    </div></div></details>
   </div>
-  <div class="s-foot"><div class="s-sum">${curSeason() ? '🏆 ' + esc(curSeason().name) + ' · ' : ''}${MAPS[S.map].icon} ${MAPS[S.map].label} · ${NAME_BANKS[S.nameCategory].label} · ${S.mode === 'war' ? '⚔️ المعركة' : '🕊️ السلام'} · ${S.teams.length} فرق · ${S.rounds} جولات · ${S.cats.length} فئة ثقافية · ${S.ncats.length} فئات أرقام</div>
-    <button class="btn gold big" data-act="start">ابدأ المعركة ⚔️</button></div>`;
+  <div class="s-foot uni-foot"><div class="s-sum">${[curSeason() ? '🏆 ' + esc(curSeason().name) : '', mName, `${n} فرق`, MAPS[S.map].label, `${S.rounds} ${S.rounds > 10 ? 'جولة' : 'جولات'}`, `≈ ${estMin()} دقيقة`, S.stage].filter(Boolean).join(' · ')}</div>
+    <button class="btn glass" data-act="home">→ رجوع</button><button class="btn gold big" data-act="start">▶ ابدأ اللعبة <kbd>Enter</kbd></button></div>`;
   applyTools();
   const nb2 = el.querySelector('.s-body'); if (nb2) nb2.scrollTop = keepY;
   if (keep) scrollTo(0, winY);
@@ -1812,7 +1950,16 @@ function setupAct(act, b) {
       d.querySelectorAll('[data-e]').forEach(x => x.onclick = () => { S.teams[i].emblem = x.dataset.e; closeDialog(); saveSetup(); renderSetup(); });
       return;
     }
-    case 'rnd': S.rounds = Math.max(3, Math.min(20, S.rounds + +b.dataset.d)); S.autoRounds = false; break;
+    case 'rnd': S.rounds = Math.max(3, Math.min(20, S.rounds + +b.dataset.d)); S.autoRounds = false; S.size = null; break;
+    case 'pm': applyMode(b.dataset.v); break;
+    case 'tn': if (+b.dataset.d < 0) { if (S.teams.length > 2) S.teams.pop(); } else if (S.teams.length < 6) return setupAct('addteam', b); break;
+    case 'sz': S.size = b.dataset.v; S.autoRounds = true; break;
+    case 'lvl': S.lvl = b.dataset.v; break;
+    case 'stage': S.stage = b.dataset.v; break;
+    case 'hint': S.hint = b.dataset.v; break;
+    case 'cup': S.cupSeason = !S.cupSeason; break;
+    case 'msprint': S.missions.print = !S.missions.print; break;
+    case 'sound': toggleSound(); break;
     case 'timer': S.timer = +b.dataset.s ? 1 : 0; break;
     case 'opt': S[b.dataset.k] = !S[b.dataset.k]; break;
     case 'mode': S.mode = b.dataset.v; break;
@@ -1841,7 +1988,7 @@ function setupAct(act, b) {
     case 'ncats': S.ncats = NCATS.map(c => c.key).filter(hasN); break;
     default: return;
   }
-  if ((act === 'addteam' || act === 'rmteam') && S.autoRounds) S.rounds = REC_ROUNDS[S.teams.length];
+  if (S.size) S.rounds = roundsFor(S.size);
   if (S.teams.length > 5 && S.dist === 'region') S.dist = 'even';
   SFX.click(); saveSetup(); renderSetup();
 }
@@ -1903,7 +2050,7 @@ function breakFort(t) { G.fort[t] = 0; G.ruin[t] = G.turnNo + (G.opt.forts.rebui
 const ramOn = () => !!G.ram || G.ev === 'siege';
 const shieldHolds = t => G.fort[t] && G.opt.forts.kind === 'shield' && !ramOn();
 const nb = t => G.ev === 'storm' ? ADJL[t] : ADJ[t];
-const cardPool = () => CARD_KEYS.filter(k => fortsOn() || (k !== 'fort' && k !== 'ram'));
+const cardPool = () => CARD_KEYS.filter(k => (fortsOn() || (k !== 'fort' && k !== 'ram')) && (k !== 'opts' || (G.opt.hint === 'card' && QS.some(q => Array.isArray(q.wrong) && q.wrong.length))));
 function originsFor(i, target) { const m = mine(i); return G.air ? m : m.filter(t => nb(target).includes(t)); }
 function capCandidates() {
   if (G.opt.mode === 'war') return mine(G.capPick).filter(t => G.cap[t] < 0);
@@ -1922,9 +2069,10 @@ function drawFrom(pool) {
   return q;
 }
 function drawQ(cat, lvl, not) {
-  let pool = QS.filter(q => q.cat === cat && q.lvl === lvl && q.id !== not);
-  if (!pool.length) pool = QS.filter(q => q.cat === cat && q.id !== not);
-  if (!pool.length) pool = QS.filter(q => q.id !== not);
+  const ok = q => q.id !== not && qUse(q);
+  let pool = QS.filter(q => q.cat === cat && q.lvl === lvl && ok(q));
+  if (!pool.length) pool = QS.filter(q => q.cat === cat && ok(q));
+  if (!pool.length) pool = QS.filter(ok);
   return drawFrom(pool.length ? pool : QS);
 }
 function drawN(cat, not) {
@@ -1932,7 +2080,7 @@ function drawN(cat, not) {
   if (!pool.length) pool = NQS.filter(q => q.id !== not);
   return drawFrom(pool.length ? pool : NQS);
 }
-const leftQ = (cat, lvl) => { const used = new Set(store.get(K_USED, [])); return QS.filter(q => q.cat === cat && q.lvl === lvl && !used.has(q.id)).length; };
+const leftQ = (cat, lvl) => { const used = new Set(store.get(K_USED, [])); return QS.filter(q => q.cat === cat && q.lvl === lvl && qUse(q) && !used.has(q.id)).length; };
 
 function giveCard(i, k, why = '') {
   if (!G.opt.cards) return null;
@@ -1979,7 +2127,7 @@ function newGame() {
     own: Array(NT).fill(-1), fort: Array(NT).fill(0), cap: Array(NT).fill(-1), ruin: Array(NT).fill(-1), regFirst: {},
     names: namesFor(SN()),
     rounds: S.rounds, turnNo: 0, cur: 0, phase: 'caps', capPick: 0, air: false,
-    opt: { map: S.map, nameCategory: S.nameCategory, nameRound: S.nameRound, season: SEA.active || null, missions: { ...S.missions }, evs: JSON.parse(JSON.stringify(S.evs)), timer: S.timer ? 1 : 0, cards: S.cards, sniper: S.sniper, mode: S.mode, dist: S.teams.length > 5 ? 'even' : S.dist, forts: { ...S.forts }, cats: S.cats.filter(hasQ), ncats: S.ncats.filter(hasN) },
+    opt: { map: S.map, nameCategory: S.nameCategory, nameRound: S.nameRound, season: SEA.active || null, missions: { ...S.missions }, evs: JSON.parse(JSON.stringify(S.evs)), timer: S.timer ? 1 : 0, cards: S.cards, sniper: S.sniper, mode: S.mode, dist: S.teams.length > 5 ? 'even' : S.dist, forts: { ...S.forts }, cats: S.cats.filter(hasQ), ncats: S.ncats.filter(hasN), pm: S.pm, lvl: S.lvl, stage: S.stage, hint: S.hint },
     feed: [],
   };
   hist = []; sel = null; busy = false; flow++;
@@ -2034,7 +2182,7 @@ function beginWar() {
   if (G.opt.cards) G.teams.forEach((_, i) => giveCard(i, null, 'ورقة البداية'));
   render(); playFx();
   announce('⚔️', G.opt.mode === 'war' ? 'بدأت الحرب!' : 'بدأت معركة النفوذ', `${G.rounds} جولات · ${N()} فرق`, { ms: 2000 });
-  if (G.opt.missions && G.opt.missions.on) { assignMissions(); save(); return revealMission(0, startTurn, true); }
+  if (G.opt.missions && G.opt.missions.on) { assignMissions(); save(); if (G.opt.missions.print) { printMissions(); return startTurn(); } return revealMission(0, startTurn, true); }
   startTurn();
 }
 function startTurn() {
@@ -2135,6 +2283,7 @@ function useCard(k) {
   const i = G.cur, t = G.teams[i], j = t.cards.indexOf(k);
   if (j < 0) return;
   if (k === 'redo') return toast('تُستخدم بعد خسارة معركة', '🔁');
+  if (k === 'opts') return toast('تُستخدم وقت السؤال الثقافي', '🃏');
   if (k === 'air') {
     if (G.air) return;
     t.cards.splice(j, 1); G.air = true;
@@ -2167,6 +2316,7 @@ function openQPick() {
   const r2 = kind === 'expand'
     ? (!fortsOn() ? (G.opt.cards ? `تاخذ ${TN[tg]} + ورقة نفوذ 🃏` : `تاخذ ${TN[tg]}`) : fc > 0 && canFort(tg) ? `تاخذ ${TN[tg]} + حصن عليها 🛡️` : `تاخذ ${TN[tg]} (وصلت حد الحصون)`)
     : (fc > 1 && others ? `حصن على ${TN[tg]} + حصن ثاني تختاره 🛡️` : `حصن على ${TN[tg]} (ما فيه مجال لحصن ثاني)`);
+  const tiers = allowedTiers(); if (!tiers.includes(qLvl)) qLvl = tiers[0];
   let cats = CATS.filter(c => G.opt.cats.includes(c.key) && hasQ(c.key));
   if (!cats.length) cats = CATS.filter(c => hasQ(c.key));
   const d = openOv(`
@@ -2174,15 +2324,15 @@ function openQPick() {
       <h2>${kind === 'expand' ? `🏳️ التوسّع إلى <b>${TN[tg]}</b>` : `🛡️ تحصين <b>${TN[tg]}</b>`}</h2>
       <button class="btn glass sm" data-act="ov-cancel">رجوع</button></div>
     <div class="lvls">
-      <button class="lv${qLvl === 1 ? ' on' : ''}" data-lv="1"><b>عادي${G.opt.timer ? ` · ⏱️ ${TIME[1]} ثانية` : ''}</b><small>إذا جاوبت صح: ${r1}</small></button>
-      <button class="lv hard${qLvl === 2 ? ' on' : ''}" data-lv="2"><b>صعب 🔥${G.opt.timer ? ` · ⏱️ ${TIME[2]} ثانية` : ''}</b><small>إذا جاوبت صح: ${r2}</small></button>
+      ${tiers.includes(1) ? `<button class="lv${qLvl === 1 ? ' on' : ''}" data-lv="1"><b>عادي${G.opt.timer ? ` · ⏱️ ${TIME[1]} ثانية` : ''}</b><small>إذا جاوبت صح: ${r1}</small></button>` : ''}
+      ${tiers.includes(2) ? `<button class="lv hard${qLvl === 2 ? ' on' : ''}" data-lv="2"><b>صعب 🔥${G.opt.timer ? ` · ⏱️ ${TIME[2]} ثانية` : ''}</b><small>إذا جاوبت صح: ${r2}</small></button>` : ''}
     </div>
     <div class="row-t">اختاروا فئة السؤال</div>
     <div class="ctiles">${cats.map(c => `<button class="ct" style="--cc:${c.color}" data-cat="${c.key}"><i>${c.icon}</i><span><b>${c.name}</b><small data-left="${c.key}"></small></span></button>`).join('')}</div>`);
   const upd = () => {
     d.querySelectorAll('.lv').forEach(b => b.classList.toggle('on', +b.dataset.lv === qLvl));
     d.querySelectorAll('[data-left]').forEach(s => {
-      const k = s.dataset.left, all = QS.filter(q => q.cat === k && q.lvl === qLvl).length, n = leftQ(k, qLvl);
+      const k = s.dataset.left, all = QS.filter(q => q.cat === k && q.lvl === qLvl && qUse(q)).length, n = leftQ(k, qLvl);
       s.textContent = !all ? (qLvl === 2 ? 'ما فيها أسئلة صعبة' : 'ما فيها أسئلة عادية') : n ? `${n} سؤال جديد` : 'بتتكرر الأسئلة';
       s.closest('.ct').disabled = !all;
     });
@@ -2193,15 +2343,16 @@ function openQPick() {
 }
 function openQuestion(q, ctx) {
   const t = G.teams[G.cur], c = CAT[q.cat];
-  QX = { ...ctx, q, revealed: false };
+  QX = { ...ctx, q, revealed: false, ho: 0, hoFree: 0 };
   const d = openOv(`
     <div class="qhead"><span class="chip" style="--cc:${c.color}">${c.icon} ${c.name}</span>
       <span class="chip${ctx.lvl === 2 ? ' hard' : ''}">${ctx.lvl === 2 ? 'صعب 🔥' : 'عادي'}</span>
       <span class="chip" style="--tc:${t.color}">${t.emblem} ${esc(t.name)} ${ctx.kind === 'expand' ? '← ' + TN[ctx.tg] : '🛡️ ' + TN[ctx.tg]}</span>
       <span class="sp"></span>${ringHTML()}</div>
-    <div class="qtext">${esc(q.q)}</div>
+    <div class="qtext">${esc(qText(q))}</div>
+    <div class="qopts" id="qOpts" hidden></div>
     <div class="qans" hidden>${qansHTML(q)}</div>
-    <div class="qbtns" id="qb1"><button class="btn gold big" data-act="q-reveal">اكشف الإجابة <kbd>Enter</kbd></button><button class="lnk" data-act="q-swap">سؤال آخر</button></div>
+    <div class="qbtns" id="qb1"><button class="btn gold big" data-act="q-reveal">اكشف الإجابة <kbd>Enter</kbd></button>${hintBtn(q, ctx)}<button class="lnk" data-act="q-swap">سؤال آخر</button></div>
     <div class="qbtns" id="qb2" hidden><button class="btn ok big" data-act="q-ok">✓ إجابة صحيحة</button><button class="btn bad big" data-act="q-no">✗ إجابة خاطئة</button></div>`);
   startTimer(qTime(ctx.lvl), d);
 }
@@ -2210,10 +2361,30 @@ function revealQ() {
   if (!QX || QX.revealed) return;
   QX.revealed = true; stopTimer(); SFX.reveal();
   const d = $('#ov'); d.querySelector('.qans').hidden = false; d.querySelector('#qb1').hidden = true; d.querySelector('#qb2').hidden = false;
+  d.querySelectorAll('.qopt').forEach(o => o.classList.add(o.dataset.ok ? 'right' : 'dim'));
 }
+
+function hintBtn(q, ctx) {
+  const h = G.opt.hint;
+  if (!h || h === 'off' || !Array.isArray(q.wrong) || !q.wrong.length) return '';
+  if (h === 'card') return G.teams[G.cur].cards.includes('opts') ? '<button class="btn glass hintb" data-act="q-opts">🃏 اعرض الاختيارات <small>(ورقة)</small></button>' : '';
+  return ctx.lvl === 2 ? '<button class="btn glass hintb" data-act="q-opts">🃏 اعرض الاختيارات <small>· بدون مكافأة الصعب</small></button>' : '';
+}
+function showOpts() {
+  if (!QX || QX.revealed || QX.ho) return;
+  const q = QX.q, t = G.teams[G.cur];
+  if (G.opt.hint === 'card') { const j = t.cards.indexOf('opts'); if (j < 0) return; t.cards.splice(j, 1); QX.hoFree = 1; feed(`${tName(G.cur)} استخدم ${CARDS.opts.icon} اعرض الاختيارات`); }
+  QX.ho = 1;
+  const ok = q.opt || q.a, L = ['أ', 'ب', 'ج', 'د'];
+  const d = $('#ov'), box = d && d.querySelector('#qOpts'); if (!box) return;
+  box.innerHTML = shuffle([ok, ...q.wrong.slice(0, 3)]).map((o, k) => `<div class="qopt"${o === ok ? ' data-ok="1"' : ''}><b>${L[k]}</b><span>${esc(o)}</span></div>`).join('');
+  box.hidden = false; const hb = d.querySelector('[data-act=q-opts]'); if (hb) hb.remove();
+  SFX.card(); save();
+}
+
 function judgeQ(ok) {
   if (!QX || !QX.revealed) return;
-  const { kind, tg, lvl } = QX, i = G.cur, st = G.teams[i].st;
+  const { kind, tg } = QX, lvl = QX.ho && !QX.hoFree ? 1 : QX.lvl, i = G.cur, st = G.teams[i].st;
   QX = null; closeOv(); st.q++;
   if (ok) {
     st.ok++; SFX.ok();
@@ -2448,7 +2619,7 @@ function renderSide() {
           ${fortsOn() ? btn('fortify', '🛡️', 'تحصين', `${G.opt.forts.kind === 'edge' ? 'حصن يعطيك أفضلية بالدفاع' : 'حصن يصد ضربة وحدة'} · ${G.ev === 'build' ? 'بدون سؤال هالجولة 🧱' : 'سؤال ثقافي'}${G.opt.forts.max ? ` · حصونك ${sc.forts}/${G.opt.forts.max}` : ''}`, fo) : ''}
           ${btn('attack', '⚔️', 'هجوم', `معركة أقرب رقم على أرض خصم (${at})`, at, 'war')}
         </div>
-        ${G.opt.cards && t.cards.length ? `<div class="tb-cards">${t.cards.map(k => `<button class="cardb" data-act="card" data-k="${k}" title="${esc(CARDS[k].desc)}" ${k === 'redo' || busy || (k === 'air' && G.air) || (k === 'ram' && G.ram) || (k === 'truce' && truced(i)) ? 'disabled' : ''}>${CARDS[k].icon} ${CARDS[k].name}</button>`).join('')}</div>` : ''}
+        ${G.opt.cards && t.cards.length ? `<div class="tb-cards">${t.cards.map(k => `<button class="cardb" data-act="card" data-k="${k}" title="${esc(CARDS[k].desc)}" ${k === 'redo' || k === 'opts' || busy || (k === 'air' && G.air) || (k === 'ram' && G.ram) || (k === 'truce' && truced(i)) ? 'disabled' : ''}>${CARDS[k].icon} ${CARDS[k].name}</button>`).join('')}</div>` : ''}
         <div class="tb-foot"><span class="muted" style="font-size:.85rem">${truced(i) ? '🕊️ عندك هدنة' : ''}</span><button class="lnk" data-act="do" data-a="pass" ${busy ? 'disabled' : ''}>تمرير الدور</button></div>`;
     }
     box.innerHTML = `<div class="turn" style="--tc:${t.color}"><div class="tb-kick"><span>الدور الحالي</span><span>الجولة ${r} / ${G.rounds}</span></div>
@@ -2597,7 +2768,9 @@ async function importEncyclopedia(file) {
       for (const q of B.q) {
         if (q[1] !== c.key || (!W.adult && adult(q)) || !q[5] || q[6] == null || q[6] === '') continue;
         const k = normQ(q[5]); if (seen.has(k)) { dup++; continue; } seen.add(k);
-        qs.push({ id: 'e' + q[0], lvl: +q[3] >= 3 ? 2 : 1, q: (q[4] === 't' ? 'صح أم خطأ: ' : '') + String(q[5]).trim(), a: String(q[6]).trim(), note: String(q[8] || '').trim() });
+        const pre = q[4] === 't' ? 'صح أم خطأ: ' : '';
+        qs.push({ id: 'e' + q[0], lvl: +q[3] >= 3 ? 2 : 1, q: pre + String(q[5]).trim(), a: String(q[6]).trim(), note: String(q[8] || '').trim(),
+          ...qExtra({ ages: q[12], wrong: q[4] === 't' ? [] : q[7], opt: q[13], no: q[14], qo: q[15] ? pre + String(q[15]).trim() : '' }) });
       }
       const name = DB.cats.some(x => x.name === c.name && x.id !== id) ? `${c.name} (الموسوعة)` : c.name;
       const cat = { id, name, icon: c.icon || '📚', color: /^#[0-9a-f]{6}$/i.test(c.color) ? c.color : '#8f9bb3', qs };
@@ -2938,7 +3111,8 @@ function editQ(cid, qid, o = {}) {
       <label class="fl">الفئة${catSelect('q', cid)}</label></div>`, root => {
     const qq = $('#fQ', root).value.trim(), aa = $('#fA', root).value.trim();
     if (!qq || !aa) { toast('اكتب السؤال والجواب', '✏️'); return false; }
-    const rec = { id: x.id || 'u' + uid(), lvl, q: qq, a: aa, note: $('#fN', root).value.trim() };
+    const ex = qExtra(x); if (qq !== x.q) { delete ex.no; delete ex.qo; } if (aa !== x.a) ex.opt = aa;
+    const rec = { id: x.id || 'u' + uid(), lvl, q: qq, a: aa, note: $('#fN', root).value.trim(), ...ex };
     const to = placeQ('q', cid, rec);
     saveDB(); afterEdit(); toast(qid ? 'انحفظ التعديل' : 'انضاف السؤال', '✔️');
     if (o.onSaved) o.onSaved(rec, to);
@@ -3113,7 +3287,7 @@ function editorAct(act, b) {
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-act]'); if (!b) return;
   const act = b.dataset.act;
-  if ($('#setup').classList.contains('on') && ['addteam', 'rmteam', 'col', 'emo', 'rnd', 'timer', 'opt', 'cat', 'ncat', 'cats', 'ncats', 'mode', 'dist', 'fon', 'fkind', 'fmax', 'freb', 'fcap', 'nameset', 'rerollnames', 'names', 'map', 'evon', 'evch', 'evst', 'evedit', 'mson', 'msb', 'sesel', 'senew', 'setable'].includes(act)) return setupAct(act, b);
+  if ($('#setup').classList.contains('on') && ['addteam', 'rmteam', 'col', 'emo', 'rnd', 'timer', 'opt', 'cat', 'ncat', 'cats', 'ncats', 'mode', 'dist', 'fon', 'fkind', 'fmax', 'freb', 'fcap', 'nameset', 'rerollnames', 'names', 'map', 'evon', 'evch', 'evst', 'evedit', 'mson', 'msb', 'sesel', 'senew', 'setable', 'pm', 'tn', 'sz', 'lvl', 'stage', 'hint', 'cup', 'msprint', 'sound'].includes(act)) return setupAct(act, b);
   switch (act) {
     case 'design': return toggleDesign();
     case 'theme': return toggleTheme();
@@ -3128,6 +3302,7 @@ document.addEventListener('click', e => {
       if (S.cats.length < 3) return toast('لازم 3 فئات ثقافية فيها أسئلة على الأقل', '📚');
       if (!S.ncats.length) return toast('لازم فئة أرقام فيها أسئلة', '🔢');
       SFX.pick(); S.teams.forEach(t => t.name = t.name.trim() || 'فريق'); saveSetup();
+      if (S.cupSeason && !curSeason()) { const se = { id: 's' + uid(), name: `بطولة ${new Date().toLocaleDateString('ar-SA-u-ca-islamic', { day: 'numeric', month: 'long', year: 'numeric' })}`, created: Date.now(), plan: [], games: [] }; SEA.list.push(se); SEA.active = se.id; saveSeason(); }
       const go = () => newGame();
       const sv0 = store.get(K_SAVE, null);
       if (sv0 && sv0.phase && sv0.phase !== 'over') return confirmBox('بدء لعبة جديدة؟', 'فيه لعبة محفوظة ما خلصت، وبتنحذف إذا بديت لعبة جديدة.', 'ابدأ لعبة جديدة', go);
@@ -3147,6 +3322,7 @@ document.addEventListener('click', e => {
     case 'card': return useCard(b.dataset.k);
     case 'ov-cancel': SFX.click(); closeOv(); QX = null; BX = null; if (sel && sel.act === 'attack') { sel.mode = 'attack'; sel.targets = attackTargets(G.cur); } render(); return;
     case 'q-reveal': return revealQ();
+    case 'q-opts': return showOpts();
     case 'q-swap': if (QX && !QX.revealed) { SFX.click(); openQuestion(drawQ(QX.q.cat, QX.lvl, QX.q.id), QX); } return;
     case 'q-ok': return judgeQ(true);
     case 'q-no': return judgeQ(false);
@@ -3154,7 +3330,7 @@ document.addEventListener('click', e => {
     case 'b-swap': if (BX && !BX.revealed) { SFX.click(); openBattle(drawN(BX.cat, BX.nq.id)); } return;
     case 'b-redo': return redoBattle();
     case 'b-done': return finishBattle();
-    case 'q-edit': if (QX) editQ(QX.q.cat, QX.q.id, { onSaved: (rec, cid) => { QX.q = { ...rec, cat: cid }; const d = $('#ov'); if (!d) return; d.querySelector('.qtext').textContent = rec.q; d.querySelector('.qans').innerHTML = qansHTML(rec); } }); return;
+    case 'q-edit': if (QX) editQ(QX.q.cat, QX.q.id, { onSaved: (rec, cid) => { QX.q = { ...rec, cat: cid }; const d = $('#ov'); if (!d) return; d.querySelector('.qtext').textContent = qText(rec); d.querySelector('.qans').innerHTML = qansHTML(rec); } }); return;
     case 'b-edit': if (BX) editN(BX.nq.cat, BX.nq.id, { onSaved: (rec, cid) => { BX.nq = { ...rec, cat: cid }; const t = $('#ov .qtext'); if (t) t.textContent = rec.q; toast('انحفظ، والتعديل يسري على المعارك الجاية', '✏️'); } }); return;
     case 'editor': SFX.click(); return openEditor('home');
     case 'editor-setup': SFX.click(); return openEditor('setup');
@@ -3163,6 +3339,7 @@ document.addEventListener('click', e => {
 });
 $('#encFile').addEventListener('change', e => { const f = e.target.files[0]; e.target.value = ''; if (f) importEncyclopedia(f); });
 $('#importFile').addEventListener('change', e => { const f = e.target.files[0]; e.target.value = ''; if (f) importDB(f); });
+document.addEventListener('toggle', e => { const d = e.target; if (d && d.dataset && d.dataset.more && $('#setup').classList.contains('on')) { S['open' + d.dataset.more] = d.open; saveSetup(); } }, true);
 document.addEventListener('input', e => {
   const inp = e.target.closest('.t-name'); if (!inp) return;
   S.teams[+inp.dataset.i].name = inp.value; saveSetup();
@@ -3178,6 +3355,7 @@ document.addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'Enter' && $('#dlg [data-x=save]')) { e.preventDefault(); return $('#dlg [data-x=save]').click(); }
   if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') && !tgt.closest('input,textarea,select')) { e.preventDefault(); return undo(); }
   if (tgt.closest('input,textarea,select') || $('#dlg')) return;
+  if (e.key === 'Enter' && $('#setup').classList.contains('on') && !ovOpen()) { e.preventDefault(); const st = $('#setup [data-act=start]'); if (st) st.click(); return; }
   if (e.key === 'Enter' || e.key === ' ') {
     if (QX && !QX.revealed && $('#ov')) { e.preventDefault(); return revealQ(); }
     if (BX && BX.revealed && $('#ov [data-act=b-done]')) { e.preventDefault(); return finishBattle(); }

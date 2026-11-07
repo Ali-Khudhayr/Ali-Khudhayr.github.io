@@ -510,6 +510,41 @@ body[data-th="lanes"] .solo-art .halo{display:none}
 @media (max-width:900px){.ln-roads,.ln-how{grid-template-columns:1fr}}
 
 :root{--disp:'Baloo Bhaijaan 2',Lalezar,Tajawal,"Segoe UI",sans-serif;--dw:800;--wink:#6b3300;--num:#fff6cf;--numink:#7a3d00;--numz:0.44}
+
+/* ui-setup v1: شاشة الإعداد الموحدة (أساسي · إعدادات إضافية · للمشرف) */
+#setup-body{padding-bottom:6.5rem}
+.pmodes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;margin-top:.6rem}
+.pm{display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;text-align:start;border:0;border-radius:1.1rem;padding:.65rem .8rem;cursor:pointer;background:#f4f1ea;box-shadow:inset 0 0 0 2px var(--line);font-weight:700;color:var(--ink);font-family:inherit;transition:transform .15s,box-shadow .15s}
+.pm:hover{transform:translateY(-2px)}
+.pm .pi{font-size:1.7rem;line-height:1.15}
+.pm b{font-size:1.12rem}
+.pm small{color:var(--mut);font-weight:700;font-size:.8rem;line-height:1.45}
+.pm.on{background:color-mix(in srgb,var(--acc) 14%,#fff);box-shadow:inset 0 0 0 2.5px var(--acc),0 .3rem 0 color-mix(in srgb,var(--acc) 45%,transparent)}
+.tagc{background:var(--acc);color:var(--acc-ink);border-radius:99px;padding:.05em .75em;font-weight:800;font-size:.85rem}
+.sizes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem;margin-top:.6rem}
+.sz{border:0;border-radius:1rem;padding:.5rem .6rem;cursor:pointer;background:#f4f1ea;box-shadow:inset 0 0 0 2px var(--line);display:flex;flex-direction:column;align-items:center;color:var(--ink);font-weight:800;font-family:inherit;transition:transform .15s}
+.sz:hover{transform:translateY(-2px)}
+.sz b{font-size:1.1rem}.sz span{font-size:.95rem}.sz small{color:var(--mut);font-weight:700;font-size:.8rem}
+.sz.on{background:var(--acc);color:var(--acc-ink);box-shadow:0 .3rem 0 var(--acc2)}.sz.on small{color:inherit;opacity:.92}
+details.more{padding:0;overflow:hidden}
+details.more>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.7rem;padding:.85rem 1.2rem;flex-wrap:wrap}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"▾";margin-inline-start:auto;font-size:1.2rem;color:var(--mut);transition:transform .2s}
+details.more[open]>summary::after{transform:rotate(180deg)}
+.more-in{display:flex;flex-direction:column;gap:1rem;padding:.9rem 1.2rem 1.1rem;border-top:1.5px dashed var(--line)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr));gap:.45rem;margin-top:.5rem}
+.pr{display:flex;align-items:center;gap:.45rem;background:#f8f6f0;border-radius:.9rem;padding:.3rem .5rem;box-shadow:inset 0 0 0 1.5px var(--line)}
+.pr .pic{width:2.1rem;height:2.1rem;flex:none;display:grid;place-items:center;font-size:1.3rem}
+.pr .pic img{width:100%;height:100%;border-radius:.45rem;object-fit:cover}
+.pr .pn{flex:1;min-width:0;font-weight:800;font-size:.92rem;line-height:1.3}
+.pr .pn small{display:block;color:var(--mut);font-size:.78rem}
+.pr input{width:4.3rem;text-align:center;padding:.25em .3em}
+.pr .pu{font-weight:800;color:var(--mut)}
+.pr .px{min-width:2.4rem;color:var(--mut);font-weight:800;text-align:center}
+.pfoot{margin-top:.5rem}
+.startbar{position:fixed;inset-inline:0;bottom:0;z-index:5;display:flex;align-items:center;gap:.7rem;padding:.7rem max(1rem,calc(50% - 30rem));background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -.5rem 1.4rem rgba(0,0,0,.12)}
+.startbar .sum{flex:1;font-weight:800;color:var(--ink);font-size:1.02rem;min-width:0}
+@media (max-width:900px){.pmodes,.sizes{grid-template-columns:repeat(2,minmax(0,1fr))}.startbar{flex-wrap:wrap}.startbar .sum{flex-basis:100%}}
 </style>
 </head>
 <body data-th="home">
@@ -884,6 +919,16 @@ const MODS = [
   ['catchup', '🎯', 'فرصة المتأخر', 'الفريق الأخير (لو بعيد) يفتح خانتين ويختار وحدة.'],
   ['gold', '✨', 'اللوحة الذهبية', 'جولة أخيرة: قيم مضاعفة و«قلب الطاولة»، الأخير يبدأ.'],
 ];
+/* ui-setup v1 */
+// أنماط اللعب الجاهزة (الكلاسيكي هو الافتراضي). آخر حقل اختياري: الحجم اللي يفرضه النمط
+const PLAY_MODES = [
+  ['classic', '🎯', 'كلاسيكي', 'بسيطة ومباشرة: تفتح خانة وتاخذ اللي وراها.', { push: false, cards: false, combo: true, catchup: false, gold: false }],
+  ['hype', '🔥', 'حماسي', 'مفاجآت وقلب طاولة: كمّل أو اكتفِ، وفرصة للمتأخر.', { push: true, cards: false, combo: true, catchup: true, gold: false }],
+  ['adv', '🧠', 'متقدم', 'استراتيجية كاملة: بطاقات القوى وكل الإضافات.', { push: true, cards: true, combo: true, catchup: true, gold: false }],
+  ['cup', '🏆', 'بطولة', 'لوحة كبيرة وكل الإضافات، وختامها اللوحة الذهبية.', { push: true, cards: true, combo: true, catchup: true, gold: true }, 'l'],
+];
+const modeMatch = (id, k) => { const m = PLAY_MODES.find(x => x[0] === id); return !!m && MODS.every(([x]) => !modOK(k, x) || !!prefs.mods[x] === !!m[4][x]); };
+function fixMode() { const k = prefs.theme; if (modeMatch(prefs.mode, k)) return; const m = PLAY_MODES.find(x => modeMatch(x[0], k)); prefs.mode = m ? m[0] : 'custom'; }
 const modOK = (k, m) => { const th = THEMES[k]; if (th.lanes) return m === 'gold'; if (th.design) return m !== 'push' && m !== 'catchup'; return true; };
 const CARD = { shield: ['🛡️', 'درع', 'يصد ضربة وحدة عن فريقكم'], reflect: ['🔄', 'عكس الضربة', 'ترجع الضربة على اللي ضربكم'], freeze: ['❄️', 'تجميد', 'فريق تختارونه يفوته دوره الجاي'] };
 
@@ -894,6 +939,8 @@ const PREF_KEY = 'lm.prefs.v1', GAME_KEY = 'lm.game.v2.' + SOLO, ITEMS_KEY = 'lm
 const prefs = Object.assign({ teamCount: 2, names: [], emojis: [], emb: [], colors: [], sound: true, autoTurn: true, theme: 'hive' }, Store.get(PREF_KEY, {}));
 prefs.mods = Object.assign({ push: true, cards: true, combo: true, catchup: true, gold: true }, prefs.mods || {});
 prefs.theme = SOLO;
+if (!prefs.mode) { prefs.mode = 'classic'; Object.assign(prefs.mods, PLAY_MODES[0][4]); }
+prefs.size = prefs.size || {}; prefs.pct = prefs.pct || {};
 const savePrefs = () => Store.set(PREF_KEY, prefs);
 let custom = Store.get(ITEMS_KEY, {});     // عناصر عدّلها المشرف لكل لوحة
 const itemsOf = k => custom[k] && custom[k].length ? custom[k] : THEMES[k].items;
@@ -993,7 +1040,28 @@ const saveGame = () => { if (G) Store.set(GAME_KEY, G); };
 const snap = () => { hist.push(clone(G)); if (hist.length > 40) hist.shift(); };
 const TH = () => THEMES[G.theme];
 const mod = m => !!(G && G.mods && G.mods[m]);
-const deck = k => shuffle(itemsOf(k).flatMap(it => Array.from({ length: Math.max(0, +it.c || 0) }, () => ({ e: it.e, n: it.n, t: it.t, v: +it.v || 0, txt: it.txt || '', hue: it.hue || '', art: artFor(k, it) })))).slice(0, 80);
+/* الحجم ونسب الظهور: كل خانة تنسحب بالحظ حسب نسبة عنصرها، مع ضمانات عدالة */
+const SIZES = [['s', 'صغير', .6], ['m', 'متوسط', 1], ['l', 'كبير', 1.5], ['xl', 'ضخم', 2]];
+const baseN = k => Math.max(1, Math.min(80, itemsOf(k).reduce((s, x) => s + (+x.c || 0), 0)));
+const sizeKey = k => (prefs.size && prefs.size[k]) || 'm';
+const sizeN = (k, s) => { const f = (SIZES.find(x => x[0] === s) || SIZES[1])[2]; let n = Math.max(8, Math.min(80, Math.round(baseN(k) * f))); if (THEMES[k].layout === 'regions') n = Math.max(8, Math.min(80, Math.round(n / 4) * 4)); return n; };
+const estMin = n => Math.max(5, Math.round(n * 40 / 300) * 5);   // تقريباً ٤٠ ثانية لكل خانة مع سؤالها
+const defPct = k => { const it = itemsOf(k), t = it.reduce((s, x) => s + (+x.c || 0), 0) || 1; return it.map(x => Math.round((+x.c || 0) / t * 1000) / 10); };
+const pctOf = k => { const p = prefs.pct && prefs.pct[k], d = defPct(k); return Array.isArray(p) && p.length === d.length ? p : d; };
+const HARM = ['sub', 'hit', 'top', 'steal'];
+function deck(k, n) {
+  const it = itemsOf(k); n = Math.max(1, Math.min(80, n || sizeN(k, sizeKey(k))));
+  const w = pctOf(k).map(x => Math.max(0, +x || 0)), W = w.reduce((a, b) => a + b, 0);
+  if (!W) return [];
+  const pick = () => { let r = Math.random() * W; for (let i = 0; i < w.length; i++) { r -= w[i]; if (r < 0) return i; } return w.length - 1; };
+  const idx = Array.from({ length: n }, pick);
+  // ضمانات: الجائزة الكبرى تظهر دائماً، وكل عنصر نسبته فوق الصفر يظهر مرة على الأقل إذا الخانات تكفي
+  const live = w.map((x, i) => x > 0 ? i : -1).filter(i => i >= 0);
+  const top = live.filter(i => it[i].t === 'add').sort((a, b) => (+it[b].v || 0) - (+it[a].v || 0))[0];
+  const must = (live.length <= n ? [top, ...live.filter(i => i !== top).sort((a, b) => w[b] - w[a])] : [top]).filter(i => i != null);
+  for (const i of must) if (!idx.includes(i)) { const c = {}; idx.forEach(x => { c[x] = (c[x] || 0) + 1; }); const donor = +Object.keys(c).sort((a, b) => c[b] - c[a])[0]; if (c[donor] > 1) idx[idx.indexOf(donor)] = i; }
+  return shuffle(idx.map(i => { const x = it[i]; return { e: x.e, n: x.n, t: x.t, v: +x.v || 0, txt: x.txt || '', hue: x.hue || '', art: artFor(k, x) }; }));
+}
 const newStats = () => ({ maxStreak: 0, bestGain: 0, maxRun: 0, traps: 0, dealt: 0, worst: 1 });
 // ألعاب محفوظة من النسخة القديمة: نكمّل الحقول الناقصة
 function fixG(g) {
@@ -1075,7 +1143,7 @@ function setTheme(k) {
 
 function renderHome() {
   G = null; setTheme('home');
-  $('#themes').innerHTML = ORDER.map((k, i) => { const t = THEMES[k], n = t.lanes ? 'نقاط بالترتيب' : t.design ? `${ar(KD.cells)} خانة يصمّمها كل فريق` : `${ar(Math.min(80, itemsOf(k).reduce((s, x) => s + (+x.c || 0), 0)))} خانة`;
+  $('#themes').innerHTML = ORDER.map((k, i) => { const t = THEMES[k], n = t.lanes ? 'نقاط بالترتيب' : t.design ? `${ar(KD.cells)} خانة يصمّمها كل فريق` : `${ar(sizeN(k, sizeKey(k)))} خانة`;
     return `<button class="th-card" style="--c:${t.color};--i:${i}" data-act="pick-theme" data-k="${k}"><span class="n">${n}</span>${t.isNew ? '<span class="new">جديدة</span>' : ''}<span class="ic">${heroHTML(k)}</span><b>${t.name}</b><span class="s">${t.sub}</span></button>`; }).join('');
   const s = Store.get(GAME_KEY, null), b = $('#resume');
   if (s && !s.over && THEMES[s.theme]) { b.hidden = false; b.innerHTML = `▶ كمّل «${THEMES[s.theme].name}»`; } else b.hidden = true;
@@ -1084,26 +1152,52 @@ function renderHome() {
 
 function renderSetup() {
   const k = prefs.theme, th = THEMES[k], T = teamList(), n = prefs.teamCount;
-  setTheme(k);
-  const items = th.lanes || th.design ? '' : itemsOf(k).map(it => { const s = artSrc(artFor(k, it)); return `<span class="chip" title="${esc(it.txt)}" style="cursor:default;display:inline-flex;align-items:center;gap:.35em">${s ? `<img src="${s}" alt="" style="width:1.7em;height:1.7em;border-radius:.4em;object-fit:cover">` : `<span style="filter:${it.hue || 'none'}">${esc(it.e)}</span>`} ${esc(it.n)} ${it.t === 'add' ? '+' + ar(it.v) : it.t === 'sub' || it.t === 'hit' ? '−' + ar(it.v) : it.v ? ar(it.v) : ''} <small class="hint">×${ar(it.c)}</small></span>`; }).join(' ');
-  const mods = `<div class="card"><div class="row" style="justify-content:space-between"><b>✨ الإضافات</b><span class="hint">اضغط عشان تشغّل أو تطفي</span></div><div class="mods">${MODS.map(([m, ic, nm, ds]) => { const ok = modOK(k, m); return `<button class="mod ${ok && prefs.mods[m] ? 'on' : ''} ${ok ? '' : 'na'}" ${ok ? `data-act="mod" data-m="${m}"` : 'disabled'}><span class="mi">${ic}</span><span><b>${nm}</b><small>${ok ? ds : 'ما تنطبق على هاللوحة'}</small></span><span class="sw"></span></button>`; }).join('')}</div></div>`;
-  $('#setup-body').innerHTML = `<h2 class="plate">${heroHTML(k).startsWith('<img') ? heroHTML(k) : th.icon} ${th.name}</h2>
-    <div class="card"><div class="row" style="justify-content:space-between"><b>الفرق <span class="hint">· اضغط الشعار عشان تختار شعار ولون</span></b><div class="row"><button class="ib" data-act="team-n" data-d="-1" ${n <= 2 ? 'disabled' : ''}>−</button><b style="font-size:1.3rem">${ar(n)}</b><button class="ib" data-act="team-n" data-d="1" ${n >= 6 ? 'disabled' : ''}>+</button></div></div>
-      <div class="trows">${T.map((t, i) => `<div class="trow" style="--tc:${t.c}"><button class="embb" data-act="team-emb" data-i="${i}" title="غيّر الشعار واللون"><img src="${embSrc(t, k)}" alt=""></button><input class="fld" data-name="${i}" maxlength="22" value="${esc(prefs.names[i] || TEAM_PRESETS[i].n)}" aria-label="اسم الفريق ${i + 1}"></div>`).join('')}</div></div>
-    ${th.lanes ? `<div class="card"><b>الفكرة</b><div style="margin-top:.6rem">${lanesHow()}</div></div>`
-    : th.design ? `<div class="card" style="display:flex;flex-direction:column;gap:.7rem"><b>🎨 كل فريق يصمّم لوحته</b>
-        <p class="hint" style="margin:0;line-height:1.8">قبل اللعب، كل فريق يوزّع نقاطه على خاناته بنفسه: أرقام، فراغات، غرامات، بيدق، «امنعك تلعب»، أو «افتح مربع من عندك». المشرف يكتبها في شاشة التصميم والقيم تقدر تنخفي.</p>
-        <div class="row" style="justify-content:space-between"><b>عدد الخانات لكل فريق</b><div class="row">${[12, 16, 20, 25].map(v => `<button class="chip ${KD.cells === v ? 'on' : ''}" data-act="kd-set" data-k="cells" data-v="${v}">${ar(v)}</button>`).join('')}</div></div>
-        <div class="row" style="justify-content:space-between"><b>نقاط كل فريق يوزّعها</b><div class="row">${[[0, 'بدون حد'], [1000, ar(1000)], [1150, ar(1150)], [1500, ar(1500)]].map(([v, l]) => `<button class="chip ${KD.budget === v ? 'on' : ''}" data-act="kd-set" data-k="budget" data-v="${v}">${l}</button>`).join('')}</div></div>
+  setTheme(k); fixMode();
+  const md = prefs.mode, sz = sizeKey(k), N = th.lanes ? 0 : th.design ? KD.cells : sizeN(k, sz);
+  const items = th.lanes || th.design ? '' : itemsOf(k).map(it => { const s = artSrc(artFor(k, it)); return `<span class="chip" title="${esc(it.txt)}" style="cursor:default;display:inline-flex;align-items:center;gap:.35em">${s ? `<img src="${s}" alt="" style="width:1.7em;height:1.7em;border-radius:.4em;object-fit:cover">` : `<span style="filter:${it.hue || 'none'}">${esc(it.e)}</span>`} ${esc(it.n)} ${valTxt(it)}</span>`; }).join(' ');
+  // ١) الأساسي: النمط، الفرق، الحجم
+  const modes = `<div class="card"><div class="row" style="justify-content:space-between"><b>نمط اللعب</b>${md === 'custom' ? '<span class="tagc">مخصص</span>' : ''}</div>
+    <div class="pmodes">${PLAY_MODES.map(([id, ic, nm, ds]) => `<button class="pm ${md === id ? 'on' : ''}" data-act="pmode" data-m="${id}" aria-pressed="${md === id}"><span class="pi">${ic}</span><b>${nm}</b><small>${ds}</small></button>`).join('')}</div></div>`;
+  const teams = `<div class="card"><div class="row" style="justify-content:space-between"><b>الفرق <span class="hint">· اضغط الشعار عشان تختار شعار ولون</span></b><div class="row"><button class="ib" data-act="team-n" data-d="-1" ${n <= 2 ? 'disabled' : ''} aria-label="فريق أقل">−</button><b style="font-size:1.3rem">${ar(n)}</b><button class="ib" data-act="team-n" data-d="1" ${n >= 6 ? 'disabled' : ''} aria-label="فريق أكثر">+</button></div></div>
+      <div class="trows">${T.map((t, i) => `<div class="trow" style="--tc:${t.c}"><button class="embb" data-act="team-emb" data-i="${i}" title="غيّر الشعار واللون"><img src="${embSrc(t, k)}" alt=""></button><input class="fld" data-name="${i}" maxlength="22" value="${esc(prefs.names[i] || TEAM_PRESETS[i].n)}" aria-label="اسم الفريق ${i + 1}"></div>`).join('')}</div></div>`;
+  const size = th.lanes ? `<div class="card"><b>الفكرة</b><div style="margin-top:.6rem">${lanesHow()}</div></div>`
+    : th.design ? `<div class="card"><div class="row" style="justify-content:space-between"><b>حجم اللعبة <span class="hint">· خانات كل فريق</span></b><div class="row">${[12, 16, 20, 25].map(v => `<button class="chip ${KD.cells === v ? 'on' : ''}" data-act="kd-set" data-k="cells" data-v="${v}">${ar(v)}</button>`).join('')}</div></div>
+        <p class="hint" style="margin:.5rem 0 0;line-height:1.8">قبل اللعب، كل فريق يوزّع نقاطه على خاناته بنفسه: أرقام، فراغات، غرامات، بيدق، «امنعك تلعب»، أو «افتح مربع من عندك».</p></div>`
+    : `<div class="card"><div class="row" style="justify-content:space-between"><b>حجم اللعبة</b><span class="hint">اختر حسب وقتك</span></div><div class="sizes">${SIZES.map(([id, nm]) => { const c = sizeN(k, id); return `<button class="sz ${sz === id ? 'on' : ''}" data-act="size" data-v="${id}" aria-pressed="${sz === id}"><b>${nm}</b><span>${ar(c)} خانة</span><small>≈ ${ar(estMin(c))} دقيقة</small></button>`; }).join('')}</div></div>`;
+  // ٢) إعدادات إضافية
+  const kdMore = th.design ? `<div class="row" style="justify-content:space-between"><b>نقاط كل فريق يوزّعها</b><div class="row">${[[0, 'بدون حد'], [1000, ar(1000)], [1150, ar(1150)], [1500, ar(1500)]].map(([v, l]) => `<button class="chip ${KD.budget === v ? 'on' : ''}" data-act="kd-set" data-k="budget" data-v="${v}">${l}</button>`).join('')}</div></div>
         <div class="row" style="justify-content:space-between"><b>مين يفتح لوحة الفريق؟</b><div class="row"><button class="chip ${KD.mode === 'others' ? 'on' : ''}" data-act="kd-set" data-k="mode" data-v="others">الفرق الثانية</button><button class="chip ${KD.mode === 'own' ? 'on' : ''}" data-act="kd-set" data-k="mode" data-v="own">الفريق نفسه</button></div></div>
-        <p class="hint" style="margin:0">${KD.mode === 'others' ? 'الفريق اللي عليه الدور يختار لوحة فريق ثاني ويفتح منها، وياخذ اللي فيها (أو تنطبق عليه الغرامة والمنع). عشان كذا كل فريق يحط فخاخ لغيره.' : 'كل فريق يفتح من لوحته هو، وياخذ اللي فيها.'}</p></div>`
-    : `<div class="card"><div class="row" style="justify-content:space-between"><b>وش وراء الخانات</b><button class="btn ghost" data-act="edit-items">✏️ تعديل</button></div><div class="row" style="justify-content:flex-start;margin-top:.6rem">${items}</div></div>${th.challenges ? `
-    <div class="card"><b>🏆 التحديات</b><p class="hint" style="margin:.3rem 0 0;line-height:1.8">مثل العرض الأصلي: بين الصناديق تلعبون تحدي (${th.challenges.map(esc).join('، ')}…)، والأول يفتح ${ar(th.rank[0])} خانة والثاني ${ar(th.rank[1])}، والباقين ولا شي. زر «🏆 تحدي» تحت اللوحة، وتقدر تعدّل التحديات منه.</p></div>` : ''}`}
-    ${mods}
-    ${th.lanes ? '' : `<div class="card row" style="justify-content:space-between"><b>الدور</b><div class="row"><button class="chip ${prefs.autoTurn ? 'on' : ''}" data-act="auto" data-v="1">ينتقل تلقائياً بعد كل خانة</button><button class="chip ${!prefs.autoTurn ? 'on' : ''}" data-act="auto" data-v="0">المشرف يختار الفريق</button></div></div>`}
-    <div class="row"><button class="btn acc big" data-act="start">▶ ابدأ اللعبة<kbd>Enter</kbd></button><button class="btn ghost" data-act="to-home">→ رجوع</button></div>`;
+        <p class="hint" style="margin:0">${KD.mode === 'others' ? 'الفريق اللي عليه الدور يختار لوحة فريق ثاني ويفتح منها، وياخذ اللي فيها (أو تنطبق عليه الغرامة والمنع). عشان كذا كل فريق يحط فخاخ لغيره.' : 'كل فريق يفتح من لوحته هو، وياخذ اللي فيها.'}</p>` : '';
+  const mods = `<div><div class="row" style="justify-content:space-between"><b>✨ الإضافات</b><span class="hint">النمط يشغّلها لك، وتقدر تغيّرها</span></div><div class="mods">${MODS.map(([m, ic, nm, ds]) => { const ok = modOK(k, m); return `<button class="mod ${ok && prefs.mods[m] ? 'on' : ''} ${ok ? '' : 'na'}" ${ok ? `data-act="mod" data-m="${m}"` : 'disabled'}><span class="mi">${ic}</span><span><b>${nm}</b><small>${ok ? ds : 'ما تنطبق على هاللوحة'}</small></span><span class="sw"></span></button>`; }).join('')}</div></div>`;
+  const turn = th.lanes ? '' : `<div class="row" style="justify-content:space-between"><b>الدور</b><div class="row"><button class="chip ${prefs.autoTurn ? 'on' : ''}" data-act="auto" data-v="1">ينتقل تلقائياً بعد كل خانة</button><button class="chip ${!prefs.autoTurn ? 'on' : ''}" data-act="auto" data-v="0">المشرف يختار الفريق</button></div></div>`;
+  const more = `<details class="more card" data-more="1" ${prefs.open1 ? 'open' : ''}><summary><b>⚙️ إعدادات إضافية</b><span class="hint">${th.lanes ? 'الإضافات' : th.design ? 'النقاط · الإضافات · الدور' : 'نسب الظهور · الإضافات · الدور'}</span></summary><div class="more-in">${th.lanes || th.design ? '' : pctHTML(k, N)}${kdMore}${mods}${turn}</div></details>`;
+  // ٣) للمشرف
+  const admin = th.lanes || th.design ? '' : `<details class="more card" data-more="2" ${prefs.open2 ? 'open' : ''}><summary><b>🛠️ للمشرف</b><span class="hint">تعديل ما وراء الخانات${th.challenges ? ' والتحديات' : ''}</span></summary><div class="more-in">
+      <div class="row" style="justify-content:space-between"><span class="hint">العناصر الحالية وقيمها</span><button class="btn ghost" data-act="edit-items">✏️ تعديل الخانات</button></div><div class="row" style="justify-content:flex-start">${items}</div>
+      ${th.challenges ? `<p class="hint" style="margin:0;line-height:1.8">🏆 التحديات: بين الصناديق تلعبون تحدي (${th.challenges.map(esc).join('، ')}…)، والأول يفتح ${ar(th.rank[0])} خانة والثاني ${ar(th.rank[1])}. زر «🏆 تحدي» تحت اللوحة، وتقدر تعدّل التحديات منه.</p>` : ''}</div></details>`;
+  const mName = md === 'custom' ? 'مخصص' : PLAY_MODES.find(x => x[0] === md)[2];
+  const sum = [mName, `${ar(n)} فرق`, N ? `${ar(N)} خانة${th.design ? ' لكل فريق' : ''}` : '', N && !th.design ? `≈ ${ar(estMin(N))} دقيقة` : ''].filter(Boolean).join(' · ');
+  $('#setup-body').innerHTML = `<h2 class="plate">${heroHTML(k).startsWith('<img') ? heroHTML(k) : th.icon} ${th.name}</h2>
+    ${modes}${teams}${size}${more}${admin}
+    <div class="startbar"><span class="sum">${sum}</span><button class="btn ghost" data-act="to-home">→ رجوع</button><button class="btn acc big" data-act="start">▶ ابدأ اللعبة<kbd>Enter</kbd></button></div>`;
   show('setup');
 }
+const valTxt = it => it.t === 'add' ? '+' + ar(it.v) : it.t === 'sub' || it.t === 'hit' ? '−' + ar(it.v) : it.v ? ar(it.v) : '';
+function pctSum(k) { const it = itemsOf(k), p = pctOf(k), tot = p.reduce((a, b) => a + (+b || 0), 0) || 1, h = it.reduce((s, x, i) => s + (HARM.includes(x.t) ? +p[i] || 0 : 0), 0), hp = Math.round(h / tot * 100), t = Math.round(tot);
+  return `المجموع ${ar(t)}٪${t !== 100 ? ' (تتوزع بالتناسب)' : ''} · الخانات الضارة ${ar(hp)}٪${hp > 35 ? ' ⚠️ كثيرة' : ''}`; }
+function pctHTML(k, N) {
+  const it = itemsOf(k), p = pctOf(k), tot = p.reduce((a, b) => a + (+b || 0), 0) || 1;
+  return `<div><div class="row" style="justify-content:space-between"><b>🎲 نسب الظهور</b><span class="hint">كل خانة تنسحب بالحظ حسب نسبتها، والجائزة الكبرى مضمونة</span></div>
+    <div class="pgrid">${it.map((x, i) => { const s = artSrc(artFor(k, x)); return `<label class="pr"><span class="pic">${s ? `<img src="${s}" alt="">` : `<span style="filter:${x.hue || 'none'}">${esc(x.e)}</span>`}</span><span class="pn">${esc(x.n)}<small>${valTxt(x)}</small></span><input class="fld" type="number" min="0" max="100" step="1" data-pct="${i}" value="${+(+p[i] || 0).toFixed(1)}" aria-label="نسبة ${esc(x.n)}"><span class="pu">٪</span><small class="px" data-px="${i}" title="العدد المتوقع">≈${ar(Math.round(N * (+p[i] || 0) / tot))}</small></label>`; }).join('')}</div>
+    <div class="row pfoot" style="justify-content:space-between"><span class="hint" id="pct-sum">${pctSum(k)}</span><button class="btn ghost" data-act="pct-reset">↺ النسب الأصلية</button></div></div>`;
+}
+function paintPct() {
+  const k = prefs.theme, p = pctOf(k), tot = p.reduce((a, b) => a + (+b || 0), 0) || 1, N = sizeN(k, sizeKey(k));
+  $$('[data-px]').forEach(el => { el.textContent = '≈' + ar(Math.round(N * (+p[+el.dataset.px] || 0) / tot)); });
+  const s = $('#pct-sum'); if (s) s.textContent = pctSum(k);
+}
+document.addEventListener('input', e => { const el = e.target; if (!el.dataset || el.dataset.pct == null) return; const k = prefs.theme, p = pctOf(k).slice(); p[+el.dataset.pct] = Math.max(0, Math.min(100, +el.value || 0)); prefs.pct = prefs.pct || {}; prefs.pct[k] = p; savePrefs(); paintPct(); });
+document.addEventListener('toggle', e => { const d = e.target; if (d && d.dataset && d.dataset.more) { prefs['open' + d.dataset.more] = d.open; savePrefs(); } }, true);
 function emblemDialog(i) {
   const k = prefs.theme, ids = [...(EMB_THEME[k] || []), ...EMB_COMMON];
   const d = overlay('', 'dlg');
@@ -1171,9 +1265,9 @@ function renderBoard() {
   const th = TH(), B = boardOf(), wrap = $('#board-wrap'), n = B.length, L = layoutOf(), skin = L === 'gold' ? 'sk-gold' : 'sk-' + G.theme;
   if (L === 'regions') {
     const R = th.regions, per = Math.ceil(n / R.length);
-    wrap.innerHTML = `<div class="regions" id="bd">${R.map(([nm, c, img], r) => `<div class="region" style="--rc:${c};${SVGA.items[img] ? `--img:url(&quot;${SVGA.items[img]}&quot;)` : ''}"><h3>${esc(nm)}</h3><div class="board ${skin}" style="grid-template-columns:repeat(${th.cols},1fr)">${B.slice(r * per, r * per + per).map((x, j) => tileHTML(x, r * per + j, ar(j + 1))).join('')}</div></div>`).join('')}</div>`;
+    wrap.innerHTML = `<div class="regions" id="bd">${R.map(([nm, c, img], r) => `<div class="region" style="--rc:${c};${SVGA.items[img] ? `--img:url(&quot;${SVGA.items[img]}&quot;)` : ''}"><h3>${esc(nm)}</h3><div class="board ${skin}" style="grid-template-columns:repeat(${colsFor(n)},1fr)">${B.slice(r * per, r * per + per).map((x, j) => tileHTML(x, r * per + j, ar(j + 1))).join('')}</div></div>`).join('')}</div>`;
   } else if (L === 'hex') {
-    const cols = th.cols, rows = Math.ceil(n / cols);
+    const cols = colsFor(n), rows = Math.ceil(n / cols);
     wrap.innerHTML = `<div class="board hex ${skin}" id="bd">${Array.from({ length: rows }, (_, r) => `<div class="hr">${B.slice(r * cols, r * cols + cols).map((x, j) => tileHTML(x, r * cols + j, ar(r * cols + j + 1))).join('')}</div>`).join('')}</div>`;
   } else {
     const cols = Math.min(colsOf(), n);
@@ -1181,15 +1275,16 @@ function renderBoard() {
   }
   fitBoard();
 }
-const colsOf = () => layoutOf() === 'gold' ? Math.ceil(Math.sqrt(boardOf().length * 1.8)) : TH().cols;
+const colsFor = n => { const th = TH(); if (th.design || !G) return th.cols; const b = baseN(G.theme); return n === b ? th.cols : Math.max(3, Math.round(th.cols * Math.sqrt(n / b))); };
+const colsOf = () => layoutOf() === 'gold' ? Math.ceil(Math.sqrt(boardOf().length * 1.8)) : colsFor(boardOf().length);
 /* حجم الخانات حسب المساحة المتاحة */
 function fitBoard() {
   if (!G || TH().lanes) return; const th = TH(), L = layoutOf();
   const wrap = $('#board-wrap'), bd = $('#bd'); if (!bd) return;
   const W = wrap.clientWidth - 24, H = wrap.clientHeight - 16, n = boardOf().length;
   let ts, bw;
-  if (L === 'hex') { const cols = th.cols, rows = Math.ceil(n / cols); ts = Math.min(W * .9 / (cols * 1.06 + .53), H / (rows * .78 + .3) * .88); bd.style.setProperty('--ts', ts + 'px'); return; }
-  if (L === 'regions') { const per = Math.ceil(n / 4), cols = th.cols, rows = Math.ceil(per / cols); const tsW = (W / 2 - 50) / (cols * 1.14), tsH = (H / 2 - 80) / (rows * 1.14); ts = Math.max(28, Math.min(tsW, tsH)); bw = Math.min(W, (ts * cols * 1.14 + 50) * 2 + 20); }
+  if (L === 'hex') { const cols = colsFor(n), rows = Math.ceil(n / cols); ts = Math.min(W * .9 / (cols * 1.06 + .53), H / (rows * .78 + .3) * .88); bd.style.setProperty('--ts', ts + 'px'); return; }
+  if (L === 'regions') { const per = Math.ceil(n / 4), cols = colsFor(n), rows = Math.ceil(per / cols); const tsW = (W / 2 - 50) / (cols * 1.14), tsH = (H / 2 - 80) / (rows * 1.14); ts = Math.max(28, Math.min(tsW, tsH)); bw = Math.min(W, (ts * cols * 1.14 + 50) * 2 + 20); }
   else { const cols = Math.min(colsOf(), n), rows = Math.ceil(n / cols), gap = Math.max(8, Math.min(14, W / cols * .1)); ts = Math.max(28, Math.min((W - (cols - 1) * gap) / cols, (H - (rows - 1) * gap) / rows, 150)); bw = ts * cols + (cols - 1) * gap; bd.style.setProperty('--gap', gap + 'px'); }
   bd.style.setProperty('--bw', bw + 'px'); $$('.board', wrap).forEach(b => { b.style.setProperty('--ts', ts + 'px'); }); bd.style.setProperty('--ts', ts + 'px');
 }
@@ -1491,7 +1586,7 @@ function startGold() {
   if (th.lanes || th.design) G.goldMul = 2;
   else {
     const n = Math.max(12, Math.min(24, G.teams.length * 3 + 4));
-    const pool = deck(G.theme).slice(0, n - 1).map(x => ({ ...x, v: x.v * 2, open: false, by: null }));
+    const pool = deck(G.theme, Math.max(n, 24)).slice(0, n - 1).map(x => ({ ...x, v: x.v * 2, open: false, by: null }));
     G.board = shuffle([...pool, { e: '🔄', n: 'قلب الطاولة', t: 'swap', v: 0, txt: 'بدّلوا نقاطكم مع الفريق اللي فوقكم مباشرة!', art: 'swapG', open: false, by: null }]);
     const asc = G.teams.map((t, i) => i).sort((a, b) => G.teams[a].score - G.teams[b].score);
     const q = [...asc, ...asc]; G.goldRound = true; G.turn = q.shift(); G.queue = q;
@@ -1555,7 +1650,7 @@ function editItems() {
   const paint = () => {
     const total = rows.reduce((s, x) => s + (+x.c || 0), 0);
     d.innerHTML = `<h3>✏️ وش وراء خانات «${THEMES[k].name}»</h3>
-      <p class="hint" style="margin:0">عدد الخانات = مجموع عمود «العدد» (حالياً <b id="ed-total">${ar(total)}</b>، والحد 80). القيمة بـ«${esc(THEMES[k].unit)}». الصورة تتبع الاسم الأصلي، والعنصر الجديد ياخذ الرمز.</p>
+      <p class="hint" style="margin:0">عمود «العدد» يحدد نسبة ظهور كل عنصر، ومجموعه هو الحجم المتوسط (حالياً <b id="ed-total">${ar(total)}</b>، والحد 80). القيمة بـ«${esc(THEMES[k].unit)}». الصورة تتبع الاسم الأصلي، والعنصر الجديد ياخذ الرمز.</p>
       <table class="ed-table"><tr><th></th><th>الرمز</th><th>الاسم</th><th>النوع</th><th>القيمة</th><th>العدد</th><th>الوصف</th><th></th></tr>
       ${rows.map((r, i) => { const s = artSrc(r.art); return `<tr><td>${s ? `<img class="thumb" src="${s}" alt="">` : ''}</td><td><input class="fld e" data-f="e" data-i="${i}" value="${esc(r.e)}" maxlength="4"></td><td><input class="fld" data-f="n" data-i="${i}" value="${esc(r.n)}" maxlength="24"></td>
         <td><select class="fld" data-f="t" data-i="${i}">${typeOpts(r.t)}</select></td><td><input class="fld v" type="number" data-f="v" data-i="${i}" value="${+r.v || 0}"></td>
@@ -1575,7 +1670,7 @@ function editItems() {
       rows = rows.filter(r => r.e && r.n && (+r.c || 0) > 0); if (!rows.length) return toast('أضف عنصر واحد على الأقل');
       rows.forEach(r => { if (!r.art) delete r.art; });
       const norm = a => JSON.stringify(a.map(o => Object.keys(o).sort().reduce((x, f) => (x[f] = o[f], x), {})));
-      custom[k] = rows; if (norm(rows) === norm(THEMES[k].items)) delete custom[k]; Store.set(ITEMS_KEY, custom); closeOverlay(); renderSetup(); toast('تم الحفظ — تطبق على اللعبة الجديدة');
+      custom[k] = rows; if (norm(rows) === norm(THEMES[k].items)) delete custom[k]; delete prefs.pct[k]; savePrefs(); Store.set(ITEMS_KEY, custom); closeOverlay(); renderSetup(); toast('تم الحفظ — تطبق على اللعبة الجديدة');
     }
   });
 }
@@ -1738,7 +1833,10 @@ const ACT = {
   fs: toggleFS,
   'team-n'(el) { prefs.teamCount = Math.max(2, Math.min(6, prefs.teamCount + +el.dataset.d)); savePrefs(); renderSetup(); Snd.pop(); },
   'team-emb'(el) { emblemDialog(+el.dataset.i); },
-  mod(el) { const m = el.dataset.m; prefs.mods[m] = !prefs.mods[m]; savePrefs(); renderSetup(); Snd.pop(); },
+  mod(el) { const m = el.dataset.m; prefs.mods[m] = !prefs.mods[m]; fixMode(); savePrefs(); renderSetup(); Snd.pop(); },
+  pmode(el) { const m = PLAY_MODES.find(x => x[0] === el.dataset.m); if (!m) return; prefs.mode = m[0]; Object.assign(prefs.mods, m[4]); if (m[5]) prefs.size[prefs.theme] = m[5]; savePrefs(); renderSetup(); Snd.pop(); },
+  size(el) { prefs.size[prefs.theme] = el.dataset.v; savePrefs(); renderSetup(); Snd.pop(); },
+  'pct-reset'() { delete prefs.pct[prefs.theme]; savePrefs(); renderSetup(); Snd.pop(); },
   auto(el) { prefs.autoTurn = el.dataset.v === '1'; savePrefs(); renderSetup(); },
   'edit-items': editItems,
   start() { THEMES[prefs.theme].design ? kdDesign(0, false) : newGame(prefs.theme); },
