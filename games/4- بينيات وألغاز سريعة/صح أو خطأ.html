@@ -2030,6 +2030,9 @@ body.sk .stage:not(.su)>.hint{background:rgba(255,255,255,.88);color:var(--sk-in
 body.sk .tf-big{display:inline-flex;align-items:center;gap:.25em;font-family:var(--sk-ui);font-weight:800;color:var(--sk-ink)}
 body.sk .tf-big .sk-sw{height:1.25em;width:auto;animation:sk-bob 3.4s ease-in-out infinite}
 body.sk .tagx{font-family:var(--sk-ui)}
+/* المشهد بمقاسه الحقيقي (بدون فراغ أبيض على الجوانب لما يصغر) */
+body.sk .pk-sc .scene{display:block;margin:0 auto;width:auto;max-width:100%;height:32vh;max-height:none;aspect-ratio:800/330}
+body.sk .pk-sc.tight .scene{height:19vh}body.sk .pk-sc.xs .scene{height:12vh}
 
 </style>
 <script id="sk-js">
