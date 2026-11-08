@@ -1808,6 +1808,7 @@ body.sk .tagx{font-family:var(--sk-ui)}
 /* المشهد بمقاسه الحقيقي (بدون فراغ أبيض على الجوانب لما يصغر) */
 body.sk .pk-sc .scene{display:block;margin:0 auto;width:auto;max-width:100%;height:32vh;max-height:none;aspect-ratio:800/330}
 body.sk .pk-sc.tight .scene{height:19vh}body.sk .pk-sc.xs .scene{height:12vh}
+body.sk #wheel{will-change:transform}
 
 </style>
 <script id="sk-js">
@@ -2114,6 +2115,17 @@ const SKC = window.SKC = { hooks: [], soundOn: () => (typeof prefs === 'object' 
       const im = document.createElement('img'); im.className = 'sk-sw'; im.alt = ''; im.src = I.stopwatch; el.prepend(im);
     });
   });
+
+  /* 6-ج) العجلة: نرسمها مرة وحدة، واللف يصير تدوير للصورة (بدل إعادة رسم ٩٠٠×٩٠٠ كل إطار) */
+  if (typeof Wheel === 'object' && Wheel.draw) {
+    const _draw = Wheel.draw; let key = '';
+    Wheel.draw = function () {
+      const cv = $('#wheel'); if (!cv) return;
+      const k = this.pool.join('\u0001') + '|' + this.pool.length;
+      if (k !== key || cv.dataset.sk !== '1') { const a = this.a; this.a = 0; _draw.call(this); this.a = a; key = k; cv.dataset.sk = '1'; }
+      cv.style.transform = `rotate(${this.a}rad)`;
+    };
+  }
 
   /* 7) ضربات الجزاء: مشهد مرسوم (مرمى + قفازين بدل الحارس + كرة) — نفس المعرّفات للحركة */
   if (typeof PK === 'object' && I.goal && I.glove && I.ball) {
