@@ -2457,8 +2457,8 @@ body.sk .region h3{font-family:var(--sk-disp)!important;font-weight:var(--sk-dw,
 #sklife{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 #sklife i{position:absolute;left:var(--x);bottom:-3%;width:calc(11px*var(--s));aspect-ratio:1;border-radius:50%;background:var(--sk-mote,radial-gradient(circle,rgba(255,250,215,.95) 0,rgba(255,214,110,.55) 42%,rgba(255,214,110,0) 70%));opacity:0;animation:sk-mote var(--d) linear infinite;animation-delay:var(--dl);will-change:transform,opacity}
 @keyframes sk-mote{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.85}50%{transform:translate3d(2.5vw,-52vh,0)}88%{opacity:.6}100%{transform:translate3d(-1.5vw,-104vh,0);opacity:0}}
-body.sk .board:not(.sk-gold) .tile.sk-glint:not(.open)::after{display:block!important;content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.8) 50%,transparent 64%) -160% 0/260% 100% no-repeat;-webkit-mask-position:center;-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;mask-position:center;mask-size:contain;mask-repeat:no-repeat;animation:sk-glint 1.1s ease-out forwards}
-@keyframes sk-glint{to{background-position:160% 0}}
+body.sk .board:not(.sk-gold) .tile.sk-glint:not(.open)::after{display:block!important;content:"";position:absolute;left:18%;top:14%;width:34%;aspect-ratio:1;pointer-events:none;background:radial-gradient(circle,#fff 0,rgba(255,255,255,.85) 14%,rgba(255,255,255,0) 46%),linear-gradient(90deg,transparent 47%,rgba(255,255,255,.95) 50%,transparent 53%),linear-gradient(0deg,transparent 47%,rgba(255,255,255,.95) 50%,transparent 53%);border-radius:50%;opacity:0;animation:sk-twinkle 1.1s ease-out forwards;will-change:transform,opacity}
+@keyframes sk-twinkle{0%{transform:scale(.1) rotate(0);opacity:0}35%{transform:scale(1) rotate(45deg);opacity:1}100%{transform:scale(.2) rotate(90deg);opacity:0}}
 .sk-fly{position:fixed;left:0;top:0;width:34px;height:34px;z-index:60;pointer-events:none;will-change:transform,opacity}
 body.sk-ov #sklife i,body.sk-ov .amb{animation-play-state:paused}
 body.sk-lite #sklife{display:none}
@@ -2495,8 +2495,7 @@ const SKA = {"bg": "data:image/webp;base64,UklGRoCvAQBXRUJQVlA4IHSvAQCwuAidASoAB
   si.textContent = (SKA.tile ? `body.sk .board:not(.sk-gold) .tile{background-image:url("${SKA.tile}")!important}
 body.sk .board:not(.sk-gold) .tile.open{background-image:url("${SKA.tileOpen}")!important}` : '') + `
 body.sk .setup h2::before,body.sk #g-title::before{background-image:url("${SKA.title}")!important}
-body.sk .reveal .art::before{background-image:url("${SKA.rays}")!important}` + (SKA.tile ? `
-body.sk .board .tile.sk-glint::after{-webkit-mask-image:url("${SKA.tile}");mask-image:url("${SKA.tile}")}` : '');
+body.sk .reveal .art::before{background-image:url("${SKA.rays}")!important}`;
   document.head.append(si);
   Object.entries(SKA.vars || {}).forEach(([k, v]) => st.setProperty(k, v));
   // صور العناصر: نفس المفاتيح اللي تستخدمها اللعبة
