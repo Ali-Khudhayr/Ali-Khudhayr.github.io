@@ -281,6 +281,77 @@ footer.ft{border-top:1px solid var(--line);color:var(--dim);padding-block:var(--
 footer.ft a{color:var(--gold);font-weight:700}
 #toast{position:fixed;bottom:1.2rem;left:50%;transform:translate(-50%,1rem);background:#fff;color:var(--on-gold);font-weight:800;padding:.6em 1.3em;border-radius:var(--pill);opacity:0;transition:opacity var(--t),transform var(--t) var(--ease);pointer-events:none;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.5)}
 #toast.on{opacity:1;transform:translate(-50%,0)}
+/* store-finish v1 */
+/* أيقونة اللعبة جنب الاسم (خطية ذهبية مثل المرجع) */
+.gc .gi{flex:none;width:1.55rem;height:1.55rem;color:var(--gold);filter:drop-shadow(0 0 6px rgba(255,201,40,.35))}
+.gc .top{gap:8px}
+/* اللهب أوضح */
+.flames{color:#FF8A1F;gap:2px;filter:drop-shadow(0 0 4px rgba(255,138,31,.4))}
+.flames .ic{width:1.3em;height:1.3em}
+.flames .off{color:rgba(201,195,229,.18)}
+
+/* الصور الحية: لمعة تمر على الغلاف ونجوم تلمع، فقط عند المرور (أو مرة وحدة على الجوال) */
+.gc .cv{isolation:isolate}
+.gc .cv::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;
+  background:linear-gradient(110deg,transparent 34%,rgba(255,255,255,.42) 47%,rgba(255,236,190,.16) 53%,transparent 64%);background-size:260% 100%;background-position:130% 0}
+.gc:hover .cv::after,.gc:focus-within .cv::after,.gc.shine .cv::after{animation:sheen .95s var(--ease) 1}
+@keyframes sheen{0%{opacity:1;background-position:130% 0}100%{opacity:1;background-position:-30% 0}}
+.gc .spk{position:absolute;z-index:2;width:var(--z,18px);height:var(--z,18px);pointer-events:none;opacity:0;color:#fff;filter:drop-shadow(0 0 6px rgba(255,214,110,.95))}
+.gc .spk svg{width:100%;height:100%;display:block;fill:currentColor}
+.gc:hover .spk,.gc:focus-within .spk,.gc.shine .spk{animation:twk 1.7s ease-in-out infinite;animation-delay:var(--d,0s)}
+.gc.shine .spk{animation-iteration-count:1}
+@keyframes twk{0%,100%{opacity:0;transform:scale(.3) rotate(0)}45%{opacity:1;transform:scale(1) rotate(30deg)}}
+@media (hover:hover) and (pointer:fine){
+  .gc:hover{transform:perspective(900px) translateY(-6px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+  .gc:hover .cv img{transform:scale(1.08) translate(var(--px,0px),var(--py,0px))}
+}
+/* غلاف صفحة اللعبة: حركة هادئة مستمرة (عنصر واحد فقط) */
+.pd-cover{position:relative;isolation:isolate}
+.pd-cover img{animation:kb 16s ease-in-out infinite alternate}
+@keyframes kb{to{transform:scale(1.07) translate(-1.2%,-1%)}}
+.pd-cover::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 36%,rgba(255,255,255,.35) 48%,transparent 60%);background-size:260% 100%;background-position:130% 0;animation:sheen2 7s ease-in-out 1.2s infinite}
+@keyframes sheen2{0%,72%{background-position:130% 0}100%{background-position:-30% 0}}
+
+/* رأس المتجر: غيوم ونجوم وقطع 2.5D على الطرفين */
+.hero .wrap{position:relative;z-index:1}
+.hero .clouds{position:absolute;inset-inline:0;bottom:-1px;height:clamp(80px,11vw,170px);pointer-events:none;z-index:0}
+.hero .clouds svg{width:100%;height:100%;display:block}
+@media (max-width:700px){.hero .clouds{height:auto}.hero .clouds svg{height:auto;aspect-ratio:1440/170}}
+.hero .deco{width:clamp(6rem,13vw,11rem)}
+.hero .deco img{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 22px rgba(5,2,25,.6))}
+.hero .deco.l>*{animation:bob 5s ease-in-out infinite}.hero .deco.r>*{animation:bob 5s 1.2s ease-in-out infinite}
+.hero .deco.l svg,.hero .deco.r svg{animation:none}
+.hero .deco .pf,.land .lp .pf{display:block}
+.hero .st{position:absolute;width:var(--z,16px);height:var(--z,16px);fill:var(--sc,#FFC928);filter:drop-shadow(0 0 8px rgba(255,201,40,.8));animation:tw 3.4s ease-in-out infinite;animation-delay:var(--d,0s);pointer-events:none}
+@keyframes tw{0%,100%{opacity:.35;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
+@media (max-width:900px){.hero .st{display:none}}
+/* أمثلة البحث تظهر لما تضغط على البحث فقط (أقل زحمة) */
+.hero .chip-ex{max-height:0;opacity:0;overflow:hidden;margin-top:0;transition:max-height var(--t) var(--ease),opacity var(--t),margin var(--t)}
+.hero .wrap:focus-within .chip-ex{max-height:6rem;opacity:1;margin-top:var(--s4);overflow:visible}
+@media (max-width:560px){.hero .wrap:focus-within .chip-ex{overflow-x:auto}}
+
+/* الفلاتر في صف واحد */
+.filters .chips{row-gap:var(--s2)}
+.filters select.chip{field-sizing:content;min-width:0}
+.filters .chip{padding-inline:.9em}.filters select.chip{padding-inline-end:2em}
+.chip.typex{background:var(--violet);color:#fff;border-color:transparent}
+
+/* الأرضية أسفل الصفحة: عشب وصخور وكنز وجوهرة */
+footer.ft{position:relative;padding:0;border-top:0;background:#0b0820}
+footer.ft .wrap{position:relative;z-index:1;padding-block:.2rem 1.4rem}
+.land{position:relative;height:clamp(120px,15vw,220px);overflow:hidden;pointer-events:none;margin-top:var(--s5)}
+.land>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.land::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,#0b0820)}
+.land .lp{position:absolute;z-index:1;bottom:16%;width:clamp(6rem,12vw,10rem)}
+.land .lp::before{content:"";position:absolute;inset:-25% -20% -10%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,var(--gw,rgba(255,201,40,.42)),transparent)}
+.land .lp.chest{left:max(.6rem,calc(50% - 41rem))}
+.land .lp.gem{right:max(.6rem,calc(50% - 41rem));width:clamp(4.6rem,9vw,7.8rem);--gw:rgba(54,184,255,.4)}
+.land .lp img,.land .lp svg{width:100%;height:auto;display:block}
+@media print{.land,.hero .clouds{display:none}}
+/* store-titled v1 */
+.gc .top.tt{align-items:center}
+.gc .top.tt .tg{flex:1;min-width:0;margin:0;min-height:0;font-size:.98rem;color:#ece8fb}
+.gc h3.vh{flex:none;width:0;height:0;margin:0;font-size:0;line-height:0;overflow:visible}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 @media print{.bar,.filters,.hero,footer,.plan-ctl button,.pl .ctl button,#planBtns{display:none!important}body{background:#fff;color:#000}body::before{display:none}.pl li{background:#fff;border:1px solid #999;break-inside:avoid;color:#000}.pl .t{color:#000}.page{padding:0}}
 </style>
@@ -315,6 +386,46 @@ footer.ft a{color:var(--gold);font-weight:700}
 <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6.500 7h11a4 4 0 0 1 3.900 3.100l1 4.600A2.600 2.600 0 0 1 17.900 17l-2.400-2.500h-7L6.100 17a2.600 2.600 0 0 1-4.500-2.300l1-4.600A4 4 0 0 1 6.500 7Z"/><path d="M7.500 10v3M6 11.500h3"/><path d="M15.500 11h.01M17.500 12.500h.01" stroke-width="2.800"/></symbol>
 <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.500A3.500 3.500 0 0 0 7.500 11M17 6h3v1.500A3.500 3.500 0 0 1 16.500 11"/><path d="M12 14v3.500M8.500 21h7M9.500 21c0-2 1-3.500 2.500-3.500s2.500 1.500 2.500 3.500"/></symbol>
 <symbol id="i-play2" viewBox="0 0 24 24"><path d="M8 5.500v13l10-6.500z"/></symbol>
+<symbol id="i-presentation" viewBox="0 0 24 24"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></symbol>
+<symbol id="i-door" viewBox="0 0 24 24"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.56v16.16a1 1 0 0 1-1.24.97L5 20V5.56a2 2 0 0 1 1.52-1.94l4-1A2 2 0 0 1 13 4.56Z"/></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5l-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+<symbol id="i-hex" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M12 8v8M8.5 10l7 4M15.5 10l-7 4"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+<symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+<symbol id="i-swords" viewBox="0 0 24 24"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"/><path d="m13 19 6-6M16 16l4 4M19 21l2-2"/><path d="M14.5 6.5 18 3h3v3l-3.5 3.5"/><path d="m5 14 4 4M7 17l-3 3M3 19l2 2"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.56 2.27a2 2 0 0 1-1.78 0l-4.22-2.1a2 2 0 0 0-1.78 0l-3.66 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.56-2.27a2 2 0 0 1 1.78 0z"/><path d="M15 5.76v15M9 3.24v15"/></symbol>
+<symbol id="i-castle" viewBox="0 0 24 24"><path d="M10 5V3M14 5V3M18 3v8M6 3v8M18 5H6M22 11H2"/><path d="M15 21v-3a3 3 0 0 0-6 0v3"/><path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9"/></symbol>
+<symbol id="i-hive" viewBox="0 0 24 24"><path d="M9 3.5h6A3.5 3.5 0 0 1 18.5 7h-13A3.5 3.5 0 0 1 9 3.5Z"/><rect x="3.5" y="7" width="17" height="5" rx="2.5"/><rect x="4.5" y="12" width="15" height="5" rx="2.5"/><path d="M7 17h10a3.5 3.5 0 0 1-3.5 3.5h-3A3.5 3.5 0 0 1 7 17Z"/><path d="M11 14.5h2"/></symbol>
+<symbol id="i-crown" viewBox="0 0 24 24"><path d="M11.56 3.27a.5.5 0 0 1 .88 0l2.95 5.6a1 1 0 0 0 1.52.3l4.27-3.67a.5.5 0 0 1 .8.52l-2.83 10.25a1 1 0 0 1-.96.73H5.81a1 1 0 0 1-.96-.73L2.02 6.02a.5.5 0 0 1 .8-.52l4.27 3.67a1 1 0 0 0 1.52-.3z"/><path d="M5 21h14"/></symbol>
+<symbol id="i-chef" viewBox="0 0 24 24"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.46.32-.84.73-1.04a4 4 0 0 0-2.14-7.59 5 5 0 0 0-9.18 0 4 4 0 0 0-2.14 7.59c.41.2.73.58.73 1.04V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></symbol>
+<symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+<symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></symbol>
+<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.12a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/><path d="M13.5 6.5h.01M17.5 10.5h.01M8.5 7.5h.01M6.5 12.5h.01" stroke-width="3"/></symbol>
+<symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24"><path d="M21.17 6.81a1 1 0 0 0-3.98-3.99L3.84 16.17a2 2 0 0 0-.5.83l-1.32 4.35a.5.5 0 0 0 .62.63l4.35-1.33a2 2 0 0 0 .83-.5z"/><path d="m15 5 4 4"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><path d="M10 2h4M12 14l3-3"/><circle cx="12" cy="14" r="8"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.27 21a2 2 0 0 0 3.46 0"/><path d="M22 8c0-2.3-.8-4.3-2-6M4 2C2.8 3.7 2 5.7 2 8"/><path d="M3.26 15.33A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.67C19.41 13.96 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.41 5.96-2.74 7.33"/></symbol>
+<symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/><path d="M12 3v7M12 14v7M4.2 7.5l6 3.5M13.8 13l6 3.5M19.8 7.5l-6 3.5M10.2 13l-6 3.5"/></symbol>
+<symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m12 7 4 3-1.5 4.5h-5L8 10z"/><path d="M12 2v5M16 10l5-1.5M14.5 14.5l3 4.5M9.5 14.5l-3 4.5M8 10 3 8.5"/></symbol>
+<symbol id="i-tf" viewBox="0 0 24 24"><path d="m2.5 12.5 3.5 3.5 6.5-7"/><path d="m15 9 6 6M21 9l-6 6"/></symbol>
+<symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></symbol>
+<symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M15.39 4.39a1 1 0 0 0 1.68-.47 2.5 2.5 0 1 1 3.01 3.01 1 1 0 0 0-.47 1.68l1.68 1.68a2.41 2.41 0 0 1 0 3.42l-1.68 1.68a1 1 0 0 1-1.68-.47 2.5 2.5 0 1 0-3.01 3.01 1 1 0 0 1 .47 1.68l-1.68 1.68a2.41 2.41 0 0 1-3.42 0l-1.68-1.68a1 1 0 0 0-1.68.47 2.5 2.5 0 1 1-3.01-3.01 1 1 0 0 0 .47-1.68l-1.68-1.68a2.41 2.41 0 0 1 0-3.42l1.68-1.68a1 1 0 0 1 1.68.47 2.5 2.5 0 1 0 3.01-3.01 1 1 0 0 1-.47-1.68l1.68-1.68a2.41 2.41 0 0 1 3.42 0z"/></symbol>
+<symbol id="i-notebook" viewBox="0 0 24 24"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4M2 10h4M2 14h4M2 18h4"/><path d="M21.38 5.63a1 1 0 1 0-3-3l-5.02 5.01a2 2 0 0 0-.5.86l-.84 2.87a.5.5 0 0 0 .62.62l2.87-.84a2 2 0 0 0 .86-.5z"/></symbol>
+<symbol id="i-calcheck" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 2.5V7M16 2.5V7"/><path d="m9 15.5 2 2 4-4"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+<symbol id="i-mosque" viewBox="0 0 24 24"><path d="M2.5 21h19"/><path d="M6 21v-6.5a6 6 0 0 1 12 0V21"/><path d="M12 8.5V5.5"/><path d="M10 21v-3a2 2 0 0 1 4 0v3"/><path d="M13.7 2.6a1.8 1.8 0 1 0 0 2.6"/><path d="M3.5 21V12M20.5 21V12"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+<symbol id="i-run" viewBox="0 0 24 24"><circle cx="15" cy="4.5" r="2"/><path d="m13 8-2 6"/><path d="M7.5 10.5 13 8l3 3.5h3"/><path d="m11 14 3 3-1 4.5"/><path d="m11 14-3 3H4.5"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.33 2q2 0 3.07-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.53"/></symbol>
+<symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+<symbol id="i-library" viewBox="0 0 24 24"><path d="m16 6 4 14M12 6v14M8 8v12M4 4v16"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+<symbol id="i-sheet" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M9 9v12M15 9v12"/></symbol>
+<symbol id="i-star4" viewBox="0 0 24 24"><path d="M12 1.5c.6 4.8 3.7 9.9 10.5 10.5-6.8.6-9.9 5.7-10.5 10.5-.6-4.8-3.7-9.9-10.5-10.5C8.3 11.4 11.4 6.3 12 1.5Z"/></symbol>
 </defs></svg>
 
 <div class="bar"><div class="wrap">
@@ -446,43 +557,64 @@ function understood(R) {
 const teamsTxt = p => { const t = p.players || {}; if (t.teamsMax == null) return p.section === 'print' || t.playersMax ? (t.playersMax ? `حتى ${t.playersMax} طالب` : 'حسب العدد') : 'حسب العدد'; return t.teamsMin === t.teamsMax ? `${t.teamsMin} فرق` : `${t.teamsMin ?? 1}–${t.teamsMax} فرق`; };
 const minsTxt = p => { const m = p.minutes || {}; return m.min == null ? '' : (m.min === m.max ? `${m.min} د` : `${m.min}–${m.max} د`); };
 const flames = n => `<span class="flames" role="img" aria-label="الحماس ${n || 0} من 5">${[1, 2, 3, 4, 5].map(i => `<svg class="ic ${i <= (n || 0) ? '' : 'off'}" aria-hidden="true"><use href="#i-flame"/></svg>`).join('')}</span>`;
+const GI = {sinjim:'presentation',shater:'door',haraj:'car',sahm:'trend',huruf:'hex',quran:'book',abqarino:'rocket',tarabee:'swords',nufooz:'map',nufooz_f:'castle',hive:'hive',forest:'crown',baik:'chef',emoji:'smile',kardees:'gamepad',hunt:'target',lanes:'swap',dive:'waves',ahzir:'palette',hazir:'zoom',malameh:'pencil',tawami:'copy',counter:'timer',buzzer:'bell',wheel:'wheel',penalty:'ball',truefalse:'tf',ayat:'bookmark',puzzles50:'puzzle',kashkelni:'notebook',weekly:'calcheck',tasmeen:'scale',prayer:'mosque',picturepuzzles:'image',cultural:'print',haraki:'run',lettersrace:'flag',adhkar:'gem',mawsooa:'library',bank1500:'layers',xlsx:'sheet'};
+const SPK = [['14%','16%','20px','0s'],['58%','78%','14px','.45s'],['30%','68%','11px','.9s']];
+const sparks = () => SPK.map(([t, l, z, d]) => `<i class="spk" style="top:${t};left:${l};--z:${z};--d:${d}"><svg aria-hidden="true"><use href="#i-star4"/></svg></i>`).join('');
 let cardN = 0;
 function card(p) {
   const inPlan = plan.some(x => x.id === p.id), isHtml = p.file && /\.html?$/i.test(p.file);
   return `<article class="gc" style="--c:${p.color};--i:${cardN++ % 12}">
-    <div class="cv">${p.cover ? `<img loading="lazy" decoding="async" src="${url(p.cover)}" alt="" onerror="this.remove()">` : `<span class="ph">${esc(p.name)}</span>`}</div>
+    <div class="cv">${p.cover ? `<img loading="lazy" decoding="async" src="${cov(p)}" alt="" onerror="this.remove()">` : `<span class="ph">${esc(p.name)}</span>`}${sparks()}</div>
     <div class="act"><button data-fav="${p.id}" class="${fav.has(p.id) ? 'on' : ''}" title="المفضلة" aria-label="أضف ${esc(p.name)} للمفضلة" aria-pressed="${fav.has(p.id)}">${ic('heart')}</button><button data-plan="${p.id}" class="${inPlan ? 'on' : ''}" title="أضف لبرنامجي" aria-label="أضف ${esc(p.name)} لبرنامجي" aria-pressed="${inPlan}">${ic(inPlan ? 'check' : 'plus')}</button></div>
     ${p.isNew ? '<span class="badge">جديدة</span>' : ''}
-    <div class="bd"><div class="top"><h3><a href="#/game/${p.id}">${esc(p.name)}</a></h3>${isHtml ? `<a class="play" href="${url(p.file)}" title="العب الآن" aria-label="العب ${esc(p.name)} الآن">${ic('play')}</a>` : ''}</div><p class="tg">${esc(p.tagline)}</p>
+    <div class="bd">${(() => { const gi = `<svg class="ic gi" aria-hidden="true"><use href="#i-${GI[p.id] || 'gamepad'}"/></svg>`, pl = isHtml ? `<a class="play" href="${url(p.file)}" title="العب الآن" aria-label="العب ${esc(p.name)} الآن">${ic('play')}</a>` : '', h3 = c => `<h3${c}><a href="#/game/${p.id}">${esc(p.name)}</a></h3>`, tg = `<p class="tg">${esc(p.tagline)}</p>`;
+      return TITLED.includes(p.id) ? `<div class="top tt">${gi}${h3(' class="vh"')}${tg}${pl}</div>` : `<div class="top">${gi}${h3('')}${pl}</div>${tg}`; })()}
       <div class="meta"><span>${ic('team')}${esc(teamsTxt(p))}</span>${minsTxt(p) ? `<span>${ic('clock')}${minsTxt(p)}</span>` : ''}${flames(p.excitement)}</div></div></article>`;
 }
 
 /* ---------- الصفحة الرئيسية ---------- */
 const state = { q: '', sec: '', age: '', type: '', teams: 0, time: 0, flags: new Set(), sort: 'best' };
 const EXAMPLES = ['لعبة حماسية بدون أسئلة', '٣ فرق في ربع ساعة', 'للصغار وما تحتاج طباعة', 'قرآن وحفظ للكبار', 'استراتيجية للثانوي', 'حركية في الساحة', 'أوراق بدون جهاز'];
-const TOGS = [['q', 'فيها أسئلة'], ['noq', 'بدون أسئلة'], ['move', 'حركية'], ['hot', 'حماسية'], ['easy', 'سهلة'], ['noscreen', 'بدون جهاز'], ['noprint', 'بدون طباعة']];
+const TOGS = [['q', 'فيها أسئلة'], ['noq', 'بدون أسئلة'], ['move', 'حركية'], ['hot', 'حماسية'], ['easy', 'سهلة']];
+const DEV = [['', 'الجهاز والطباعة'], ['noscreen', 'بدون جهاز'], ['noprint', 'بدون طباعة'], ['both', 'بدون جهاز ولا طباعة']];
+const devVal = () => state.flags.has('noscreen') && state.flags.has('noprint') ? 'both' : state.flags.has('noscreen') ? 'noscreen' : state.flags.has('noprint') ? 'noprint' : '';
 const BRAND_HEX = `<svg viewBox="0 0 120 120" aria-hidden="true"><path d="M60 6 L107 33 V87 L60 114 L13 87 V33Z" fill="url(#bg-gold)" stroke="#fff" stroke-width="6" stroke-linejoin="round"/><path d="M48 41 V79 L81 60Z" fill="#100B2D" stroke="#100B2D" stroke-width="7" stroke-linejoin="round"/></svg>`;
 const DECO_PAD = `<svg viewBox="0 0 160 110"><defs><linearGradient id="dp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EC56D8"/><stop offset="1" stop-color="#7547E8"/></linearGradient></defs><path d="M38 22h84a30 30 0 0 1 29 23l7 31a17 17 0 0 1-29 15L112 74H48L31 91A17 17 0 0 1 2 76l7-31a30 30 0 0 1 29-23Z" fill="url(#dp)" stroke="#36B8FF" stroke-width="3" style="filter:drop-shadow(0 0 10px rgba(54,184,255,.7))"/><path d="M44 38v22M33 49h22" stroke="#fff" stroke-width="7" stroke-linecap="round"/><circle cx="112" cy="42" r="6" fill="#FFC928"/><circle cx="126" cy="54" r="6" fill="#36B8FF"/><path d="M128 12l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#FFC928"/></svg>`;
+const CLOUDS = `<svg viewBox="0 0 1440 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="cl1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a3fb8"/><stop offset="1" stop-color="#21154f"/></linearGradient><linearGradient id="cl2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2786"/><stop offset="1" stop-color="#170f3c"/></linearGradient></defs><g fill="url(#cl2)" opacity=".8"><circle cx="40" cy="150" r="80"/><circle cx="150" cy="120" r="70"/><circle cx="270" cy="150" r="64"/><circle cx="1400" cy="150" r="80"/><circle cx="1290" cy="118" r="72"/><circle cx="1170" cy="152" r="60"/></g><g fill="url(#cl1)"><circle cx="-10" cy="170" r="70"/><circle cx="90" cy="150" r="58"/><circle cx="185" cy="168" r="52"/><circle cx="260" cy="176" r="40"/><circle cx="1450" cy="170" r="70"/><circle cx="1350" cy="148" r="60"/><circle cx="1250" cy="168" r="50"/><circle cx="1180" cy="178" r="38"/></g><g fill="#fff" opacity=".10"><ellipse cx="80" cy="112" rx="34" ry="10"/><ellipse cx="1356" cy="110" rx="34" ry="10"/></g></svg>`;
+const STARS = `<svg class="st" style="top:16%;left:31%;--z:22px" aria-hidden="true"><use href="#i-star4"/></svg><svg class="st" style="top:9%;right:30%;--z:15px;--d:1.1s;--sc:#fff" aria-hidden="true"><use href="#i-star4"/></svg><svg class="st" style="top:46%;right:21%;--z:12px;--d:2s" aria-hidden="true"><use href="#i-star4"/></svg><svg class="st" style="top:52%;left:22%;--z:13px;--d:.6s;--sc:#d9ccff" aria-hidden="true"><use href="#i-star4"/></svg>`;
+const DECO_CHEST = `<svg viewBox="0 0 160 130" aria-hidden="true"><defs><linearGradient id="chw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a65a26"/><stop offset="1" stop-color="#5c2a10"/></linearGradient><linearGradient id="chg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE071"/><stop offset=".6" stop-color="#FFC928"/><stop offset="1" stop-color="#d98a12"/></linearGradient><radialGradient id="chl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6c8"/><stop offset="1" stop-color="#FFC928" stop-opacity="0"/></radialGradient></defs><ellipse cx="80" cy="58" rx="70" ry="34" fill="url(#chl)"/><path d="M24 64 32 26q48-20 96 0l8 38Z" fill="url(#chw)" stroke="url(#chg)" stroke-width="5" stroke-linejoin="round"/><ellipse cx="80" cy="64" rx="56" ry="9" fill="#ffe9a0"/><circle cx="58" cy="60" r="7" fill="#EC56D8"/><circle cx="74" cy="56" r="8" fill="#FFC928" stroke="#fff3" stroke-width="2"/><path d="m92 50 8 6-3 9h-10l-3-9z" fill="#36B8FF"/><circle cx="106" cy="61" r="6" fill="#2fe08a"/><rect x="20" y="64" width="120" height="56" rx="9" fill="url(#chw)"/><rect x="20" y="64" width="120" height="9" rx="4" fill="url(#chg)"/><rect x="38" y="64" width="9" height="56" fill="url(#chg)"/><rect x="113" y="64" width="9" height="56" fill="url(#chg)"/><rect x="70" y="78" width="20" height="22" rx="4" fill="url(#chg)"/><path d="M80 85v7" stroke="#5c2a10" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="122" r="6" fill="url(#chg)"/><circle cx="138" cy="121" r="5" fill="url(#chg)"/><path d="M128 18l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff"/></svg>`;
+const DECO_GEM = `<svg viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="gm1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9a6ff"/><stop offset=".5" stop-color="#7547E8"/><stop offset="1" stop-color="#3a1fa0"/></linearGradient><linearGradient id="gm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fe6ff"/><stop offset="1" stop-color="#36B8FF"/></linearGradient></defs><path d="M30 28h60l22 28-52 58L8 56Z" fill="url(#gm1)"/><path d="M30 28 44 56h32l14-28Z" fill="url(#gm2)" opacity=".85"/><path d="M8 56h104L60 114Z" fill="#4b2bc0" opacity=".35"/><path d="M44 56 60 114 76 56" fill="#EC56D8" opacity=".35"/><path d="M30 28h60l22 28-52 58L8 56Z" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.5" stroke-linejoin="round"/><path d="M36 34l8 16" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".8"/><path d="M98 8l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z" fill="#fff"/></svg>`;
+const LAND = `<svg viewBox="0 0 1600 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="ld1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f9a50"/><stop offset="1" stop-color="#15402c"/></linearGradient><linearGradient id="ld2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b6a50"/><stop offset="1" stop-color="#12302a"/></linearGradient></defs><path d="M0 118C200 72 380 92 560 108s340-40 540-14 320-16 500 10V220H0Z" fill="#221858"/><path d="M0 150c180-30 360-15 520 0s340-25 540-10 340-20 540 0V220H0Z" fill="url(#ld2)"/><path d="M0 176c220-25 420-10 640-4s400-22 620-8 220-8 340 2V220H0Z" fill="url(#ld1)"/><path d="M0 176c220-25 420-10 640-4s400-22 620-8 220-8 340 2" fill="none" stroke="#86e070" stroke-opacity=".5" stroke-width="3"/><g fill="#3b2d7a"><path d="M560 184c4-16 26-24 46-16 12-9 30-5 36 9 4 11-5 18-18 18H572c-9 0-14-4-12-11Z"/><path d="M1010 180c3-12 20-18 35-12 10-7 24-4 28 7 3 8-4 14-14 14h-40c-7 0-11-3-9-9Z"/></g><g fill="#5a46a8" opacity=".7"><path d="M578 172c6-6 16-8 24-5"/><ellipse cx="596" cy="172" rx="14" ry="4"/><ellipse cx="1040" cy="170" rx="10" ry="3"/></g><g stroke="#7fd56a" stroke-width="3" stroke-linecap="round" fill="none" opacity=".75"><path d="M300 168l-4-12M306 168l2-14M312 168l6-10"/><path d="M820 166l-4-12M826 166l2-14M832 166l6-10"/><path d="M1300 166l-4-11M1306 166l2-13M1312 166l6-9"/></g><g><circle cx="420" cy="170" r="4" fill="#FFC928"/><circle cx="430" cy="174" r="3" fill="#EC56D8"/><circle cx="1180" cy="168" r="4" fill="#36B8FF"/><circle cx="1190" cy="172" r="3" fill="#FFC928"/></g></svg>`;
+/* صور 2.5D من ملفات المتجر/scene إذا موجودة، وإلا الرسمة البديلة */
+const SCENE = ['controller', 'trophy', 'chest', 'gem'];
+const IMG_V = '202611081253'; /* رقم إصدار الصور عشان المتصفح ما يعرض نسخة قديمة (يحدّثه سكربت التركيب) */
+const cov = p => p.cover ? url(p.cover) + '?v=' + IMG_V : '#';
+const TITLED = ['sinjim', 'shater', 'haraj', 'sahm', 'huruf', 'quran', 'abqarino', 'tarabee', 'nufooz', 'nufooz_f', 'hive', 'forest', 'baik', 'emoji', 'kardees', 'hunt', 'lanes', 'dive', 'ahzir', 'hazir', 'malameh', 'tawami', 'counter', 'buzzer', 'wheel', 'penalty', 'truefalse', 'ayat', 'puzzles50', 'kashkelni', 'weekly', 'tasmeen', 'prayer', 'picturepuzzles', 'cultural', 'haraki', 'lettersrace', 'adhkar', 'mawsooa', 'bank1500', 'xlsx']; /* ألعاب غلافها فيه الاسم مكتوب (يحدّثها سكربت التركيب) */ /* أسماء صور المشهد الموجودة في ملفات المتجر/scene (يحدّثها سكربت التركيب) */
+const prop = (n, svg) => !SCENE.includes(n) ? `<span class="pf">${svg}</span>` : `<img src="ملفات المتجر/scene/${n}.webp" alt="" onerror="this.nextElementSibling.hidden=false;this.remove()"><span class="pf" hidden>${svg}</span>`;
 const DECO_CUP = `<svg viewBox="0 0 130 140"><defs><linearGradient id="dc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE071"/><stop offset=".55" stop-color="#FFC928"/><stop offset="1" stop-color="#E08A10"/></linearGradient></defs><path d="M35 14h60v34a30 30 0 0 1-60 0Z" fill="url(#dc)"/><path d="M35 24H17v8a20 20 0 0 0 20 20M95 24h18v8a20 20 0 0 1-20 20" fill="none" stroke="#FFAC24" stroke-width="7"/><path d="M57 77h16v18H57z" fill="#FFAC24"/><rect x="38" y="95" width="54" height="14" rx="5" fill="url(#dc)"/><rect x="30" y="109" width="70" height="12" rx="5" fill="#7547E8"/><path d="M48 20v26" stroke="#fff" stroke-opacity=".55" stroke-width="6" stroke-linecap="round"/><path d="M112 6l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fff"/><path d="M14 70l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#FFC928"/></svg>`;
 function picks() { const d = Math.floor(Date.now() / 864e5), L = P.filter(p => p.isNew && p.cover && (p.excitement || 0) >= 3); return [0, 1, 2].map(i => L[(d + i * 5) % L.length]).filter(Boolean); }
 function viewHome() {
   const typesAll = [...new Set(P.flatMap(p => p.types || []))].sort((a, b) => a.localeCompare(b, 'ar'));
   const on = v => v ? ' on' : '';
-  $('#app').innerHTML = `<section class="hero"><div class="wrap">
-      <span class="deco r" aria-hidden="true">${DECO_PAD}</span><span class="deco l" aria-hidden="true">${DECO_CUP}</span>
+  $('#app').innerHTML = `<section class="hero"><div class="clouds" aria-hidden="true">${CLOUDS}</div><div class="wrap">
+      <span class="deco l" aria-hidden="true">${prop('controller', DECO_PAD)}</span><span class="deco r" aria-hidden="true">${prop('trophy', DECO_CUP)}</span>${STARS}
       <h1>${BRAND_HEX}<span>متجر</span> الألعاب</h1>
       <p class="sub">${P.length} لعبة وتحدٍّ ممتع للحلقة والفصل والبرامج. اكتب مثل ما تتكلم، ونطلع لك الأنسب.</p>
       <div class="sbox">${ic('search')}<input id="q" type="search" aria-label="ابحث في الألعاب" placeholder="مثل: عندي ٣ فرق وربع ساعة وأبغى شي حماسي" autocomplete="off" value="${esc(state.q)}"><button class="btn gold" id="rnd">${ic('sparkle')}<span class="lbl">اقترح لي</span></button></div>
       <div class="chip-ex">${EXAMPLES.map(e => `<button data-ex="${esc(e)}">${esc(e)}</button>`).join('')}</div></div></section>
     <section class="filters"><div class="wrap">
-      <div class="chips seg" role="group" aria-label="الأقسام"><button class="chip${on(!state.sec)}" data-sec="">الكل</button>${SECTIONS.map(s => `<button class="chip${on(state.sec === s.id)}" data-sec="${s.id}">${esc(s.t)}</button>`).join('')}<span class="sp"></span><select class="chip" id="fSort" aria-label="الترتيب">${[['best', 'الأنسب'], ['hot', 'الأكثر حماساً'], ['short', 'الأقصر وقتاً'], ['easy', 'الأسهل'], ['abc', 'أبجدياً']].map(([v, t]) => `<option value="${v}" ${state.sort === v ? 'selected' : ''}>${t}</option>`).join('')}</select><button class="chip clear" id="fClear">${ic('x')}مسح</button></div>
       <div class="chips" role="group" aria-label="الفلاتر">
         <select class="chip${on(state.age)}" id="fAge" aria-label="الفئة العمرية"><option value="">كل الأعمار</option>${['ابتدائي', 'متوسط', 'ثانوي', 'جامعي', 'كبار'].map(a => `<option ${state.age === a ? 'selected' : ''}>${a}</option>`).join('')}</select>
         <select class="chip${on(state.time)}" id="fTime" aria-label="الوقت المتاح"><option value="0">الوقت المتاح</option>${[5, 10, 15, 20, 30, 45, 60].map(n => `<option value="${n}" ${state.time === n ? 'selected' : ''}>${n} دقيقة</option>`).join('')}</select>
         <select class="chip${on(state.teams)}" id="fTeams" aria-label="عدد الفرق"><option value="0">عدد الفرق</option>${[2, 3, 4, 5, 6].map(n => `<option value="${n}" ${state.teams === n ? 'selected' : ''}>${n} فرق</option>`).join('')}</select>
-        <select class="chip${on(state.type)}" id="fType" aria-label="نوع اللعبة"><option value="">كل الأنواع</option>${typesAll.map(a => `<option ${state.type === a ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select>
+        <select class="chip${on(state.sec)}" id="fSec" aria-label="القسم"><option value="">كل الأقسام</option>${SECTIONS.map(s => `<option value="${s.id}" ${state.sec === s.id ? 'selected' : ''}>${esc(s.t)}</option>`).join('')}</select>
         <span class="sep"></span>
         ${TOGS.map(([k, t]) => `<button class="chip${on(state.flags.has(k))}" data-tog="${k}" aria-pressed="${state.flags.has(k)}">${t}</button>`).join('')}
+        <select class="chip${on(devVal())}" id="fDev" aria-label="الجهاز والطباعة">${DEV.map(([v, t]) => `<option value="${v}" ${devVal() === v ? 'selected' : ''}>${t}</option>`).join('')}</select>
+        ${state.type ? `<button class="chip typex" id="fTypeX" title="إلغاء النوع">${esc(state.type)}${ic('x')}</button>` : ''}
+        <span class="sp"></span>
+        <select class="chip" id="fSort" aria-label="الترتيب">${[['best', 'الأنسب'], ['hot', 'الأكثر حماساً'], ['short', 'الأقصر وقتاً'], ['easy', 'الأسهل'], ['abc', 'أبجدياً']].map(([v, t]) => `<option value="${v}" ${state.sort === v ? 'selected' : ''}>${t}</option>`).join('')}</select>
+        <button class="chip clear" id="fClear"${isFiltered() || state.sort !== 'best' ? '' : ' hidden'}>${ic('x')}مسح</button>
       </div><div class="und" id="und" hidden></div></div></section>
     <div id="results"></div>`;
   paintResults();
@@ -493,6 +625,7 @@ function isFiltered() { return !!(state.q.trim() || state.sec || state.age || st
 function paintResults() {
   const F = { sec: state.sec, age: state.age, type: state.type, teams: state.teams, time: state.time, flags: [...state.flags], sort: state.sort };
   const { R, list } = search(state.q, F), box = $('#results'), und = $('#und');
+  const fc = $('#fClear'); if (fc) fc.hidden = !(isFiltered() || state.sort !== 'best');
   const u = understood(R); und.hidden = !u.length; und.innerHTML = u.length ? `فهمت: ${u.map(x => `<b>${esc(x)}</b>`).join('')}` : '';
   if (!isFiltered() && state.sort === 'best') {
     box.innerHTML = SECTIONS.map(s => { const L = P.filter(p => p.section === s.id); if (!L.length) return ''; const lead = L.find(p => p.lead) || null; const ordered = lead ? [lead, ...L.filter(p => p !== lead)] : L; cardN = 0;
@@ -524,7 +657,7 @@ function viewGame(id) {
         <div class="pd-tag">${esc(p.tagline)}</div><p class="pd-sh">${esc(p.short)}</p>
         <div class="pd-acts">${p.file ? `<a class="btn sun big" href="${url(p.file)}">${ic('play')}${openTxt}</a>` : ''}<button class="btn ${inFav ? 'on' : ''}" data-fav="${id}">${ic('heart')}${inFav ? 'في المفضلة' : 'المفضلة'}</button><button class="btn ${inPlan ? 'on' : ''}" data-plan="${id}">${ic(inPlan ? 'check' : 'plus')}${inPlan ? 'في برنامجي' : 'أضف لبرنامجي'}</button></div>
         <div class="quick"><span>${ic('team')}${esc(teamsTxt(p))}</span>${mins ? `<span>${ic('clock')}${mins}</span>` : ''}${(p.ages || []).length ? `<span>${ic('age')}${esc(p.ages.join('، '))}</span>` : ''}<span>${ic('q')}${qLabel(p)}</span></div></div>
-      <div class="pd-cover"><img src="${url(p.cover)}" alt="" onerror="this.remove()"></div></div></section>
+      <div class="pd-cover"><img src="${cov(p)}" alt="" onerror="this.remove()"></div></div></section>
     ${lbList.length ? `<section class="wrap" style="padding-top:1.2rem"><h2 class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">صور من داخل اللعبة</h2><div class="gallery">${lbList.map((s, i) => `<button data-lb="${i}" aria-label="تكبير الصورة ${i + 1}"><img loading="lazy" src="${url(s)}" alt="صورة ${i + 1} من داخل ${esc(p.name)}"></button>`).join('')}</div></section>` : ''}
     <section class="wrap pd-body" style="--pc:${p.color}"><div>
         <h2>الفكرة</h2><p>${esc(p.long)}</p>
@@ -551,7 +684,7 @@ const toClock = m => { m = ((m % 1440) + 1440) % 1440; return String(m / 60 | 0)
 function viewPlan() {
   let [h, mi] = planCfg.start.split(':').map(Number), t = h * 60 + mi;
   const rows = plan.map((x, i) => { const p = byId[x.id]; if (!p) return ''; const at = t; t += (+x.min || 0) + (i < plan.length - 1 ? +planCfg.gap : 0);
-    return `<li><span class="t">${toClock(at)}</span><img src="${url(p.cover)}" alt="" onerror="this.remove()"><a class="nm" href="#/game/${p.id}">${esc(p.name)}</a><span class="ctl"><input type="number" min="1" max="180" value="${+x.min || 0}" data-pmin="${i}" aria-label="مدة ${esc(p.name)} بالدقائق"><span>د</span><button data-pup="${i}" aria-label="لفوق">${ic('up')}</button><button data-pdn="${i}" aria-label="لتحت">${ic('down')}</button><button data-pdel="${i}" aria-label="حذف ${esc(p.name)}">${ic('x')}</button></span></li>`; }).join('');
+    return `<li><span class="t">${toClock(at)}</span><img src="${cov(p)}" alt="" onerror="this.remove()"><a class="nm" href="#/game/${p.id}">${esc(p.name)}</a><span class="ctl"><input type="number" min="1" max="180" value="${+x.min || 0}" data-pmin="${i}" aria-label="مدة ${esc(p.name)} بالدقائق"><span>د</span><button data-pup="${i}" aria-label="لفوق">${ic('up')}</button><button data-pdn="${i}" aria-label="لتحت">${ic('down')}</button><button data-pdel="${i}" aria-label="حذف ${esc(p.name)}">${ic('x')}</button></span></li>`; }).join('');
   const tot = plan.reduce((s, x) => s + (+x.min || 0), 0) + Math.max(0, plan.length - 1) * +planCfg.gap;
   $('#app').innerHTML = `<section class="page"><div class="wrap"><h1>برنامجي</h1><p>رتّب ألعاب الحصة، ويطلع لك جدول بالأوقات تقدر تطبعه.</p>
     ${plan.length ? `<div class="plan-ctl"><label>يبدأ الساعة <input type="time" id="pStart" value="${planCfg.start}"></label><label>بين كل لعبة <input type="number" id="pGap" min="0" max="30" value="${planCfg.gap}"> د</label><span>المجموع ${tot} دقيقة، ينتهي ${toClock(h * 60 + mi + tot)}</span><span id="planBtns" style="display:flex;gap:.4rem"><button class="btn grape" id="pPrint">${ic('print')}اطبع</button><button class="btn" id="pClear">${ic('x')}فضّي البرنامج</button></span></div><ul class="pl">${rows}</ul>`
@@ -582,6 +715,7 @@ document.addEventListener('click', e => {
   if ((b = t.closest('[data-type]'))) { e.preventDefault(); clearState(); state.type = b.dataset.type; location.hash = '#/'; if (location.hash === '#/') viewHome(); return; }
   if ((b = t.closest('[data-lb]'))) return openLb(+b.dataset.lb);
   if (t.closest('#fClear') || t.closest('#fClear2')) return clearFilters();
+  if (t.closest('#fTypeX')) { state.type = ''; return viewHome(); }
   if (t.closest('#rnd')) { if (state.age) WZ.age = state.age; if (state.time) WZ.time = state.time; if (state.teams) WZ.teams = state.teams; return openWiz(); }
   if (t.closest('#lbClose')) return $('#lb').close();
   if (t.closest('#lbNext')) return openLb((lbI + 1) % lbList.length);
@@ -596,7 +730,7 @@ document.addEventListener('click', e => {
 const clearState = () => { Object.assign(state, { q: '', sec: '', age: '', type: '', teams: 0, time: 0, sort: 'best' }); state.flags = new Set(); };
 document.addEventListener('change', e => {
   const t = e.target, id = t.id;
-  if (id === 'fTeams') state.teams = +t.value; else if (id === 'fTime') state.time = +t.value; else if (id === 'fAge') state.age = t.value; else if (id === 'fType') state.type = t.value; else if (id === 'fSort') state.sort = t.value;
+  if (id === 'fSec') state.sec = t.value; else if (id === 'fDev') { state.flags.delete('noscreen'); state.flags.delete('noprint'); if (t.value === 'noscreen' || t.value === 'both') state.flags.add('noscreen'); if (t.value === 'noprint' || t.value === 'both') state.flags.add('noprint'); } else if (id === 'fTeams') state.teams = +t.value; else if (id === 'fTime') state.time = +t.value; else if (id === 'fAge') state.age = t.value; else if (id === 'fType') state.type = t.value; else if (id === 'fSort') state.sort = t.value;
   else if (id === 'pStart') { planCfg.start = t.value || '16:00'; Mem.set('store.planCfg', planCfg); return viewPlan(); } else if (id === 'pGap') { planCfg.gap = Math.max(0, +t.value || 0); Mem.set('store.planCfg', planCfg); return viewPlan(); }
   else if (t.dataset.pmin != null) { plan[+t.dataset.pmin].min = Math.max(1, +t.value || 1); savePlan(); return viewPlan(); } else return;
   if (id !== 'fSort') t.classList.toggle('on', t.value !== '' && t.value !== '0');
@@ -614,13 +748,32 @@ function paintWiz() {
   const L = search('', { age: WZ.age, time: WZ.time, teams: WZ.teams, flags: [], sort: 'best' }).list.filter(p => p.file && /\.html?$/i.test(p.file)).sort((a, b) => (b.excitement || 0) - (a.excitement || 0) || (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0)).reduce((acc, p, _, all) => { if (acc.length < 3 && !acc.some(x => x.section === p.section)) acc.push(p); if (p === all[all.length - 1]) for (const q of all) if (acc.length < 3 && !acc.includes(q)) acc.push(q); return acc; }, []);
   if (!L.length) { res.innerHTML = `<p style="margin:0;color:var(--mute)">ما فيه لعبة تجمع الشروط الثلاثة. جرّب وقتاً أطول أو عدد فرق مختلف.</p>`; return; }
   const why = p => [WZ.age && 'تناسب ' + WZ.age, minsTxt(p) && minsTxt(p).replace('د', 'دقيقة'), teamsTxt(p)].filter(Boolean).join(' · ');
-  res.innerHTML = L.map((p, i) => `<a class="ri" href="#/game/${p.id}"><img src="${url(p.cover)}" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'sq'}))"><div><h3>${esc(p.name)}</h3><p>${esc(p.tagline)}</p><p>${esc(why(p))}</p></div><span class="rank">${i + 1}</span></a>`).join('');
+  res.innerHTML = L.map((p, i) => `<a class="ri" href="#/game/${p.id}"><img src="${cov(p)}" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'sq'}))"><div><h3>${esc(p.name)}</h3><p>${esc(p.tagline)}</p><p>${esc(why(p))}</p></div><span class="rank">${i + 1}</span></a>`).join('');
 }
 function openWiz() { paintWiz(); const d = $('#wiz'); if (!d.open) d.showModal(); }
 $('#wizBtn').addEventListener('click', openWiz);
 $('#wizX').addEventListener('click', () => $('#wiz').close());
 $('#wiz').addEventListener('click', e => { if (e.target === $('#wiz')) return $('#wiz').close(); const b = e.target.closest('[data-wv]'); if (!b) { if (e.target.closest('.ri')) $('#wiz').close(); return; } const [k, v] = b.dataset.wv.split(':'); const val = k === 'age' ? v : +v; WZ[k] = WZ[k] === val ? (k === 'age' ? '' : 0) : val; Mem.set('store.wiz', WZ); paintWiz(); });
 paintCounts(); route();
+
+/* ---------- الأرضية أسفل الصفحة ---------- */
+$('footer.ft').insertAdjacentHTML('afterbegin', `<div class="land" aria-hidden="true">${LAND}<span class="lp chest">${prop('chest', DECO_CHEST)}</span><span class="lp gem">${prop('gem', DECO_GEM)}</span></div>`);
+/* ---------- الصور الحية: إمالة مع الماوس، ولمعة مرة وحدة لما تظهر البطاقة على الجوال ---------- */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let cur = null, ev = null, raf = 0;
+    const KEYS = ['--rx', '--ry', '--px', '--py'];
+    const apply = () => { raf = 0; if (!cur || !ev) return; const r = cur.getBoundingClientRect(), x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5;
+      cur.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg'); cur.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg'); cur.style.setProperty('--px', (-x * 10).toFixed(1) + 'px'); cur.style.setProperty('--py', (-y * 10).toFixed(1) + 'px'); };
+    document.addEventListener('pointerover', e => { const c = e.target.closest ? e.target.closest('.gc') : null; if (c !== cur) { if (cur) KEYS.forEach(k => cur.style.removeProperty(k)); cur = c; } });
+    document.addEventListener('pointermove', e => { if (!cur) return; ev = e; if (!raf) raf = requestAnimationFrame(apply); }, { passive: true });
+  } else if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(en => { if (!en.isIntersecting) return; const c = en.target; io.unobserve(c); c.classList.add('shine'); setTimeout(() => c.classList.remove('shine'), 1800); }), { threshold: .6 });
+    const watch = () => $$('.gc:not([data-io])').forEach(c => { c.dataset.io = 1; io.observe(c); });
+    new MutationObserver(watch).observe($('#app'), { childList: true, subtree: true }); watch();
+  }
+})();
 </script>
 </body>
 </html>
