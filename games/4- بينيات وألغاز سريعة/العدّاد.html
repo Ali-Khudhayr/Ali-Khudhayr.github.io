@@ -1743,7 +1743,8 @@ body.sk .bz-status.open{color:#16a862}
 /* ---------- عجلة الاختيار ---------- */
 body.sk #wheel{box-shadow:0 0 0 .5rem #ffd24a,0 0 0 .85rem #c98a12,0 1.4rem 3rem rgba(0,40,40,.35)}
 body.sk .wheel-wrap::before{content:"";position:absolute;width:calc(var(--ws) + 1.7rem);aspect-ratio:1;border-radius:50%;pointer-events:none;z-index:1;
-  background:repeating-conic-gradient(from 6deg,#fffbe0 0 3.2deg,transparent 3.2deg 22.5deg);-webkit-mask:radial-gradient(circle,transparent calc(50% - .62rem),#000 calc(50% - .6rem) calc(50% - .18rem),transparent calc(50% - .16rem));mask:radial-gradient(circle,transparent calc(50% - .62rem),#000 calc(50% - .6rem) calc(50% - .18rem),transparent calc(50% - .16rem))}
+  background:repeating-conic-gradient(from 6deg,#fffbe0 0 3.2deg,transparent 3.2deg 22.5deg);-webkit-mask:radial-gradient(circle closest-side,transparent calc(100% - .66rem),#000 calc(100% - .64rem) calc(100% - .2rem),transparent calc(100% - .18rem));mask:radial-gradient(circle closest-side,transparent calc(100% - .66rem),#000 calc(100% - .64rem) calc(100% - .2rem),transparent calc(100% - .18rem))}
+body.sk .sk-temo{color:#000!important;-webkit-text-fill-color:#000}
 body.sk .pointer{border:0!important;width:clamp(3rem,8vh,4.6rem);height:clamp(3.6rem,9.5vh,5.4rem);top:-1.6rem;background:center/contain no-repeat;filter:none}
 body.sk .wh-hub{background:center/contain no-repeat;border:0;font-size:0!important;box-shadow:none;z-index:2}
 body.sk .wh-hub .ic{display:none}
